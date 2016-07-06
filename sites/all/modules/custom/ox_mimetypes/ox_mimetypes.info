@@ -1,0 +1,6 @@
+name = Podcasts.ox Mimetypes
+description = Add .epub and .ibooks extensions and mimetypes to Drupal
+package = Podcasts.ox
+core = 7.x
+version = 7.x-1.0
+files[] = ox_mimetypes.module

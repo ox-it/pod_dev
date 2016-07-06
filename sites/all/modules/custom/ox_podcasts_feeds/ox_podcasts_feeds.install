@@ -1,0 +1,121 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ *
+ * Set up feeds sources with the correct Mediapub URLs for importing, and ensure
+ * they are enabled.
+ */
+function ox_podcasts_feeds_enable() {
+  $urls = array(
+    'unit_importer'          => 'http://mediapub.it.ox.ac.uk/feeds/static/units.xml',
+    'contributor_importer'   => 'http://mediapub.it.ox.ac.uk/feeds/static/contributors.xml',
+    'series_importer'        => 'http://mediapub.it.ox.ac.uk/feeds/static/series.xml',
+    'file_audio_importer'    => 'http://mediapub.it.ox.ac.uk/feeds/static/files.xml',
+    'file_video_importer'    => 'http://mediapub.it.ox.ac.uk/feeds/static/files.xml',
+    'file_document_importer' => 'http://mediapub.it.ox.ac.uk/feeds/static/files.xml',
+    'episode_importer'       => 'http://mediapub.it.ox.ac.uk/feeds/static/episodes.xml'
+  );
+
+  $disabled = variable_get('default_feeds_importer');
+
+  foreach ($urls as $importer => $url) {
+    $source = feeds_source($importer, 0);
+    $config = $source->getConfig();
+    $config['FeedsHTTPFetcher']['source'] = $url;
+    $source->setConfig($config);
+    $source->save();
+
+    unset($disabled[$importer]);
+  }
+
+  variable_set('default_feeds_importer', $disabled);
+
+  // Remap any old feed items and delete the old importers
+  ox_podcasts_feeds_update_7102();
+}
+
+/**
+ * Implements hook_schema().
+ *
+ * Create a table listing importers that need to be re-run, to be used as an IPC
+ * mechanism for communication between ox_podcasts_feeds_feeds_presave() and
+ * drush_ox_podcasts_feeds_import_all_feeds(), so that the latter can loop until
+ * all units have been imported.  (This has to be done in a loop because units
+ * are hierarchical, the input is not topologically sorted, and turning on the
+ * skip_hash_check option for this importer destroys the consistency of the
+ * image cache in badly visible ways.  Oh well!)
+ *
+ * It would be nice to use variable_{get,set}() instead of creating a whole
+ * table for this, but it's a bad idea for two reasons.  First, variable_get()
+ * returns the (potentially stale) value that was cached at the beginning of the
+ * request / process, so it can't be used to check for changes that occurred
+ * since the drush command began running.  Second, variable_set() destroys the
+ * cache of variable values each time it's called, degrading performances on all
+ * page requests until the cache is rebuilt.  See the following two pages for
+ * details:
+ *
+ *  https://www.drupal.org/node/973436
+ *  http://nathan.rambeck.org/blog/19-drupal-performance-and-variable-cache
+ */
+function ox_podcasts_feeds_schema() {
+  $schema['ox_podcasts_feeds_rerun'] = array(
+    'description' => 'List of feed importers which need to be re-run.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Feed importer ID',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
+
+/**
+ * Create "ox_podcasts_feeds_rerun" table
+ */
+function ox_podcasts_feeds_update_7101(&$sandbox) {
+  $schema['ox_podcasts_feeds_rerun'] = array(
+    'description' => 'List of feed importers which need to be re-run.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Feed importer ID',
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  $name = 'ox_podcasts_feeds_rerun';
+  db_create_table($name, $schema[$name]);
+}
+
+/**
+ * Delete old feed importers and remap their items.
+ */
+function ox_podcasts_feeds_update_7102() {
+  $remap = array(
+    'importer_series'        => 'series_importer',
+    'importer_file_audio'    => 'file_audio_importer',
+    'importer_file_video'    => 'file_video_importer',
+    'file_importer_document' => 'file_document_importer',
+    'importer_episode'       => 'episode_importer',
+  );
+
+  foreach ($remap as $old => $new) {
+    db_query("UPDATE feeds_item SET id = :new WHERE id = :old", array(
+        ':new' => $new,
+        ':old' => $old,
+      )
+    );
+    $importer = feeds_importer_load($old);
+    if (is_object($importer)) {
+      $importer->delete();
+    }
+  }
+}

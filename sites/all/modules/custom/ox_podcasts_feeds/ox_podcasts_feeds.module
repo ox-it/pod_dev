@@ -1,0 +1,77 @@
+<?php
+/**
+ * @file
+ * Code for the Podcasts.ox Feed Importers module
+ */
+
+include 'ox_podcasts_feeds.features.inc';
+
+/**
+ * Define the order in which importers should run
+ *
+ * Podcasts.ox imports data from Mediapub in the form of separate XML feeds for
+ * Series, Episodes, Files, Units, and Contributors.  The relationships between
+ * these types of entities imply that some must be imported before others.
+ * (Alternatively, we can set the "Skip Hash Check" option on the feed importer
+ * to force an update every time the importer runs; however, this is creates
+ * problems with image files and caching.
+ *
+ * The following dependencies exist:
+ *
+ * Unit <-- Series
+ * Contributor <-- Episode
+ * Series <-- Episode
+ * File <-- Episode
+ *
+ * (Here, 'A <-- B' means 'B refers to A' and implies that A must be imported
+ * before B).
+ *
+ * One good order in which to run these importers is therefore:
+ *
+ *   Units, Contributors, Series, Files, Episodes
+ *
+ * which is the order defined by this function.
+ */
+function _ox_podcasts_feeds_importer_order() {
+  return array(
+    'unit_importer',
+    'contributor_importer',
+    'series_importer',
+    'file_audio_importer',
+    'file_video_importer',
+    'file_document_importer',
+    'episode_importer'
+  );
+}
+
+/**
+ * Implements hook_feeds_presave().
+ *
+ * Ensure that the hierarchy of units is imported correctly.  This is
+ * accomplished by forcing Feeds to skip importing a unit if it would refer to a
+ * parent element which has not yet been created.  A second (third, etc.) pass
+ * through the importer should import these elements correctly.
+ */
+function ox_podcasts_feeds_feeds_presave(FeedsSource $source, $entity, $item) {
+  switch ($source->id) {
+    case 'unit_importer':
+      if ((empty($entity->parent) || $entity->parent == array(0) || !taxonomy_term_load($entity->parent[0]))
+          && !empty($item['xpathparser:16'])) {
+        drupal_set_message(t(
+            'Skipping unit %name, whose parent element %guid is not yet imported.  Re-run the importer to import skipped elements.',
+            array(
+              '%name' => $entity->name,
+              '%guid' => $item['xpathparser:16'],
+            )
+          ));
+
+        $entity->feeds_item->skip = TRUE;
+
+        // When importing via 'drush-import-all-feeds', request that this
+        // importer be re-run so that the missing units will get imported on the
+        // next pass.
+        db_merge('ox_podcasts_feeds_rerun')->key(array('id' => 'unit_importer'))->execute();
+      }
+      break;
+  }
+}
