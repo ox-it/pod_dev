@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Implementation of the Feeds mapping API for the media module.
+ * Implementation of the Feeds mapping API for the Media module.
  */
 
 /**
@@ -23,6 +23,9 @@ function media_feeds_feeds_processor_targets_alter(&$targets, $entity_type, $bun
   }
   if (module_exists('image')) {
     $field_types[] = 'image';
+  }
+  if (module_exists('video')) {
+    $field_types[] = 'video';
   }
 
   foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
@@ -57,7 +60,7 @@ function media_feeds_feeds_processor_targets_alter(&$targets, $entity_type, $bun
 }
 
 /**
- * The actual mapping happens here.
+ * Do the actual mapping.
  */
 function media_feeds_set_target($source, $entity, $target, $values, $config = array()) {
   if (empty($values)) {
@@ -68,12 +71,12 @@ function media_feeds_set_target($source, $entity, $target, $values, $config = ar
     $values = array($values);
   }
 
+  // Get the provider class name by splitting $target.
+  // MediaFeedsInternetProvider is the default for the second value.
+  list($target, $provider) = explode(':', $target, 2) + array(1 => 'MediaFeedsInternetProvider');
+
   $field_info = field_info_field($target);
   $field = array(LANGUAGE_NONE => array());
-
-  // Get the provider class name by splitting $target.
-  // MediaFeedsInternetProvider is the default for the secound value.
-  list($target, $provider) = explode(':', $target, 2) + array(1 => 'MediaFeedsInternetProvider');
 
   foreach ($values as $value) {
     try {
@@ -140,7 +143,7 @@ function media_feeds_set_target($source, $entity, $target, $values, $config = ar
         if ($field_info['type'] == 'media') {
           $allowed_schemes = $instance['widget']['settings']['allowed_schemes'];
           if (in_array('public', $allowed_schemes)) {
-            $fromurlschemes = media_variable_get('fromurl_supported_schemes');
+            $fromurlschemes = variable_get('media_fromurl_supported_schemes', array('http', 'https', 'ftp', 'smb', 'ftps'));
             foreach ($fromurlschemes as $fromurlscheme) {
               $allowed_schemes[$fromurlscheme] = $fromurlscheme;
             }
@@ -173,15 +176,14 @@ function media_feeds_set_target($source, $entity, $target, $values, $config = ar
         'fid' => $file->fid,
       );
       if ($field_info['type'] == 'file') {
-        $result += array(
-          'display' => 1,
-          'description' => '',
-        );
+        $result['display'] = (int) !empty($field_info['settings']['display_default']);
       }
       $field[LANGUAGE_NONE][] = $result;
     } catch (MediaInternetNoHandlerException $e) {
       drupal_set_message($e->getMessage(), 'error');
     } catch (MediaInternetValidationException $e) {
+      drupal_set_message($e->getMessage(), 'error');
+    } catch (Exception $e) {
       drupal_set_message($e->getMessage(), 'error');
     }
   }
