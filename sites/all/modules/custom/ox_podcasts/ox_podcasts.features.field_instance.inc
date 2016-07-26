@@ -10,7 +10,7 @@
 function ox_podcasts_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'file-audio-field_disable_embedding'
+  // Exported field_instance: 'file-audio-field_disable_embedding'.
   $field_instances['file-audio-field_disable_embedding'] = array(
     'bundle' => 'audio',
     'default_value' => array(
@@ -26,7 +26,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'preview' => array(
         'label' => 'above',
@@ -60,7 +60,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-audio-field_duration'
+  // Exported field_instance: 'file-audio-field_duration'.
   $field_instances['file-audio-field_duration'] = array(
     'bundle' => 'audio',
     'default_value' => array(
@@ -76,7 +76,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'preview' => array(
         'label' => 'above',
@@ -111,7 +111,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-audio-field_licence'
+  // Exported field_instance: 'file-audio-field_licence'.
   $field_instances['file-audio-field_licence'] = array(
     'bundle' => 'audio',
     'default_value' => NULL,
@@ -123,7 +123,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'preview' => array(
         'label' => 'above',
@@ -155,7 +155,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-audio-field_mediapub_fid'
+  // Exported field_instance: 'file-audio-field_mediapub_fid'.
   $field_instances['file-audio-field_mediapub_fid'] = array(
     'bundle' => 'audio',
     'default_value' => NULL,
@@ -172,7 +172,7 @@ function ox_podcasts_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'preview' => array(
         'label' => 'above',
@@ -208,7 +208,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_document_type'
+  // Exported field_instance: 'file-document-field_document_type'.
   $field_instances['file-document-field_document_type'] = array(
     'bundle' => 'document',
     'default_value' => NULL,
@@ -252,7 +252,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_licence'
+  // Exported field_instance: 'file-document-field_licence'.
   $field_instances['file-document-field_licence'] = array(
     'bundle' => 'document',
     'default_value' => NULL,
@@ -296,7 +296,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_test'
+  // Exported field_instance: 'file-document-field_test'.
   $field_instances['file-document-field_test'] = array(
     'bundle' => 'document',
     'default_value' => NULL,
@@ -338,7 +338,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-document-field_visible_in_feeds'
+  // Exported field_instance: 'file-document-field_visible_in_feeds'.
   $field_instances['file-document-field_visible_in_feeds'] = array(
     'bundle' => 'document',
     'default_value' => NULL,
@@ -382,7 +382,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_alt_text'
+  // Exported field_instance: 'file-image-field_file_image_alt_text'.
   $field_instances['file-image-field_file_image_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -433,7 +433,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -484,7 +484,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_disable_embedding'
+  // Exported field_instance: 'file-video-field_disable_embedding'.
   $field_instances['file-video-field_disable_embedding'] = array(
     'bundle' => 'video',
     'default_value' => array(
@@ -500,7 +500,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'preview' => array(
         'label' => 'above',
@@ -534,7 +534,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_duration'
+  // Exported field_instance: 'file-video-field_duration'.
   $field_instances['file-video-field_duration'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -546,7 +546,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'preview' => array(
         'label' => 'above',
@@ -581,7 +581,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_licence'
+  // Exported field_instance: 'file-video-field_licence'.
   $field_instances['file-video-field_licence'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -593,7 +593,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'preview' => array(
         'label' => 'above',
@@ -625,7 +625,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_mediapub_fid'
+  // Exported field_instance: 'file-video-field_mediapub_fid'.
   $field_instances['file-video-field_mediapub_fid'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -642,7 +642,7 @@ function ox_podcasts_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'preview' => array(
         'label' => 'above',
@@ -678,7 +678,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-body'
+  // Exported field_instance: 'node-episode-body'.
   $field_instances['node-episode-body'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -722,7 +722,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_automatic_keywords'
+  // Exported field_instance: 'node-episode-field_automatic_keywords'.
   $field_instances['node-episode-field_automatic_keywords'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -755,7 +755,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_episode_description_long'
+  // Exported field_instance: 'node-episode-field_episode_description_long'.
   $field_instances['node-episode-field_episode_description_long'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -788,7 +788,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_episode_editor'
+  // Exported field_instance: 'node-episode-field_episode_editor'.
   $field_instances['node-episode-field_episode_editor'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -821,7 +821,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_episode_order'
+  // Exported field_instance: 'node-episode-field_episode_order'.
   $field_instances['node-episode-field_episode_order'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -855,7 +855,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_itunes_u_category'
+  // Exported field_instance: 'node-episode-field_itunes_u_category'.
   $field_instances['node-episode-field_itunes_u_category'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -888,7 +888,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_keywords'
+  // Exported field_instance: 'node-episode-field_keywords'.
   $field_instances['node-episode-field_keywords'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -921,7 +921,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_licence'
+  // Exported field_instance: 'node-episode-field_licence'.
   $field_instances['node-episode-field_licence'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -947,11 +947,89 @@ function ox_podcasts_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-episode-field_media_file_image'.
+  $field_instances['node-episode-field_media_file_image'] = array(
+    'bundle' => 'episode',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_media_file_image',
+    'label' => 'media_file_image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'alt_field_default' => '',
+      'alt_field_hide' => 0,
+      'alt_field_sync_title' => 0,
+      'alt_field_update_on_edit' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 'image',
+        'media_type' => 'media',
+        'preview' => 'large',
+        'thumbnail' => 'thumbnail',
+      ),
+      'min_resolution' => '',
+      'title_field' => 0,
+      'title_field_default' => '',
+      'title_field_hide' => 0,
+      'title_field_update_on_edit' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'file_entity_inline' => 1,
+        'file_entity_inline_fields' => array(),
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'remotefile' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
       'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_media_files'
+  // Exported field_instance: 'node-episode-field_media_files'.
   $field_instances['node-episode-field_media_files'] = array(
     'bundle' => 'episode',
     'deleted' => 0,
@@ -959,8 +1037,14 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'jw_player',
+        'settings' => array(
+          'check_support' => 0,
+          'jwplayer_preset' => 'jwplayer_episode_node',
+          'preview_image_field' => 'node:episode|field_media_file_image',
+          'preview_image_style' => 'medium',
+        ),
+        'type' => 'jw_player',
         'weight' => 6,
       ),
     ),
@@ -973,6 +1057,13 @@ function ox_podcasts_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'mp3 mp4 epub pdf',
       'max_filesize' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 'media',
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1000,6 +1091,7 @@ function ox_podcasts_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
+            'search_all_fields' => 0,
           ),
         ),
         'progress_indicator' => 'throbber',
@@ -1009,7 +1101,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_mediapub_nid'
+  // Exported field_instance: 'node-episode-field_mediapub_nid'.
   $field_instances['node-episode-field_mediapub_nid'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -1039,11 +1131,11 @@ function ox_podcasts_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 15,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_people'
+  // Exported field_instance: 'node-episode-field_people'.
   $field_instances['node-episode-field_people'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -1076,7 +1168,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-episode-field_series'
+  // Exported field_instance: 'node-episode-field_series'.
   $field_instances['node-episode-field_series'] = array(
     'bundle' => 'episode',
     'default_value' => NULL,
@@ -1105,11 +1197,11 @@ function ox_podcasts_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1153,7 +1245,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-meta_description'
+  // Exported field_instance: 'node-page-meta_description'.
   $field_instances['node-page-meta_description'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1190,7 +1282,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-meta_keywords'
+  // Exported field_instance: 'node-page-meta_keywords'.
   $field_instances['node-page-meta_keywords'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1227,7 +1319,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reference-field_people'
+  // Exported field_instance: 'node-reference-field_people'.
   $field_instances['node-reference-field_people'] = array(
     'bundle' => 'reference',
     'default_value' => NULL,
@@ -1267,7 +1359,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reference-field_series'
+  // Exported field_instance: 'node-reference-field_series'.
   $field_instances['node-reference-field_series'] = array(
     'bundle' => 'reference',
     'default_value' => NULL,
@@ -1297,17 +1389,17 @@ function ox_podcasts_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy_term_reference_sortable_widget',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
         'size' => 60,
       ),
-      'type' => 'taxonomy_term_reference_sortable_widget',
+      'type' => 'options_select',
       'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-reference-field_unit'
+  // Exported field_instance: 'node-reference-field_unit'.
   $field_instances['node-reference-field_unit'] = array(
     'bundle' => 'reference',
     'default_value' => NULL,
@@ -1347,7 +1439,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reference-meta_description'
+  // Exported field_instance: 'node-reference-meta_description'.
   $field_instances['node-reference-meta_description'] = array(
     'bundle' => 'reference',
     'default_value' => NULL,
@@ -1384,7 +1476,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-reference-meta_keywords'
+  // Exported field_instance: 'node-reference-meta_keywords'.
   $field_instances['node-reference-meta_keywords'] = array(
     'bundle' => 'reference',
     'default_value' => NULL,
@@ -1421,7 +1513,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-keywords-field_keywords_alias'
+  // Exported field_instance: 'taxonomy_term-keywords-field_keywords_alias'.
   $field_instances['taxonomy_term-keywords-field_keywords_alias'] = array(
     'bundle' => 'keywords',
     'default_value' => NULL,
@@ -1455,7 +1547,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-keywords-field_keywords_image'
+  // Exported field_instance: 'taxonomy_term-keywords-field_keywords_image'.
   $field_instances['taxonomy_term-keywords-field_keywords_image'] = array(
     'bundle' => 'keywords',
     'deleted' => 0,
@@ -1522,7 +1614,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-keywords-field_relevant_links'
+  // Exported field_instance: 'taxonomy_term-keywords-field_relevant_links'.
   $field_instances['taxonomy_term-keywords-field_relevant_links'] = array(
     'bundle' => 'keywords',
     'default_value' => NULL,
@@ -1542,6 +1634,7 @@ function ox_podcasts_field_default_field_instances() {
     'label' => 'Relevant Links',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -1555,6 +1648,7 @@ function ox_podcasts_field_default_field_instances() {
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1570,7 +1664,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-keywords-meta_description'
+  // Exported field_instance: 'taxonomy_term-keywords-meta_description'.
   $field_instances['taxonomy_term-keywords-meta_description'] = array(
     'bundle' => 'keywords',
     'default_value' => NULL,
@@ -1601,7 +1695,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-keywords-meta_keywords'
+  // Exported field_instance: 'taxonomy_term-keywords-meta_keywords'.
   $field_instances['taxonomy_term-keywords-meta_keywords'] = array(
     'bundle' => 'keywords',
     'default_value' => NULL,
@@ -1632,7 +1726,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-field_featured'
+  // Exported field_instance: 'taxonomy_term-people-field_featured'.
   $field_instances['taxonomy_term-people-field_featured'] = array(
     'bundle' => 'people',
     'default_value' => array(
@@ -1669,7 +1763,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-field_people_image'
+  // Exported field_instance: 'taxonomy_term-people-field_people_image'.
   $field_instances['taxonomy_term-people-field_people_image'] = array(
     'bundle' => 'people',
     'deleted' => 0,
@@ -1736,7 +1830,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-field_quote'
+  // Exported field_instance: 'taxonomy_term-people-field_quote'.
   $field_instances['taxonomy_term-people-field_quote'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1769,7 +1863,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-field_relevant_links'
+  // Exported field_instance: 'taxonomy_term-people-field_relevant_links'.
   $field_instances['taxonomy_term-people-field_relevant_links'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1789,6 +1883,7 @@ function ox_podcasts_field_default_field_instances() {
     'label' => 'Relevant Links',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -1801,6 +1896,7 @@ function ox_podcasts_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -1816,7 +1912,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-field_unit'
+  // Exported field_instance: 'taxonomy_term-people-field_unit'.
   $field_instances['taxonomy_term-people-field_unit'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1850,7 +1946,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-meta_description'
+  // Exported field_instance: 'taxonomy_term-people-meta_description'.
   $field_instances['taxonomy_term-people-meta_description'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1881,7 +1977,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-people-meta_keywords'
+  // Exported field_instance: 'taxonomy_term-people-meta_keywords'.
   $field_instances['taxonomy_term-people-meta_keywords'] = array(
     'bundle' => 'people',
     'default_value' => NULL,
@@ -1912,7 +2008,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_itunes_u_audio_code'
+  // Exported field_instance: 'taxonomy_term-series-field_itunes_u_audio_code'.
   $field_instances['taxonomy_term-series-field_itunes_u_audio_code'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -1921,15 +2017,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -1952,7 +2048,8 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_itunes_u_document_code'
+  // Exported field_instance:
+  // 'taxonomy_term-series-field_itunes_u_document_code'.
   $field_instances['taxonomy_term-series-field_itunes_u_document_code'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -1961,15 +2058,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -1992,7 +2089,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_itunes_u_video_code'
+  // Exported field_instance: 'taxonomy_term-series-field_itunes_u_video_code'.
   $field_instances['taxonomy_term-series-field_itunes_u_video_code'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -2001,15 +2098,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2032,7 +2129,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_licence'
+  // Exported field_instance: 'taxonomy_term-series-field_licence'.
   $field_instances['taxonomy_term-series-field_licence'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -2041,9 +2138,14 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),
@@ -2063,7 +2165,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_mediapub_nid'
+  // Exported field_instance: 'taxonomy_term-series-field_mediapub_nid'.
   $field_instances['taxonomy_term-series-field_mediapub_nid'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -2072,15 +2174,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2103,7 +2205,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_relevant_links'
+  // Exported field_instance: 'taxonomy_term-series-field_relevant_links'.
   $field_instances['taxonomy_term-series-field_relevant_links'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -2112,10 +2214,16 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2123,6 +2231,7 @@ function ox_podcasts_field_default_field_instances() {
     'label' => 'Relevant Links',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -2135,6 +2244,7 @@ function ox_podcasts_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -2150,7 +2260,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_series_album_cover'
+  // Exported field_instance: 'taxonomy_term-series-field_series_album_cover'.
   $field_instances['taxonomy_term-series-field_series_album_cover'] = array(
     'bundle' => 'series',
     'deleted' => 0,
@@ -2158,10 +2268,16 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -2217,7 +2333,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_series_banner_image'
+  // Exported field_instance: 'taxonomy_term-series-field_series_banner_image'.
   $field_instances['taxonomy_term-series-field_series_banner_image'] = array(
     'bundle' => 'series',
     'deleted' => 0,
@@ -2225,13 +2341,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2284,7 +2402,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_series_flag_level'
+  // Exported field_instance: 'taxonomy_term-series-field_series_flag_level'.
   $field_instances['taxonomy_term-series-field_series_flag_level'] = array(
     'bundle' => 'series',
     'default_value' => array(
@@ -2297,10 +2415,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2319,7 +2442,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-series-field_unit'
+  // Exported field_instance: 'taxonomy_term-series-field_unit'.
   $field_instances['taxonomy_term-series-field_unit'] = array(
     'bundle' => 'series',
     'default_value' => NULL,
@@ -2328,10 +2451,16 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2353,7 +2482,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-field_relevant_links'
+  // Exported field_instance: 'taxonomy_term-units-field_relevant_links'.
   $field_instances['taxonomy_term-units-field_relevant_links'] = array(
     'bundle' => 'units',
     'default_value' => NULL,
@@ -2373,6 +2502,7 @@ function ox_podcasts_field_default_field_instances() {
     'label' => 'Relevant Links',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -2385,6 +2515,7 @@ function ox_podcasts_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -2400,7 +2531,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-field_unit_image'
+  // Exported field_instance: 'taxonomy_term-units-field_unit_image'.
   $field_instances['taxonomy_term-units-field_unit_image'] = array(
     'bundle' => 'units',
     'deleted' => 0,
@@ -2467,7 +2598,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-meta_description'
+  // Exported field_instance: 'taxonomy_term-units-meta_description'.
   $field_instances['taxonomy_term-units-meta_description'] = array(
     'bundle' => 'units',
     'default_value' => NULL,
@@ -2498,7 +2629,7 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-units-meta_keywords'
+  // Exported field_instance: 'taxonomy_term-units-meta_keywords'.
   $field_instances['taxonomy_term-units-meta_keywords'] = array(
     'bundle' => 'units',
     'default_value' => NULL,
@@ -2610,6 +2741,7 @@ function ox_podcasts_field_default_field_instances() {
   t('iTunes U Category');
   t('iTunes U Document Code');
   t('iTunes U Video Code');
+  t('media_file_image');
   t('test');
 
   return $field_instances;

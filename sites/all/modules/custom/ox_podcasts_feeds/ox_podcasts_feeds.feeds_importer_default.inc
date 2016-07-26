@@ -740,7 +740,7 @@ function ox_podcasts_feeds_feeds_importer_default() {
         'input_format' => 'plain_text',
         'bundle' => 'series',
         'vocabulary' => 0,
-        'skip_hash_check' => 0,
+        'skip_hash_check' => 1,
       ),
     ),
     'content_type' => '',

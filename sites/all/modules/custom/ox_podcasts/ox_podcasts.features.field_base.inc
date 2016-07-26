@@ -10,7 +10,7 @@
 function ox_podcasts_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,14 +19,6 @@ function ox_podcasts_field_default_field_bases() {
       0 => 'node',
     ),
     'field_name' => 'body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_automatic_keywords'
+  // Exported field_base: 'field_automatic_keywords'.
   $field_bases['field_automatic_keywords'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_automatic_keywords',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -73,14 +57,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_disable_embedding'
+  // Exported field_base: 'field_disable_embedding'.
   $field_bases['field_disable_embedding'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_disable_embedding',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -99,14 +82,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_document_type'
+  // Exported field_base: 'field_document_type'.
   $field_bases['field_document_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_document_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -127,21 +109,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_duration'
+  // Exported field_base: 'field_duration'.
   $field_bases['field_duration'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_duration',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -156,21 +130,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_episode_description_long'
+  // Exported field_base: 'field_episode_description_long'.
   $field_bases['field_episode_description_long'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_episode_description_long',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -183,21 +149,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_episode_editor'
+  // Exported field_base: 'field_episode_editor'.
   $field_bases['field_episode_editor'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_episode_editor',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -212,14 +170,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_episode_order'
+  // Exported field_base: 'field_episode_order'.
   $field_bases['field_episode_order'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_episode_order',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -228,14 +185,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_featured'
+  // Exported field_base: 'field_featured'.
   $field_bases['field_featured'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_featured',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -254,21 +210,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_file_image_alt_text'
+  // Exported field_base: 'field_file_image_alt_text'.
   $field_bases['field_file_image_alt_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_file_image_alt_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -283,21 +231,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_file_image_title_text'
+  // Exported field_base: 'field_file_image_title_text'.
   $field_bases['field_file_image_title_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_file_image_title_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -312,14 +252,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_itunes_u_audio_code'
+  // Exported field_base: 'field_itunes_u_audio_code'.
   $field_bases['field_itunes_u_audio_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_itunes_u_audio_code',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -328,21 +267,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_itunes_u_category'
+  // Exported field_base: 'field_itunes_u_category'.
   $field_bases['field_itunes_u_category'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_itunes_u_category',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -362,14 +293,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_itunes_u_code'
+  // Exported field_base: 'field_itunes_u_code'.
   $field_bases['field_itunes_u_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_itunes_u_code',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -378,14 +308,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_itunes_u_document_code'
+  // Exported field_base: 'field_itunes_u_document_code'.
   $field_bases['field_itunes_u_document_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_itunes_u_document_code',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -394,14 +323,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_itunes_u_video_code'
+  // Exported field_base: 'field_itunes_u_video_code'.
   $field_bases['field_itunes_u_video_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_itunes_u_video_code',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -410,21 +338,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_keywords'
+  // Exported field_base: 'field_keywords'.
   $field_bases['field_keywords'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_keywords',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -444,21 +364,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_keywords_alias'
+  // Exported field_base: 'field_keywords_alias'.
   $field_bases['field_keywords_alias'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_keywords_alias',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -473,21 +385,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_keywords_image'
+  // Exported field_base: 'field_keywords_image'.
   $field_bases['field_keywords_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_keywords_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -503,14 +407,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_licence'
+  // Exported field_base: 'field_licence'.
   $field_bases['field_licence'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_licence',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -528,21 +431,35 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_media_files'
+  // Exported field_base: 'field_media_file_image'.
+  $field_bases['field_media_file_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_media_file_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_media_files'.
   $field_bases['field_media_files'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_media_files',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -559,14 +476,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_mediapub_fid'
+  // Exported field_base: 'field_mediapub_fid'.
   $field_bases['field_mediapub_fid'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mediapub_fid',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -575,14 +491,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_mediapub_nid'
+  // Exported field_base: 'field_mediapub_nid'.
   $field_bases['field_mediapub_nid'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mediapub_nid',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -591,21 +506,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_people'
+  // Exported field_base: 'field_people'.
   $field_bases['field_people'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_people',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -625,21 +532,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_people_image'
+  // Exported field_base: 'field_people_image'.
   $field_bases['field_people_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_people_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -655,21 +554,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_quote'
+  // Exported field_base: 'field_quote'.
   $field_bases['field_quote'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_quote',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -682,14 +573,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_relevant_links'
+  // Exported field_base: 'field_relevant_links'.
   $field_bases['field_relevant_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_relevant_links',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -712,21 +602,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_series'
+  // Exported field_base: 'field_series'.
   $field_bases['field_series'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_series',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -746,21 +628,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_series_album_cover'
+  // Exported field_base: 'field_series_album_cover'.
   $field_bases['field_series_album_cover'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_series_album_cover',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -776,21 +650,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_series_banner_image'
+  // Exported field_base: 'field_series_banner_image'.
   $field_bases['field_series_banner_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_series_banner_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -806,14 +672,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_series_flag_level'
+  // Exported field_base: 'field_series_flag_level'.
   $field_bases['field_series_flag_level'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_series_flag_level',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -833,14 +698,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_test'
+  // Exported field_base: 'field_test'.
   $field_bases['field_test'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_test',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'metatags_quick',
@@ -852,21 +716,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'metatags_quick',
   );
 
-  // Exported field_base: 'field_unit'
+  // Exported field_base: 'field_unit'.
   $field_bases['field_unit'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_unit',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -886,21 +742,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_unit_image'
+  // Exported field_base: 'field_unit_image'.
   $field_bases['field_unit_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_unit_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -916,14 +764,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_visible_in_feeds'
+  // Exported field_base: 'field_visible_in_feeds'.
   $field_bases['field_visible_in_feeds'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_visible_in_feeds',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -943,14 +790,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'meta_description'
+  // Exported field_base: 'meta_description'.
   $field_bases['meta_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'meta_description',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'metatags_quick',
@@ -962,14 +808,13 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'metatags_quick',
   );
 
-  // Exported field_base: 'meta_keywords'
+  // Exported field_base: 'meta_keywords'.
   $field_bases['meta_keywords'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'meta_keywords',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'metatags_quick',
