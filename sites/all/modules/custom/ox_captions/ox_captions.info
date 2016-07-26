@@ -1,0 +1,6 @@
+name = Podcasts.ox captions
+description = Add captions to jw_player files
+package = Podcasts.ox
+core = 7.x
+version = 7.x-1.0
+# scripts[] = captions.js
