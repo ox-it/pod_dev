@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ox_views feature.
+ */
+
+include_once 'ox_views.features.inc';
