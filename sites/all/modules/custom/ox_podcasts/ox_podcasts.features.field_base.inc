@@ -31,6 +31,28 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_audio_image'.
+  $field_bases['field_audio_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_audio_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 11051,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_automatic_keywords'.
   $field_bases['field_automatic_keywords'] = array(
     'active' => 1,
@@ -506,6 +528,28 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_pdf_image'.
+  $field_bases['field_pdf_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pdf_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 11052,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_people'.
   $field_bases['field_people'] = array(
     'active' => 1,
@@ -758,6 +802,28 @@ function ox_podcasts_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_video_image'.
+  $field_bases['field_video_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_video_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 11050,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,

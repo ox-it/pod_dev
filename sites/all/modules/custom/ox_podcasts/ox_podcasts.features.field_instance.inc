@@ -10,6 +10,101 @@
 function ox_podcasts_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'file-audio-field_audio_image'.
+  $field_instances['file-audio-field_audio_image'] = array(
+    'bundle' => 'audio',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_audio_image',
+    'label' => 'audio_image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'alt_field_default' => '',
+      'alt_field_hide' => 0,
+      'alt_field_sync_title' => 0,
+      'alt_field_update_on_edit' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'min_resolution' => '',
+      'title_field' => 0,
+      'title_field_default' => '',
+      'title_field_hide' => 0,
+      'title_field_update_on_edit' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'file_entity_inline' => 1,
+        'file_entity_inline_fields' => array(),
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'remotefile' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'file-audio-field_disable_embedding'.
   $field_instances['file-audio-field_disable_embedding'] = array(
     'bundle' => 'audio',
@@ -293,6 +388,101 @@ function ox_podcasts_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'file-document-field_pdf_image'.
+  $field_instances['file-document-field_pdf_image'] = array(
+    'bundle' => 'document',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_pdf_image',
+    'label' => 'pdf_image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'alt_field_default' => '',
+      'alt_field_hide' => 0,
+      'alt_field_sync_title' => 0,
+      'alt_field_update_on_edit' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'min_resolution' => '',
+      'title_field' => 0,
+      'title_field_default' => '',
+      'title_field_hide' => 0,
+      'title_field_update_on_edit' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'file_entity_inline' => 1,
+        'file_entity_inline_fields' => array(),
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'remotefile' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
     ),
   );
 
@@ -678,6 +868,101 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'file-video-field_video_image'.
+  $field_instances['file-video-field_video_image'] = array(
+    'bundle' => 'video',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_video_image',
+    'label' => 'video_image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'alt_field_default' => '',
+      'alt_field_hide' => 0,
+      'alt_field_sync_title' => 0,
+      'alt_field_update_on_edit' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'min_resolution' => '',
+      'title_field' => 0,
+      'title_field_default' => '',
+      'title_field_hide' => 0,
+      'title_field_update_on_edit' => 0,
+      'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'file_entity_inline' => 1,
+        'file_entity_inline_fields' => array(),
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'remotefile' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+            'search_all_fields' => 0,
+          ),
+        ),
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-episode-body'.
   $field_instances['node-episode-body'] = array(
     'bundle' => 'episode',
@@ -735,6 +1020,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_automatic_keywords',
@@ -767,6 +1058,12 @@ function ox_podcasts_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -801,6 +1098,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 11,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_episode_editor',
@@ -833,6 +1136,12 @@ function ox_podcasts_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -868,6 +1177,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_itunes_u_category',
@@ -900,6 +1215,12 @@ function ox_podcasts_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -934,6 +1255,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_licence',
@@ -962,6 +1289,12 @@ function ox_podcasts_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -1047,6 +1380,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'jw_player',
         'weight' => 6,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_media_files',
@@ -1114,6 +1453,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 12,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_mediapub_nid',
@@ -1148,6 +1493,12 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_people',
@@ -1180,6 +1531,12 @@ function ox_podcasts_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -2019,7 +2376,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -2060,7 +2417,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -2100,7 +2457,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -2176,7 +2533,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -2270,14 +2627,14 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'medium',
+          'image_style' => 'large',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -2343,7 +2700,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -2417,7 +2774,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -2737,12 +3094,15 @@ function ox_podcasts_field_default_field_instances() {
   t('Visible in Feeds');
   t('When checked, Podcasts.ox will not provide a link for easy embedding of this audio on third-party sites. (Note that files can still be directly linked to from any site unless additional protections are put in place).');
   t('When checked, Podcasts.ox will not provide a link for easy embedding of this video on third-party sites. (Note that files can still be directly linked to from any site unless additional protections are put in place).');
+  t('audio_image');
   t('iTunes U Audio Code');
   t('iTunes U Category');
   t('iTunes U Document Code');
   t('iTunes U Video Code');
   t('media_file_image');
+  t('pdf_image');
   t('test');
+  t('video_image');
 
   return $field_instances;
 }
