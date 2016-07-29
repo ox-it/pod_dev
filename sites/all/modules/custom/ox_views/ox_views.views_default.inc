@@ -38,49 +38,14 @@ function ox_views_views_default_views() {
   $handler->display->display_options['relationships']['file_to_node']['id'] = 'file_to_node';
   $handler->display->display_options['relationships']['file_to_node']['table'] = 'file_usage';
   $handler->display->display_options['relationships']['file_to_node']['field'] = 'file_to_node';
-  /* Field: File: audio_image */
-  $handler->display->display_options['fields']['field_audio_image']['id'] = 'field_audio_image';
-  $handler->display->display_options['fields']['field_audio_image']['table'] = 'field_data_field_audio_image';
-  $handler->display->display_options['fields']['field_audio_image']['field'] = 'field_audio_image';
-  $handler->display->display_options['fields']['field_audio_image']['label'] = '';
-  $handler->display->display_options['fields']['field_audio_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_audio_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_audio_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_audio_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
-  /* Field: File: pdf_image */
-  $handler->display->display_options['fields']['field_pdf_image']['id'] = 'field_pdf_image';
-  $handler->display->display_options['fields']['field_pdf_image']['table'] = 'field_data_field_pdf_image';
-  $handler->display->display_options['fields']['field_pdf_image']['field'] = 'field_pdf_image';
-  $handler->display->display_options['fields']['field_pdf_image']['label'] = '';
-  $handler->display->display_options['fields']['field_pdf_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_pdf_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pdf_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pdf_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
-  /* Field: File: video_image */
-  $handler->display->display_options['fields']['field_video_image']['id'] = 'field_video_image';
-  $handler->display->display_options['fields']['field_video_image']['table'] = 'field_data_field_video_image';
-  $handler->display->display_options['fields']['field_video_image']['field'] = 'field_video_image';
-  $handler->display->display_options['fields']['field_video_image']['label'] = '';
-  $handler->display->display_options['fields']['field_video_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_video_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_video_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_video_image][field_pdf_image][field_audio_image]';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'file_to_node';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -89,12 +54,16 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
-  /* Field: File: Rendered */
-  $handler->display->display_options['fields']['rendered']['id'] = 'rendered';
-  $handler->display->display_options['fields']['rendered']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['rendered']['field'] = 'rendered';
-  $handler->display->display_options['fields']['rendered']['label'] = '';
-  $handler->display->display_options['fields']['rendered']['element_label_colon'] = FALSE;
+  /* Field: File: Rendered File */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_file';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
@@ -197,7 +166,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['field_series_tid']['vocabulary'] = 'series';
 
   /* Display: All Audio and Video */
-  $handler = $view->new_display('page', 'All Audio and Video', 'page');
+  $handler = $view->new_display('page', 'All Audio and Video', 'page_list');
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -275,6 +244,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'audio' => 'audio',
+    'document' => 'document',
     'video' => 'video',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 1;
@@ -320,7 +290,8 @@ function ox_views_views_default_views() {
   $handler->display->display_options['path'] = 'media-files';
 
   /* Display: Series Taxonomy Page */
-  $handler = $view->new_display('block', 'Series Taxonomy Page', 'block_1');
+  $handler = $view->new_display('block', 'Series Taxonomy Page', 'series_taxonomy_list');
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: File: Type */
@@ -381,6 +352,186 @@ function ox_views_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['block_description'] = 'Series Taxonomy Page';
+
+  /* Display: Series Taxonomy Grid */
+  $handler = $view->new_display('block', 'Series Taxonomy Grid', 'series_taxonomy_grid');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'file_to_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  /* Field: File: Rendered File */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_file';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'audio' => 'audio',
+    'document' => 'document',
+    'video' => 'video',
+  );
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['type']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Media Type';
+  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Audio',
+      'operator' => 'in',
+      'value' => array(
+        'audio' => 'audio',
+        'all' => 0,
+        'document' => 0,
+        'image' => 0,
+        'video' => 0,
+      ),
+    ),
+    2 => array(
+      'title' => 'Video',
+      'operator' => 'in',
+      'value' => array(
+        'video' => 'video',
+        'all' => 0,
+        'audio' => 0,
+        'document' => 0,
+        'image' => 0,
+      ),
+    ),
+    3 => array(
+      'title' => 'Document',
+      'operator' => 'in',
+      'value' => array(
+        'document' => 'document',
+        'all' => 0,
+        'audio' => 0,
+        'image' => 0,
+        'video' => 0,
+      ),
+    ),
+  );
+  /* Filter criterion: Content: Media Files (field_media_files:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_media_files';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['relationship'] = 'file_to_node';
+  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
+  $handler->display->display_options['block_description'] = 'Series Taxonomy Grid';
+
+  /* Display: Episode Node Page (AV) */
+  $handler = $view->new_display('block', 'Episode Node Page (AV)', 'episode_node_view');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: File: Rendered File */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_file';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'file_to_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'audio' => 'audio',
+    'video' => 'video',
+  );
+  $handler->display->display_options['block_description'] = 'Episode Node View (AV)';
+
+  /* Display: Episode Node Page (DOC) */
+  $handler = $view->new_display('block', 'Episode Node Page (DOC)', 'block_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: File: Rendered File */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_file';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'preview';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'file_to_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['block_description'] = 'Episode Node View (DOC)';
   $export['media_files'] = $view;
 
   return $export;

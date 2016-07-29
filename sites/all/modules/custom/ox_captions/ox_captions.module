@@ -1,130 +1,150 @@
 <?php
 
 
-/**
- * @defgroup ox_jwplayer_alterations
- *
- * Theme (pre)process hooks for hooks created by other modules.  These are used
- * to augment JWPlayers created by the "jw_player" or "views_jwplayer" modules
- * with embed-code functionality.
- */
+function ox_captions_jw_player_build(&$player, $node) {
 
-/**
- * Implements hook_preprocess_HOOK() for jw_player().
- *
- */
-function ox_captions_preprocess_jw_player(&$variables) {
-  
-  //dpm($variables);
-  $variables['jw_player_inline_js_code'] = stripslashes(json_encode($variables['config']));
-  // Load the JW Player libraries (and integration into Drupal).
-  drupal_add_library('jw_player', 'jwplayer');
-  $file = file_load($variables['file']['fid']);
-  $episode = _ox_captions_choose_episode($file);
-  drupal_add_js('/sites/all/modules/custom/ox_captions/captions.js');
-
-/**
-  $config["playlist"]["file"] = $variables['config']['file'];
-  $config["playlist"]["width"] = $variables['config']['width'];
-  $config["playlist"]["height"] = $variables['config']['height'];
-  $config["playlist"]["skin"] = $variables['config']['skin'];
-  $config["playlist"]["stretching"] = $variables['config']['stretching'];
-*/  
- 
-
-// $configuration['playlist'] = array_merge($variables['config'], $config);
- $tconfig['tracks'] = array(
-    'file' => 'https://ives.oucs.ox.ac.uk/podcasts/sites/default/files/uploads/2015-12-09-acm-lovelace-session-1-intro-wolf.srt',
-    'kind' => 'captions',
-  );
-
- $complete_array = array(
-    
- );
- $variables['config'] = array_merge($variables['config'], $tconfig);
-  
-// $variables['config'] = $variables['config'];
-
-}
-
-
-
-function _ox_jwplayer_build_jwconfig($file, $episode) {
-  // Build an array of JWPlayer configuration options, which will be merged with
-  // options from the jw_player module preset, JSON-encoded, and passed as an
-  // argument to jwplayer.setup().
-
-  $config = array (
-    'image' => '',
-    'aspectratio' => '16:9',
-  );
-  $config['tracks'] = array(
-    'file' => 'https://ives.oucs.ox.ac.uk/podcasts/sites/default/files/uploads/2015-12-09-acm-lovelace-session-1-intro-wolf.srt',
-    'kind' => 'captions',
-  );
-  // Display logo and title only on video players
-  if ($file->type == 'video') {
-    $config['title'] = $episode ? $episode->title : '';
-    $config['logo'] = array (
-      'file' => url('sites/all/themes/betacast/logo.png', array('absolute' => TRUE)), // FIXME
-      'hide' => TRUE,
-    );
-  }
-
-  return $config;
-}
-
-
-/**
- * Attempt to return an episode node associated with the given file, based on
- * the current page context.
- *
- * If the current page is an episode node page, the node ID is taken from the
- * URL.  Otherwise, the database is queried for a related episode.
- *
- * @param object $file
- *     A file object
- * @return object
- *     An episode object, or NULL.
- */
-function _ox_captions_choose_episode($file) {
-  if ($node = menu_get_object('node') && $node->type == 'episode') {
-    // On an episode page
-    return $node;
-  } else {
-    // Look for related episodes in database.
-    $nid = _ox_captions_find_nid($file);
-    if ($nid) {
-      return node_load($nid);
+    if ($node->type == 'episode') {
+      $player = array(
+        '#options' => array(
+            'skin' => 'seven',
+            'stretching' => 'uniform',
+            'width' => '50%',
+            'aspectratio' => '16:9',
+            'tracks' => array(
+                        'file' => "/sites/default/files/2015-12-09-acm-lovelace-session-1-intro-wolf.srt", 
+                        'label' => "English",
+                        'kind' => "captions",
+                        'default' => true,
+                      ) 
+          )
+        );
     }
   }
-  return NULL;
-}
 
-/**
- * Query the database for the NID of an episode associated with a given file.
- *
- * Because a given file may be attached to more than one episode, this is not
- * deterministic.  However, it enables us to make a "best guess" effort in cases
- * where information on the original episode is missing for some reason.
- *
- * @param object $file
- *    A file object.
- * @return int
- *    The NID of the related episode, or NULL if none was found.
- */
-function _ox_captions_find_nid($file) {
-  $q = new EntityFieldQuery();
-  $results = $q->entityCondition('entity_type', 'node')
-               ->entityCondition('bundle', 'episode')
-               ->fieldCondition('field_media_files', 'fid', $file->fid)
-               ->execute();
-  if (empty($results['node'])) {
-    return NULL;
-  } else {
-    return key($results['node']);
-  }
-}
+// /**
+//  * @defgroup ox_jwplayer_alterations
+//  *
+//  * Theme (pre)process hooks for hooks created by other modules.  These are used
+//  * to augment JWPlayers created by the "jw_player" or "views_jwplayer" modules
+//  * with embed-code functionality.
+//  */
+
+// /**
+//  * Implements hook_preprocess_HOOK() for jw_player().
+//  *
+//  */
+// function ox_captions_preprocess_jw_player(&$variables) {
+  
+//   //dpm($variables);
+//   $variables['jw_player_inline_js_code'] = stripslashes(json_encode($variables['config']));
+//   // Load the JW Player libraries (and integration into Drupal).
+//   drupal_add_library('jw_player', 'jwplayer');
+//   $file = file_load($variables['file']['fid']);
+//   $episode = _ox_captions_choose_episode($file);
+//   drupal_add_js('/sites/all/modules/custom/ox_captions/captions.js');
+
+// /**
+//   $config["playlist"]["file"] = $variables['config']['file'];
+//   $config["playlist"]["width"] = $variables['config']['width'];
+//   $config["playlist"]["height"] = $variables['config']['height'];
+//   $config["playlist"]["skin"] = $variables['config']['skin'];
+//   $config["playlist"]["stretching"] = $variables['config']['stretching'];
+// */  
+ 
+
+// // $configuration['playlist'] = array_merge($variables['config'], $config);
+//  $tconfig['tracks'] = array(
+//     'file' => 'https://ives.oucs.ox.ac.uk/podcasts/sites/default/files/uploads/2015-12-09-acm-lovelace-session-1-intro-wolf.srt',
+//     'kind' => 'captions',
+//   );
+
+//  $complete_array = array(
+    
+//  );
+//  $variables['config'] = array_merge($variables['config'], $tconfig);
+  
+// // $variables['config'] = $variables['config'];
+
+// }
+
+
+
+// function _ox_jwplayer_build_jwconfig($file, $episode) {
+//   // Build an array of JWPlayer configuration options, which will be merged with
+//   // options from the jw_player module preset, JSON-encoded, and passed as an
+//   // argument to jwplayer.setup().
+
+//   $config = array (
+//     'image' => '',
+//     'aspectratio' => '16:9',
+//   );
+//   $config['tracks'] = array(
+//     'file' => 'https://ives.oucs.ox.ac.uk/podcasts/sites/default/files/uploads/2015-12-09-acm-lovelace-session-1-intro-wolf.srt',
+//     'kind' => 'captions',
+//   );
+//   // Display logo and title only on video players
+//   if ($file->type == 'video') {
+//     $config['title'] = $episode ? $episode->title : '';
+//     $config['logo'] = array (
+//       'file' => url('sites/all/themes/betacast/logo.png', array('absolute' => TRUE)), // FIXME
+//       'hide' => TRUE,
+//     );
+//   }
+
+//   return $config;
+// }
+
+
+// /**
+//  * Attempt to return an episode node associated with the given file, based on
+//  * the current page context.
+//  *
+//  * If the current page is an episode node page, the node ID is taken from the
+//  * URL.  Otherwise, the database is queried for a related episode.
+//  *
+//  * @param object $file
+//  *     A file object
+//  * @return object
+//  *     An episode object, or NULL.
+//  */
+// function _ox_captions_choose_episode($file) {
+//   if ($node = menu_get_object('node') && $node->type == 'episode') {
+//     // On an episode page
+//     return $node;
+//   } else {
+//     // Look for related episodes in database.
+//     $nid = _ox_captions_find_nid($file);
+//     if ($nid) {
+//       return node_load($nid);
+//     }
+//   }
+//   return NULL;
+// }
+
+// /**
+//  * Query the database for the NID of an episode associated with a given file.
+//  *
+//  * Because a given file may be attached to more than one episode, this is not
+//  * deterministic.  However, it enables us to make a "best guess" effort in cases
+//  * where information on the original episode is missing for some reason.
+//  *
+//  * @param object $file
+//  *    A file object.
+//  * @return int
+//  *    The NID of the related episode, or NULL if none was found.
+//  */
+// function _ox_captions_find_nid($file) {
+//   $q = new EntityFieldQuery();
+//   $results = $q->entityCondition('entity_type', 'node')
+//                ->entityCondition('bundle', 'episode')
+//                ->fieldCondition('field_media_files', 'fid', $file->fid)
+//                ->execute();
+//   if (empty($results['node'])) {
+//     return NULL;
+//   } else {
+//     return key($results['node']);
+//   }
+// }
 
 
 
