@@ -1,0 +1,108 @@
+// Import variables, abstractions, base styles and components.
+// Uncomment the next lines and adjust them to your needs.
+
+//see http://www.bramvandenbulcke.be/en/article/getting-started-drupal-omega-44-nodejs-and-gulp
+
+@import "singularitygs";
+@import "compass";
+@import "breakpoint";
+
+// Import variables, abstractions, base styles and components using globbing.
+//
+// Globbing will always import files alphabetically. Optimally, all your
+// components should be self-contained and explicit enough to not have any
+// contained styles leak into unrelated components: The import order should not
+// affect the result.
+//
+// If there are variables, functions or mixins that depend on each other and
+// therefore need to be imported in a specific order you can import them
+// directly. Variables-, function- or mixin providing partials should never
+// output any styles themselves: Importing them multiple times to resolve
+// dependencies shouldn't be a problem.
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+
+
+.media-list {
+
+    .views-row {
+        float: left;
+        width: 30%;
+        padding: 1%;
+        display: block;
+        margin: 2% 2% 1% 0;
+        max-height: 600px;
+        background-color: $colorLightGrey;
+        &:nth-child(3n+1) {clear: both;} // because of diff height on pdf image
+        &:nth-child(3n+3) { margin-right: 0; } 
+          
+          .views-field {
+  
+          }
+      
+          .views-field-title {
+              height: 50px;
+          }
+
+          //.views-field-term-node-tid {vertical-align: top;}
+
+          .views-field-nothing  {          
+             .field-content img {
+                display: none;
+
+             }
+          }
+
+
+      }
+  }
+
+  .media-grid {
+
+    .views-row {
+
+       
+        display: block;
+        margin: 2% 0 1% 0;
+        overflow: hidden; 
+        padding: 20px;
+        max-height: 300px;
+        background-color: $colorLightGrey;
+          
+          .views-field {
+              float: left; 
+              height: auto;
+              padding: 0 1% 0 0;
+
+          }
+      
+          .views-field-title {
+              height: 30px;
+              width: 40%;
+          }
+
+          .views-field-rendered-entity {
+              height: 30px;
+              width: 30%;
+              height: auto;
+              float: right;
+          }
+
+          .views-field-nothing  {
+            float: left;
+             width: 15%;
+             .field-content img {
+
+
+             }
+          }
+
+
+
+
+      }
+  }
+
+
