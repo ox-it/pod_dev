@@ -18,7 +18,7 @@ function ox_podcasts_taxonomy_display_default_displays() {
   $taxonomy_display->associated_display_plugin = 'TaxonomyDisplayAssociatedDisplayHandlerViews';
   $taxonomy_display->associated_display_options = array(
     'view' => 'media_files',
-    'display' => 'series_taxonomy_grid',
+    'display' => 'series_taxonomy_list',
   );
   $taxonomy_display->add_feed = FALSE;
   $taxonomy_display->breadcrumb_display_plugin = 'TaxonomyDisplayBreadcrumbDisplayHandlerCore';
