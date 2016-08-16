@@ -58,9 +58,10 @@
   };
 
 
+
+
   Drupal.behaviors.podOmegaToggleGridList = {
     attach: function (context, settings) {
-
 
       //$('.view-display-id-page_list .view-content').addClass('media-grid');
 
@@ -71,11 +72,11 @@
          $button.toggleClass('listview');
 
          if ($button.hasClass('listview')) {
-            $button.text('Grid');
+            $button.text('List');
             $('.view-media-files').addClass('media-list');
             $('.view-media-files').removeClass('media-grid');
          } else {
-            $button.text('List');
+            $button.text('Grid');
             $('.view-media-files').removeClass('media-list');
             $('.view-media-files').addClass('media-grid');
          }
@@ -84,6 +85,45 @@
 
     }
   };
+
+
+Drupal.behaviors.podOmegaActivateSidr = {
+    attach: function (context, settings) {
+      $('#simple-menu').sidr({
+        name: 'sidr-menu',
+        source: '#block-views-series-galleries-block-1',
+        displace: false
+      });
+    }
+
+};
+
+
+// Uses the HideSeek jQuery add-on:
+// https://github.com/vdw/HideSeek
+Drupal.behaviors.podOmegaHideSeek = {
+    attach: function (context, settings) {
+        $('#sidr-id-hideseek-search').hideseek({
+          list: '.sidr-class-view-content',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+    }
+
+};
+
+
+
+
+
+
+
+
+
 
 
 

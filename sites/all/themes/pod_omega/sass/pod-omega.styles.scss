@@ -6,6 +6,7 @@
 @import "singularitygs";
 @import "compass";
 @import "breakpoint";
+@import "sidr";
 
 // Import variables, abstractions, base styles and components using globbing.
 //
@@ -23,6 +24,26 @@
 @import "abstractions/**/*";
 @import "base/**/*";
 @import "components/**/*";
+
+
+// If using the Sidr menu: https://www.berriart.com/sidr/
+// Install Sidr: npm install sidr
+// Callback function in pod-omega.behaviors.js
+// Include script references in pod_omega.info:
+//    scripts[] = node_modules/sidr/dist/jquery.sidr.min.js
+//    scripts[] = node_modules/jquery/dist/jquery.js
+//
+//
+
+#block-views-series-galleries-block-1 {display:none;}
+#sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
+.sidr-class-views-row {height: 300px;}
+.sidr-class-views-field { padding-top: 20px; }
+.sidr-class-views-field-field-series-album-cover {float: left; padding-right: 1%;}
+.sidr-class-views-field-description {  height: 300px; overflow: hidden; }
+#sidr-id-hideseek-search {width: 100%; height: 35px; display: block;}
+
+
 
 
 .media-list {

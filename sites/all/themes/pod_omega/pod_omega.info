@@ -10,11 +10,14 @@ core = 7.x
 ; ========================================
 stylesheets[all][] = css/pod-omega.reset.css
 stylesheets[all][] = css/pod-omega.styles.css
+stylesheets[all][] = node_modules/sidr/dist/stylesheets/jquery.sidr.bare.css
 
 ; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/pod-omega.behaviors.js
+scripts[] = node_modules/sidr/dist/jquery.sidr.min.js 
+scripts[] = node_modules/hideseek/jquery.hideseek.min.js
 
 ; ========================================
 ; Regions
@@ -56,7 +59,7 @@ settings[omega_enable_export_reminder] = 1
 settings[omega_rebuild_theme_registry] = 0
 settings[omega_rebuild_aggregates] = 0
 settings[omega_browser_width_indicator] = 0
-settings[omega_livereload] = 1
+settings[omega_livereload] = 0
 settings[omega_livereload_script] = http://localhost:35729/livereload.js
 settings[omega_livereload_host] = localhost
 settings[omega_livereload_port] = 35729

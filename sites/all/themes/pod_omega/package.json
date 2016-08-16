@@ -4,10 +4,11 @@
   "description": "A subtheme for the podcasts.ox site, based on Omega base theme",
   "main": "gulpfile.js",
   "scripts": {
-    "sass:dev": "./node_modules/.bin/gulp",
-    "sass:prod": "./node_modules/.bin/gulp sass:prod"
+    "postinstall": "find node_modules -type f -name '*.info' | xargs rm"
   },
   "dependencies": {
+    "hideseek": "^0.7.0",
+    "sidr": "^2.2.1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -21,8 +22,5 @@
     "singularitygs": "^1.6.2",
     "compass-mixins": "^0.12.7",
     "breakpoint-sass": "^2.6.1"
-  },
-   "scripts": {
-    "postinstall": "find node_modules -type f -name '*.info' | xargs rm"
   }
 }
