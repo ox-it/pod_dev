@@ -89,13 +89,16 @@
 
 Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
-      $('#simple-menu').sidr({
+      $('#sidr-open-menu').sidr({
         name: 'sidr-menu',
         source: '#block-views-series-galleries-block-1',
         displace: false
       });
-    }
-
+  
+      $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu');  // close the div with the ID of "sidr-menu"
+      });
+  }
 };
 
 
@@ -103,6 +106,18 @@ Drupal.behaviors.podOmegaActivateSidr = {
 // https://github.com/vdw/HideSeek
 Drupal.behaviors.podOmegaHideSeek = {
     attach: function (context, settings) {
+
+        $('#hideseek-search-page').hideseek({
+          list: '.view-content',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+
+
         $('#sidr-id-hideseek-search').hideseek({
           list: '.sidr-class-view-content',      
           nodata:         '',
@@ -112,6 +127,9 @@ Drupal.behaviors.podOmegaHideSeek = {
           navigation:     false,
           ignore_accents: false
         });
+
+
+
     }
 
 };
