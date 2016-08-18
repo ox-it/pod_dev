@@ -187,6 +187,7 @@ function ox_podcasts_feeds_feeds_importer_default() {
           'xpathparser:17' => 'author',
           'xpathparser:22' => 'files/file/@url',
           'xpathparser:23' => 'nid',
+          'xpathparser:24' => 'category',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -203,6 +204,7 @@ function ox_podcasts_feeds_feeds_importer_default() {
           'xpathparser:17' => 0,
           'xpathparser:22' => 0,
           'xpathparser:23' => 0,
+          'xpathparser:24' => 0,
         ),
         'context' => '//node',
         'exp' => array(
@@ -223,6 +225,7 @@ function ox_podcasts_feeds_feeds_importer_default() {
             'xpathparser:17' => 0,
             'xpathparser:22' => 0,
             'xpathparser:23' => 0,
+            'xpathparser:24' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -305,6 +308,11 @@ function ox_podcasts_feeds_feeds_importer_default() {
           13 => array(
             'source' => 'xpathparser:23',
             'target' => 'field_mediapub_nid',
+            'unique' => FALSE,
+          ),
+          14 => array(
+            'source' => 'xpathparser:24',
+            'target' => 'field_itunes_u_category',
             'unique' => FALSE,
           ),
         ),
