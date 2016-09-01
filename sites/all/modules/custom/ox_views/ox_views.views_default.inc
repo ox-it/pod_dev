@@ -11,6 +11,145 @@ function ox_views_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'episode_search_api';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_episode_index';
+  $view->human_name = 'Episode Search API';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_series' => 'field_series',
+    'title' => 'title',
+    'field_people' => 'field_people',
+    'field_series_field_unit' => 'field_series_field_unit',
+    'field_media_files' => 'field_media_files',
+    'search_api_excerpt' => 'search_api_excerpt',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_series' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_people' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_series_field_unit' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_media_files' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'search_api_excerpt' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  /* Field: Indexed Node: Series */
+  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series']['display'] = 'view';
+  $handler->display->display_options['fields']['field_series']['view_mode'] = 'token';
+  $handler->display->display_options['fields']['field_series']['bypass_access'] = 0;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Episode';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Node: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Department';
+  $handler->display->display_options['fields']['field_series_field_unit']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'first';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Indexed Node: Media Files */
+  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'body:value' => 'body:value',
+    'field_episode_description_long:value' => 'field_episode_description_long:value',
+    'field_series:name' => 'field_series:name',
+    'title' => 'title',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'search';
+  $export['episode_search_api'] = $view;
+
+  $view = new view();
   $view->name = 'media_files';
   $view->description = '';
   $view->tag = 'default';
