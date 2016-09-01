@@ -13,6 +13,119 @@ function ox_podcasts_feeds_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'category_importer';
+  $feeds_importer->config = array(
+    'name' => 'Category importer',
+    'description' => 'Import iTunes Categories from Mediapub XML feed',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => 0,
+        'use_pubsubhubbub' => 0,
+        'designated_hub' => '',
+        'request_timeout' => '600',
+        'auto_scheme' => 'http',
+        'accept_invalid_cert' => FALSE,
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:1' => 'name',
+          'xpathparser:15' => 'guid',
+          'xpathparser:2' => 'description',
+          'xpathparser:19' => 'CC-numeric-code',
+          'xpathparser:16' => 'parent',
+          'xpathparser:18' => 'weight',
+        ),
+        'rawXML' => array(
+          'xpathparser:1' => 0,
+          'xpathparser:15' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:19' => 0,
+          'xpathparser:16' => 0,
+          'xpathparser:18' => 0,
+        ),
+        'context' => '//term',
+        'exp' => array(
+          'errors' => 1,
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:15' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:19' => 0,
+            'xpathparser:16' => 0,
+            'xpathparser:18' => 0,
+          ),
+        ),
+        'allow_override' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'name',
+            'unique' => 0,
+            'language' => 'und',
+          ),
+          1 => array(
+            'source' => 'xpathparser:15',
+            'target' => 'guid',
+            'unique' => 1,
+            'language' => 'und',
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'description',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          3 => array(
+            'source' => 'xpathparser:19',
+            'target' => 'field_cc_numeric_code',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          4 => array(
+            'source' => 'xpathparser:16',
+            'target' => 'parentguid',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'xpathparser:18',
+            'target' => 'weight',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'bundle' => 'categories',
+        'vocabulary' => 0,
+        'skip_hash_check' => 0,
+        'insert_new' => '1',
+        'update_non_existent' => 'skip',
+        'language' => 'und',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['category_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'contributor_importer';
   $feeds_importer->config = array(
     'name' => 'Contributor importer',

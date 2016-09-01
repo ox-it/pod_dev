@@ -13,6 +13,40 @@ function ox_podcasts_feeds_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'category_importer-xpathparser_15-find_replace_regex';
+  $feeds_tamper->importer = 'category_importer';
+  $feeds_tamper->source = 'xpathparser:15';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/(staged-fred\\.podcasts\\.ox\\.ac\\.uk|ives\\.oucs\\.ox\\.ac\\.uk\\/drupal)/',
+    'replace' => 'mediapub.it.ox.ac.uk',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Tweak staged & dev GUIDs';
+  $export['category_importer-xpathparser_15-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'category_importer-xpathparser_16-find_replace_regex';
+  $feeds_tamper->importer = 'category_importer';
+  $feeds_tamper->source = 'xpathparser:16';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/(staged-fred\\.podcasts\\.ox\\.ac\\.uk|ives\\.oucs\\.ox\\.ac\\.uk\\/drupal)/',
+    'replace' => 'mediapub.it.ox.ac.uk',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Tweak staged & dev GUIDs';
+  $export['category_importer-xpathparser_16-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'contributor_importer-xpathparser_15-find_replace_regex';
   $feeds_tamper->importer = 'contributor_importer';
   $feeds_tamper->source = 'xpathparser:15';
