@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ox_searchapi feature.
+ */
+
+include_once 'ox_searchapi.features.inc';
