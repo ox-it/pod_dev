@@ -31,6 +31,7 @@ base theme = neato
 ; Stylesheets
 ; ========================================
 stylesheets[all][] = css/neato_pod.css
+stylesheets[all][] = css/neato_pod.reset.css
 stylesheets[all][] = node_modules/sidr/dist/stylesheets/jquery.sidr.bare.css
 
 
