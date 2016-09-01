@@ -1,0 +1,4 @@
+# Ignore node_modules and bower_components
+node_modules
+bower_components
+STARTER/node_modules
