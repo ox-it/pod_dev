@@ -62,6 +62,8 @@
 // Use only if want to hide iTunes U exposed facet children -- must show full hierarchy
 .facetapi-facetapi-links .item-list .expanded {display: none;}
 
-.facetapi-search-api-glossary li {padding: 12px; border: 1px solid #ccc; display: inline-block;}
+.facetapi-facet-title-az-glossary {@include clearfix;}
+.facetapi-facet-title-az-glossary li a {padding: 10px; display: inline-block;}
+.facetapi-facet-title-az-glossary li { float:left; border: 1px solid #ccc;}
 
 //.block--facetapi {display: inline-block;}
