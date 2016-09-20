@@ -17,9 +17,22 @@ function ox_searchapi_current_search_default_items() {
   $item->label = 'Episode Current Search';
   $item->settings = array(
     'items' => array(
-      'episode_active_items' => array(
+      'episode_count' => array(
+        'id' => 'text',
+        'label' => 'Episode Count',
+        'text' => 'Search found [facetapi_results:result-count] Item',
+        'plural' => 1,
+        'text_plural' => 'Results: [facetapi_results:result-count] Items   |    Page [facetapi_results:page-number] out of [facetapi_results:page-total]',
+        'plural_condition' => 'facetapi_results:result-count',
+        'wrapper' => 1,
+        'element' => 'h3',
+        'css' => 0,
+        'classes' => '',
+        'weight' => '-50',
+      ),
+      'episode_active_items_links' => array(
         'id' => 'active_links',
-        'label' => 'Episode Active Items',
+        'label' => 'Episode Active Items Links',
         'pattern' => '[facetapi_active:active-value]',
         'keys' => 1,
         'keys_whole' => 1,
@@ -33,7 +46,7 @@ function ox_searchapi_current_search_default_items() {
       ),
     ),
     'advanced' => array(
-      'empty_searches' => '3',
+      'empty_searches' => '1',
     ),
   );
   $export['episode_current_search'] = $item;
