@@ -107,7 +107,7 @@ Drupal.behaviors.podOmegaActivateSidr = {
 Drupal.behaviors.podOmegaHideSeek = {
     attach: function (context, settings) {
 
-        $('#edit-combine-wrapper #edit-combine').hideseek({
+        $('#hideseek-search-page').hideseek({
           list: '.view-content',      
           nodata:         '',
           attribute:      'text',
