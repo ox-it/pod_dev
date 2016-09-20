@@ -46,12 +46,12 @@
 
 
 
-#block-views-series-galleries-block-1 {display:none;}
+#site-footer .footer-bottom {display:none;}
 #sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
 .sidr-class-views-row {height: 300px;}
 .sidr-class-views-field { padding-top: 20px; }
 .sidr-class-views-field-field-series-album-cover {float: left; padding-right: 1%;}
-.sidr-class-views-field-description {  height: 300px; overflow: hidden; }
+.sidr-class-views-field-description {  font-size: .7em; height: 170px; overflow: hidden; }
 #sidr-id-hideseek-search {width: 100%; height: 35px; display: block;}
 
 
@@ -61,6 +61,8 @@
 
 // Use only if want to hide iTunes U exposed facet children -- must show full hierarchy
 .facetapi-facetapi-links .item-list .expanded {display: none;}
+
+
 
 .facetapi-facet-title-az-glossary {@include clearfix;}
 .facetapi-facet-title-az-glossary li a {padding: 10px; display: inline-block;}

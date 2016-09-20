@@ -91,7 +91,7 @@ Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
       $('#sidr-open-menu').sidr({
         name: 'sidr-menu',
-        source: '#block-views-series-galleries-block-1',
+        source: '.view-series-galleries',
         displace: false
       });
   
@@ -107,7 +107,7 @@ Drupal.behaviors.podOmegaActivateSidr = {
 Drupal.behaviors.podOmegaHideSeek = {
     attach: function (context, settings) {
 
-        $('#hideseek-search-page').hideseek({
+        $('#edit-combine-wrapper #edit-combine').hideseek({
           list: '.view-content',      
           nodata:         '',
           attribute:      'text',

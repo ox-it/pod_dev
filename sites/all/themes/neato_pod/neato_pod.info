@@ -32,36 +32,26 @@ base theme = neato
 ; ========================================
 stylesheets[all][] = css/neato_pod.css
 stylesheets[all][] = css/neato_pod.reset.css
-stylesheets[all][] = node_modules/sidr/dist/stylesheets/jquery.sidr.bare.css
-
-
-; In the page.tpl.php, the contents of the region are output with a
-; $page['MACHINE-NAME'] variable. For example, with this line in the .info
-; file:
-;   regions[header] = Header
-; You'll use this variable in page.tpl.php:
-;   <?php print render($page['header']); ?>
+stylesheets[all][] = js/sidr/dist/stylesheets/jquery.sidr.bare.css
 
 
 ; ========================================
 ; Regions
 ; ========================================
-regions[page_top] = Page top
-regions[header] = Header
-regions[highlighted] = Highlighted
-regions[help] = Help
-regions[content] = Content
-regions[sidebar_first] = First sidebar
-regions[sidebar_second] = Second sidebar
-regions[footer] = Footer
-regions[page_bottom] = Page bottom
+regions[header]              = Header
+regions[featured]            = Featured
+regions[sidebar_first]       = Left Sidebar
+regions[content]             = Content
+regions[sidebar_second]      = Right Sidebar
+regions[footer_top]          = Footer Top
+regions[footer_bottom]       = Footer Bottom
 
 
 ; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/neato-pod.behaviors.js
-scripts[] = node_modules/sidr/dist/jquery.sidr.min.js 
-scripts[] = node_modules/hideseek/jquery.hideseek.min.js
+scripts[] = js/sidr/dist/jquery.sidr.min.js 
+scripts[] = js/hideseek/jquery.hideseek.min.js
 
 

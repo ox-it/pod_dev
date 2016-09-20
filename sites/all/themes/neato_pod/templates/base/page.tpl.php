@@ -75,4 +75,14 @@
       <?php endif; ?>
     </footer>
   <?php endif; ?>
+
+    <?php if (!empty($page['footer_bottom'])): ?>
+    <footer id="site-footer" role="contentinfo">
+      <?php if (!empty($page['footer_bottom'])): ?>
+        <section class="footer-bottom">
+          <?php print render($page['footer_bottom']); ?>
+        </section>
+      <?php endif; ?>
+    </footer>
+  <?php endif; ?>
 </div>
