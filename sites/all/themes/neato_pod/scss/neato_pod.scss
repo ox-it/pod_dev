@@ -48,9 +48,9 @@
 
 #site-footer .footer-bottom {display:none;}
 #sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
-.sidr-class-views-row {height: 300px;}
-.sidr-class-views-field { padding-top: 20px; }
-.sidr-class-views-field-field-series-album-cover {float: left; padding-right: 1%;}
+.sidr-class-views-row {padding-top: 5px; height: 150px; border-top: 1px solid #ccc; }
+.sidr-class-views-field { padding-top: 5px; }
+//.sidr-class-views-field-field-series-album-cover {float: left; padding-right: 1%;}
 .sidr-class-views-field-description {  font-size: .7em; height: 170px; overflow: hidden; }
 #sidr-id-hideseek-search {width: 100%; height: 35px; display: block;}
 
