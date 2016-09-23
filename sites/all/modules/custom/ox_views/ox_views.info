@@ -1,10 +1,13 @@
 name = ox_views
 core = 7.x
 package = Features
+dependencies[] = search_api_views
 dependencies[] = views
 dependencies[] = views_load_more
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = episode_search_api
+features[views_view][] = episode_search_api_page_holder
 features[views_view][] = media_files
 features[views_view][] = series_galleries
+features[views_view][] = series_taxonomy_display
