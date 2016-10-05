@@ -144,7 +144,7 @@ function ox_views_views_default_views() {
     'field_series:name' => 'field_series:name',
     'title' => 'title',
   );
-  /* Filter criterion: Facet API: Keep facets */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['keep_facet_values']['id'] = 'keep_facet_values';
   $handler->display->display_options['filters']['keep_facet_values']['table'] = 'facetapi';
   $handler->display->display_options['filters']['keep_facet_values']['field'] = 'keep_facet_values';

@@ -32,9 +32,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'pretty_paths_alias' => 'category',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'categories',
   );
   $export['search_api@episode_index::field_itunes_u_category'] = $facet;
 
@@ -52,6 +55,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '10',
     'facet_missing' => '0',
@@ -59,9 +63,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'pretty_paths_alias' => 'keyword',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'keywords',
   );
   $export['search_api@episode_index::field_keywords'] = $facet;
 
@@ -79,6 +86,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '0',
     'facet_missing' => '0',
@@ -86,9 +94,10 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => 0,
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'pretty_paths_alias' => 'type',
   );
   $export['search_api@episode_index::field_media_files:file:type'] = $facet;
 
@@ -106,6 +115,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
+      'roles' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -113,9 +123,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'pretty_paths_alias' => 'series',
+    'pretty_paths_taxonomy_pathauto' => 0,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'series',
   );
   $export['search_api@episode_index::field_series'] = $facet;
 
@@ -141,9 +154,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
+    'pretty_paths_alias' => 'unit',
+    'pretty_paths_taxonomy_pathauto' => 1,
+    'pretty_paths_taxonomy_pathauto_vocabulary' => 'units',
   );
   $export['search_api@episode_index::field_series:field_unit'] = $facet;
 
@@ -250,10 +266,11 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'individual_parent' => 0,
     'query_type' => 'term',
     'limit_active_items' => 1,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
     'title_az_glossary_field' => '',
+    'pretty_paths_alias' => 'a-z',
   );
   $export['search_api@episode_index::title_az_glossary'] = $facet;
 
@@ -351,17 +368,17 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'indexed' => 0,
     ),
     'sort_weight' => array(
+      'display' => '-50',
       'glossary_az' => '-49',
       'active' => '-48',
       'count' => '-47',
-      'display' => '-50',
       'indexed' => '-46',
     ),
     'sort_order' => array(
+      'display' => '4',
       'glossary_az' => '4',
       'active' => '3',
       'count' => '3',
-      'display' => '4',
       'indexed' => '4',
     ),
     'empty_behavior' => 'none',
@@ -682,7 +699,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@episode_index';
   $facet->realm = 'block';
   $facet->facet = 'field_series';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_select_dropdowns',
