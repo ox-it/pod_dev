@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ox_searchapi_elastic feature.
+ */
+
+include_once 'ox_searchapi_elastic.features.inc';
