@@ -130,7 +130,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search (DB)';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
@@ -144,10 +144,6 @@ function ox_views_views_default_views() {
     'field_series:name' => 'field_series:name',
     'title' => 'title',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['keep_facet_values']['id'] = 'keep_facet_values';
-  $handler->display->display_options['filters']['keep_facet_values']['table'] = 'facetapi';
-  $handler->display->display_options['filters']['keep_facet_values']['field'] = 'keep_facet_values';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

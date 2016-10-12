@@ -31,6 +31,10 @@ function ox_searchapi_default_search_api_index() {
       "datasource" : { "bundles" : [ "episode" ] },
       "index_directly" : 0,
       "cron_limit" : "100",
+      "index_name" : { "index" : "episode_index", "cluster_id" : "elasticsearch_episodes" },
+      "collect_index_statistics" : 0,
+      "log_only_not_found" : 0,
+      "index_statistics_ttl" : "365d",
       "fields" : {
         "body:value" : { "type" : "text" },
         "field_episode_description_long:value" : { "type" : "text" },
@@ -196,7 +200,7 @@ function ox_searchapi_default_search_api_server() {
           },
           "field_itunes_u_category" : {
             "table" : "search_api_db_episode_index_field_itunes_u_category",
-            "column" : "field_itunes_u_category",
+            "column" : "value",
             "type" : "list\\u003Cinteger\\u003E",
             "boost" : "1.0"
           },
@@ -230,10 +234,15 @@ function ox_searchapi_default_search_api_server() {
             "type" : "string",
             "boost" : "1.0"
           },
-          "field_media_files:file:type" : {
-            "table" : "search_api_db_episode_index_field_media_files_file_type",
-            "column" : "value",
-            "type" : "list\\u003Cstring\\u003E",
+          "search_api_url" : {
+            "table" : "search_api_db_episode_index",
+            "column" : "search_api_url",
+            "type" : "uri",
+            "boost" : "1.0"
+          },
+          "body:value" : {
+            "table" : "search_api_db_episode_index_text",
+            "type" : "text",
             "boost" : "1.0"
           },
           "field_episode_description_long:value" : {
@@ -241,13 +250,8 @@ function ox_searchapi_default_search_api_server() {
             "type" : "text",
             "boost" : "1.0"
           },
-          "field_series:name" : {
-            "table" : "search_api_db_episode_index_text",
-            "type" : "list\\u003Ctext\\u003E",
-            "boost" : "1.0"
-          },
-          "field_unit:name" : {
-            "table" : "search_api_db_episode_index_field_unit_name",
+          "field_itunes_u_category:name" : {
+            "table" : "search_api_db_episode_index_field_itunes_u_category_name",
             "column" : "value",
             "type" : "list\\u003Cstring\\u003E",
             "boost" : "1.0"
@@ -258,21 +262,9 @@ function ox_searchapi_default_search_api_server() {
             "type" : "list\\u003Cstring\\u003E",
             "boost" : "1.0"
           },
-          "field_itunes_u_category:name" : {
-            "table" : "search_api_db_episode_index_field_itunes_u_category_name",
-            "column" : "value",
-            "type" : "list\\u003Cstring\\u003E",
-            "boost" : "1.0"
-          },
-          "body:value" : {
+          "field_series:name" : {
             "table" : "search_api_db_episode_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
-          "field_unit:field_unit" : {
-            "table" : "search_api_db_episode_index_field_unit_field_unit",
-            "column" : "value",
-            "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+            "type" : "list\\u003Ctext\\u003E",
             "boost" : "1.0"
           },
           "field_series:field_unit" : {
@@ -281,10 +273,22 @@ function ox_searchapi_default_search_api_server() {
             "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
             "boost" : "1.0"
           },
-          "search_api_url" : {
-            "table" : "search_api_db_episode_index",
-            "column" : "search_api_url",
-            "type" : "uri",
+          "field_unit:name" : {
+            "table" : "search_api_db_episode_index_field_unit_name",
+            "column" : "value",
+            "type" : "list\\u003Cstring\\u003E",
+            "boost" : "1.0"
+          },
+          "field_unit:field_unit" : {
+            "table" : "search_api_db_episode_index_field_unit_field_unit",
+            "column" : "value",
+            "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+            "boost" : "1.0"
+          },
+          "field_media_files:file:type" : {
+            "table" : "search_api_db_episode_index_field_media_files_file_type",
+            "column" : "value",
+            "type" : "list\\u003Cstring\\u003E",
             "boost" : "1.0"
           }
         }

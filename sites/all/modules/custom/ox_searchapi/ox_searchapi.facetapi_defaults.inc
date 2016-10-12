@@ -359,7 +359,48 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
-    'filters' => array(),
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+      'current_depth' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'filter_depth' => array(
+        'status' => 1,
+        'weight' => '-43',
+      ),
+      'hide_if_selected' => array(
+        'status' => 0,
+        'weight' => '-42',
+      ),
+      'glossary_rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-41',
+      ),
+    ),
     'active_sorts' => array(
       'display' => 'display',
       'active' => 'active',
@@ -398,6 +439,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'exclude' => '',
+    'regex' => 0,
+    'invert' => 0,
+    'show_minimum_items' => 2,
+    'depth' => '0',
+    'parents' => 0,
   );
   $export['search_api@episode_index:block:field_itunes_u_category'] = $facet;
 
@@ -756,7 +803,48 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_select_dropdowns',
-    'filters' => array(),
+    'filters' => array(
+      'active_items' => array(
+        'status' => 0,
+        'weight' => '-50',
+      ),
+      'current_depth' => array(
+        'status' => 0,
+        'weight' => '-49',
+      ),
+      'exclude_items' => array(
+        'status' => 0,
+        'weight' => '-48',
+      ),
+      'rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-47',
+      ),
+      'narrow_results' => array(
+        'status' => 0,
+        'weight' => '-46',
+      ),
+      'show_if_minimum_items' => array(
+        'status' => 0,
+        'weight' => '-45',
+      ),
+      'deepest_level_items' => array(
+        'status' => 0,
+        'weight' => '-44',
+      ),
+      'filter_depth' => array(
+        'status' => 0,
+        'weight' => '-43',
+      ),
+      'hide_if_selected' => array(
+        'status' => 0,
+        'weight' => '-42',
+      ),
+      'glossary_rewrite_items' => array(
+        'status' => 0,
+        'weight' => '-41',
+      ),
+    ),
     'active_sorts' => array(
       'active' => 'active',
       'count' => 'count',
@@ -795,6 +883,12 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'exclude' => '',
+    'regex' => 0,
+    'invert' => 0,
+    'show_minimum_items' => 2,
+    'depth' => '2',
+    'parents' => 1,
   );
   $export['search_api@episode_index:block:field_series:field_unit'] = $facet;
 

@@ -38,6 +38,12 @@ function ox_context_context_default_contexts() {
           'region' => 'featured',
           'weight' => '-10',
         ),
+        'views-79d5d83c0edb66f7e92ef01f77814bad' => array(
+          'module' => 'views',
+          'delta' => '79d5d83c0edb66f7e92ef01f77814bad',
+          'region' => 'featured',
+          'weight' => '-9',
+        ),
       ),
     ),
   );
@@ -119,7 +125,7 @@ function ox_context_context_default_contexts() {
           'module' => 'current_search',
           'delta' => 'episode_current_search',
           'region' => 'content',
-          'weight' => '-17',
+          'weight' => '-19',
         ),
         'facetapi-362X7yIwCWvjKplJmmvMq7R4XcGmkqNP' => array(
           'module' => 'facetapi',

@@ -1905,6 +1905,18 @@ function ox_podcasts_field_default_field_instances() {
         'type' => 'number_integer',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_cc_numeric_code',
