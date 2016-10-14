@@ -9,6 +9,7 @@ features[features_api][] = api:2
 features[views_view][] = episode_search_api
 features[views_view][] = episode_search_api_page_holder
 features[views_view][] = episode_search_elastic
+features[views_view][] = episode_search_solr
 features[views_view][] = media_files
 features[views_view][] = series_galleries
 features[views_view][] = series_taxonomy

@@ -151,6 +151,11 @@ function ox_searchapi_default_search_api_index() {
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc\\r\\nof\\r\\n"
           }
         },
+        "search_api_taxonomy_hierarchy" : {
+          "status" : 0,
+          "weight" : "30",
+          "settings" : { "fields" : { "field_itunes_u_category" : true } }
+        },
         "search_api_highlighting" : {
           "status" : 1,
           "weight" : "35",
@@ -200,7 +205,7 @@ function ox_searchapi_default_search_api_server() {
           },
           "field_itunes_u_category" : {
             "table" : "search_api_db_episode_index_field_itunes_u_category",
-            "column" : "value",
+            "column" : "field_itunes_u_category",
             "type" : "list\\u003Cinteger\\u003E",
             "boost" : "1.0"
           },
@@ -252,7 +257,7 @@ function ox_searchapi_default_search_api_server() {
           },
           "field_itunes_u_category:name" : {
             "table" : "search_api_db_episode_index_field_itunes_u_category_name",
-            "column" : "value",
+            "column" : "field_itunes_u_category_name",
             "type" : "list\\u003Cstring\\u003E",
             "boost" : "1.0"
           },

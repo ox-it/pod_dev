@@ -44,6 +44,12 @@ function ox_context_context_default_contexts() {
           'region' => 'featured',
           'weight' => '-9',
         ),
+        'views--exp-episode_search_solr-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_solr-page',
+          'region' => 'featured',
+          'weight' => '-8',
+        ),
       ),
     ),
   );
@@ -221,6 +227,65 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_searchapi_elastic'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'context_searchapi_solr';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'solr' => 'solr',
+        'solr*' => 'solr*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'current_search-episode_current_search_solr' => array(
+          'module' => 'current_search',
+          'delta' => 'episode_current_search_solr',
+          'region' => 'content',
+          'weight' => '-19',
+        ),
+        'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
+          'module' => 'facetapi',
+          'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'facetapi-Ak8F50t7DdzWJKOtCL6HeyT8K0DmULQI' => array(
+          'module' => 'facetapi',
+          'delta' => 'Ak8F50t7DdzWJKOtCL6HeyT8K0DmULQI',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
+          'module' => 'facetapi',
+          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
+          'module' => 'facetapi',
+          'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+        'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
+          'module' => 'facetapi',
+          'delta' => 'd0QkDcLZVvKKApcDWQIsYZWHl7OBcfql',
+          'region' => 'sidebar_second',
+          'weight' => '-6',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_searchapi_solr'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

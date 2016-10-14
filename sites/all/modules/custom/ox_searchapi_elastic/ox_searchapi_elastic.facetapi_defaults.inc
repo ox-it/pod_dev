@@ -256,7 +256,7 @@ function ox_searchapi_elastic_facetapi_default_facet_settings() {
     'widget' => 'facetapi_links',
     'filters' => array(
       'filter_depth' => array(
-        'status' => 1,
+        'status' => 0,
         'weight' => '-50',
       ),
       'active_items' => array(
@@ -264,7 +264,7 @@ function ox_searchapi_elastic_facetapi_default_facet_settings() {
         'weight' => '-49',
       ),
       'current_depth' => array(
-        'status' => 0,
+        'status' => 1,
         'weight' => '-48',
       ),
       'exclude_items' => array(
@@ -326,7 +326,7 @@ function ox_searchapi_elastic_facetapi_default_facet_settings() {
     'facet_fewer_text' => 'Show fewer',
     'soft_limit' => '0',
     'nofollow' => 1,
-    'show_expanded' => 1,
+    'show_expanded' => 0,
     'show_all' => 1,
     'show_count' => 1,
     'default_option_label' => '',
