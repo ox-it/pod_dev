@@ -227,6 +227,15 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Episode';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Department';
+  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
   /* Field: Indexed Node: People */
   $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
   $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
@@ -235,15 +244,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
-  /* Field: Units: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_unit_field_unit']['id'] = 'field_unit_field_unit';
-  $handler->display->display_options['fields']['field_unit_field_unit']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_unit_field_unit']['field'] = 'field_unit_field_unit';
-  $handler->display->display_options['fields']['field_unit_field_unit']['label'] = 'Department';
-  $handler->display->display_options['fields']['field_unit_field_unit']['list']['mode'] = 'list';
-  $handler->display->display_options['fields']['field_unit_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_unit_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_unit_field_unit']['bypass_access'] = 0;
   /* Field: Indexed Node: Media Files */
   $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
   $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
