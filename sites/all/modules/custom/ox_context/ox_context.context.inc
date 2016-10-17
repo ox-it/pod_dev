@@ -172,65 +172,6 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'context_searchapi_elastic';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'elastic' => 'elastic',
-        'elastic*' => 'elastic*',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'current_search-episode_current_search' => array(
-          'module' => 'current_search',
-          'delta' => 'episode_current_search',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-        'facetapi-ZICLvdRwvvHT6zgAP2MaXmz4IIaU0Dm8' => array(
-          'module' => 'facetapi',
-          'delta' => 'ZICLvdRwvvHT6zgAP2MaXmz4IIaU0Dm8',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'facetapi-bMXdtuh1XAWm5DjOnqfZaNVk9iwY1CM4' => array(
-          'module' => 'facetapi',
-          'delta' => 'bMXdtuh1XAWm5DjOnqfZaNVk9iwY1CM4',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'facetapi-Y3jvqA00zWoYapLHlIX23Io9swfN1x90' => array(
-          'module' => 'facetapi',
-          'delta' => 'Y3jvqA00zWoYapLHlIX23Io9swfN1x90',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-        'facetapi-0XVYJfT0PcAPgeAca1lSC7wiibZnXTVL' => array(
-          'module' => 'facetapi',
-          'delta' => '0XVYJfT0PcAPgeAca1lSC7wiibZnXTVL',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'facetapi-FO8ro8KMGZBdoWawIgpWpP4bXME96TY0' => array(
-          'module' => 'facetapi',
-          'delta' => 'FO8ro8KMGZBdoWawIgpWpP4bXME96TY0',
-          'region' => 'sidebar_second',
-          'weight' => '-6',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_searchapi_elastic'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'context_searchapi_solr';
   $context->description = '';
   $context->tag = '';

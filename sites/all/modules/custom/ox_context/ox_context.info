@@ -14,7 +14,6 @@ features[context][] = context_all
 features[context][] = context_breadcrumb
 features[context][] = context_episode_node
 features[context][] = context_searchapi
-features[context][] = context_searchapi_elastic
 features[context][] = context_searchapi_solr
 features[context][] = context_sidr
 features[ctools][] = context:context:3
