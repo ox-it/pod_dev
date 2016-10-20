@@ -29,26 +29,14 @@ function ox_context_context_default_contexts() {
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
-          'region' => 'header',
+          'region' => 'header-bottom-left',
           'weight' => '-10',
-        ),
-        'views--exp-episode_search_api-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-episode_search_api-page',
-          'region' => 'featured',
-          'weight' => '-10',
-        ),
-        'views-79d5d83c0edb66f7e92ef01f77814bad' => array(
-          'module' => 'views',
-          'delta' => '79d5d83c0edb66f7e92ef01f77814bad',
-          'region' => 'featured',
-          'weight' => '-9',
         ),
         'views--exp-episode_search_solr-page' => array(
           'module' => 'views',
           'delta' => '-exp-episode_search_solr-page',
-          'region' => 'featured',
-          'weight' => '-8',
+          'region' => 'header-bottom-right',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -103,6 +91,38 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_episode_node'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'context_search_banner';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '<front>' => '<front>',
+        'series' => 'series',
+        'series*' => 'series*',
+        'solr' => 'solr',
+        'solr*' => 'solr*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-episode_search_solr-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_solr-page',
+          'region' => 'featured',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_search_banner'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -190,7 +210,7 @@ function ox_context_context_default_contexts() {
           'module' => 'current_search',
           'delta' => 'episode_current_search_solr',
           'region' => 'content',
-          'weight' => '-19',
+          'weight' => '-16',
         ),
         'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
           'module' => 'facetapi',
@@ -239,6 +259,8 @@ function ox_context_context_default_contexts() {
       'values' => array(
         '~search' => '~search',
         '~search/*' => '~search/*',
+        '~solr' => '~solr',
+        '~solr/*' => '~solr/*',
         '~series' => '~series',
       ),
     ),
@@ -249,8 +271,8 @@ function ox_context_context_default_contexts() {
         'block-1' => array(
           'module' => 'block',
           'delta' => '1',
-          'region' => 'featured',
-          'weight' => '-13',
+          'region' => 'header-middle-right',
+          'weight' => '-10',
         ),
         'views-series_galleries-block_1' => array(
           'module' => 'views',
