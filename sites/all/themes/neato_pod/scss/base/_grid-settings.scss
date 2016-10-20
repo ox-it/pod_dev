@@ -2,12 +2,23 @@
 // Neat Overrides
 // $column: 90px;
 // $gutter: 30px;
-// $grid-columns: 12;
-// $max-width: em(1088);
+// $grid-columns: 15;
+$max-width: em(1580);
+
+
+// Bourbon grid display. Comment out to remove display.
+$visual-grid:       true;
+$visual-grid-color: #EEEEEE;
+$visual-grid-opacity: 0.2;
+
+
 
 // Neat Breakpoints
-$medium-screen: em(640);
-$large-screen: em(860);
+// $medium-screen: em(640);
+// $large-screen: em(860);
 
-$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
-$large-screen-up: new-breakpoint(min-width $large-screen 8);
+// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+// $large-screen-up: new-breakpoint(min-width $large-screen 8);
+
+
+

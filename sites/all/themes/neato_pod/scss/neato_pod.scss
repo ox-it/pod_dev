@@ -25,6 +25,9 @@
 // Import Bitters.
 @import "base/base";
 
+// Neat Grid Setting Overrides -- must be imported before Neat
+@import "base/grid-settings";
+
 // Import Neat.
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
@@ -44,9 +47,15 @@
 @import "components/footer";
 @import "components/grid-list-toggle";
 
+//.header-bottom-right .views-exposed-widgets {float: right;}
+.header-top, .header-bottom, .footer-top, .block-current-search  {background-color: #eee;}
+.header-middle {background-color: #ccc;}
+.block-menu ul.menu li {display: inline-block; margin: 10px 10px 10px 0;}
+.block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
+.block-current-search h2 {display: none;}
+#featured .block .views-exposed-widgets {margin: 10px 0; padding: 1%; background-color: #eee; opacity: .8; }
 
-
-#site-footer .footer-bottom {display:none;}
+#footer-bottom .block {display:none;}
 #sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
 .sidr-class-views-row {padding-top: 5px; height: 150px; border-top: 1px solid #ccc; }
 .sidr-class-views-field { padding-top: 5px; }

@@ -1,4 +1,4 @@
-#site-footer {
+#site-footer-top {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-spacing: 1.5em !default;
   $base-accent-color: #477DCA !default;
@@ -20,7 +20,7 @@
   //////////////////////////////////////////////////////////////////////////////////
 
   section {
-    @include outer-container;
+    @include outer-container(100%);
   }
 
   $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
@@ -29,8 +29,8 @@
   $footer-disclaimer-color: transparentize($footer-color, 0.35);
 
   background: $footer-background;
-  padding: ($base-spacing * 2) $gutter;
-  width: 100%;
+  padding: ($base-spacing * 2) 0;
+  //width: 100%;
 
   .footer-top {
     margin-bottom: 1em;
