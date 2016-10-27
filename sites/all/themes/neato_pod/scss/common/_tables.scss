@@ -63,7 +63,7 @@ table {
       padding: $table-padding;
 
       button {
-        @include button(flat, $base-accent-color);
+        // @include button(flat, $base-accent-color); //button mixin deprecated 
         display: inline-block;
         font-size: .7em;
         line-height: $base-line-height;

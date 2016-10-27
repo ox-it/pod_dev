@@ -1,0 +1,30 @@
+.sidebar .block-facetapi {
+	border: 1px solid $base-border-color;
+	margin: 0 0 $base-spacing 0;
+	max-height: 30em;
+	overflow: scroll;
+	font-size: $sidebar-font-size;
+	padding: $small-spacing;
+}
+
+.sidebar .facetapi-facet-title-az-glossary {@include clearfix;}
+.sidebar .facetapi-facet-title-az-glossary li a {width: 25px; display: inline-block;}
+.sidebar .facetapi-facet-title-az-glossary li { margin: 1px; padding: 8px; float:left; border: 1px solid #ccc;}
+.sidebar .facetapi-facet-title-az-glossary li .facetapi-active {padding-right: 10px;}
+
+.block-current-search {
+	border: 1px solid $base-border-color;
+	margin: 0 0 $base-spacing 0;
+	max-height: 30em;
+	overflow: scroll;
+	font-size: $sidebar-font-size;
+	padding: $small-spacing;
+	float: right;
+	width: 32.5%;
+}
+
+#featured .views-exposed-form {
+	float: left;
+	width: 67.5%;
+
+}

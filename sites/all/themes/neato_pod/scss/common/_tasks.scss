@@ -36,11 +36,11 @@
         color: $tab-link-color;
         display: block;
         font-weight: 400;
-        padding: ($base-spacing / 2) $gutter;
+        padding: ($base-spacing / 4) $gutter;
         text-decoration: none;
 
         @include media($tab-mode) {
-          @include inline-block;
+          display: inline-block; // @inline-block mixin deprecated, so use CSS display
           border-top: 0;
         }
 

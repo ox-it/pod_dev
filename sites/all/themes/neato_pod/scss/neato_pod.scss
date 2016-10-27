@@ -40,6 +40,7 @@
 @import "common/messages";
 @import "common/tables";
 @import "common/tasks";
+@import "common/sidebars";
 
 // Import your components here.
 @import "components/hero";
@@ -48,12 +49,12 @@
 @import "components/grid-list-toggle";
 
 //.header-bottom-right .views-exposed-widgets {float: right;}
-.header-top, .header-bottom, .footer-top, .block-current-search  {background-color: #eee;}
-.header-middle {background-color: #ccc;}
+.header-top-outer, .header-bottom-outer, .footer-top-outer {background-color: #eee;}
+.header-middle-outer {background-color: #ccc;}
 .block-menu ul.menu li {display: inline-block; margin: 10px 10px 10px 0;}
 .block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
-.block-current-search h2 {display: none;}
-#featured .block .views-exposed-widgets {margin: 10px 0; padding: 1%; background-color: #eee; opacity: .8; }
+
+.featured-outer {padding: 10px 0 0 0; background-color: #efefef; opacity: .7; }
 
 #footer-bottom .block {display:none;}
 #sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
@@ -73,8 +74,5 @@
 
 
 
-.facetapi-facet-title-az-glossary {@include clearfix;}
-.facetapi-facet-title-az-glossary li a {padding: 10px; display: inline-block;}
-.facetapi-facet-title-az-glossary li { float:left; border: 1px solid #ccc;}
 
 //.block--facetapi {display: inline-block;}

@@ -1,7 +1,7 @@
 <div role="document" class="page">
 
  <!-- ______________________ HEADER _______________________ -->
-  <div role="header" class="header-top outer-wrapper">
+  <div role="header" class="header-top-outer">
     
     <div class="no-inner-wrapper">  
       <?php if (!empty($page['header-top'])): ?>
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div role="header" class="header-middle outer-wrapper">
+  <div role="header" class="header-middle-outer">
 
     <div class="inner-wrapper">
       <?php if (!empty($page['header-middle-left'])): ?>
@@ -32,7 +32,7 @@
   </div>
 
 
-  <div role="header" class="header-bottom outer-wrapper">
+  <div role="header" class="header-bottom-outer">
 
     <div class="inner-wrapper">
       <?php if (!empty($page['header-bottom-left'])): ?>
@@ -54,12 +54,12 @@
 
 
 <!-- ______________________ FEATURED _______________________ -->
-  <div class="featured outer-wrapper">
+  <div class="featured-outer">
 
       <?php if (!empty($page['featured'])): ?>
-        <section id="featured" class="no-inner-wrapper">      
+        <header id="featured" class="inner-wrapper">      
             <?php print render($page['featured']); ?>
-        </section>
+        </header>
       <?php endif; ?>
 
   </div>
@@ -75,14 +75,12 @@
 
 <!-- ______________________ BREADCRUMB _______________________ -->
   
-  <div class="featured outer-wrapper">
+  <div class="breadcrumb-outer">
 
     <?php if ($breadcrumb): ?>
-      <section id="breadcrumb">
-        <div class="inner-wrapper">
+      <header id="breadcrumb" class="inner-wrapper">
           <?php print $breadcrumb; ?>
-        </div>
-      </section>
+      </header>
     <?php endif; ?>
 
   </div>
@@ -90,7 +88,7 @@
 
 <!-- ______________________ MAIN _______________________ -->
 
-  <div class="main-wrapper outer-wrapper">
+  <div class="main-outer">
 
     <main role="main" class="main">
       <?php if (!empty($page['sidebar_first'])): ?>
@@ -133,7 +131,7 @@
 
 <!-- ______________________ FOOTER _______________________ -->
 
-  <div role="footer" class="footer-top outer-wrapper">
+  <div role="footer" class="footer-top-outer">
 
     <div class="inner-wrapper">
       <?php if (!empty($page['footer_top_left'])): ?>
@@ -151,7 +149,7 @@
 
   </div>
 
-  <div role="footer" class="footer-bottom outer-wrapper">
+  <div role="footer" class="footer-bottom-outer">
 
     <div class="no-inner-wrapper">
       <?php if (!empty($page['footer_bottom'])): ?>

@@ -57,7 +57,6 @@ function ox_searchapi_default_search_api_index() {
         },
         "field_unit:name" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
-        "search_api_url" : { "type" : "uri" },
         "title" : { "type" : "text" },
         "title_az_glossary" : { "type" : "string" }
       },
@@ -67,7 +66,7 @@ function ox_searchapi_default_search_api_index() {
           "weight" : "-10",
           "settings" : { "default" : "1", "bundles" : [] }
         },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_hierarchy" : {
@@ -151,11 +150,6 @@ function ox_searchapi_default_search_api_index() {
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc\\r\\nof\\r\\n"
           }
         },
-        "search_api_taxonomy_hierarchy" : {
-          "status" : 0,
-          "weight" : "30",
-          "settings" : { "fields" : { "field_itunes_u_category" : true } }
-        },
         "search_api_highlighting" : {
           "status" : 1,
           "weight" : "35",
@@ -237,12 +231,6 @@ function ox_searchapi_default_search_api_server() {
             "table" : "search_api_db_episode_index",
             "column" : "search_api_language",
             "type" : "string",
-            "boost" : "1.0"
-          },
-          "search_api_url" : {
-            "table" : "search_api_db_episode_index",
-            "column" : "search_api_url",
-            "type" : "uri",
             "boost" : "1.0"
           },
           "body:value" : {

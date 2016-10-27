@@ -1,20 +1,23 @@
 body {
   margin: 0;
   padding: 0;
+
   
 
   header {
     &.header-top { @include span-columns(12); }
     &.header-middle-left { @include span-columns(4); }
     &.header-middle-right { @include span-columns(8); }
-    &.header-bottom-left { @include span-columns(8); }
-    &.header-bottom-right { @include span-columns(4); }
+    &.header-bottom-left { @include span-columns(7); }
+    &.header-bottom-right { @include span-columns(5); }
+    //padding: 0 2%;
   }
 
-
+  
   main {
     @include outer-container;
-    //padding: 3em 2%;
+    //padding: 0 2%;
+
   }
 
 
@@ -32,6 +35,7 @@ body {
       aside {
         &#sidebar-first {
           @include span-columns(3);
+          
         }
       }
 
@@ -43,14 +47,29 @@ body {
 
   &.one-sidebar.sidebar-second {
     main {
+
       aside {
         &#sidebar-second {
           @include span-columns(4);
+          //@include shift(-12);
+
+          @include media($mobile) {
+              @include span-columns(4);
+
+
+          }
         }
       }
 
       section#content {
         @include span-columns(8);
+        //@include shift (4);
+                
+        @include media($mobile) {
+          @include span-columns(4);
+
+        }
+
       }
     }
   }
@@ -78,6 +97,7 @@ body {
     &.footer-top-left { @include span-columns(6); }
     &.footer-top-right { @include span-columns(6); }
     &.footer-bottom { @include span-columns(12); }
+    //padding: 0 2%;
   }
 
 
@@ -87,3 +107,7 @@ body {
 .inner-wrapper {
   @include outer-container;
 } 
+
+
+
+

@@ -32,12 +32,6 @@ function ox_context_context_default_contexts() {
           'region' => 'header-bottom-left',
           'weight' => '-10',
         ),
-        'views--exp-episode_search_solr-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-episode_search_solr-page',
-          'region' => 'header-bottom-right',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
@@ -102,10 +96,6 @@ function ox_context_context_default_contexts() {
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
-        'series' => 'series',
-        'series*' => 'series*',
-        'solr' => 'solr',
-        'solr*' => 'solr*',
       ),
     ),
   );
@@ -141,47 +131,47 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-fca8df778752202bbea2a0bcc517f58a' => array(
+        'views--exp-episode_search_api-page' => array(
           'module' => 'views',
-          'delta' => 'fca8df778752202bbea2a0bcc517f58a',
-          'region' => 'header',
+          'delta' => '-exp-episode_search_api-page',
+          'region' => 'featured',
           'weight' => '-10',
         ),
         'current_search-episode_current_search' => array(
           'module' => 'current_search',
           'delta' => 'episode_current_search',
-          'region' => 'content',
-          'weight' => '-19',
-        ),
-        'facetapi-362X7yIwCWvjKplJmmvMq7R4XcGmkqNP' => array(
-          'module' => 'facetapi',
-          'delta' => '362X7yIwCWvjKplJmmvMq7R4XcGmkqNP',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
+          'region' => 'featured',
+          'weight' => '-9',
         ),
         'facetapi-EZWaCxOWhedI0cUvGDFTeNECA3eaUehM' => array(
           'module' => 'facetapi',
           'delta' => 'EZWaCxOWhedI0cUvGDFTeNECA3eaUehM',
           'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'facetapi-nfMPqS2Nrkzo4693KsSw79EEoXE7aK31' => array(
-          'module' => 'facetapi',
-          'delta' => 'nfMPqS2Nrkzo4693KsSw79EEoXE7aK31',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-        'facetapi-2jJNzaGGAk51or515mhY4LIxVV2yhQ9K' => array(
-          'module' => 'facetapi',
-          'delta' => '2jJNzaGGAk51or515mhY4LIxVV2yhQ9K',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '-21',
         ),
         'facetapi-gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd' => array(
           'module' => 'facetapi',
           'delta' => 'gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd',
           'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '-20',
+        ),
+        'facetapi-2jJNzaGGAk51or515mhY4LIxVV2yhQ9K' => array(
+          'module' => 'facetapi',
+          'delta' => '2jJNzaGGAk51or515mhY4LIxVV2yhQ9K',
+          'region' => 'sidebar_second',
+          'weight' => '-19',
+        ),
+        'facetapi-nfMPqS2Nrkzo4693KsSw79EEoXE7aK31' => array(
+          'module' => 'facetapi',
+          'delta' => 'nfMPqS2Nrkzo4693KsSw79EEoXE7aK31',
+          'region' => 'sidebar_second',
+          'weight' => '-18',
+        ),
+        'facetapi-362X7yIwCWvjKplJmmvMq7R4XcGmkqNP' => array(
+          'module' => 'facetapi',
+          'delta' => '362X7yIwCWvjKplJmmvMq7R4XcGmkqNP',
+          'region' => 'sidebar_second',
+          'weight' => '-17',
         ),
       ),
     ),
@@ -206,41 +196,47 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views--exp-episode_search_solr-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_solr-page',
+          'region' => 'featured',
+          'weight' => '-10',
+        ),
         'current_search-episode_current_search_solr' => array(
           'module' => 'current_search',
           'delta' => 'episode_current_search_solr',
-          'region' => 'content',
-          'weight' => '-16',
-        ),
-        'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
-          'module' => 'facetapi',
-          'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
+          'region' => 'featured',
+          'weight' => '-9',
         ),
         'facetapi-Ak8F50t7DdzWJKOtCL6HeyT8K0DmULQI' => array(
           'module' => 'facetapi',
           'delta' => 'Ak8F50t7DdzWJKOtCL6HeyT8K0DmULQI',
           'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
-          'module' => 'facetapi',
-          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-        'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
-          'module' => 'facetapi',
-          'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '-21',
         ),
         'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
           'module' => 'facetapi',
           'delta' => 'd0QkDcLZVvKKApcDWQIsYZWHl7OBcfql',
           'region' => 'sidebar_second',
-          'weight' => '-6',
+          'weight' => '-20',
+        ),
+        'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
+          'module' => 'facetapi',
+          'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
+          'region' => 'sidebar_second',
+          'weight' => '-19',
+        ),
+        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
+          'module' => 'facetapi',
+          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
+          'region' => 'sidebar_second',
+          'weight' => '-18',
+        ),
+        'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
+          'module' => 'facetapi',
+          'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
+          'region' => 'sidebar_second',
+          'weight' => '-17',
         ),
       ),
     ),

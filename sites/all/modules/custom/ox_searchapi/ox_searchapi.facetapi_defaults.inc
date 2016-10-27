@@ -30,7 +30,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'force_deactivation' => TRUE,
       'regex' => FALSE,
     ),
-    'facet_mincount' => '0',
+    'facet_mincount' => '1',
     'facet_missing' => '0',
     'flatten' => '0',
     'individual_parent' => '0',
@@ -372,34 +372,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
         'status' => 1,
         'weight' => '-49',
       ),
-      'exclude_items' => array(
-        'status' => 0,
-        'weight' => '-48',
-      ),
-      'rewrite_items' => array(
-        'status' => 0,
-        'weight' => '-47',
-      ),
-      'narrow_results' => array(
-        'status' => 0,
-        'weight' => '-46',
-      ),
-      'show_if_minimum_items' => array(
-        'status' => 0,
-        'weight' => '-45',
-      ),
-      'deepest_level_items' => array(
-        'status' => 0,
-        'weight' => '-44',
-      ),
-      'filter_depth' => array(
-        'status' => 0,
-        'weight' => '-43',
-      ),
-      'hide_if_selected' => array(
-        'status' => 0,
-        'weight' => '-42',
-      ),
       'glossary_rewrite_items' => array(
         'status' => 0,
         'weight' => '-41',
@@ -411,15 +383,13 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => 'count',
       'glossary_az' => 0,
       'indexed' => 0,
-      'natural' => 0,
     ),
     'sort_weight' => array(
       'display' => '-50',
-      'glossary_az' => '-49',
-      'active' => '-48',
-      'count' => '-47',
+      'glossary_az' => '-47',
+      'active' => '-49',
+      'count' => '-48',
       'indexed' => '-46',
-      'natural' => '0',
     ),
     'sort_order' => array(
       'display' => '4',
@@ -427,7 +397,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'active' => '3',
       'count' => '3',
       'indexed' => '4',
-      'natural' => '4',
     ),
     'empty_behavior' => 'none',
     'display_count' => 1,
@@ -576,7 +545,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_select_dropdowns',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',
@@ -603,7 +572,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'display_count' => 1,
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '30',
+    'soft_limit' => '0',
     'nofollow' => 1,
     'show_expanded' => 0,
     'show_all' => 1,
@@ -809,7 +778,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_select_dropdowns',
+    'widget' => 'facetapi_links',
     'filters' => array(
       'active_items' => array(
         'status' => 0,
@@ -877,7 +846,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'display_count' => 1,
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '30',
+    'soft_limit' => '0',
     'nofollow' => 1,
     'show_expanded' => 0,
     'show_all' => 1,

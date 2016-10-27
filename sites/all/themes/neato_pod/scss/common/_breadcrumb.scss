@@ -38,6 +38,15 @@
     position: relative;
     text-decoration: none;
 
+    &:nth-child(1n+1) {
+      background-color: $breadcrumb-background;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      color: $breadcrumb-color-active;
+      padding-right: $breadcrumb-height / 2;
+      border-left: none;
+    }
+
     &:first-child {
       border-bottom-left-radius: $base-border-radius;
       border-left: $breadcrumb-border;
@@ -46,14 +55,10 @@
     }
     
     &:last-child {
-      background-color: $breadcrumb-background;
-      border-bottom-right-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      color: $breadcrumb-color-active;
-      padding-right: $breadcrumb-height / 2;
-      border-left: none;
       margin-right: 10px;
     }
+
+
 
     &:focus,
     &:hover {

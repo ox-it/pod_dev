@@ -1,9 +1,9 @@
 @import "../../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 // Neat Overrides
 // $column: 90px;
-// $gutter: 30px;
+$gutter: .8em;
 // $grid-columns: 15;
-$max-width: em(1580);
+$max-width: em(1600);
 
 
 // Bourbon grid display. Comment out to remove display.
@@ -12,13 +12,19 @@ $visual-grid-color: #EEEEEE;
 $visual-grid-opacity: 0.2;
 
 
+$mobile: new-breakpoint(max-width 800px 4);
 
-// Neat Breakpoints
-// $medium-screen: em(640);
-// $large-screen: em(860);
+// // Neat Breakpoints
+// $first-breakpoint-value: 400px;
+// $second-breakpoint-value: 835px;
+// $third-breakpoint-value: 1100px;
 
-// $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
-// $large-screen-up: new-breakpoint(min-width $large-screen 8);
-
-
+// // Covers 0-399px wide screen size. 2 column grid
+// $small-screen: new-breakpoint(max-width em($first-breakpoint-value — 1) 2);
+// // Covers 400-835px wide screen size. 4 column grid
+// $medium-screen: new-breakpoint(min-width em($first-breakpoint-value) max-width em($second-breakpoint-value) 4);
+// // Covers 836-1099px wide screen size. 8 column grid
+// $large-screen: new-breakpoint(min-width em($second-breakpoint-value + 1) max-width em($third-breakpoint-value — 1) 8);
+// // Covers 1100px and up wide screen size. 12 column grid (default grid size)
+// $xl-screen: new-breakpoint(min-width em($third-breakpoint-value));
 
