@@ -128,11 +128,32 @@ Drupal.behaviors.podOmegaHideSeek = {
           ignore_accents: false
         });
 
+        $('#hideseek-keywords').hideseek({
+          list: '.facetapi-facet-field-keywords',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+
+        $('#hideseek-units').hideseek({
+          list: '.facetapi-facet-field-seriesfield-unit',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+
 
 
     }
 
 };
+
 
 
 })(jQuery);

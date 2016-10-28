@@ -76,3 +76,40 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+
+//
+// Search API Search form (overrides the general styling above)
+// 
+
+.views-exposed-form .views-exposed-widget {
+  margin-top: 0; padding-top: 0;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 0;
+}
+
+
+
+.form-item-search-api-views-fulltext, 
+#views-exposed-form-series-galleries-page #edit-combine-wrapper .views-widget {
+
+  position: relative;
+
+  input {
+    appearance: none;
+    background-color: white;
+    border: 1px solid $base-border-color;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 0;
+    padding: $base-spacing / 2.3;
+    position: relative;
+    transition: border-color;
+    width: 400px;
+  }
+}
+
+

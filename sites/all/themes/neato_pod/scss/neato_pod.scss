@@ -41,6 +41,7 @@
 @import "common/tables";
 @import "common/tasks";
 @import "common/sidebars";
+@import "common/featured";
 
 // Import your components here.
 @import "components/hero";
@@ -51,10 +52,11 @@
 //.header-bottom-right .views-exposed-widgets {float: right;}
 .header-top-outer, .header-bottom-outer, .footer-top-outer {background-color: #eee;}
 .header-middle-outer {background-color: #ccc;}
-.block-menu ul.menu li {display: inline-block; margin: 10px 10px 10px 0;}
+.header-middle-right .block {float: right;}
+.block-menu ul.menu li {display: inline-block; margin: 10px 0 10px 10px;}
 .block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
 
-.featured-outer {padding: 10px 0 0 0; background-color: #efefef; opacity: .7; }
+
 
 #footer-bottom .block {display:none;}
 #sidr-menu {background-color: #F8F8F8; width:450px; left:-470px; right: auto; padding: 10px; overflow-x: hidden;}
@@ -71,8 +73,16 @@
 
 // Use only if want to hide iTunes U exposed facet children -- must show full hierarchy
 //.facetapi-facetapi-links .item-list .expanded {display: none;}
-
-
-
-
 //.block--facetapi {display: inline-block;}
+//
+//
+#logo img {
+	width: 30%; 
+	float: left; 
+	margin: 10px 0;
+}
+#site-name a {
+	font-family: $lucida-grande; 
+	font-size: 3em;
+}
+

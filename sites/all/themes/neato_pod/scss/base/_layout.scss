@@ -6,12 +6,14 @@ body {
 
   header {
     &.header-top { @include span-columns(12); }
-    &.header-middle-left { @include span-columns(4); }
-    &.header-middle-right { @include span-columns(8); }
+    &.header-middle-left { @include span-columns(6); }
+    &.header-middle-right { @include span-columns(6); }
     &.header-bottom-left { @include span-columns(7); }
     &.header-bottom-right { @include span-columns(5); }
     //padding: 0 2%;
   }
+
+
 
   
   main {
@@ -107,6 +109,7 @@ body {
 .inner-wrapper {
   @include outer-container;
 } 
+
 
 
 

@@ -1,0 +1,48 @@
+.block-current-search {
+	font-size: $sidebar-font-size;
+	float: right;
+	width: 32.5%;
+}
+
+.block-current-search h3 {
+	@include appearance(none);
+	  -webkit-font-smoothing: antialiased;
+	  background-color: $light-gray;
+	  border-radius: $base-border-radius;
+	  border: none;
+	  color: #fff;
+	  font-family: $base-font-family;
+	  font-size: 1.2em;
+	  line-height: 1;
+	  padding: 1em 1em;
+	  width: 100%;
+}
+
+
+.page-solr #featured .views-exposed-form {
+	float: left;
+	width: 67.5%;
+
+}
+
+.featured-outer {
+	padding: $base-spacing 0; 
+	background-color: #f8f8f8; 
+	margin-bottom: $base-spacing;
+
+}
+
+/*
+* Overwrites to the module "Chosen" for the Unit select dropdown on the series page
+ */
+.chosen-container {}
+.chosen-container-single .chosen-single {
+	//background: none;
+	box-shadow: none;
+	height: 3.6em;
+	border: 1px solid $base-border-color;
+	padding: 10px;
+	border-radius: $base-border-radius;
+}
+
+.chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
