@@ -2,6 +2,7 @@ name = ox_context
 core = 7.x
 package = Features
 dependencies[] = block
+dependencies[] = blockify
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = current_search

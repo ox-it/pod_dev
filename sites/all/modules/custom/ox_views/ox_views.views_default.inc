@@ -721,10 +721,8 @@ function ox_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Go';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -845,7 +843,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['combine']['operator'] = 'contains';
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
@@ -864,7 +861,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['field_unit_tid_selective']['ui_name'] = 'Oxford Unit (field_unit) (selective)';
   $handler->display->display_options['filters']['field_unit_tid_selective']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['label'] = 'Oxford Unit';
   $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['identifier'] = 'field_unit_tid_selective';
   $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['remember_roles'] = array(
     2 => '2',

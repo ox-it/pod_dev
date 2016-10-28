@@ -248,7 +248,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => -2,
     ),
@@ -345,7 +347,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => -3,
     ),
@@ -389,7 +393,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 0,
     ),
@@ -821,7 +827,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => -1,
     ),
@@ -1294,7 +1302,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 5,
     ),
@@ -1764,6 +1774,7 @@ function ox_podcasts_field_default_field_instances() {
       'active' => 0,
       'module' => 'options',
       'settings' => array(
+        'apply_chosen' => '',
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
         'size' => 60,
       ),
@@ -2615,7 +2626,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 5,
     ),
@@ -2926,7 +2939,9 @@ function ox_podcasts_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 6,
     ),
