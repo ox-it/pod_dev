@@ -1,0 +1,32 @@
+.view {font-size: $views-font-size;}
+.view-episode-search-solr .views-row {margin-bottom: 60px;}
+.view-episode-search-solr .views-fieldset {border: 1px solid $base-border-color;}
+
+.view-episode-search-solr 
+{
+	@include fill-parent();
+	@include row(table);
+
+
+	.fieldset-top-left {
+	@include span-columns(2);
+	@include pad();
+	}
+	.fieldset-top-middle {
+	@include span-columns(5);
+	@include pad();
+	}
+	.fieldset-top-right {
+	@include span-columns(1);
+	@include pad();
+	//@include reset-display;
+	}
+
+}
+
+
+
+.view-episode-search-solr .views-field-title {font-size: 1.3em;}
+.view-episode-search-solr .views-field-body-value {border-bottom: 1px solid $base-border-color; margin-bottom: 15px;}
+
+

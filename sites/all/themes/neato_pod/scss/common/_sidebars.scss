@@ -1,9 +1,12 @@
+.sidebar {
+	font-size: $sidebar-font-size;
+}
+
 .sidebar .block-facetapi {
 	border: 1px solid $base-border-color;
 	margin: 0 0 $base-spacing 0;
 	max-height: 30em;
 	overflow: scroll;
-	font-size: $sidebar-font-size;
 	padding: $small-spacing;
 }
 
@@ -11,8 +14,6 @@
 	border: 1px solid $base-border-color;
 	margin: 0 0 $base-spacing 0;
 	max-height: 20em;
-	//overflow: scroll;
-	font-size: $sidebar-font-size;
 	padding: $small-spacing;
 }
 

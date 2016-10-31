@@ -208,43 +208,84 @@ function ox_views_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset_top-left';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_series',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   /* Field: Indexed Node: Series */
   $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
   $handler->display->display_options['fields']['field_series']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['label'] = '';
+  $handler->display->display_options['fields']['field_series']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_series']['list']['mode'] = 'first';
   $handler->display->display_options['fields']['field_series']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_series']['display'] = 'view';
   $handler->display->display_options['fields']['field_series']['view_mode'] = 'token';
   $handler->display->display_options['fields']['field_series']['bypass_access'] = 0;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
+  $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
+  $handler->display->display_options['fields']['fieldset_5']['children'] = array(
+    0 => 'title',
+    1 => 'body_value',
+    2 => 'field_people',
+    3 => 'field_series_field_unit',
+  );
+  $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Episode';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: Series: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Department';
-  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'list';
-  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: The main body text: Text (indexed) */
+  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['label'] = '';
+  $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
   /* Field: Indexed Node: People */
   $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
   $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['list']['mode'] = 'list';
   $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Oxford Unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'fieldset-top-right';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_media_files',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   /* Field: Indexed Node: Media Files */
   $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
   $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['label'] = '';
+  $handler->display->display_options['fields']['field_media_files']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_media_files']['settings'] = array(
@@ -252,6 +293,15 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
+  $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_4']['label'] = 'fieldset-bottom';
+  $handler->display->display_options['fields']['fieldset_4']['children'] = array(
+    0 => 'search_api_excerpt',
+  );
+  $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   /* Field: Search: Excerpt */
   $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
   $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index_solr';
