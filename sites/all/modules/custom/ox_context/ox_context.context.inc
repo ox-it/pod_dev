@@ -101,6 +101,40 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_front';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '<front>' => '<front>',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-episode_search_solr-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_solr-page',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
+        'block-2' => array(
+          'module' => 'block',
+          'delta' => '2',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_front'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_search_banner';
   $context->description = '';
   $context->tag = '';
@@ -211,13 +245,13 @@ function ox_context_context_default_contexts() {
         'views--exp-episode_search_solr-page' => array(
           'module' => 'views',
           'delta' => '-exp-episode_search_solr-page',
-          'region' => 'featured',
+          'region' => 'featured-one',
           'weight' => '-10',
         ),
         'current_search-episode_current_search_solr' => array(
           'module' => 'current_search',
           'delta' => 'episode_current_search_solr',
-          'region' => 'featured',
+          'region' => 'featured-one',
           'weight' => '-9',
         ),
         'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
@@ -255,6 +289,35 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_searchapi_solr'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'context_series_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'series' => 'series',
+        'series*' => 'series*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-series_galleries-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-series_galleries-page',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_series_page'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

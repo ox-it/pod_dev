@@ -2768,7 +2768,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'media_thumbnail',
         ),
         'type' => 'image',
         'weight' => 0,

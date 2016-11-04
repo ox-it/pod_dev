@@ -210,26 +210,39 @@ function ox_views_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Indexed Node: Series */
+  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
   /* Field: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset_top-left';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_series',
+    0 => 'field_series_album_cover',
+    1 => 'field_series_name',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
-  /* Field: Indexed Node: Series */
-  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
-  $handler->display->display_options['fields']['field_series']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
-  $handler->display->display_options['fields']['field_series']['label'] = '';
-  $handler->display->display_options['fields']['field_series']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series']['list']['mode'] = 'first';
-  $handler->display->display_options['fields']['field_series']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series']['display'] = 'view';
-  $handler->display->display_options['fields']['field_series']['view_mode'] = 'token';
-  $handler->display->display_options['fields']['field_series']['bypass_access'] = 0;
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Series: Name (indexed) */
+  $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_name']['field'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['label'] = '';
+  $handler->display->display_options['fields']['field_series_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_name']['link_to_entity'] = 1;
   /* Field: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
   $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
@@ -300,6 +313,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['fieldset_4']['label'] = 'fieldset-bottom';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'search_api_excerpt',
+    1 => 'field_series',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   /* Field: Search: Excerpt */

@@ -161,9 +161,9 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => 'file:audio|field_audio_image',
-    'preview_image_style' => 'medium',
+    'preview_image_style' => 'large',
     'check_support' => 0,
   );
   $export['audio__preview__file_field_jw_player'] = $file_display;
@@ -174,7 +174,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => '',
     'preview_image_style' => '',
     'playlist_size' => '200',
@@ -189,7 +189,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => '',
     'preview_image_style' => '',
     'check_support' => 0,
