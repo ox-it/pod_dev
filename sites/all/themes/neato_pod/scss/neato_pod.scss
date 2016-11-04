@@ -22,18 +22,18 @@
 // Import Bourbon.
 @import "../../neato/bower_components/bourbon/app/assets/stylesheets/bourbon";
 
-// Import Bitters.
+// Import Bitters. Includes Grid Setting Overrides, which must be imported before Neat
 @import "base/base";
 
-// Neat Grid Setting Overrides -- must be imported before Neat
-@import "base/grid-settings";
+// // Neat Grid Setting Overrides -- must be imported before Neat
+// @import "bitters/grid-settings";
 
 // Import Neat.
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 
 // Import layout
-@import "base/layout";
+@import "layout/layout";
 
 // Import Drupal element overrides
 @import "common/breadcrumb";
@@ -49,13 +49,11 @@
 @import "components/flexbox";
 @import "components/footer";
 @import "components/grid-list-toggle";
+@import "components/hoverbox";
+@import "components/header";
 
-//.header-bottom-right .views-exposed-widgets {float: right;}
-.header-top-outer, .header-bottom-outer, .footer-top-outer {background-color: #eee;}
-.header-middle-outer {background-color: #ccc;}
-.header-middle-right .block {float: right;}
-.block-menu ul.menu li {display: inline-block; margin: 10px 0 10px 10px;}
-.block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
+
+
 
 
 
@@ -77,13 +75,5 @@
 //.block--facetapi {display: inline-block;}
 //
 //
-#logo img {
-	width: 30%; 
-	float: left; 
-	margin: 10px 0;
-}
-#site-name a {
-	font-family: $lucida-grande; 
-	font-size: 3em;
-}
+
 

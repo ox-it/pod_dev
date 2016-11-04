@@ -1,0 +1,24 @@
+
+
+.header-top-outer, .header-bottom-outer, .footer-top-outer {background-color: #eee;}
+.header-middle-outer {background-color: #ccc; height: 120px; padding: 20px;}
+.header-middle { display: block; }
+.header-middle-right .block {float: right;}
+
+
+.block-menu ul.menu li {display: inline-block; margin: 0 0 0 10px;}
+.block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
+
+
+#logo img {
+	@include size(300px auto);  //This overrides the responsive image settings in _media.scss 
+	float: left; 
+	//margin: 5px 0;
+
+}
+#site-name a {
+	font-family: $lucida-grande; 
+	font-size: 3em;
+	float: right;
+	padding-right: 12%;
+}

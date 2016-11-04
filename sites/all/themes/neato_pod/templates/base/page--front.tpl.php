@@ -66,6 +66,27 @@
       <?php endif; ?>
 
   </div>
+
+    <div class="featured-outer featured-outer-two">
+
+      <?php if (!empty($page['featured-two'])): ?>
+        <header id="featured-two" class="inner-wrapper">      
+            <?php print render($page['featured-two']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
+
+    <div class="featured-outer featured-outer-three">
+
+      <?php if (!empty($page['featured-three'])): ?>
+        <header id="featured-three" class="inner-wrapper">      
+            <?php print render($page['featured-three']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
+
 <!-- ______________________ ERROR _______________________ -->
  
   <?php if ($messages): ?>
@@ -78,7 +99,7 @@
 
 <!-- ______________________ BREADCRUMB _______________________ -->
   
-  <div class="breadcrumb-outer">
+<!--   <div class="breadcrumb-outer">
 
     <?php if ($breadcrumb): ?>
       <header id="breadcrumb" class="inner-wrapper">
@@ -86,12 +107,12 @@
       </header>
     <?php endif; ?>
 
-  </div>
+  </div> -->
 
 
 <!-- ______________________ MAIN _______________________ -->
 
-  <div class="main-outer">
+<!--   <div class="main-outer">
 
     <main role="main" class="main">
       <?php if (!empty($page['sidebar_first'])): ?>
@@ -130,7 +151,7 @@
 
   </div>
 
-
+ -->
 
 <!-- ______________________ FOOTER _______________________ -->
 

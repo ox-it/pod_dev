@@ -3,12 +3,10 @@
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
 
-@import "variables";
-
-
-
+@import "variables"; //These must appear first
 @import "buttons";
 @import "forms";
+@import "grid-settings";
 @import "lists";
 @import "typography";
 @import "media";

@@ -68,40 +68,40 @@ gulp.task('compress', function() {
 /**
  * Defines a task that triggers a Drush cache clear.
  */
-gulp.task('drush:cc', function () {
-  if (config !== null && !config.drush.enabled) {
-    return;
-  }
+// gulp.task('drush:cc', function () {
+//   if (config !== null && !config.drush.enabled) {
+//     return;
+//   }
 
-  return gulp.src('', {read: false})
-    .pipe(shell([
-      config.drush.alias.css_js
-    ]))
-    .pipe(notify({
-      title: "Caches cleared",
-      message: "Drupal CSS/JS caches cleared.",
-      onLast: true
-    }));
-});
+//   return gulp.src('', {read: false})
+//     .pipe(shell([
+//       config.drush.alias.css_js
+//     ]))
+//     .pipe(notify({
+//       title: "Caches cleared",
+//       message: "Drupal CSS/JS caches cleared.",
+//       onLast: true
+//     }));
+// });
 
-/**
- * Defines a task that triggers a Drush cache rebuild.
- */
-gulp.task('drush:cr', function () {
-  if (!config.drush.enabled) {
-    return;
-  }
+// *
+//  * Defines a task that triggers a Drush cache rebuild.
+ 
+// gulp.task('drush:cr', function () {
+//   if (!config.drush.enabled) {
+//     return;
+//   }
 
-  return gulp.src('', {read: false})
-    .pipe(shell([
-      config.drush.alias.cr
-    ]))
-    .pipe(notify({
-      title: "Cache rebuilt",
-      message: "Drupal cache rebuilt.",
-      onLast: true
-    }));
-});
+//   return gulp.src('', {read: false})
+//     .pipe(shell([
+//       config.drush.alias.cr
+//     ]))
+//     .pipe(notify({
+//       title: "Cache rebuilt",
+//       message: "Drupal cache rebuilt.",
+//       onLast: true
+//     }));
+// });
 
 /**
  * Define a task to spawn Browser Sync.
@@ -129,15 +129,15 @@ gulp.task('watch', function() {
   });
 
   // watch scss for changes and clear drupal theme cache on change
-  gulp.watch(['scss/**/*.scss'], ['sass', 'drush:cc']);
+  gulp.watch(['scss/**/*.scss'], ['sass']).on('change', browserSync.reload);
 
   // watch js for changes and clear drupal theme cache on change
-  gulp.watch(['js-src/**/*.js'], ['compress', 'drush:cc']);
+  gulp.watch(['js-src/**/*.js'], ['compress']);
 
-  // If user has not specified an override, assume tpl changes don't need to reload
-  if (config.tpl.rebuildOnChange) {
-    gulp.watch(['templates/**/*.tpl.php'], ['drush:cr']).on('change', browserSync.reload);
-  }
+  // // If user has not specified an override, assume tpl changes don't need to reload
+  // if (config.tpl.rebuildOnChange) {
+  //   gulp.watch(['templates/**/*.tpl.php'], ['drush:cr']).on('change', browserSync.reload);
+  // }
 });
 
 gulp.task('default', ['watch']);
