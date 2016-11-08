@@ -11,351 +11,11 @@ function ox_views_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'episode_search_api';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'search_api_index_episode_index';
-  $view->human_name = 'Episode Search API';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_series' => 'field_series',
-    'title' => 'title',
-    'field_people' => 'field_people',
-    'field_series_field_unit' => 'field_series_field_unit',
-    'field_media_files' => 'field_media_files',
-    'search_api_excerpt' => 'search_api_excerpt',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_series' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_people' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_series_field_unit' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_media_files' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'search_api_excerpt' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['sticky'] = TRUE;
-  /* Field: Indexed Node: Series */
-  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
-  $handler->display->display_options['fields']['field_series']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
-  $handler->display->display_options['fields']['field_series']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series']['display'] = 'view';
-  $handler->display->display_options['fields']['field_series']['view_mode'] = 'token';
-  $handler->display->display_options['fields']['field_series']['bypass_access'] = 0;
-  /* Field: Indexed Node: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Episode';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: Indexed Node: People */
-  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['list']['mode'] = 'list';
-  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
-  /* Field: Series: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Department';
-  $handler->display->display_options['fields']['field_series_field_unit']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'first';
-  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
-  /* Field: Indexed Node: Media Files */
-  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
-    'file_view_mode' => 'preview',
-  );
-  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
-  /* Field: Search: Excerpt */
-  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
-  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
-  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
-  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
-  /* Filter criterion: Search: Fulltext search */
-  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search (DB)';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
-    'body:value' => 'body:value',
-    'field_episode_description_long:value' => 'field_episode_description_long:value',
-    'field_series:name' => 'field_series:name',
-    'title' => 'title',
-  );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'search';
-  $export['episode_search_api'] = $view;
-
-  $view = new view();
-  $view->name = 'episode_search_api_page_holder';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'search_api_index_episode_index';
-  $view->human_name = 'Episode Search API Page Holder';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Indexed Node: Node ID */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-
-  /* Display: Facets block */
-  $handler = $view->new_display('search_api_views_facets_block', 'Facets block', 'search_api_views_facets_block_1');
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['block_description'] = 'Episode Search Facet Block Placeholder';
-  $handler->display->display_options['linked_path'] = 'search';
-  $handler->display->display_options['facet_field'] = 'field_itunes_u_category';
-  $handler->display->display_options['hide_block'] = 1;
-  $export['episode_search_api_page_holder'] = $view;
-
-  $view = new view();
-  $view->name = 'episode_search_solr';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'search_api_index_episode_index_solr';
-  $view->human_name = 'Episode Search Solr';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '35';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Indexed Node: Series */
-  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
-  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
-  /* Field: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset_top-left';
-  $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_series_album_cover',
-    1 => 'field_series_name',
-  );
-  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
-  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  /* Field: Series: Name (indexed) */
-  $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
-  $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series_name']['field'] = 'field_series_name';
-  $handler->display->display_options['fields']['field_series_name']['label'] = '';
-  $handler->display->display_options['fields']['field_series_name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_name']['link_to_entity'] = 1;
-  /* Field: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
-  $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
-  $handler->display->display_options['fields']['fieldset_5']['children'] = array(
-    0 => 'title',
-    1 => 'body_value',
-    2 => 'field_people',
-    3 => 'field_series_field_unit',
-  );
-  $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
-  /* Field: Indexed Node: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: The main body text: Text (indexed) */
-  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
-  $handler->display->display_options['fields']['body_value']['label'] = '';
-  $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
-  /* Field: Indexed Node: People */
-  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
-  /* Field: Series: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Oxford Unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
-  /* Field: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
-  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_1']['label'] = 'fieldset-top-right';
-  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
-    0 => 'field_media_files',
-  );
-  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
-  /* Field: Indexed Node: Media Files */
-  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['label'] = '';
-  $handler->display->display_options['fields']['field_media_files']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
-    'file_view_mode' => 'preview',
-  );
-  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
-  /* Field: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
-  $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_4']['label'] = 'fieldset-bottom';
-  $handler->display->display_options['fields']['fieldset_4']['children'] = array(
-    0 => 'search_api_excerpt',
-    1 => 'field_series',
-  );
-  $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
-  /* Field: Search: Excerpt */
-  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
-  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
-  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
-  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
-  /* Filter criterion: Search: Fulltext search */
-  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search (Solr)';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
-    'body:value' => 'body:value',
-    'field_episode_description_long:value' => 'field_episode_description_long:value',
-    'field_series:name' => 'field_series:name',
-    'title' => 'title',
-  );
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'solr';
-  $export['episode_search_solr'] = $view;
-
-  $view = new view();
-  $view->name = 'media_files';
+  $view->name = 'episode_node_view';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'file_managed';
-  $view->human_name = 'media_files';
+  $view->human_name = 'Episode Node View';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -546,144 +206,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['filters']['field_series_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_series_tid']['vocabulary'] = 'series';
 
-  /* Display: All Audio and Video */
-  $handler = $view->new_display('page', 'All Audio and Video', 'page_list');
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<button id="buttonSwitch">Grid</button>
-';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: File: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'audio' => 'audio',
-    'document' => 'document',
-    'video' => 'video',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['type']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Media Type';
-  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
-    1 => array(
-      'title' => 'Audio',
-      'operator' => 'in',
-      'value' => array(
-        'audio' => 'audio',
-        'all' => 0,
-        'document' => 0,
-        'image' => 0,
-        'video' => 0,
-      ),
-    ),
-    2 => array(
-      'title' => 'Video',
-      'operator' => 'in',
-      'value' => array(
-        'video' => 'video',
-        'all' => 0,
-        'audio' => 0,
-        'document' => 0,
-        'image' => 0,
-      ),
-    ),
-    3 => array(
-      'title' => 'Document',
-      'operator' => 'in',
-      'value' => array(
-        'document' => 'document',
-        'all' => 0,
-        'audio' => 0,
-        'image' => 0,
-        'video' => 0,
-      ),
-    ),
-  );
-  /* Filter criterion: Content: Media Files (field_media_files:delta) */
-  $handler->display->display_options['filters']['delta']['id'] = 'delta';
-  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_media_files';
-  $handler->display->display_options['filters']['delta']['field'] = 'delta';
-  $handler->display->display_options['filters']['delta']['relationship'] = 'file_to_node';
-  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
-  $handler->display->display_options['filters']['delta']['group'] = 1;
-  /* Filter criterion: File: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'file_managed';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'audio' => 'audio',
-    'document' => 'document',
-    'video' => 'video',
-  );
-  $handler->display->display_options['filters']['type_1']['group'] = 1;
-  /* Filter criterion: Global: Combine fields filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
-  $handler->display->display_options['filters']['combine']['group'] = 1;
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Episode Search';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'title' => 'title',
-  );
-  /* Filter criterion: Content: Series (field_series) */
-  $handler->display->display_options['filters']['field_series_tid']['id'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['table'] = 'field_data_field_series';
-  $handler->display->display_options['filters']['field_series_tid']['field'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['relationship'] = 'file_to_node';
-  $handler->display->display_options['filters']['field_series_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_series_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_series_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_series_tid']['expose']['operator_id'] = 'field_series_tid_op';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['label'] = 'Series';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['operator'] = 'field_series_tid_op';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['identifier'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_series_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_series_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_series_tid']['vocabulary'] = 'series';
-  $handler->display->display_options['path'] = 'media-files';
-
   /* Display: Episode Node Page (AV) */
   $handler = $view->new_display('block', 'Episode Node Page (AV)', 'episode_node_view');
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -766,463 +288,20 @@ function ox_views_views_default_views() {
     'document' => 'document',
   );
   $handler->display->display_options['block_description'] = 'Episode Node View (DOC)';
-  $export['media_files'] = $view;
+  $export['episode_node_view'] = $view;
 
   $view = new view();
-  $view->name = 'series_episodes_solr_';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'search_api_index_episode_index_solr';
-  $view->human_name = 'Series Episodes (Solr)';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Series Episodes (Solr)';
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'nid' => 'nid',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'nid' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  /* Header: Global: Result summary */
-  $handler->display->display_options['header']['result']['id'] = 'result';
-  $handler->display->display_options['header']['result']['table'] = 'views';
-  $handler->display->display_options['header']['result']['field'] = 'result';
-  /* Relationship: Indexed Node: Series */
-  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
-  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  /* Field: Indexed Node: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
-  /* Field: Indexed Node: People */
-  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
-  $handler->display->display_options['fields']['field_people']['list']['mode'] = 'list';
-  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
-  /* Field: Series: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'list';
-  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
-  /* Field: Indexed Node: Media Files */
-  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
-  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
-    'file_view_mode' => 'preview',
-  );
-  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
-  /* Field: Indexed Node: The main body text */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  /* Contextual filter: Search: Indexed taxonomy term fields */
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['id'] = 'search_api_views_taxonomy_term';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['field'] = 'search_api_views_taxonomy_term';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['term_page'] = FALSE;
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['node'] = TRUE;
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['anyall'] = '+';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['limit'] = TRUE;
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['vocabularies'] = array(
-    'people' => 'people',
-  );
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['validate_options']['vocabularies'] = array(
-    'series' => 'series',
-  );
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['not'] = 0;
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $export['series_episodes_solr_'] = $view;
-
-  $view = new view();
-  $view->name = 'series_galleries';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'series galleries';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
-  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'content',
-  );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['relationship'] = 'tid_representative';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'series' => 'series',
-  );
-
-  /* Display: Series Page */
-  $handler = $view->new_display('page', 'Series Page', 'page');
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Result summary */
-  $handler->display->display_options['header']['result']['id'] = 'result';
-  $handler->display->display_options['header']['result']['table'] = 'views';
-  $handler->display->display_options['header']['result']['field'] = 'result';
-  $handler->display->display_options['header']['result']['content'] = 'Series found: @total
-';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  /* Relationship: Taxonomy term: Representative node */
-  $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';
-  $handler->display->display_options['relationships']['tid_representative']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['tid_representative']['field'] = 'tid_representative';
-  $handler->display->display_options['relationships']['tid_representative']['subquery_sort'] = 'node.created';
-  $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
-  $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
-  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['relationship'] = 'tid_representative';
-  $handler->display->display_options['fields']['created']['label'] = 'Last Updated';
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd M Y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Episode';
-  $handler->display->display_options['fields']['nid']['format_plural_plural'] = '@count Episodes';
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['max_length'] = '600';
-  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  /* Field: Field: Oxford Unit */
-  $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
-  $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
-  $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'series' => 'series',
-  );
-  /* Filter criterion: Global: Combine fields filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'name' => 'name',
-    'description' => 'description',
-  );
-  /* Filter criterion: Oxford Unit (field_unit) (selective) */
-  $handler->display->display_options['filters']['field_unit_tid_selective']['id'] = 'field_unit_tid_selective';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['table'] = 'field_data_field_unit';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['field'] = 'field_unit_tid_selective';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['ui_name'] = 'Oxford Unit (field_unit) (selective)';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['identifier'] = 'field_unit_tid_selective';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_display_field'] = 'field_unit';
-  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_items_limit'] = '100';
-  $handler->display->display_options['path'] = 'series';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'menu-series-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Series Block */
-  $handler = $view->new_display('block', 'Series Block', 'block_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '<none>';
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search" name="hideseek-search" placeholder="Start typing here" type="text" data-list=".sidr-class-view-content" >
-<a id="sidr-close-menu">Close Series Menu</a>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['max_length'] = '250';
-  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'series' => 'series',
-  );
-  $handler->display->display_options['block_description'] = 'Sidr Series Block';
-
-  /* Display: Series Page (Lazy) */
-  $handler = $view->new_display('page', 'Series Page (Lazy)', 'page_1');
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['query'] = FALSE;
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search-page" name="hideseek-search-page" placeholder="Start typing here" type="text" data-list=".view-content" >';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
-  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Episode';
-  $handler->display->display_options['fields']['nid']['format_plural_plural'] = '@count Episodes';
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['max_length'] = '600';
-  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Taxonomy vocabulary: Machine name */
-  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
-  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['filters']['machine_name']['value'] = array(
-    'series' => 'series',
-  );
-  $handler->display->display_options['path'] = 'series2';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'menu-series-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['series_galleries'] = $view;
-
-  $view = new view();
-  $view->name = 'series_taxonomy';
+  $view->name = 'episode_search_db_';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_episode_index';
-  $view->human_name = 'Series Taxonomy';
+  $view->human_name = 'Episode Search (DB)';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Series Taxonomy';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -1230,19 +309,23 @@ function ox_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'field_series' => 'field_series',
     'title' => 'title',
     'field_people' => 'field_people',
     'field_series_field_unit' => 'field_series_field_unit',
     'field_media_files' => 'field_media_files',
+    'search_api_excerpt' => 'search_api_excerpt',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'field_series' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'align' => '',
       'separator' => '',
@@ -1263,26 +346,27 @@ function ox_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'search_api_excerpt' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
-  /* Relationship: Indexed Node: Series */
-  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
-  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = 'Series';
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  /* Field: Indexed Node: Series */
+  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series']['display'] = 'view';
+  $handler->display->display_options['fields']['field_series']['view_mode'] = 'token';
+  $handler->display->display_options['fields']['field_series']['bypass_access'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Episode';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
   /* Field: Indexed Node: People */
   $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
@@ -1296,7 +380,9 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
   $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index';
   $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Department';
+  $handler->display->display_options['fields']['field_series_field_unit']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'first';
   $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
@@ -1310,46 +396,244 @@ function ox_views_views_default_views() {
     'file_view_mode' => 'preview',
   );
   $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_media_files']['separator'] = '';
-  /* Field: The main body text: Text (indexed) */
-  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
-  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
-  /* Contextual filter: Series: Name (indexed) */
-  $handler->display->display_options['arguments']['field_series_name']['id'] = 'field_series_name';
-  $handler->display->display_options['arguments']['field_series_name']['table'] = 'search_api_index_episode_index';
-  $handler->display->display_options['arguments']['field_series_name']['field'] = 'field_series_name';
-  $handler->display->display_options['arguments']['field_series_name']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_series_name']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['field_series_name']['default_argument_options']['term_page'] = FALSE;
-  $handler->display->display_options['arguments']['field_series_name']['default_argument_options']['node'] = TRUE;
-  $handler->display->display_options['arguments']['field_series_name']['default_argument_options']['anyall'] = '+';
-  $handler->display->display_options['arguments']['field_series_name']['default_argument_options']['vocabularies'] = array(
-    'series' => 'series',
+  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_episode_index';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search (DB)';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
   );
-  $handler->display->display_options['arguments']['field_series_name']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_series_name']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_series_name']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_series_name']['validate_options']['vocabularies'] = array(
-    'series' => 'series',
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'body:value' => 'body:value',
+    'field_episode_description_long:value' => 'field_episode_description_long:value',
+    'field_series:name' => 'field_series:name',
+    'title' => 'title',
   );
-  $handler->display->display_options['arguments']['field_series_name']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['field_series_name']['not'] = 0;
 
-  /* Display: Series Taxonomy Block */
-  $handler = $view->new_display('block', 'Series Taxonomy Block', 'block_1');
-  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
-  $handler->display->display_options['block_description'] = 'Series Taxonomy Block (Episode Index)';
-  $handler->display->display_options['block_caching'] = '-1';
-  $export['series_taxonomy'] = $view;
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['path'] = 'search';
+  $export['episode_search_db_'] = $view;
 
   $view = new view();
-  $view->name = 'series_taxonomy_display';
+  $view->name = 'episode_search_solr_';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_episode_index_solr';
+  $view->human_name = 'Episode Search (Solr)';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '35';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Indexed Node: Series */
+  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset_top-left';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_series_album_cover',
+    1 => 'field_series_name',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Series: Name (indexed) */
+  $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_name']['field'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['label'] = '';
+  $handler->display->display_options['fields']['field_series_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_name']['link_to_entity'] = 1;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
+  $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
+  $handler->display->display_options['fields']['fieldset_5']['children'] = array(
+    0 => 'title',
+    1 => 'body_value',
+    2 => 'field_people',
+    3 => 'field_series_field_unit',
+  );
+  $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: The main body text: Text (indexed) */
+  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['label'] = '';
+  $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Oxford Unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'fieldset-top-right';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_media_files',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  /* Field: Indexed Node: Media Files */
+  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['label'] = '';
+  $handler->display->display_options['fields']['field_media_files']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
+  $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_4']['label'] = 'fieldset-bottom';
+  $handler->display->display_options['fields']['fieldset_4']['children'] = array(
+    0 => 'search_api_excerpt',
+    1 => 'field_series',
+  );
+  $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search (Solr)';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'body:value' => 'body:value',
+    'field_episode_description_long:value' => 'field_episode_description_long:value',
+    'field_series:name' => 'field_series:name',
+    'title' => 'title',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['path'] = 'solr';
+  $export['episode_search_solr_'] = $view;
+
+  $view = new view();
+  $view->name = 'episode_search_solr_pageholder';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_episode_index_solr';
+  $view->human_name = 'Episode Search (Solr) Pageholder';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+
+  /* Display: Facets block */
+  $handler = $view->new_display('search_api_views_facets_block', 'Facets block', 'search_api_views_facets_block_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['block_description'] = 'Episode Search (Solr) Anywhere Block';
+  $handler->display->display_options['hide_block'] = 1;
+  $export['episode_search_solr_pageholder'] = $view;
+
+  $view = new view();
+  $view->name = 'series_episodes_file_';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'file_managed';
-  $view->human_name = 'Series Taxonomy Display';
+  $view->human_name = 'Series Episodes (File)';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1690,7 +974,449 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
   $handler->display->display_options['block_description'] = 'Series Taxonomy Block (File)';
-  $export['series_taxonomy_display'] = $view;
+  $export['series_episodes_file_'] = $view;
+
+  $view = new view();
+  $view->name = 'series_episodes_solr_';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'search_api_index_episode_index_solr';
+  $view->human_name = 'Series Episodes (Solr)';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Series Episodes (Solr)';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  /* Relationship: Indexed Node: Series */
+  $handler->display->display_options['relationships']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['relationships']['field_series']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['relationships']['field_series']['field'] = 'field_series';
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
+  /* Field: Indexed Node: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Indexed Node: Media Files */
+  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Indexed Node: The main body text */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  /* Contextual filter: Search: Indexed taxonomy term fields */
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['id'] = 'search_api_views_taxonomy_term';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['field'] = 'search_api_views_taxonomy_term';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['default_argument_options']['vocabularies'] = array(
+    'people' => 'people',
+  );
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['validate_options']['vocabularies'] = array(
+    'series' => 'series',
+  );
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['search_api_views_taxonomy_term']['not'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['series_episodes_solr_'] = $view;
+
+  $view = new view();
+  $view->name = 'series_gallery';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Series Gallery';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['relationship'] = 'tid_representative';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'series' => 'series',
+  );
+
+  /* Display: Series Page */
+  $handler = $view->new_display('page', 'Series Page', 'page');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = 'Series found: @total
+';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Content with term */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  /* Relationship: Taxonomy term: Representative node */
+  $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['tid_representative']['field'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_sort'] = 'node.created';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'tid_representative';
+  $handler->display->display_options['fields']['created']['label'] = 'Last Updated';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd M Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Episode';
+  $handler->display->display_options['fields']['nid']['format_plural_plural'] = '@count Episodes';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '600';
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Field: Oxford Unit */
+  $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'series' => 'series',
+  );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'name' => 'name',
+    'description' => 'description',
+  );
+  /* Filter criterion: Oxford Unit (field_unit) (selective) */
+  $handler->display->display_options['filters']['field_unit_tid_selective']['id'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['field'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['ui_name'] = 'Oxford Unit (field_unit) (selective)';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['identifier'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_display_field'] = 'field_unit';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_items_limit'] = '100';
+  $handler->display->display_options['path'] = 'series';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-series-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Series Block */
+  $handler = $view->new_display('block', 'Series Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search" name="hideseek-search" placeholder="Start typing here" type="text" data-list=".sidr-class-view-content" >
+<a id="sidr-close-menu">Close Series Menu</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '250';
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'series' => 'series',
+  );
+  $handler->display->display_options['block_description'] = 'Sidr Series Block';
+
+  /* Display: Series Page (Lazy) */
+  $handler = $view->new_display('page', 'Series Page (Lazy)', 'page_1');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search-page" name="hideseek-search-page" placeholder="Start typing here" type="text" data-list=".view-content" >';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Content with term */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Episode';
+  $handler->display->display_options['fields']['nid']['format_plural_plural'] = '@count Episodes';
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['label'] = '';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '600';
+  $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'series' => 'series',
+  );
+  $handler->display->display_options['path'] = 'series2';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-series-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['series_gallery'] = $view;
 
   return $export;
 }

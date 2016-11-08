@@ -1,9 +1,9 @@
 .view {font-size: $views-font-size;}
-.view-episode-search-solr .views-row {margin-bottom: 60px; border-top: 1px solid $base-border-color;}
-.view-episode-search-solr .views-fieldset {border: 1px solid $base-border-color;}
-.view-episode-search-solr .views-field-field-series-name {width: 150px;}
+.view-episode-search-solr- .views-row {margin-bottom: 60px; border-top: 1px solid $base-border-color;}
+.view-episode-search-solr- .views-fieldset {border: 1px solid $base-border-color;}
+.view-episode-search-solr- .views-field-field-series-name {width: 150px;}
 
-.view-episode-search-solr 
+.view-episode-search-solr-
 {
 	@include fill-parent();
 	@include row(table);
@@ -23,13 +23,13 @@
 	}
 }
 
-.view-episode-search-solr .views-field-title {font-size: 1.3em;}
-.view-episode-search-solr .views-field-body-value {
+.view-episode-search-solr- .views-field-title {font-size: 1.3em;}
+.view-episode-search-solr- .views-field-body-value {
 	border-bottom: 1px solid $base-border-color; 
 	margin-bottom: 15px;
 }
 
-.view-episode-search-solr .views-field-field-people {
+.view-episode-search-solr- .views-field-field-people {
 	vertical-align: bottom;
 }
 

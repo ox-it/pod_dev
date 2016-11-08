@@ -91,7 +91,7 @@ Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
       $('#sidr-open-menu').sidr({
         name: 'sidr-menu',
-        source: '.view-series-galleries',
+        source: '.view-series-gallery',
         displace: false
       });
   
