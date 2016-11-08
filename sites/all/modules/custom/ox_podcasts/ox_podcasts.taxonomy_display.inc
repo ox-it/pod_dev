@@ -17,8 +17,8 @@ function ox_podcasts_taxonomy_display_default_displays() {
   $taxonomy_display->term_display_options = '';
   $taxonomy_display->associated_display_plugin = 'TaxonomyDisplayAssociatedDisplayHandlerViews';
   $taxonomy_display->associated_display_options = array(
-    'view' => 'series_taxonomy',
-    'display' => 'block_1',
+    'view' => 'series_episodes_solr_',
+    'display' => 'block',
   );
   $taxonomy_display->add_feed = FALSE;
   $taxonomy_display->breadcrumb_display_plugin = 'TaxonomyDisplayBreadcrumbDisplayHandlerCore';
