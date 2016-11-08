@@ -46,7 +46,7 @@ function ox_podcasts_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 11051,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -558,7 +558,7 @@ function ox_podcasts_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 11052,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -838,7 +838,7 @@ function ox_podcasts_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 11050,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
