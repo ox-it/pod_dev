@@ -10,6 +10,7 @@ features[views_view][] = episode_node_view
 features[views_view][] = episode_search_db_
 features[views_view][] = episode_search_solr_
 features[views_view][] = episode_search_solr_pageholder
+features[views_view][] = people_view
 features[views_view][] = series_episodes_file_
 features[views_view][] = series_episodes_solr_
 features[views_view][] = series_gallery

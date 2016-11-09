@@ -629,6 +629,123 @@ function ox_views_views_default_views() {
   $export['episode_search_solr_pageholder'] = $view;
 
   $view = new view();
+  $view->name = 'people_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'People View';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'People View';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: View area */
+  $handler->display->display_options['footer']['view']['id'] = 'view';
+  $handler->display->display_options['footer']['view']['table'] = 'views';
+  $handler->display->display_options['footer']['view']['field'] = 'view';
+  $handler->display->display_options['footer']['view']['view_to_insert'] = 'people_view:block_1';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Image */
+  $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['field'] = 'field_people_image';
+  $handler->display->display_options['fields']['field_people_image']['label'] = '';
+  $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_people_image']['settings'] = array(
+    'image_style' => 'people__400x400_',
+    'image_link' => 'content',
+  );
+  /* Field: Field: Oxford Unit */
+  $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['label'] = '';
+  $handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_unit']['delta_offset'] = '0';
+  /* Sort criterion: Taxonomy term: Image (field_people_image:fid) */
+  $handler->display->display_options['sorts']['field_people_image_fid']['id'] = 'field_people_image_fid';
+  $handler->display->display_options['sorts']['field_people_image_fid']['table'] = 'field_data_field_people_image';
+  $handler->display->display_options['sorts']['field_people_image_fid']['field'] = 'field_people_image_fid';
+  $handler->display->display_options['sorts']['field_people_image_fid']['order'] = 'DESC';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'people' => 'people',
+  );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'name' => 'name',
+  );
+  /* Filter criterion: Oxford Unit (field_unit) (selective) */
+  $handler->display->display_options['filters']['field_unit_tid_selective']['id'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['field'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['ui_name'] = 'Oxford Unit (field_unit) (selective)';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['identifier'] = 'field_unit_tid_selective';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_display_field'] = 'field_unit';
+  $handler->display->display_options['filters']['field_unit_tid_selective']['selective_items_limit'] = '100';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '110';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['path'] = 'people';
+  $export['people_view'] = $view;
+
+  $view = new view();
   $view->name = 'series_episodes_file_';
   $view->description = '';
   $view->tag = 'default';
