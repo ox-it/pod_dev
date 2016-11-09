@@ -1,26 +1,33 @@
 .sidebar {
 	font-size: $sidebar-font-size;
+
+	.block-facetapi {
+		border: 1px solid $base-border-color;
+		margin: 0 0 $base-spacing 0;
+		max-height: 30em;
+		overflow: scroll;
+		padding: $small-spacing;
+	}
+
+	.block-facetapi-units, .sidebar .block-facetapi-keywords {
+		border: 1px solid $base-border-color;
+		margin: 0 0 $base-spacing 0;
+		max-height: 20em;
+		padding: $small-spacing;
+	}
+
+	.block-facetapi-units ul.facetapi-facetapi-links,
+	.block-facetapi-keywords ul.facetapi-facetapi-links {
+		overflow: scroll;
+		
+	}
 }
 
-.sidebar .block-facetapi {
-	border: 1px solid $base-border-color;
-	margin: 0 0 $base-spacing 0;
-	max-height: 30em;
-	overflow: scroll;
-	padding: $small-spacing;
-}
 
-.sidebar .block-facetapi-units, .sidebar .block-facetapi-keywords {
-	border: 1px solid $base-border-color;
-	margin: 0 0 $base-spacing 0;
-	max-height: 20em;
-	padding: $small-spacing;
-}
 
-.sidebar .block-facetapi-units ul.facetapi-facetapi-links, .sidebar .block-facetapi-keywords ul.facetapi-facetapi-links {
-	overflow: scroll;
-	
-}
+
+
+
 
 
 

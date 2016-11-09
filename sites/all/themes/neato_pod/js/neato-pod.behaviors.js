@@ -60,31 +60,32 @@
 
 
 
-  Drupal.behaviors.podOmegaToggleGridList = {
-    attach: function (context, settings) {
+  // Drupal.behaviors.podOmegaToggleGridList = {
+  //   attach: function (context, settings) {
 
-      //$('.view-display-id-page_list .view-content').addClass('media-grid');
+  //     $('.view-series-gallery .view-content').addClass('media-grid');
 
-      $('#buttonSwitch').click(function(){
+  //     $('#buttonSwitch').click(function(){
 
-         var $button = $('#buttonSwitch');
+  //        var $button = $('#buttonSwitch');
          
-         $button.toggleClass('listview');
+  //        $button.toggleClass('gridview');
 
-         if ($button.hasClass('listview')) {
-            $button.text('List');
-            $('.view-media-files').addClass('media-list');
-            $('.view-media-files').removeClass('media-grid');
-         } else {
-            $button.text('Grid');
-            $('.view-media-files').removeClass('media-list');
-            $('.view-media-files').addClass('media-grid');
-         }
+  //        if ($button.hasClass('gridview')) {
+  //           $button.text('List');
+  //           $('.view-series-gallery .view-content').addClass('media-grid');
+  //           $('.view-series-gallery .view-content').removeClass('media-list');
+  //        } else {
+  //           $button.text('Grid');
+  //           $('.view-series-gallery .view-content').removeClass('media-grid');
+  //           $('.view-series-gallery .view-content').addClass('media-list');
+  //        }
 
-       });
+  //      });
 
-    }
-  };
+  //   }
+  // };
+
 
 
 Drupal.behaviors.podOmegaActivateSidr = {

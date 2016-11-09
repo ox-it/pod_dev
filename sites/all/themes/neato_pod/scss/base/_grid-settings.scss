@@ -1,7 +1,7 @@
 @import "../../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 // Neat Overrides
 // $column: 90px;
-$gutter: .8em;
+$gutter: 4em;
 // $grid-columns: 15;
 $max-width: em(1450);
 
@@ -12,7 +12,7 @@ $visual-grid-color: #EEEEEE;
 $visual-grid-opacity: 0.4;
 
 
-$mobile: new-breakpoint(max-width 800px 4);
+$tablet: new-breakpoint(max-width 1000px 4);
 
 // // Neat Breakpoints
 // $first-breakpoint-value: 400px;

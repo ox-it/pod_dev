@@ -1,0 +1,187 @@
+/*
+ *****************  Search (Solr) View (.../solr)  **************************************************
+ */
+
+
+.view {font-size: $views-font-size;}
+.view-episode-search-solr- .views-row {margin-bottom: 60px; border-top: 1px solid $base-border-color;}
+.view-episode-search-solr- .views-fieldset {border: 1px solid $base-border-color;}
+.view-episode-search-solr- .views-field-field-series-name {width: 150px;}
+
+.view-episode-search-solr-
+{
+	@include fill-parent();
+	@include row(table);
+
+	.fieldset-top-left {
+		@include span-columns(1);
+		//@include pad();
+	}
+	.fieldset-top-middle {
+		@include span-columns(6);
+		@include pad();
+	}
+	.fieldset-top-right {
+		@include span-columns(1);
+		//@include pad();
+	    text-align: right;
+	}
+}
+
+.view-episode-search-solr- .views-field-title {font-size: 1.3em;}
+.view-episode-search-solr- .views-field-body-value {
+	border-bottom: 1px solid $base-border-color; 
+	margin-bottom: 15px;
+}
+
+.view-episode-search-solr- .views-field-field-people {
+	vertical-align: bottom;
+}
+
+
+/*
+ * The below is to use in case the @include row(table) implementation falls about given Gulp error
+ * The below basically is an extension of the _layout.scss model, and works. 
+ * 
+ */
+
+// .fieldset-top-left {
+// 	@include span-columns(1.5 of 8);
+// 	height: 300px;
+// 	//@include pad();
+// 	}
+// 	.fieldset-top-middle {
+// 	@include span-columns(5 of 8);
+// 	height: 300px;
+// 	@include pad();
+// 	}
+// 	.fieldset-top-right {
+// 	@include span-columns(1.5 of 8);
+// 	height: 300px;
+// 	@include omega;
+// 	//@include pad();
+// 	text-align: right;
+// }
+
+
+
+/*
+ *****************  Series View (.../series)  **************************************************
+ */
+
+.view-series-gallery {
+	.views-row {
+
+  		@include reset-display;
+    	@include span-columns(6);
+    	@include omega(2n);
+		margin-bottom: 6em;
+
+		//border-top: 1px solid $base-border-color;
+		border-bottom: 1px solid $base-border-color;
+
+		@include media($tablet) {
+			border: 1px solid $base-border-color;
+			padding: 20px;	
+		}
+
+		.fieldset-series-middle {
+			@include clearfix;
+
+			.fieldset-series-left { 
+				@include span-columns(3 of 6);
+				//margin-bottom: 2em;
+				
+				@include media($tablet) {
+					@include span-columns(6 of 6);
+
+				}
+			}
+
+			.fieldset-series-right {
+				@include span-columns(3 of 6);
+				
+				height: 24em;
+				overflow: scroll;
+
+				@include media($tablet) {
+					@include span-columns(6 of 6);
+					height: 10em;
+					
+				}
+			}
+
+		}
+
+		.fieldset-series-bottom {
+		//@include clearfix;
+
+			border-top: 1px solid $base-border-color;
+	    	margin-bottom: 5px;
+	    	padding: 3px;
+
+
+			}
+
+	}
+
+
+
+    .views-field-name {
+      //height: auto;
+      min-height: 4em;
+      font-size: 1.2em;
+      background-color: $lighter-gray;
+      margin-bottom: 1em;
+      padding: 5px;
+      
+
+      	@include media($tablet) {
+			font-size: 1em;
+			min-height: 4em;
+		}
+    }
+
+    .views-field-nid, .views-field-created {
+    	border-bottom: 1px solid $base-border-color;
+    	margin-bottom: 5px;
+    	padding: 3px;
+    }
+
+    .views-field-description {
+    	padding-right: 3em;
+    	@include media($tablet) {
+			height: 54px; 
+			overflow: hidden;
+			padding-right: 0;
+
+		}
+
+    }
+
+}
+
+
+/*
+ *****************  People View (.../people)  **************************************************
+ */
+
+.view-people-view {
+	.views-row {
+
+		//@include reset-display;
+    	@include span-columns(2);
+    	@include omega(6n);
+		margin-bottom: 2em;
+
+	}
+
+}
+
+
+
+  
+
+//.view-series-gallery .views-field-field-series-album-cover {float: left; padding-right: 1%;}
+//#hideseek-search-page {width: 100%; height: 35px; display: block; margin: 40px 0;}
+

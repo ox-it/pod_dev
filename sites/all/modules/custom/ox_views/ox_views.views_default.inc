@@ -1116,6 +1116,9 @@ function ox_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_unit' => 'field_unit',
+  );
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1160,7 +1163,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '24';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -1186,18 +1189,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
   $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Album Cover */
-  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
-  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
-  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1206,15 +1197,48 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['relationship'] = 'tid_representative';
-  $handler->display->display_options['fields']['created']['label'] = 'Last Updated';
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd M Y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
+  $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_2']['label'] = 'fieldset-series-middle';
+  $handler->display->display_options['fields']['fieldset_2']['children'] = array(
+    0 => 'fieldset',
+    1 => 'fieldset_1',
+  );
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset-series-left';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_series_album_cover',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'medium__300x300_',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'fieldset-series-right';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'nid',
+    1 => 'created',
+    2 => 'description',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1226,14 +1250,33 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['nid']['format_plural_singular'] = '1 Episode';
   $handler->display->display_options['fields']['nid']['format_plural_plural'] = '@count Episodes';
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['relationship'] = 'tid_representative';
+  $handler->display->display_options['fields']['created']['label'] = 'Last Updated';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd M Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['alter']['max_length'] = '600';
+  $handler->display->display_options['fields']['description']['alter']['max_length'] = '450';
   $handler->display->display_options['fields']['description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['description']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
+  $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_3']['label'] = 'fieldset-series-bottom';
+  $handler->display->display_options['fields']['fieldset_3']['children'] = array(
+    0 => 'field_unit',
+  );
+  $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   /* Field: Field: Oxford Unit */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';

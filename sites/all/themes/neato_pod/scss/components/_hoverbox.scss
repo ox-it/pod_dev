@@ -1,4 +1,16 @@
 
+.categories .category  {
+  //@include reset-display;
+  @include span-columns(3);
+  @include omega(4n); 
+}
+.categories .category a {
+  display: block;
+}
+.categories {@include clearfix;}
+
+
+
 .hover-tile-outer {
   border: 1px solid $base-border-color;
   margin-bottom: 20px;

@@ -47,7 +47,7 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
     	$form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Fulltext Search Here...');
   	}
 
-  	if ($form['#id'] == 'views-exposed-form-series-galleries-page') {
+  	if ($form['#id'] == 'views-exposed-form-series-gallery-page') {
   		if (isset($form['combine'])) {
             $form['combine']['#attributes']['placeholder'] = t('Search Series Here...');
     	}
@@ -59,7 +59,7 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
   		$form['#info']['filter-search_api_views_fulltext']['label'] = t('');
   	}
 
-  	if ($form['#id'] == 'views-exposed-form-series-galleries-page') {
+  	if ($form['#id'] == 'views-exposed-form-series-gallery-page') {
 
     	$form['field_unit_tid_selective']['#options']['All'] = t('- - - All Oxford Units - - -'); // overrides <All> on the dropdown
 

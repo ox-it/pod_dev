@@ -307,9 +307,9 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-series_galleries-page' => array(
+        'views--exp-series_gallery-page' => array(
           'module' => 'views',
-          'delta' => '-exp-series_galleries-page',
+          'delta' => '-exp-series_gallery-page',
           'region' => 'featured-one',
           'weight' => '-10',
         ),
