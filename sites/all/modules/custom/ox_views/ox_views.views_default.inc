@@ -675,7 +675,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
-    'image_style' => 'people_styles',
+    'image_style' => 'people',
     'image_link' => 'content',
   );
   /* Field: Taxonomy term: Name */
@@ -752,7 +752,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_people_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_people_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_people_image']['settings'] = array(
-    'image_style' => 'people_styles',
+    'image_style' => 'people',
     'image_link' => 'content',
   );
   /* Field: Field: Oxford Unit */
@@ -1454,7 +1454,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
-    'image_style' => 'series_styles',
+    'image_style' => 'series',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_series_album_cover']['group_column'] = 'entity_id';
