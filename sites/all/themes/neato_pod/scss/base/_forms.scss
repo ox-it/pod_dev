@@ -26,6 +26,9 @@ label {
   }
 }
 
+
+
+
 #{$all-text-inputs},
 select[multiple=multiple],
 textarea {
@@ -92,7 +95,8 @@ select {
 
 
 .form-item-search-api-views-fulltext, 
-#views-exposed-form-series-gallery-page #edit-combine-wrapper .views-widget {
+#views-exposed-form-series-gallery-page #edit-combine-wrapper .views-widget,
+#views-exposed-form-people-view-page #edit-combine-wrapper .views-widget {
 
   position: relative;
 
@@ -110,6 +114,38 @@ select {
     transition: border-color;
     width: 400px;
   }
+}
+
+
+/*
+***************************** Load More button **************************************
+ */
+
+.view-people-view .item-list .pager li a, .view-series-gallery .item-list .pager li a {
+
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  font-size: 2em;
+  margin-bottom: $base-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color;
+  width: 100%;
+
+  &:hover {
+    border-color: darken($base-border-color, 10%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+
 }
 
 

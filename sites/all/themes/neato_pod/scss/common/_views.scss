@@ -10,22 +10,27 @@
 
 .view-episode-search-solr-
 {
-	@include fill-parent();
-	@include row(table);
+	.fieldset-top {
+		
+		@include display-context(table);
 
-	.fieldset-top-left {
-		@include span-columns(1);
-		//@include pad();
+		.fieldset-top-left {
+			@include span-columns(2);
+			//@include pad();
+		}
+		.fieldset-top-middle {
+			@include span-columns(8);
+			//@include pad();
+		}
+		.fieldset-top-right {
+			@include span-columns(2);
+			//@include pad();
+		    text-align: right;
+		}
+
+		@include clearfix;
 	}
-	.fieldset-top-middle {
-		@include span-columns(6);
-		@include pad();
-	}
-	.fieldset-top-right {
-		@include span-columns(1);
-		//@include pad();
-	    text-align: right;
-	}
+	
 }
 
 .view-episode-search-solr- .views-field-title {font-size: 1.3em;}
@@ -72,7 +77,6 @@
 .view-series-gallery {
 	.views-row {
 
-  		@include reset-display;
     	@include span-columns(6);
     	@include omega(2n);
 		margin-bottom: 6em;
@@ -166,15 +170,29 @@
  *****************  People View (.../people)  **************************************************
  */
 
+
+
 .view-people-view {
 	.views-row {
 
-		//@include reset-display;
-    	@include span-columns(2);
-    	@include omega(6n);
+    	@include span-columns(3);
+    	@include omega(4n);
 		margin-bottom: 2em;
 
+		// .views-field-field-people-image .field-content:empty { background-image: url(".../images/no-avatar-ff.png") no-repeat; }
+
+
+		.views-field-field-people-image .field-content:empty { 
+			//content: "\00a0 no image \00a0"; 
+			//@include background-image(url('/sites/all/themes/neato_pod/images/no-avatar-ff.png');
+			max-width:100%;
+          	height:290px;
+          	background: url("/sites/all/themes/neato_pod/images/people-avatar.png") no-repeat;
+          	background-size: 100%;
+		}
+
 	}
+
 
 }
 

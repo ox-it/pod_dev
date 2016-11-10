@@ -28,8 +28,6 @@
 .featured-outer-one {
 	padding: $base-spacing 0; 
 	background-color: #f8f8f8; 
-	margin-bottom: $base-spacing;
-
 }
 
 /*
@@ -46,3 +44,23 @@
 }
 
 .chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
+
+
+
+
+/*
+ ******************************** Featured People View (.../people)  **************************************************
+ */
+
+.front .featured-outer-three {background-color: $light-gray;}
+
+.front .view-people-featured {
+	.views-row {
+
+    	@include span-columns(2);
+    	@include omega(6n);
+		margin-bottom: 2em;
+	}
+
+
+}

@@ -1,4 +1,6 @@
 
+.front .featured-outer-two {background-color: $lighter-gray;}
+
 .categories .category  {
   //@include reset-display;
   @include span-columns(3);

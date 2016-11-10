@@ -44,6 +44,12 @@ function ox_context_context_default_contexts() {
           'region' => 'header-middle-right',
           'weight' => '-10',
         ),
+        'system-powered-by' => array(
+          'module' => 'system',
+          'delta' => 'powered-by',
+          'region' => 'footer_top_left',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
@@ -114,16 +120,22 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-episode_search_solr-page' => array(
+        'views--exp-episode_search_solr_-page' => array(
           'module' => 'views',
-          'delta' => '-exp-episode_search_solr-page',
+          'delta' => '-exp-episode_search_solr_-page',
           'region' => 'featured-one',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'block-2' => array(
           'module' => 'block',
           'delta' => '2',
           'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'views-people_featured-block' => array(
+          'module' => 'views',
+          'delta' => 'people_featured-block',
+          'region' => 'featured-three',
           'weight' => '-10',
         ),
       ),

@@ -44,7 +44,7 @@ function neato_pod_preprocess_block(&$variables) {
 function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
 	//dpm($form);
   	if (isset($form['search_api_views_fulltext'])) {
-    	$form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Fulltext Search Here...');
+    	$form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Search Podcasts Here...');
   	}
 
   	if ($form['#id'] == 'views-exposed-form-series-gallery-page') {
@@ -52,6 +52,12 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
             $form['combine']['#attributes']['placeholder'] = t('Search Series Here...');
     	}
   	}
+
+    if ($form['#id'] == 'views-exposed-form-people-view-page') {
+      if (isset($form['combine'])) {
+            $form['combine']['#attributes']['placeholder'] = t('Search People Here...');
+      }
+    }
 
   	// Remove hard-to-remove title from Search API fulltext search block 
 
