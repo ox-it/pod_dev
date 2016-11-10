@@ -66,9 +66,11 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
   	}
 
   	if ($form['#id'] == 'views-exposed-form-series-gallery-page') {
-
     	$form['field_unit_tid_selective']['#options']['All'] = t('- - - All Oxford Units - - -'); // overrides <All> on the dropdown
+    }
 
-  }
+    if ($form['#id'] == 'views-exposed-form-people-view-page') {
+      $form['field_unit_tid_selective']['#options']['All'] = t('- - - All Oxford Units - - -'); // overrides <All> on the dropdown
+    }
 
 }
