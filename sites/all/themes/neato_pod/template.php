@@ -26,7 +26,7 @@ function neato_pod_preprocess_node(&$variables) {
 function neato_pod_preprocess_block(&$variables) {
 
 	if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
-                $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Keyword Filter" type="text" data-list=".facetapi-facet-field-keywords" >';
+                $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Enter Keywords" type="text" data-list=".facetapi-facet-field-keywords" >';
                 $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
             }
 

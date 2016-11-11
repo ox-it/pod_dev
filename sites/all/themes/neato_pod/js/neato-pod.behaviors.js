@@ -131,12 +131,13 @@ Drupal.behaviors.podOmegaHideSeek = {
 
         $('#hideseek-keywords').hideseek({
           list: '.facetapi-facet-field-keywords',      
-          nodata:         '',
+          nodata:         'No keywords found',
           attribute:      'text',
           highlight:      true,
           ignore:         '',
           navigation:     false,
-          ignore_accents: false
+          ignore_accents: false,
+          hidden_mode: true
         });
 
         $('#hideseek-units').hideseek({

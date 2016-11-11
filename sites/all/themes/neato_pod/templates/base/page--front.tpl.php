@@ -5,19 +5,23 @@
  <!-- ______________________ HEADER _______________________ -->
   <div role="header" class="header-top-outer">
     
-    <div class="no-inner-wrapper header-top">  
+    <div class="no-inner-wrapper header-top"> 
+
       <?php if (!empty($page['header-top'])): ?>
         <header id="site-header" class="header-top">
             <?php print render($page['header-top']); ?>
         </header>
       <?php endif; ?>
+
     </div>
+
   </div>
 
 
   <div role="header" class="header-middle-outer">
 
     <div class="no-inner-wrapper header-middle">
+
       <?php if (!empty($page['header-middle-left'])): ?>
         <header id="site-header" class="header-middle-left"> 
             <?php print render($page['header-middle-left']); ?>   
@@ -38,6 +42,7 @@
   <div role="header" class="header-bottom-outer">
 
     <div class="inner-wrapper header-bottom">
+
       <?php if (!empty($page['header-bottom-left'])): ?>
         <header id="site-header" class="header-bottom-left"> 
             <?php print render($page['header-bottom-left']); ?>   
@@ -67,7 +72,7 @@
 
   </div>
 
-    <div class="featured-outer featured-outer-two">
+  <div class="featured-outer featured-outer-two">
 
       <?php if (!empty($page['featured-two'])): ?>
         <header id="featured-two" class="inner-wrapper">      
@@ -77,11 +82,31 @@
 
   </div>
 
-    <div class="featured-outer featured-outer-three">
+  <div class="featured-outer featured-outer-three">
 
       <?php if (!empty($page['featured-three'])): ?>
         <header id="featured-three" class="inner-wrapper">      
             <?php print render($page['featured-three']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-four">
+
+      <?php if (!empty($page['featured-four'])): ?>
+        <header id="featured-four" class="inner-wrapper">      
+            <?php print render($page['featured-four']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-five">
+
+      <?php if (!empty($page['featured-five'])): ?>
+        <header id="featured-five" class="inner-wrapper">      
+            <?php print render($page['featured-five']); ?>
         </header>
       <?php endif; ?>
 

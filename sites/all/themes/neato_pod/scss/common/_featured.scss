@@ -1,7 +1,11 @@
 .block-current-search {
-	font-size: $sidebar-font-size;
+	
 	float: right;
 	width: 30.5%;
+
+	.current-search-item {
+		font-size: 1em;
+	}
 }
 
 .block-current-search h3 {
@@ -10,9 +14,9 @@
 	  background-color: $light-gray;
 	  border-radius: $base-border-radius;
 	  border: none;
-	  color: #fff;
+	  //color: #fff;
 	  font-family: $base-font-family;
-	  font-size: 1.2em;
+	  font-size: 1.1em;
 	  line-height: 1;
 	  padding: 1em 1em;
 	  width: 100%;
@@ -31,36 +35,128 @@
 }
 
 /*
-* Overwrites to the module "Chosen" for the Unit select dropdown on the series page
+ ******************************** Chosen dropdown filter overrides  **************************************************
  */
 .chosen-container {}
 .chosen-container-single .chosen-single {
 	//background: none;
 	box-shadow: none;
-	height: 3.4em;
+	height: 3.8em;
 	border: 1px solid $base-border-color;
-	padding: 10px;
+	padding: 12px;
 	border-radius: $base-border-radius;
 }
 
 .chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
 
 
+/*
+ ******************************** Featured Series View (.../people)  **************************************************
+ */
 
+.front .featured-outer-three {background-color: $light-gray;}
+
+.front .view-series-featured .view-content {
+	.views-row {
+
+    	@include span-columns(3);
+    	@include omega(4n);
+		margin-bottom: 2em;
+		
+	}
+	@include clearfix;
+}
+
+.view-admin-people .views-row-edit-static {display: none;}
 
 /*
  ******************************** Featured People View (.../people)  **************************************************
  */
 
-.front .featured-outer-three {background-color: $light-gray;}
+.front .featured-outer-four {background-color: $lighter-gray;}
 
-.front .view-people-featured {
+.front .view-people-featured .view-content {
 	.views-row {
 
     	@include span-columns(2);
     	@include omega(6n);
 		margin-bottom: 2em;
+		
 	}
+	@include clearfix;
+}
+
+.view-admin-people .views-row-edit-static {display: none;}
 
 
+/*
+ ******************************** Featured iTunes U category selectors  **************************************************
+ */
+
+
+.front .featured-outer-two {background-color: $lighter-gray; margin-top: 100px;}
+
+.categories {
+
+	.category  {
+		//@include reset-display;
+		@include span-columns(3);
+		@include omega(4n); 
+		display: block;
+
+		}
+
+	@include clearfix;
+
+}
+
+
+
+
+.hover-tile-outer {
+  border: 1px solid $base-border-color;
+  background-color: $light-gray;
+  margin-bottom: 20px;
+  display: block;
+  height: 70px;
+  cursor: pointer;
+  padding: 20px 0 0 0;
+  
+  a {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    vertical-align: middle;
+    //padding: 12px;
+  }
+}
+
+
+.hover-tile-container {
+  margin-top: 23px;
+  transform: scale(0);
+  opacity: 0;
+  font-size: 1em;
+  background: transparentize(#000, 0.5);
+  color: white;
+  padding: $base-spacing;
+  cursor: default;
+
+  li {
+  display: inline;
+
+    &:not(:last-child):after { 
+      content: "\00a0 | \00a0";
+    }
+
+  }
+  
+}
+
+.hover-tile-outer:hover .hover-tile-container {
+  transform: scale(1);
+  opacity: 1;
+  position: relative;
+  z-index: 100;
+  @include transition (opacity .9s ease-in-out);
 }

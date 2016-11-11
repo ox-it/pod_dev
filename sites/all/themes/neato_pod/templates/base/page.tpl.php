@@ -12,12 +12,14 @@
         </header>
       <?php endif; ?>
     </div>
+    
   </div>
 
 
   <div role="header" class="header-middle-outer">
 
     <div class="no-inner-wrapper header-middle">
+
       <?php if (!empty($page['header-middle-left'])): ?>
         <header id="site-header" class="header-middle-left"> 
             <?php print render($page['header-middle-left']); ?>   
@@ -38,6 +40,7 @@
   <div role="header" class="header-bottom-outer">
 
     <div class="inner-wrapper header-bottom">
+
       <?php if (!empty($page['header-bottom-left'])): ?>
         <header id="site-header" class="header-bottom-left"> 
             <?php print render($page['header-bottom-left']); ?>   

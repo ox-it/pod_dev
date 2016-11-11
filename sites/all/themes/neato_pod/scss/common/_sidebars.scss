@@ -1,27 +1,49 @@
 .sidebar {
+	
+	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
+
+	position: none;
 	font-size: $sidebar-font-size;
 
+
 	.block-facetapi {
-		border: 1px solid $base-border-color;
+		//border-bottom: 1px solid $base-border-color;
 		margin: 0 0 $base-spacing 0;
-		max-height: 30em;
-		overflow: scroll;
-		padding: $small-spacing;
+		
+		
+		.item-list {max-height: 30em; overflow: scroll;}
+		
+
+		//padding-right: $small-spacing;
+
+		h2 {
+			background-color: $lighter-gray;
+			padding: .75em;
+		}
 	}
 
-	.block-facetapi-units, .sidebar .block-facetapi-keywords {
-		border: 1px solid $base-border-color;
+	.sidebar .block-facetapi-units, .sidebar .block-facetapi-keywords {
+		//border-top: 1px solid $base-border-color;
 		margin: 0 0 $base-spacing 0;
 		max-height: 20em;
-		padding: $small-spacing;
+		//padding: $small-spacing;
+		
 	}
 
 	.block-facetapi-units ul.facetapi-facetapi-links,
 	.block-facetapi-keywords ul.facetapi-facetapi-links {
-		overflow: scroll;
+		
+		padding-right: -20px;
+
+		.item-list {overflow-y: scroll;}
+
+
+		li {border-bottom: 1px solid $base-border-color;}
 		
 	}
 }
+
+
 
 
 
