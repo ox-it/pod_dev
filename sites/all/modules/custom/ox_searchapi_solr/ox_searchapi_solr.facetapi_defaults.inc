@@ -65,9 +65,9 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
     ),
-    'facet_mincount' => '10',
+    'facet_mincount' => '15',
     'facet_missing' => '0',
-    'flatten' => '0',
+    'flatten' => '1',
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
@@ -136,7 +136,7 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'unit',
@@ -901,7 +901,7 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@episode_index_solr';
   $facet->realm = 'block';
   $facet->facet = 'title_az_glossary';
-  $facet->enabled = TRUE;
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',

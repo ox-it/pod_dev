@@ -31,7 +31,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'thumbnail',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -422,7 +422,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'thumbnail',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -909,7 +909,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'thumbnail',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -2451,6 +2451,62 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-series-field_featured_series'.
+  $field_instances['taxonomy_term-series-field_featured_series'] = array(
+    'bundle' => 'series',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_featured_series',
+    'label' => 'Featured Series',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-series-field_itunes_u_audio_code'.
   $field_instances['taxonomy_term-series-field_itunes_u_audio_code'] = array(
     'bundle' => 'series',
@@ -3201,6 +3257,7 @@ function ox_podcasts_field_default_field_instances() {
   t('Enter the people you wish to promote as a comma-separated list. Only people who have an image will be displayed, and only the first 4 people will be displayed.');
   t('Enter the units you wish to promote as a comma-separated list. Only units who have an image will be displayed, and only the first 4 people will be displayed.');
   t('Featured');
+  t('Featured Series');
   t('File ID of this file on Mediapub. This is assumed to be more stable than the file ID on Podcasts, and is used for generating permanet video embedding URLs.  It should <i>never</i>be changed.');
   t('Identifies the document type.');
   t('Image');
