@@ -1,0 +1,49 @@
+
+/*
+*  Entity pages (i.e., taxonomy and node displays) can use the "Field Group" module
+*  The field group module allows for nesting, but comes with default styles
+*  The 'fieldset' selector below should not be confused with the "fieldset_views" module
+*  The code below turns off all default styling for the Field Group module
+*/
+//fieldset {border: none; margin: 0; padding: 0; background-color: transparent;}
+
+.group-series-left {
+	@include span-columns(4);
+}
+
+.group-series-right {
+
+	@include span-columns(8);
+}
+
+.vocabulary-series {
+	:not(.collapsed) .field-group-format-toggler a:after {
+		content: "   ▲   ";
+	}
+
+	.collapsed .field-group-format-toggler a:after {
+		content: "   ▼   ";
+	}
+
+	.group-series a {display: block;}
+
+	.group-series {
+		display: block;
+		border: 1px solid $light-gray; 
+		padding: 10px 10px 0 10px;
+		margin-bottom: 1em;
+	}
+
+	.taxonomy-term-description br { 
+
+			content: "A" !important;
+		    display: block !important;
+		    margin-bottom: 1em !important;
+		}
+
+}
+
+
+
+
+

@@ -1,64 +1,139 @@
+// $gutter: 10em;
+// // Import Neat.
+// @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
+// @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
+
 /*
  *****************  Search (Solr) View (.../solr)  **************************************************
  */
 
+.page-solr {
 
-.view-episode-search-solr- .views-row {
-	margin-bottom: 60px; 
-	padding: 0 0 10px 0;
-	//border-top: 1px solid $base-border-color;
-	border-bottom: 1px solid $base-border-color;
-}
-//.view-episode-search-solr- .views-fieldset {border: 1px solid $base-border-color;}
-.view-episode-search-solr- .views-field-field-series-name {}
+	.view-episode-search-solr- {
 
-.view-episode-search-solr-
-{
-	.fieldset-top {
+		.views-row {
+			margin-bottom: 60px; 
+			padding: 0 0 10px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+		}
+
+		.fieldset-top {
+			
+			@include display-context(table);
+
+			.fieldset-top-left {
+				@include span-columns(2.5);
+				//@include pad();
+				img:hover {opacity: .8;}
+				&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $light-gray;}
+			}
+			.fieldset-top-middle {
+				@include span-columns(7.5);
+				//@include shift(-.2);
+				//@include pad();
+			}
+			.fieldset-top-right {
+				@include span-columns(2);
+				//@include pad();
+			    text-align: right;
+			}
+
+			@include clearfix;
+		}
+
+		.views-field-title {
+			font-size: 1.3em;
+			background-color: $lighter-gray;
+			padding: 5px;
+			margin-bottom: .5em;
+		}
+
+		.views-field-body-value {
+			border-bottom: 1px solid $base-border-color; 
+			margin-bottom: .5em;
+		}
+
+		.views-field-field-series-name, 
+		.views-field-field-series-field-unit {
+		} 
+
+		.views-field-field-people {
+			vertical-align: bottom;
+		}
 		
-		@include display-context(table);
-
-		.fieldset-top-left {
-			@include span-columns(2.5);
-			//@include pad();
-		}
-		.fieldset-top-middle {
-			@include span-columns(7.5);
-			//@include shift(-.2);
-			//@include pad();
-		}
-		.fieldset-top-right {
-			@include span-columns(2);
-			//@include pad();
-		    text-align: right;
-		}
-
-		@include clearfix;
 	}
-	
 }
 
-.view-episode-search-solr- .views-field-title {
-	font-size: 1.3em;
-	background-color: $lighter-gray;
-	padding: 5px;
-	margin-bottom: .5em;
+
+/*
+ *****************  Series (Solr) View (.../series/series-name)************************************
+ *  Uses the same view as "Search (Solr) View" above
+ */
+
+
+.page-taxonomy {
+
+	.view-episode-search-solr- {
+
+		.views-row {
+			margin-bottom: 30px; 
+			padding: 0 0 10px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+		}
+
+		.fieldset-top {
+			
+			@include display-context(table);
+
+			.fieldset-top-left {
+				@include span-columns(0);
+			}
+			.fieldset-top-middle {
+				@include span-columns(10);
+				//@include shift(-.2);
+				//@include pad();
+			}
+			.fieldset-top-right {
+				@include span-columns(2);
+				//@include pad();
+			    text-align: right;
+			}
+
+			@include clearfix;
+		}
+
+		.views-field-title {
+			font-size: 1.3em;
+			background-color: $lighter-gray;
+			padding: 5px;
+			margin-bottom: .5em;
+		}
+
+		.views-field-body-value {
+			border-bottom: 1px solid $base-border-color; 
+			margin-bottom: .5em;
+		}
+
+		.views-field-field-series-name, 
+		.views-field-field-series-field-unit {
+		} 
+
+		.views-field-field-people {
+			vertical-align: bottom;
+		}
+		
+	}
 }
-.view-episode-search-solr- .views-field-body-value {
-	border-bottom: 1px solid $base-border-color; 
-	margin-bottom: .5em;
-}
-
-.view-episode-search-solr- .views-field-field-series-name, 
-.view-episode-search-solr- .views-field-field-series-field-unit {
-} 
 
 
 
 
-.view-episode-search-solr- .views-field-field-people {
-	vertical-align: bottom;
-}
+
+
+
+
 
 
 /*
@@ -96,10 +171,10 @@
 
     	@include span-columns(6);
     	@include omega(2n);
-		margin-bottom: 6em;
+		margin-bottom: 5em;
 
 		//border-top: 1px solid $base-border-color;
-		border-bottom: 1px solid $base-border-color;
+		//border-bottom: 1px solid $base-border-color;
 
 		@include media($tablet) {
 			border: 1px solid $base-border-color;
@@ -121,9 +196,10 @@
 
 			.fieldset-series-right {
 				@include span-columns(3 of 6);
-				
-				height: 24em;
+				height: 21em;
+				@include shift(-.2);
 				overflow: scroll;
+				font-size: .8em;
 
 				@include media($tablet) {
 					@include span-columns(6 of 6);
@@ -138,47 +214,45 @@
 		//@include clearfix;
 
 			border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+	    	margin-bottom: 5px;
+	    	padding: 5px;
+
+		}
+
+		.views-field-name {
+			//height: auto;
+			min-height: 4em;
+			font-size: 1.2em;
+			background-color: $lighter-gray;
+			margin-bottom: .6em;
+			padding: 5px;
+      
+
+      		@include media($tablet) {
+				font-size: 1em;
+				min-height: 4em;
+			}
+    	}
+
+    	.views-field-nid, .views-field-created {
+	    	border-bottom: 1px solid $base-border-color;
 	    	margin-bottom: 5px;
 	    	padding: 3px;
+	    }
 
+	    .views-field-description {
+
+
+	    	@include media($tablet) {
+				height: 54px; 
+				overflow: hidden;
 
 			}
 
+    	}
+
 	}
-
-
-
-    .views-field-name {
-      //height: auto;
-      min-height: 4em;
-      font-size: 1.2em;
-      background-color: $lighter-gray;
-      margin-bottom: 1em;
-      padding: 5px;
-      
-
-      	@include media($tablet) {
-			font-size: 1em;
-			min-height: 4em;
-		}
-    }
-
-    .views-field-nid, .views-field-created {
-    	border-bottom: 1px solid $base-border-color;
-    	margin-bottom: 5px;
-    	padding: 3px;
-    }
-
-    .views-field-description {
-    	padding-right: 3em;
-    	@include media($tablet) {
-			height: 54px; 
-			overflow: hidden;
-			padding-right: 0;
-
-		}
-
-    }
 
 }
 
@@ -192,9 +266,20 @@
 .view-people-view {
 	.views-row {
 
-    	@include span-columns(3);
-    	@include omega(4n);
-		margin-bottom: 2em;
+    	// @include span-columns(2);
+    	// @include omega(6n);
+
+        float: left;
+        width: 19%;
+        //padding: 1%;
+        display: inline-block;
+        margin: 0 8% 2% 0;
+        &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
+        &:nth-child(4n) { margin-right: 0; } 
+
+		margin-bottom: 3em;
+
+
 
 		// .views-field-field-people-image .field-content:empty { background-image: url(".../images/no-avatar-ff.png") no-repeat; }
 
