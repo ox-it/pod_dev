@@ -20,6 +20,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -30,6 +32,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'medium',
         ),
@@ -53,7 +57,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36358,
+      'default_image' => 36363,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -319,7 +323,10 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'list_default',
         'weight' => 1,
       ),
@@ -365,7 +372,10 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'list_default',
         'weight' => 3,
       ),
@@ -411,6 +421,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -421,6 +433,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => 'content',
           'image_style' => 'medium',
         ),
@@ -431,6 +445,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'large',
         ),
@@ -448,7 +464,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36360,
+      'default_image' => 36365,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -514,7 +530,10 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'metatags_quick',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'metatags_quick_default',
         'weight' => 2,
       ),
@@ -556,7 +575,10 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'list',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'list_default',
         'weight' => 0,
       ),
@@ -898,6 +920,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -908,6 +932,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'medium',
         ),
@@ -931,7 +957,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36359,
+      'default_image' => 36364,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -2182,10 +2208,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2213,14 +2244,28 @@ function ox_podcasts_field_default_field_instances() {
     'description' => 'Upload a photo for this person. Square pictures are best as the image will be cropped and resized automatically for use in multiple places on the website.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => 'Empty Field',
+          'empty_fields_handler' => '',
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'people',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => 'Empty Field',
+          'empty_fields_handler' => 'EmptyFieldText',
+          'image_link' => '',
+          'image_style' => 'people',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2284,7 +2329,13 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2316,9 +2367,22 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'link_default',
-        'weight' => 1,
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2365,9 +2429,22 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2398,10 +2475,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'metatags_quick',
         'settings' => array(),
-        'type' => 'metatags_quick_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2429,10 +2511,15 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'metatags_quick',
         'settings' => array(),
-        'type' => 'metatags_quick_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -2466,7 +2553,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -2517,7 +2604,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'above',
@@ -2564,7 +2651,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'above',
@@ -2610,7 +2697,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'above',
@@ -2656,7 +2743,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -2700,7 +2787,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 16,
       ),
       'full' => array(
         'label' => 'above',
@@ -2745,9 +2832,12 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -2804,11 +2894,14 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'image',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+          'image_link' => '',
+          'image_style' => 'series',
         ),
-        'type' => 'file_rendered',
+        'type' => 'image',
         'weight' => 1,
       ),
       'full' => array(
@@ -2821,6 +2914,8 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
           'image_link' => 'content',
           'image_style' => 'media_thumbnail',
         ),
@@ -2888,7 +2983,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'above',
@@ -2968,7 +3063,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -3011,9 +3106,12 @@ function ox_podcasts_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'taxonomy',
-        'settings' => array(),
+        'settings' => array(
+          'empty_fields_emptyfieldtext_empty_text' => '',
+          'empty_fields_handler' => '',
+        ),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
