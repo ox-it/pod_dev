@@ -181,6 +181,82 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_people_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'people' => 'people',
+        'people/*' => 'people/*',
+      ),
+    ),
+    'taxonomy_term' => array(
+      'values' => array(
+        'people' => 'people',
+      ),
+      'options' => array(
+        'term_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-people_view-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-people_view-page',
+          'region' => 'featured-one',
+          'weight' => '-27',
+        ),
+        'fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a' => array(
+          'module' => 'fieldblock',
+          'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
+          'region' => 'featured-one',
+          'weight' => '-25',
+        ),
+        'fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403' => array(
+          'module' => 'fieldblock',
+          'delta' => '3dbe9f8cbf1b14bec2bd52b6292ca403',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'fieldblock-7d9066c7669a89290d050e50e280919a' => array(
+          'module' => 'fieldblock',
+          'delta' => '7d9066c7669a89290d050e50e280919a',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'fieldblock-cdd8d27af833196db5fd48c8da91d8d8' => array(
+          'module' => 'fieldblock',
+          'delta' => 'cdd8d27af833196db5fd48c8da91d8d8',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+        'fieldblock-54f7e23c84e601be1dc3f7dffffeec2b' => array(
+          'module' => 'fieldblock',
+          'delta' => '54f7e23c84e601be1dc3f7dffffeec2b',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-people-page',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_people_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_search_banner';
   $context->description = '';
   $context->tag = '';
@@ -340,7 +416,15 @@ function ox_context_context_default_contexts() {
     'path' => array(
       'values' => array(
         'series' => 'series',
-        'series*' => 'series*',
+        'series/*' => 'series/*',
+      ),
+    ),
+    'taxonomy_term' => array(
+      'values' => array(
+        'series' => 'series',
+      ),
+      'options' => array(
+        'term_form' => '1',
       ),
     ),
   );
@@ -353,7 +437,34 @@ function ox_context_context_default_contexts() {
           'region' => 'featured-one',
           'weight' => '-10',
         ),
+        'fieldblock-f3b41b0d6b540a613d7f82df1568a0ba' => array(
+          'module' => 'fieldblock',
+          'delta' => 'f3b41b0d6b540a613d7f82df1568a0ba',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
+        'fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51' => array(
+          'module' => 'fieldblock',
+          'delta' => '8a7af6a03ced7132e0a84a2c74e6eb51',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'fieldblock-930ac34e1bf7b2e5e0bdb144db8a5d2c' => array(
+          'module' => 'fieldblock',
+          'delta' => '930ac34e1bf7b2e5e0bdb144db8a5d2c',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'fieldblock-42d99c56b52cb2270df884230914d4c8' => array(
+          'module' => 'fieldblock',
+          'delta' => '42d99c56b52cb2270df884230914d4c8',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-series-page',
     ),
   );
   $context->condition_mode = 0;
