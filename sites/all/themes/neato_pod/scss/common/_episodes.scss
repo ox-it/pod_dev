@@ -1,0 +1,72 @@
+main #content #page-title {
+	font-size: 1.5em;
+	//padding-bottom: 10px;
+	 
+}
+
+
+/*
+ *****************  Search (Solr) View (.../solr)  **************************************************
+ */
+
+.page-solr {
+
+	.view-episode-search-solr- {
+
+		.views-row {
+			margin-bottom: 60px; 
+			padding: 0 0 10px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+
+			.fieldset-top {
+				@include clearfix;
+
+				.fieldset-top-left {
+					@include span-columns(2.5);
+					img:hover {opacity: .8;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $light-gray;}
+				}
+				.fieldset-top-middle {
+					@include span-columns(7.5);
+					font-size: $description-font-size;
+				}
+				.fieldset-top-right {
+
+					text-align: right; 
+						img {
+							width: 13%;
+						}
+
+					}
+
+			}
+
+			.views-field-title {
+				font-size: 1.3em;
+				background-color: $lighter-gray;
+				padding: 5px;
+				margin-bottom: .5em;
+			}
+
+			.views-field-body-value {
+				border-bottom: 1px solid $base-border-color; 
+				margin-bottom: .5em;
+			}
+
+			.views-field-field-series-name, 
+			.views-field-field-series-field-unit {
+			} 
+
+			.views-field-field-people {
+				vertical-align: bottom;
+			}
+
+
+		}
+
+
+		
+	}
+
+}

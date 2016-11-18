@@ -1,0 +1,216 @@
+
+/*
+ ********************************   People Page   **************************************************
+ */
+
+.context-people-page {
+
+	main {
+
+		#page-title {display:none;}
+
+		#block-block-4  {
+			
+			max-width:100%;
+          	height:320px;
+          	background: url("../images/people-avatar.png") no-repeat;
+          	background-size: 100%;
+
+          	p {display: none;}
+
+		}
+
+		#content {
+
+			//Can use if using "field_group" module
+
+			// .vocabulary-people {
+			// 	:not(.collapsed) .field-group-format-toggler a:after {
+			// 		content: "   ▲   ";
+			// 	}
+
+			// 	.collapsed .field-group-format-toggler a:after {
+			// 		content: "   ▼   ";
+			// 	}	
+			// }
+
+		}
+
+		// aside section {
+		// 	.field-name-field-people-image {
+		// 		.field-items {
+		// 			max-width:100%;
+		//       		height:325px;
+		//           	background: url("../images/people-avatar.png") no-repeat;
+		//           	background-size: 100%;
+		// 		}
+		// 		.field-item {color: transparent;}
+		// 	}
+		// }
+	}
+
+	#featured  {
+
+		.view-display-id-entity_view_1 {
+			margin-top: 2em;
+
+			.views-row {
+				width: auto;
+				padding-top: 1em;
+				padding-bottom: 2em;
+				@include span-columns(2);
+				@include omega(6n);
+				font-size: $description-font-size;
+
+
+			}		
+		}
+
+		.view-display-id-entity_view_2 {
+			margin-top: 2em;
+			
+
+			.views-field-name-1 {
+				font-size: 2em;
+				border-bottom: 1px solid $light-gray;
+			}
+
+			.views-field-description {
+				padding-top: $base-spacing;
+			}
+
+			.views-field-description .field-content p br { 
+				content: "A" !important;
+			    display: block !important;
+			    margin-bottom: 1em !important;
+			    
+			}
+
+
+
+		}
+
+	}
+
+}
+
+
+
+/*
+ *****************  People View (.../people)  **************************************************
+ */
+
+
+
+.page-people .view-people-view {
+	.views-row {
+
+    	// @include span-columns(2);
+    	// @include omega(6n);
+    	// 
+    	// Using explicit floats here, not the grid, as want larger grid gutters. 
+
+        float: left;
+        width: 19%;
+        //padding: 1%;
+        display: inline-block;
+        margin: 0 8% 2% 0;
+        &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
+        &:nth-child(4n) { margin-right: 0; } 
+
+		margin-bottom: 3em;
+
+
+		.views-field-field-people-image .field-content:empty { 
+			max-width:100%;
+          	height:200px;
+          	background: url("../images/people-avatar.png") no-repeat;
+          	background-size: 100%;
+		}
+
+	}
+
+
+}
+
+/*
+ *****************  People (Solr) View (.../people/person-name)************************************
+ *  Uses the same view as "Search (Solr) View" above
+ */
+
+.page-taxonomy .vocabulary-people {
+
+	.view-episode-search-solr- {
+
+		.views-row {
+	
+			margin-bottom: 35px; 
+			padding: 0 0 15px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+
+			.fieldset-top {
+				@include clearfix;
+
+				.fieldset-top-left {	
+					@include span-columns(2.5);
+					img:hover {opacity: .8;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $light-gray;}
+				}
+
+				.fieldset-top-middle {	
+					@include span-columns(7.5);
+					font-size: $description-font-size;
+				}
+
+				.fieldset-top-right {
+
+					text-align: right; 
+					img {
+						width: 13%;
+					}     
+				}
+			}
+
+			.views-field-title {
+				font-size: 1.3em;
+				background-color: $lighter-gray;
+				//padding: 5px;
+				margin-bottom: .5em;
+			}
+
+			.views-field-body-value {
+				//border-bottom: 1px solid $base-border-color; 
+				margin-bottom: .5em;
+			}
+
+			.views-field-field-series-name, 
+			.views-field-field-series-field-unit {
+			} 
+
+			.views-field-field-people {
+				vertical-align: bottom;
+			}
+
+		}
+	
+	}
+}
+
+
+
+
+/*
+ *****************  Lexicon View (.../people)  **************************************************
+ */
+
+.lexicon-list > dl > dt {
+	@include span-columns(3);
+    @include omega(4n);
+	width: 20%
+}
+
+.lexicon-list > p {
+	@include clearfix;
+}
+

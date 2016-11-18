@@ -1,4 +1,8 @@
 .sidebar {
+
+	input {
+		margin-bottom: $base-spacing / 2;
+	}
 	
 	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
 

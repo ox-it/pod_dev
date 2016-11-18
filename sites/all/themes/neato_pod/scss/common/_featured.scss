@@ -1,3 +1,8 @@
+/*
+ ******************************** Search API/ Solr "Current Search block"  *****************************************
+ */
+
+
 .block-current-search {
 	
 	float: right;
@@ -29,10 +34,7 @@
 
 }
 
-.featured-outer-one {
-	padding: $base-spacing 0; 
-	background-color: #f8f8f8; 
-}
+
 
 /*
  ******************************** Chosen dropdown filter overrides  **************************************************
@@ -51,8 +53,25 @@
 
 
 /*
- ******************************** Featured Series View (.../people)  **************************************************
+ ********************************   Main Featured    **************************************************
  */
+
+#featured {
+	padding: $base-spacing 0;
+}
+
+
+.featured-outer-one {
+	//padding: $base-spacing 0; 
+	margin-bottom: $base-spacing;
+	background-color: #f8f8f8; 
+}
+
+
+/*
+ ********************************   Featured Series View   **************************************************
+ */
+
 
 .front .featured-outer-three {background-color: $light-gray;}
 
@@ -61,7 +80,8 @@
 
     	@include span-columns(3);
     	@include omega(4n);
-		margin-bottom: 2em;
+		margin-bottom: 1em;
+		margin-top: 1em;
 		
 	}
 	@include clearfix;
@@ -70,7 +90,7 @@
 .view-admin-people .views-row-edit-static {display: none;}
 
 /*
- ******************************** Featured People View (.../people)  **************************************************
+ ********************************   Featured People View   **************************************************
  */
 
 .front .featured-outer-four {background-color: $lighter-gray;}
@@ -89,8 +109,10 @@
 .view-admin-people .views-row-edit-static {display: none;}
 
 
+
+
 /*
- ******************************** Featured iTunes U category selectors  **************************************************
+ ********************************   Featured iTunes U category selectors   **************************************************
  */
 
 
@@ -103,24 +125,18 @@
 		@include span-columns(3);
 		@include omega(4n); 
 		display: block;
-
 		}
-
 	@include clearfix;
-
 }
-
-
-
 
 .hover-tile-outer {
   border: 1px solid $base-border-color;
   background-color: $light-gray;
-  margin-bottom: 20px;
+  margin: $base-spacing/2 0;
   display: block;
   height: 70px;
   cursor: pointer;
-  padding: 20px 0 0 0;
+  padding: $base-spacing 0;
   
   a {
     display: block;
@@ -130,7 +146,6 @@
     //padding: 12px;
   }
 }
-
 
 .hover-tile-container {
   margin-top: 23px;
@@ -148,9 +163,7 @@
     &:not(:last-child):after { 
       content: "\00a0 | \00a0";
     }
-
-  }
-  
+  }  
 }
 
 .hover-tile-outer:hover .hover-tile-container {

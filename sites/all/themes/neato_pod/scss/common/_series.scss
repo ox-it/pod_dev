@@ -1,0 +1,220 @@
+/*
+ ********************************   Series Page   **************************************************
+ */
+
+
+.context-series-page {
+	main {
+		#page-title {display:none;}
+
+		#content {
+			.vocabulary-series {
+				:not(.collapsed) .field-group-format-toggler a:after {
+					content: "   ▲   ";
+				}
+
+				.collapsed .field-group-format-toggler a:after {
+					content: "   ▼   ";
+				}
+
+				.taxonomy-term-description br { 
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1.2em !important;
+				}
+
+			}
+
+		}
+	}	
+
+	#featured  {
+		.view-eva-display-fields {
+			margin-top: 2em;
+
+			.views-field-name {
+				font-size: 2em;
+				border-bottom: 1px solid $light-gray;
+			}
+
+			.views-field-description {
+				padding-top: $base-spacing;
+			}
+
+			.views-field-description .field-content p { 
+				// content: "A" !important;
+			 //    display: block !important;
+			    margin-bottom: 1em !important;
+			}
+
+			br {
+				content: "A" !important;
+			    display: block !important;
+			    margin-bottom: 1em !important;
+
+			}
+		}
+	}
+}
+
+
+
+/*
+ *****************  Series View (.../series)  **************************************************
+ */
+
+.view-series-gallery {
+	.views-row {
+
+    	@include span-columns(6);
+    	@include omega(2n);
+		margin-bottom: 5em;
+
+		//border-top: 1px solid $base-border-color;
+		//border-bottom: 1px solid $base-border-color;
+
+		@include media($tablet) {
+			border: 1px solid $base-border-color;
+			padding: 20px;	
+		}
+
+		.fieldset-series-middle {
+			@include clearfix;
+
+			.fieldset-series-left { 
+				@include span-columns(3 of 6);
+				//margin-bottom: 2em;
+				
+				@include media($tablet) {
+					@include span-columns(6 of 6);
+
+				}
+			}
+
+			.fieldset-series-right {
+				@include span-columns(3 of 6);
+				height: 21em;
+				@include shift(-.2);
+				overflow: scroll;
+				font-size: $description-font-size;
+
+				br { 
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1.2em !important;
+				}
+
+				@include media($tablet) {
+					@include span-columns(6 of 6);
+					height: 10em;
+					
+				}
+			}
+
+		}
+
+		.fieldset-series-bottom {
+		//@include clearfix;
+
+			border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+	    	margin-bottom: 5px;
+	    	padding: 5px;
+
+		}
+
+		.views-field-name {
+			//height: auto;
+			min-height: 4em;
+			font-size: 1.2em;
+			background-color: $lighter-gray;
+			margin-bottom: .6em;
+			padding: 5px;
+      
+
+      		@include media($tablet) {
+				font-size: 1em;
+				min-height: 4em;
+			}
+    	}
+
+    	.views-field-nid, .views-field-created {
+	    	border-bottom: 1px solid $base-border-color;
+	    	margin-bottom: 5px;
+	    	padding: 3px;
+	    }
+
+	    .views-field-description {
+
+
+	    	@include media($tablet) {
+				height: 54px; 
+				overflow: hidden;
+
+			}
+
+    	}
+
+	}
+
+}
+
+
+/*
+ *****************  Series (Solr) View (.../series/series-name)************************************
+ *  Uses the same view as "Search (Solr) View" above
+ */
+
+.page-taxonomy .vocabulary-series {
+
+	.view-episode-search-solr- {
+	
+		.views-row {
+			margin-bottom: 30px; 
+			padding: 0 0 10px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+
+			.fieldset-top {
+				@include clearfix;
+
+				.fieldset-top-left {
+					@include span-columns(0);
+				}
+				.fieldset-top-middle {
+					@include span-columns(10);
+					font-size: $description-font-size;
+				}
+				.fieldset-top-right {
+
+					text-align: right; 
+						img {
+							width: 13%;
+						}
+					     
+					}
+				}
+
+			.views-field-title {
+				font-size: 1.3em;
+				background-color: $lighter-gray;
+				padding: 5px;
+				margin-bottom: .5em;
+			}
+
+			.views-field-body-value {
+				border-bottom: 1px solid $base-border-color; 
+				margin-bottom: .5em;
+			}
+
+			.views-field-field-series-name, 
+			.views-field-field-series-field-unit {
+			} 
+
+			.views-field-field-people {
+				vertical-align: bottom;
+			}
+
+		}
+	}
+}

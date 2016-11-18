@@ -42,7 +42,8 @@
  */
 ?>
 <?php if ($block->delta != 'main'): ?>
-  <section class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <section id="block-<?php print $block->module . '-' . $block->delta; ?>" class="<?php print $classes; ?> " <?php print $attributes; ?>>
+
 <?php endif; ?>
 
 <?php print render($title_prefix); ?>
