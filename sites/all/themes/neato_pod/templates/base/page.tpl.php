@@ -69,6 +69,16 @@
       <?php endif; ?>
 
   </div>
+
+  <div class="featured-outer featured-outer-two">
+
+      <?php if (!empty($page['featured-two'])): ?>
+        <header id="featured-two" class="inner-wrapper">      
+            <?php print render($page['featured-two']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
 <!-- ______________________ ERROR _______________________ -->
  
   <?php if ($messages): ?>

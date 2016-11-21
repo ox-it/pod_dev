@@ -156,6 +156,20 @@ Drupal.behaviors.podOmegaHideSeek = {
 
 };
 
+Drupal.behaviors.personAssociated = {
+  attach: function(context) {
+
+    
+
+    $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields h2").click(function () {
+
+      $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields .view-content").slideToggle("slow");
+      $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields h2").toggleClass('collapsed');
+      });
+
+    }
+};
+
 
 
 })(jQuery);

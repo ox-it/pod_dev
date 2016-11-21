@@ -14,10 +14,11 @@ main #content #page-title {
 	.view-episode-search-solr- {
 
 		.views-row {
+			//background-color: $colorVLightGrey;
 			margin-bottom: 60px; 
 			padding: 0 0 10px 0;
 			//border-top: 1px solid $base-border-color;
-			border-bottom: 1px solid $base-border-color;
+			//border-bottom: 1px solid $base-border-color;
 
 			.fieldset-top {
 				@include clearfix;
@@ -25,7 +26,7 @@ main #content #page-title {
 				.fieldset-top-left {
 					@include span-columns(2.5);
 					img:hover {opacity: .8;}
-					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $light-gray;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorLightGrey;}
 				}
 				.fieldset-top-middle {
 					@include span-columns(7.5);
@@ -42,11 +43,28 @@ main #content #page-title {
 
 			}
 
+			.fieldset-bottom {
+				border-top: 1px solid $base-border-color;
+				margin-top: $base-spacing/2;
+				//padding-top: $base-spacing/2;
+				
+			}
+
 			.views-field-title {
 				font-size: 1.3em;
-				background-color: $lighter-gray;
-				padding: 5px;
+				//border-top: 2px solid $base-border-color;
+				//border-bottom: 1px solid $base-border-color;
+				
 				margin-bottom: .5em;
+				a {
+					background-color: $colorBeigeGrey;
+					display: block;
+					border-radius: $base-border-radius;
+					padding: 5px;
+					&:hover {
+						background-color: $colorLightGrey;
+					}
+				}
 			}
 
 			.views-field-body-value {

@@ -2278,11 +2278,18 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 0,
+      'default_image' => 36366,
       'file_directory' => 'images/contributors',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '800 KB',
       'max_resolution' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'min_resolution' => '',
       'title_field' => 1,
       'title_field_default' => '',
@@ -2297,7 +2304,14 @@ function ox_podcasts_field_default_field_instances() {
         'file_entity_inline' => 1,
         'file_entity_inline_fields' => array(),
         'filefield_sources' => array(
-          'filefield_sources' => array(),
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'remotefile' => 0,
+            'upload' => 'upload',
+          ),
           'source_attach' => array(
             'absolute' => 0,
             'attach_mode' => 'move',
@@ -2308,6 +2322,7 @@ function ox_podcasts_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
+            'search_all_fields' => 0,
           ),
         ),
         'preview_image_style' => 'thumbnail',

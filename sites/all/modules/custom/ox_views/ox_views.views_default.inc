@@ -1655,7 +1655,7 @@ function ox_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '52';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2322,7 +2322,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_2']['label'] = 'fieldset-series-middle';
+  $handler->display->display_options['fields']['fieldset_2']['label'] = 'fieldset-series-wrapper';
   $handler->display->display_options['fields']['fieldset_2']['children'] = array(
     0 => 'fieldset',
     1 => 'fieldset_1',

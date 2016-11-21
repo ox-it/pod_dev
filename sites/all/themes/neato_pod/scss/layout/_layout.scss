@@ -6,8 +6,8 @@ body {
 
   header {
     &.header-top { @include span-columns(12); }
-    &.header-middle-left { @include span-columns(8); }
-    &.header-middle-right { @include span-columns(4); }
+    &.header-middle-left { @include span-columns(6); }
+    &.header-middle-right { @include span-columns(6); }
     &.header-bottom-left { @include span-columns(6); }
     &.header-bottom-right { @include span-columns(6); }
     

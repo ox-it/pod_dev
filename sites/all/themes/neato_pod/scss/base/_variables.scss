@@ -7,32 +7,66 @@ $heading-font-family: $base-font-family;
 $base-font-size: .9rem;
 $sidebar-font-size: .9em;
 $views-font-size: .9em;
-$description-font-size: .8em;
+$description-font-size: .9em;
 
 // Line height
 $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius-search: 4px;
+$base-border-radius: 2px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
-// Colors
-$blue: #477dca;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
-$lighter-gray: #EEEEEE;
+
+
+// Colors (Oxford)
+
+$colorLightGrey: #e0ded9; //Oxford
+$colorVLightGrey: #f9f8f5; //Oxford
+$colorDarkGrey: #a6a6a6; //Oxford
+$colorCopyrightGrey: #c7c2bc; //Oxford 
+$colorBeigeGrey: #f3f1ec; //Oxford 
+
+//Random (Oxford)
+$colorGraduateLightGreen: #aab300;
+$colorGraduateDarkGreen: #69913b;
+$colorBooksBlog: #cf7a30;
+
+$colorSecondary: #a79d96;
+
+// Shades (Oxford)
+$colorOffBlack: 333333;
+$colorMidGrey: #7a736e;
+$colorTertiary: #f3f1ee;
+
+//Blues (Oxford)
+$colorPrimary: #002147; //#002248;//#002147;
+$colorDarkBlue: #001c3d;
+$colorWashedOutBlue: #193658;
+$colorBlueGrey: #353c47;
+$colorVeryLightBlue: #f0f5f8;
+$colorLightPrimary: #122f53;
+$colorPrimaryAdapted: #224269;
+
+
+
+//Link Colors (Oxford)
+$colorAltLinkHover: #be0f34;
+$colorLink: #3277ae;
+$colorLinkHover: #44687d;
+$colorIconBlueGrey: #a1c4d0;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $dark-gray;
-$action-color: $blue;
+$base-font-color: $colorOffBlack;
+$action-color: $colorLinkHover;
+$font-heading-color: $base-background-color;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: $colorLightGrey;
 $base-border: 1px solid $base-border-color;
 
 // Forms

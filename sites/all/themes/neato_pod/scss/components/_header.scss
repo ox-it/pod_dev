@@ -1,24 +1,56 @@
 
 
-.header-top-outer, .header-bottom-outer, .footer-top-outer {background-color: #eee;}
-.header-middle-outer {background-color: #ccc; height: 120px; padding: 20px;}
-.header-middle { display: block; }
-.header-middle-right .block {float: right;}
+.header-top-outer, .header-bottom-outer, .footer-top-outer {
+	background-color: $colorBeigeGrey;
+}
+
+.header-middle-outer {
+	background-color: $colorPrimary; //$colorCopyrightGrey; //$colorWashedOutBlue;/
+	//opacity: .7;
+	height: 110px; 
+	padding: 20px;
+}
+
+.header-middle { 
+	display: block; 
+}
+
+.header-middle-right .block {
+	float: right;
+}
+
+.header-bottom .block {
+	padding-top: 8px;
+}
 
 
-.block-menu ul.menu li {display: inline-block; margin: 0 0 0 10px;}
-.block-menu ul.menu li a {padding: 10px; border: 1px solid red; display: block;}
+.block-menu ul.menu li {
+	display: inline-block; 
+	margin: 0 0 0 15px;
+	background-color: lighten($colorPrimary, 2%);
+
+}
+
+.block-menu ul.menu li a {
+	color: $colorVLightGrey;
+	padding: 2em 1.5em; 
+	border: 1px solid darken($colorLinkHover, 12%); 
+	display: block;
+	border-radius: $base-border-radius;
+}
 
 
 #logo img {
-	@include size(300px auto);  //This overrides the responsive image settings in _media.scss 
+	@include size(105px auto);  //This overrides the responsive image settings in _media.scss 
 	float: left; 
+	border: 1px solid #fff;
+	margin-bottom: -15px;
 	//margin: 5px 0;
 
 }
 #site-name a {
 	font-family: $lucida-grande; 
-	font-size: 2em;
-	float: right;
-	padding-right: 10%;
+	font-size: 1.5em;
+	padding-left: $base-spacing;
+	color: $font-heading-color;
 }

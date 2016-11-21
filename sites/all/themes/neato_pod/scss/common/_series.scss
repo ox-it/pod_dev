@@ -29,12 +29,13 @@
 	}	
 
 	#featured  {
+
 		.view-eva-display-fields {
-			margin-top: 2em;
+			margin-top: 3em;
 
 			.views-field-name {
-				font-size: 2em;
-				border-bottom: 1px solid $light-gray;
+				font-size: 1.8em;
+				border-bottom: 1px solid $colorLinkHover;
 			}
 
 			.views-field-description {
@@ -78,7 +79,7 @@
 			padding: 20px;	
 		}
 
-		.fieldset-series-middle {
+		.fieldset-series-wrapper {
 			@include clearfix;
 
 			.fieldset-series-left { 
@@ -89,13 +90,20 @@
 					@include span-columns(6 of 6);
 
 				}
+
+				.views-field-field-series-album-cover img:hover   {
+					opacity: .8;
+					
+				}
 			}
+
+
 
 			.fieldset-series-right {
 				@include span-columns(3 of 6);
 				height: 21em;
 				@include shift(-.2);
-				overflow: scroll;
+				//overflow: scroll;
 				font-size: $description-font-size;
 
 				br { 
@@ -123,13 +131,24 @@
 
 		}
 
+
 		.views-field-name {
 			//height: auto;
-			min-height: 4em;
+			
 			font-size: 1.2em;
-			background-color: $lighter-gray;
+			background-color: $colorVeryLightBlue;
+			border-radius: $base-border-radius;
 			margin-bottom: .6em;
-			padding: 5px;
+
+			a {
+				display: block;
+				padding: 10px;
+				min-height: 4em;
+				&:hover {
+					background-color: $colorLightGrey;
+					color: $colorPrimary;
+				}
+			}
       
 
       		@include media($tablet) {
@@ -145,7 +164,6 @@
 	    }
 
 	    .views-field-description {
-
 
 	    	@include media($tablet) {
 				height: 54px; 
@@ -165,12 +183,12 @@
  *  Uses the same view as "Search (Solr) View" above
  */
 
-.page-taxonomy .vocabulary-series {
+.context-series-page {
 
 	.view-episode-search-solr- {
 	
 		.views-row {
-			margin-bottom: 30px; 
+			margin-bottom: 3em; 
 			padding: 0 0 10px 0;
 			//border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
@@ -195,11 +213,18 @@
 					}
 				}
 
-			.views-field-title {
+			.views-field-title a {
+				//border-top: 1px solid $base-border-color;
+				display: block;
+				border-radius: $base-border-radius;
 				font-size: 1.3em;
-				background-color: $lighter-gray;
+				background-color: $colorBeigeGrey;
 				padding: 5px;
 				margin-bottom: .5em;
+
+				&:hover {
+					background-color: $colorLightGrey;
+				}
 			}
 
 			.views-field-body-value {

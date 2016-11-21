@@ -1,5 +1,5 @@
 /*
- ******************************** Search API/ Solr "Current Search block"  *****************************************
+ ******************************** Search API/ Solr "Current Search block"  ****************************
  */
 
 
@@ -16,14 +16,14 @@
 .block-current-search h3 {
 	@include appearance(none);
 	  -webkit-font-smoothing: antialiased;
-	  background-color: $light-gray;
+	  background-color: $colorLinkHover;
 	  border-radius: $base-border-radius;
 	  border: none;
-	  //color: #fff;
+	  color: $font-heading-color;
 	  font-family: $base-font-family;
-	  font-size: 1.1em;
+	  font-size: 1em;
 	  line-height: 1;
-	  padding: 1em 1em;
+	  padding: 1.22em 1.2em;
 	  width: 100%;
 }
 
@@ -37,43 +37,53 @@
 
 
 /*
- ******************************** Chosen dropdown filter overrides  **************************************************
- */
-.chosen-container {}
-.chosen-container-single .chosen-single {
-	//background: none;
-	box-shadow: none;
-	height: 3.8em;
-	border: 1px solid $base-border-color;
-	padding: 12px;
-	border-radius: $base-border-radius;
-}
-
-.chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
-
-
-/*
  ********************************   Main Featured    **************************************************
  */
 
+ main {
+ 	padding-top: 2em;
+ }
+
 #featured {
-	padding: $base-spacing 0;
+	padding: 2.5em 0 2.2em 0;
 }
 
+.front {
+	.featured-outer-one {
+		background-color: $colorLightGrey;
+	}
+}
+
+.context-series-page {
+	.featured-outer-one {
+		background-color: $colorIconBlueGrey;
+	}
+}
+.context-people-page {
+	.featured-outer-one {
+		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
+	}
+}
+
+.context-episode-page {
+	.featured-outer-one {
+		background-color: $colorMidGrey //$colorBooksBlog; //$colorMidGrey;
+	}
+}
 
 .featured-outer-one {
 	//padding: $base-spacing 0; 
-	margin-bottom: $base-spacing;
-	background-color: #f8f8f8; 
+	//margin-bottom: $base-spacing;
+	background-color: $colorBeigeGrey; //$colorBooksBlog; 
 }
 
 
 /*
- ********************************   Featured Series View   **************************************************
+ ********************************   Featured Series View  ****************************************
  */
 
 
-.front .featured-outer-three {background-color: $light-gray;}
+.front .featured-outer-three {background-color: $colorLightGrey;}
 
 .front .view-series-featured .view-content {
 	.views-row {
@@ -90,10 +100,10 @@
 .view-admin-people .views-row-edit-static {display: none;}
 
 /*
- ********************************   Featured People View   **************************************************
+ ********************************   Featured People View  ***************************************
  */
 
-.front .featured-outer-four {background-color: $lighter-gray;}
+.front .featured-outer-four {background-color: $colorVLightGrey;}
 
 .front .view-people-featured .view-content {
 	.views-row {
@@ -112,16 +122,19 @@
 
 
 /*
- ********************************   Featured iTunes U category selectors   **************************************************
+ ********************************   Featured iTunes U category selectors  ******************************
  */
 
 
-.front .featured-outer-two {background-color: $lighter-gray; margin-top: 100px;}
+.front .featured-outer-two {
+	background-color: $colorVLightGrey;
+}
 
 .categories {
+	padding: 2em 0;
 
 	.category  {
-		//@include reset-display;
+
 		@include span-columns(3);
 		@include omega(4n); 
 		display: block;
@@ -131,17 +144,17 @@
 
 .hover-tile-outer {
   border: 1px solid $base-border-color;
-  background-color: $light-gray;
+  background-color: $colorLightGrey;
   margin: $base-spacing/2 0;
   display: block;
-  height: 70px;
+  height: 4em;
   cursor: pointer;
-  padding: $base-spacing 0;
+  padding: 1em 0;
   
   a {
     display: block;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     vertical-align: middle;
     //padding: 12px;
   }
@@ -151,7 +164,7 @@
   margin-top: 23px;
   transform: scale(0);
   opacity: 0;
-  font-size: 1em;
+  font-size: .85em;
   background: transparentize(#000, 0.5);
   color: white;
   padding: $base-spacing;

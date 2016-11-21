@@ -207,25 +207,19 @@ function ox_context_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-people_view-page',
           'region' => 'featured-one',
-          'weight' => '-27',
+          'weight' => '-10',
         ),
         'fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a' => array(
           'module' => 'fieldblock',
           'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
           'region' => 'featured-one',
-          'weight' => '-25',
+          'weight' => '-9',
         ),
         'fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403' => array(
           'module' => 'fieldblock',
           'delta' => '3dbe9f8cbf1b14bec2bd52b6292ca403',
           'region' => 'featured-one',
-          'weight' => '-10',
-        ),
-        'block-4' => array(
-          'module' => 'block',
-          'delta' => '4',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-8',
         ),
         'fieldblock-7d9066c7669a89290d050e50e280919a' => array(
           'module' => 'fieldblock',
@@ -354,6 +348,14 @@ function ox_context_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'episode' => 'episode',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
     'path' => array(
       'values' => array(
         'solr' => 'solr',
@@ -401,6 +403,9 @@ function ox_context_context_default_contexts() {
           'weight' => '-7',
         ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-episode-page',
     ),
   );
   $context->condition_mode = 0;
@@ -479,11 +484,7 @@ function ox_context_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        '~search' => '~search',
-        '~search/*' => '~search/*',
-        '~solr' => '~solr',
-        '~solr/*' => '~solr/*',
-        '~series' => '~series',
+        '<front>' => '<front>',
       ),
     ),
   );

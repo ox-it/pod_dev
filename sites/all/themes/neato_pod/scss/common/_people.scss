@@ -51,7 +51,30 @@
 
 	#featured  {
 
-		.view-display-id-entity_view_1 {
+
+
+		#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-display-id-entity_view_1 {
+
+			h2 {
+				display: block;
+				//border-bottom: 1px solid $colorLinkHover;
+				cursor: pointer;
+				
+				color: $action-color;
+				
+			}
+			h2.collapsed:after {
+				content: "   ▲   ";
+			}
+
+			h2:not(.collapsed):after {	
+				content: "   ▼   ";
+			}
+
+			.view-content {
+				display:none; // JQuery toggles
+			}
+
 			margin-top: 2em;
 
 			.views-row {
@@ -66,16 +89,17 @@
 			}		
 		}
 
-		.view-display-id-entity_view_2 {
+		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a .view-display-id-entity_view_2 {
 			margin-top: 2em;
 			
 
 			.views-field-name-1 {
 				font-size: 2em;
-				border-bottom: 1px solid $light-gray;
+				border-bottom: 1px solid $colorLinkHover;
 			}
 
-			.views-field-description {
+			.views-field-description  {
+	
 				padding-top: $base-spacing;
 			}
 
@@ -135,7 +159,6 @@
 
 /*
  *****************  People (Solr) View (.../people/person-name)************************************
- *  Uses the same view as "Search (Solr) View" above
  */
 
 .page-taxonomy .vocabulary-people {
@@ -155,7 +178,7 @@
 				.fieldset-top-left {	
 					@include span-columns(2.5);
 					img:hover {opacity: .8;}
-					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $light-gray;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
 				}
 
 				.fieldset-top-middle {	
@@ -173,10 +196,17 @@
 			}
 
 			.views-field-title {
-				font-size: 1.3em;
-				background-color: $lighter-gray;
+				
+				
 				//padding: 5px;
 				margin-bottom: .5em;
+				a {
+					display: block;
+					font-size: 1.3em;
+					background-color: $colorBeigeGrey;
+					&:hover {background-color: $colorLightGrey; }
+				}
+				
 			}
 
 			.views-field-body-value {
