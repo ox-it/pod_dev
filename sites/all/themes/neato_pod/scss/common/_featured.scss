@@ -8,24 +8,32 @@
 	float: right;
 	width: 30.5%;
 
-	.current-search-item {
-		font-size: 1em;
+	h3 {
+		@include appearance(none);
+		  -webkit-font-smoothing: antialiased;
+		  background-color: $colorLinkHover;
+		  border-radius: $base-border-radius;
+		  border: none;
+		  color: $font-heading-color;
+		  font-family: $base-font-family;
+		  font-size: 1em;
+		  line-height: 1;
+		  padding: 1.22em 1.2em;
+		  width: 100%;
 	}
+
+	.current-search-item {
+		.item-list {
+			color: $colorLightGrey;
+			font-size: 1.1em;
+			a {color: $colorDarkGrey;}
+
+		}
+	}
+
 }
 
-.block-current-search h3 {
-	@include appearance(none);
-	  -webkit-font-smoothing: antialiased;
-	  background-color: $colorLinkHover;
-	  border-radius: $base-border-radius;
-	  border: none;
-	  color: $font-heading-color;
-	  font-family: $base-font-family;
-	  font-size: 1em;
-	  line-height: 1;
-	  padding: 1.22em 1.2em;
-	  width: 100%;
-}
+
 
 
 .page-solr #featured .views-exposed-form {
@@ -67,7 +75,7 @@
 
 .context-episode-page {
 	.featured-outer-one {
-		background-color: $colorMidGrey //$colorBooksBlog; //$colorMidGrey;
+		background-color: $colorMidGrey; //$colorBooksBlog; //$colorMidGrey;
 	}
 }
 

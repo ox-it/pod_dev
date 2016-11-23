@@ -90,17 +90,49 @@
 
 Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
-      $('#sidr-open-menu').sidr({
-        name: 'sidr-menu',
+      $('#sidr-menu-series').sidr({
+        name: 'sidr-menu-series-button',
+        displace:false,
+        side: 'right',
         source: '.view-series-gallery',
-        displace: false
+        
       });
   
       $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
-          $.sidr('close', 'sidr-menu');  // close the div with the ID of "sidr-menu"
+          $.sidr('close', 'sidr-menu-series-button');  // close the div with the ID of "sidr-menu"
       });
+
+
+      $('#sidr-menu-episode').sidr({
+        name: 'sidr-menu-episode-button',
+        displace:false,
+        source: '#sidebar-first',
+
+      });
+
+
+      $('#sidr-menu-keywords').sidr({
+        name: 'sidr-menu-keywords-button',
+        displace:false,
+        source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1',
+
+      });
+
+      $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu-keywords-button');  // close the div with the ID of "sidr-menu"
+      });
+
+      $('#sidr-id-sidr-close-episode-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu-episode-button');  // close the div with the ID of "sidr-menu"
+      });
+
+      
+
+
+
   }
 };
+
 
 
 // Uses the HideSeek jQuery add-on:
@@ -108,17 +140,19 @@ Drupal.behaviors.podOmegaActivateSidr = {
 Drupal.behaviors.podOmegaHideSeek = {
     attach: function (context, settings) {
 
-        $('#hideseek-search-page').hideseek({
-          list: '.view-content',      
-          nodata:         '',
-          attribute:      'text',
-          highlight:      true,
-          ignore:         '',
-          navigation:     false,
-          ignore_accents: false
-        });
+        // $('#hideseek-search-page').hideseek({
+        //   list: '.view-content',      
+        //   nodata:         '',
+        //   attribute:      'text',
+        //   highlight:      true,
+        //   ignore:         '',
+        //   navigation:     false,
+        //   ignore_accents: false
+        // });
 
 
+
+        // Series Sidr pod-out search box
         $('#sidr-id-hideseek-search').hideseek({
           list: '.sidr-class-view-content',      
           nodata:         '',
@@ -129,6 +163,39 @@ Drupal.behaviors.podOmegaHideSeek = {
           ignore_accents: false
         });
 
+
+        // Keywords Sidr pop-out search box
+        $('#sidr-id-hideseek-keywords-two').hideseek({
+          list: '.sidr-class-item-list ul',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false,
+          //hidden_mode: true
+        });
+
+
+        // Sidebar search boxes for Episode (both static and Sidr pop-out)
+
+        
+        // Keywords search box (Sidr pop-out sidebar) 
+        // Have to add a class first, as theseclasses automatically appended with sidr-class  
+        $('.sidr-class-facetapi-facet-field-keywords').addClass('facetapi-facet-field-keywords')
+        $('#sidr-id-hideseek-keywords').hideseek({
+          list: '.facetapi-facet-field-keywords',      
+          nodata:         'No keywords found',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false,
+          hidden_mode: true
+        });
+
+        
+        // Keywords search box (static sidebar)
         $('#hideseek-keywords').hideseek({
           list: '.facetapi-facet-field-keywords',      
           nodata:         'No keywords found',
@@ -140,6 +207,21 @@ Drupal.behaviors.podOmegaHideSeek = {
           hidden_mode: true
         });
 
+        // Unit search box (Sidr pop-out sidebar)
+        // Have to add a class first, as theseclasses automatically appended with sidr-class 
+        $('.sidr-class-facetapi-facet-field-seriesfield-unit').addClass('facetapi-facet-field-seriesfield-unit')
+        $('#sidr-id-hideseek-units').hideseek({
+          list: '.facetapi-facet-field-seriesfield-unit',      
+          nodata:         '',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+
+
+        // Unit search box (static sidebar)
         $('#hideseek-units').hideseek({
           list: '.facetapi-facet-field-seriesfield-unit',      
           nodata:         '',
@@ -152,14 +234,17 @@ Drupal.behaviors.podOmegaHideSeek = {
 
 
 
+
+
+
+
+
     }
 
 };
 
 Drupal.behaviors.personAssociated = {
   attach: function(context) {
-
-    
 
     $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields h2").click(function () {
 

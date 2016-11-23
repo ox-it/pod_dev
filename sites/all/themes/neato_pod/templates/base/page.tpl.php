@@ -168,9 +168,17 @@
   <div role="footer" class="footer-bottom-outer">
 
     <div class="no-inner-wrapper">
-      <?php if (!empty($page['footer_bottom'])): ?>
-        <footer id="footer-bottom" class="footer-bottom" role="contentinfo">
-          <?php print render($page['footer_bottom']); ?>
+      <?php if (!empty($page['footer_hidden_one'])): ?>
+        <footer id="footer-bottom" class="footer-hidden-one" role="contentinfo">
+          <?php print render($page['footer_hidden_one']); ?>
+        </footer>
+      <?php endif; ?>
+    </div>
+
+    <div class="no-inner-wrapper">
+      <?php if (!empty($page['footer_hidden_two'])): ?>
+        <footer id="footer" class="footer-hidden-two" role="contentinfo">
+          <?php print render($page['footer_hidden_two']); ?>
         </footer>
       <?php endif; ?>
     </div>

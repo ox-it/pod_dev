@@ -1304,11 +1304,50 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
 
-  /* Display: Facets block */
-  $handler = $view->new_display('search_api_views_facets_block', 'Facets block', 'search_api_views_facets_block_1');
+  /* Display: Keyword Facets block */
+  $handler = $view->new_display('search_api_views_facets_block', 'Keyword Facets block', 'search_api_views_facets_block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['block_description'] = 'Episode Search (Solr) Anywhere Block';
-  $handler->display->display_options['hide_block'] = 1;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search" name="hideseek-search" placeholder="Search Keywords" type="text" data-list=".sidr-class-view-content" >
+<a id="sidr-close-menu">✕</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'keyword-test-wrapper';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  $handler->display->display_options['block_description'] = 'Episode Search (Solr) Anywhere Keywords';
+  $handler->display->display_options['linked_path'] = 'solr';
+  $handler->display->display_options['facet_field'] = 'field_keywords';
+  $handler->display->display_options['hide_block'] = 0;
+
+  /* Display: Type Facets block */
+  $handler = $view->new_display('search_api_views_facets_block', 'Type Facets block', 'search_api_views_facets_block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Media Type';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['block_description'] = 'Episode Search (Solr) Anywhere Type';
+  $handler->display->display_options['linked_path'] = 'solr';
+  $handler->display->display_options['facet_field'] = 'field_media_files:file:type';
+
+  /* Display: Category Facets block */
+  $handler = $view->new_display('search_api_views_facets_block', 'Category Facets block', 'search_api_views_facets_block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Categories';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['block_description'] = 'Episode Search (Solr) Anywhere Category';
+  $handler->display->display_options['linked_path'] = 'solr';
+  $handler->display->display_options['facet_field'] = 'field_itunes_u_category:name';
   $export['episode_search_solr_pageholder'] = $view;
 
   $view = new view();
@@ -1655,7 +1694,7 @@ function ox_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '52';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2442,8 +2481,8 @@ function ox_views_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Series Block */
-  $handler = $view->new_display('block', 'Series Block', 'block_1');
+  /* Display: Series Block (Sidr) */
+  $handler = $view->new_display('block', 'Series Block (Sidr)', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '<none>';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
@@ -2462,7 +2501,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search" name="hideseek-search" placeholder="Start typing here" type="text" data-list=".sidr-class-view-content" >
+  $handler->display->display_options['header']['area']['content'] = '<input id="hideseek-search" name="hideseek-search" placeholder="Search Series Name" type="text" data-list=".sidr-class-view-content" >
 <a id="sidr-close-menu">✕</a>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;

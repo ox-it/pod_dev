@@ -38,23 +38,23 @@ stylesheets[all][] = js/sidr/dist/stylesheets/jquery.sidr.bare.css
 ; ========================================
 ; Regions
 ; ========================================
-regions[header-top]	         	= Header Top
-regions[header-middle-left]     = Header Middle Left
-regions[header-middle-right]    = Header Middle Right
-regions[header-bottom-left]     = Header Bottom Left
-regions[header-bottom-right]    = Header Bottom Right
-regions[featured-one]          	= Featured One
-regions[featured-two]           = Featured Two
-regions[featured-three]         = Featured Three
-regions[featured-four]          = Featured Four
-regions[featured-five]          = Featured Five
-regions[sidebar_first]       	= Left Sidebar
-regions[content]             	= Content
-regions[sidebar_second]      	= Right Sidebar
-regions[footer_top_left]     	= Footer Top Left
-regions[footer_top_right]    	= Footer Top Right
-regions[footer_bottom]       	= Footer Bottom
-
+regions[header-top]	         		= Header Top
+regions[header-middle-left]     	= Header Middle Left
+regions[header-middle-right]    	= Header Middle Right
+regions[header-bottom-left]     	= Header Bottom Left
+regions[header-bottom-right]    	= Header Bottom Right
+regions[featured-one]          		= Featured One
+regions[featured-two]           	= Featured Two
+regions[featured-three]         	= Featured Three
+regions[featured-four]          	= Featured Four
+regions[featured-five]          	= Featured Five
+regions[sidebar_first]       		= Left Sidebar
+regions[content]             		= Content
+regions[sidebar_second]      		= Right Sidebar
+regions[footer_top_left]     		= Footer Top Left
+regions[footer_top_right]    		= Footer Top Right
+regions[footer_hidden_one]   		= Footer Hidden One
+regions[footer_hidden_two]   		= Footer Hidden Two
 
 ; ========================================
 ; Scripts

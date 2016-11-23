@@ -1,4 +1,4 @@
-.sidebar {
+.context-episode-page .sidebar {
 
 	input {
 		margin-bottom: $base-spacing / 2;
@@ -19,7 +19,7 @@
 		h2 {
 			background-color: $colorIconBlueGrey;
 			padding: .75em;
-			color: $font-heading-color;
+			color: $font-heading-white;
 			border-radius: $base-border-radius;
 		}
 	}
@@ -29,7 +29,7 @@
 		margin: 0 0 $base-spacing 0;
 				
 		.item-list {
-			max-height: 30em;
+			max-height: 20em;
 			overflow-y: scroll;
 		}
 	}
@@ -38,34 +38,33 @@
 	.block-facetapi-keywords ul.facetapi-facetapi-links {
 		
 		padding-right: -20px;
-
-		//.item-list {overflow-y: scroll;}
-
 		li {border-bottom: 1px solid $base-border-color;}
 		
 	}
 
 
-	.facetapi-facet-title-az-glossary {
-		@include clearfix;
-	}
+	// .facetapi-facet-title-az-glossary {
+	// 	@include clearfix;
+	// }
 
-	.facetapi-facet-title-az-glossary li a {
-		width: 25px; 
-		display: inline-block;
-	}
-	.facetapi-facet-title-az-glossary li { 
-		margin: 1px; 
-		padding: 8px; 
-		float:left; 
-		border: 1px solid #ccc;
-	}
-	.facetapi-facet-title-az-glossary li .facetapi-active {
-		padding-right: 10px;
-	}
-
+	// .facetapi-facet-title-az-glossary li a {
+	// 	width: 25px; 
+	// 	display: inline-block;
+	// }
+	// .facetapi-facet-title-az-glossary li { 
+	// 	margin: 1px; 
+	// 	padding: 8px; 
+	// 	float:left; 
+	// 	border: 1px solid #ccc;
+	// }
+	// .facetapi-facet-title-az-glossary li .facetapi-active {
+	// 	padding-right: 10px;
+	// }
 
 }
+
+
+
 
 
 

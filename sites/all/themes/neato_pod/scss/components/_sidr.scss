@@ -1,70 +1,265 @@
-#sidr-menu {
+/*
+******************************** Sidr Series (Front page) pop-out menu  *******************************
+ */
+
+#sidr-menu-series-button {
+	background-color: #F8F8F8; 
+	width:450px; 
+	right:-470px; 
+	left: auto; 
+	padding: $base-spacing; 
+	overflow-x: hidden;
+
+	.sidr-class-views-row {
+		padding-top: 5px; 
+		height: auto; 
+		border-top: 2px solid #ccc; 
+	}
+
+	.sidr-class-views-field { 
+		padding-top: 5px; 
+	}
+
+
+	.sidr-class-views-field-description {  
+		font-size: .8em; 
+		height: 110px; 
+		overflow: hidden; 
+	}
+
+	#sidr-id-hideseek-search {
+		width: 100%; 
+		height: 35px; 
+		display: block;
+		border: 1px solid lighten($action-color, 40%);
+
+		input {
+			border: 1px solid red; //lighten($action-color, 30%);
+		}
+	}
+
+	#sidr-id-sidr-close-menu {
+		display: block;
+		float: left;
+		font-size: 2em;
+		color:red;
+		//border: 1px solid red;
+		margin-bottom: $base-spacing / 3;
+		@include clearfix;
+		cursor: pointer;
+	}
+
+	.sidr-class-view-header {
+		display: block;
+		@include clearfix;
+	}
+
+	.sidr-class-view-content {
+	}
+
+}
+
+
+/*
+******************************** Sidr Keywords (Front page) pop-out menu  *******************************
+ */
+
+
+
+#sidr-menu-keywords-button {
 	background-color: #F8F8F8; 
 	width:450px; 
 	left:-470px; 
 	right: auto; 
 	padding: $base-spacing; 
 	overflow-x: hidden;
+	ul li {
+		//padding-right: 10px; float: left;
+
+		span {display: none; }
+
+	}
+
+
+	#sidr-id-hideseek-keywords-two {
+		margin-bottom: 20px;	
+	}
+
+	//Styles X close-button on episode sidr-popout
+	#sidr-id-sidr-close-keyword-menu {
+		border-bottom: 2px solid #ccc;
+		padding-bottom: 10px;
+		display: block;
+		text-align: right;
+		font-size: 2em;
+		color:red;
+		margin-bottom: $base-spacing / 3;
+		//@include clearfix;
+		cursor: pointer;
+	}
+	
+	// &:before {
+	// 	content: <a href="www.ox.ac.uk>Hello</a>; 
+	// }
+
 }
 
-.sidr-class-views-row {
-	padding-top: 5px; 
-	height: auto; 
-	border-top: 2px solid #ccc; 
-}
 
-.sidr-class-views-field { 
-	padding-top: 5px; 
-}
 
-//.sidr-class-views-field-field-series-album-cover {float: left; padding-right: 1%;}
-//
-.sidr-class-views-field-description {  
-	font-size: .8em; 
-	height: 110px; 
-	overflow: hidden; 
-}
+/*
+******************************** Sidr Episode (../solr) pop-out menu  *******************************
+ */
 
-#sidr-id-hideseek-search {
-	width: 100%; 
-	height: 35px; 
-	display: block;
-	border: 1px solid lighten($action-color, 40%);
+
+#sidr-menu-episode-button {
+	background-color: #F8F8F8; 
+	width:450px; 
+	left:-470px; 
+	right: auto; 
+	padding: $base-spacing; 
+	overflow-x: hidden;
+	ul li {
+		//padding-right: 10px; float: left;
+
+		span {display: none; }
+
+	}
 
 	input {
-		border: 1px solid red; //lighten($action-color, 30%);
+		margin-bottom: $base-spacing / 2;
+	}
+	
+	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
+
+	position: none;
+	font-size: $sidebar-font-size;
+
+
+	.sidr-class-block {
+		margin: 0 0 $base-spacing 0;
+		//background-color: $colorBeigeGrey;
+		//padding: 20px;
+
+
+		h2 {
+			background-color: $colorIconBlueGrey;
+			padding: .75em;
+			color: $font-heading-color;
+			border-radius: $base-border-radius;
+		}
+	}
+
+	#sidr-id-block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO, #sidr-id-block-facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK {
+		//border-top: 1px solid $base-border-color;
+		margin: 0 0 $base-spacing 0;
+				
+		.sidr-class-item-list{
+			max-height: 30em;
+			overflow-y: scroll;
+		}
+	}
+
+	.block-facetapi-units ul.facetapi-facetapi-links,
+	.block-facetapi-keywords ul.facetapi-facetapi-links {
+		
+		padding-right: -20px;
+		li {border-bottom: 1px solid $base-border-color;}
+		
+	}
+
+
+}
+
+
+
+//Removes X close-button on regular (non-sidr-popout) sidebar
+#block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO {
+	#sidr-close-episode-menu {
+		display: none;
 	}
 }
 
-#sidr-id-sidr-close-menu {
-	display: block;
-	float: right;
-	font-size: 2em;
-	color:red;
-	//border: 1px solid red;
-	margin-bottom: $base-spacing / 3;
-	@include clearfix;
-	cursor: pointer;
+//Styles X close-button on episode sidr-popout
+#sidr-id-block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO {
+	#sidr-id-sidr-close-episode-menu {
+		//border-bottom: 2px solid #ccc;
+		//padding-bottom: 5px;
+		display: block;
+		text-align: right;
+		font-size: 2em;
+		color:red;
+		//margin-bottom: 1em;
+		//@include clearfix;
+		cursor: pointer;
+
+	}
 }
 
-.sidr-class-view-header {
-	display: block;
-	@include clearfix;
+
+
+
+
+
+/*
+********************  The hamburger Sidr pop-out menus  *******************************
+ */
+
+
+#block-block-1 {
+	text-align: right;
+	#sidr-menu-series span {
+		font-size: 2em;
+		position: relative;
+		top: 5px;
+		padding-left:10px;
+	}
+
+	#sidr-menu-series {
+		color: $colorMidGrey;
+	}
 }
 
-.sidr-class-view-content {
+#block-block-7 {
+	text-align: left;
+	#sidr-menu-episode span {
+		font-size: .5em;
+		position: relative;
+		top: -5px;
+		padding-left:10px;
+	}
+
+	#sidr-menu-episode {
+		position: relative;
+		top: 5px;
+		font-size: 2em;
+		color: $colorMidGrey;
+	}
 }
 
-#sidr-open-menu span {font-size: .5em; 
-	position: relative; 
-	top: -5px; 
-	padding-left:6px;
+#block-block-8 {
+	text-align: left;
+	#sidr-menu-keywords span {
+		font-size: .5em;
+		position: relative;
+		top: -5px;
+		padding-left:10px;
+	}
+
+	#sidr-menu-keywords {
+		position: relative;
+		top: 5px;
+		font-size: 2em;
+		color: $colorMidGrey;
+	}
 }
 
-#sidr-open-menu {
 
-	font-size: 1.9em; 
-	color: $colorMidGrey;
 
-}
+
+
+
+
+
+
+
 

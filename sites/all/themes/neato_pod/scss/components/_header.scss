@@ -32,7 +32,7 @@
 }
 
 .block-menu ul.menu li a {
-	color: $colorVLightGrey;
+	color: $font-heading-color;
 	padding: 2em 1.5em; 
 	border: 1px solid darken($colorLinkHover, 12%); 
 	display: block;
@@ -40,14 +40,24 @@
 }
 
 
-#logo img {
-	@include size(105px auto);  //This overrides the responsive image settings in _media.scss 
+#logo-block {
+	//size: 10%;
+	background: url("../images/oxford-logo-square.png") no-repeat;
+	background-size: 100%;
+	@include size(105px);
 	float: left; 
-	border: 1px solid #fff;
-	margin-bottom: -15px;
-	//margin: 5px 0;
+	margin-bottom: -20px;
+}
+
+#site-name-block {
+	font-family: $lucida-grande; 
+	font-size: 1.5em;
+	padding-left: $base-spacing;
+	color: $colorVLightGrey;
 
 }
+
+
 #site-name a {
 	font-family: $lucida-grande; 
 	font-size: 1.5em;

@@ -26,17 +26,11 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'blockify-blockify-logo' => array(
-          'module' => 'blockify',
-          'delta' => 'blockify-logo',
+        'block-6' => array(
+          'module' => 'block',
+          'delta' => '6',
           'region' => 'header-middle-left',
           'weight' => '-10',
-        ),
-        'blockify-blockify-site-name' => array(
-          'module' => 'blockify',
-          'delta' => 'blockify-site-name',
-          'region' => 'header-middle-left',
-          'weight' => '-9',
         ),
         'system-main-menu' => array(
           'module' => 'system',
@@ -207,19 +201,19 @@ function ox_context_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-people_view-page',
           'region' => 'featured-one',
-          'weight' => '-10',
+          'weight' => '-27',
         ),
         'fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a' => array(
           'module' => 'fieldblock',
           'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
           'region' => 'featured-one',
-          'weight' => '-9',
+          'weight' => '-25',
         ),
         'fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403' => array(
           'module' => 'fieldblock',
           'delta' => '3dbe9f8cbf1b14bec2bd52b6292ca403',
           'region' => 'featured-one',
-          'weight' => '-8',
+          'weight' => '-10',
         ),
         'fieldblock-7d9066c7669a89290d050e50e280919a' => array(
           'module' => 'fieldblock',
@@ -348,14 +342,6 @@ function ox_context_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
-    'node' => array(
-      'values' => array(
-        'episode' => 'episode',
-      ),
-      'options' => array(
-        'node_form' => '1',
-      ),
-    ),
     'path' => array(
       'values' => array(
         'solr' => 'solr',
@@ -378,29 +364,35 @@ function ox_context_context_default_contexts() {
           'region' => 'featured-one',
           'weight' => '-9',
         ),
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
         'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
           'module' => 'facetapi',
           'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
           'module' => 'facetapi',
           'delta' => 'd0QkDcLZVvKKApcDWQIsYZWHl7OBcfql',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
           'module' => 'facetapi',
           'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
           'region' => 'sidebar_first',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
           'module' => 'facetapi',
           'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
           'region' => 'sidebar_first',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
       ),
     ),
@@ -491,17 +483,29 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'header-bottom-left',
+          'weight' => '-10',
+        ),
         'block-1' => array(
           'module' => 'block',
           'delta' => '1',
-          'region' => 'header-bottom-left',
+          'region' => 'header-bottom-right',
           'weight' => '-10',
         ),
         'views-series_gallery-block_1' => array(
           'module' => 'views',
           'delta' => 'series_gallery-block_1',
-          'region' => 'footer_bottom',
+          'region' => 'footer_hidden_one',
           'weight' => '-10',
+        ),
+        'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
+          'module' => 'views',
+          'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
+          'region' => 'footer_hidden_one',
+          'weight' => '-9',
         ),
       ),
     ),

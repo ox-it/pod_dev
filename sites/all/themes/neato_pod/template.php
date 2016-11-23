@@ -25,16 +25,29 @@ function neato_pod_preprocess_node(&$variables) {
  */
 function neato_pod_preprocess_block(&$variables) {
 
-	if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
-                $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Enter Keywords" type="text" data-list=".facetapi-facet-field-keywords" >';
-                $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
-            }
 
+    // Add hideseek keyword search box to *Sidr* episode sidebar
+    if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' && $variables['block']->module == 'facetapi') {
+        $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".facetapi-facet-field-keywords"><a id="menu-episode" href="#menu-episode-sidr">View All Keywords</a>';
+        $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
+    }
+
+    // Add hideseek unit search box in static episode sidebar
     if($variables['block']->delta == 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK') {
+        $variables['title_suffix'] = '<input id="hideseek-units" name="hideseek-units" placeholder="Oxford Unit Filter" type="text" data-list=".facetapi-facet-field-seriesfield-unit" >';
+        $variables['classes_array'][] = drupal_html_class('block-facetapi-units');
+    }
 
-                $variables['title_suffix'] = '<input id="hideseek-units" name="hideseek-units" placeholder="Oxford Unit Filter" type="text" data-list=".facetapi-facet-field-seriesfield-unit" >';
-                $variables['classes_array'][] = drupal_html_class('block-facetapi-units');
-            }
+    // Keywords Sidr popout sidebar (Keywords alone)
+    if($variables['block']->delta == 'd1fd9fb73e9d432f430dcbd5aaf5eaf1') {
+        $variables['title_suffix'] = '<input id="hideseek-keywords-two" name="hideseek-keywords-two" placeholder="Search Keywords" type="text" data-list=".sidr-class-item-list ul" ><a id="sidr-close-keyword-menu">✕</a>';
+        $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords-sidr');
+    }
+  
+    // Add "X" close button on Episode Sidr popout
+    if ($variables['block']->module == 'facetapi' && $variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
+        $variables['title_prefix'] = '<a id="sidr-close-episode-menu">✕</a>';
+    }
 
 }
 
@@ -74,3 +87,7 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
     }
 
 }
+
+
+// <input id="hideseek-search" name="hideseek-search" placeholder="Start typing here" type="text" data-list=".sidr-class-view-content" >
+// <a id="sidr-close-menu">✕</a>

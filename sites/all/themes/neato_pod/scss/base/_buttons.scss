@@ -5,7 +5,7 @@ button {
   background-color: $colorLinkHover;
   border-radius: $base-border-radius-search;
   border: none;
-  color: #fff;
+  color: $font-heading-color;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
