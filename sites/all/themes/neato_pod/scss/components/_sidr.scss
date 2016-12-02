@@ -54,9 +54,6 @@
 		@include clearfix;
 	}
 
-	.sidr-class-view-content {
-	}
-
 }
 
 
@@ -65,8 +62,7 @@
  */
 
 
-
-#sidr-menu-keywords-button {
+#sidr-menu-keywords-button, #menu-episode-sidr {
 	background-color: #F8F8F8; 
 	width:450px; 
 	left:-470px; 
@@ -81,7 +77,7 @@
 	}
 
 
-	#sidr-id-hideseek-keywords-two {
+	#sidr-id-hideseek-keywords {
 		margin-bottom: 20px;	
 	}
 
@@ -98,9 +94,6 @@
 		cursor: pointer;
 	}
 	
-	// &:before {
-	// 	content: <a href="www.ox.ac.uk>Hello</a>; 
-	// }
 
 }
 
@@ -207,51 +200,53 @@
 
 #block-block-1 {
 	text-align: right;
-	#sidr-menu-series span {
-		font-size: 2em;
-		position: relative;
-		top: 5px;
-		padding-left:10px;
-	}
 
 	#sidr-menu-series {
-		color: $colorMidGrey;
-	}
-}
 
-#block-block-7 {
-	text-align: left;
-	#sidr-menu-episode span {
-		font-size: .5em;
-		position: relative;
-		top: -5px;
-		padding-left:10px;
-	}
-
-	#sidr-menu-episode {
-		position: relative;
-		top: 5px;
-		font-size: 2em;
 		color: $colorMidGrey;
+		&:after {
+			content: "≡";
+			font-size: 2em;
+			position: relative;
+			top: 5px;
+			padding-left: 10px;
+		}
 	}
 }
 
 #block-block-8 {
 	text-align: left;
-	#sidr-menu-keywords span {
-		font-size: .5em;
-		position: relative;
-		top: -5px;
-		padding-left:10px;
+	#sidr-menu-keywords {
+		color: $colorMidGrey;
+		&:before {
+			content: "≡";
+			font-size: 2em;
+			position: relative;
+			top: 5px;
+			padding-right: 10px;
+
+		}
 	}
 
-	#sidr-menu-keywords {
-		position: relative;
-		top: 5px;
-		font-size: 2em;
+}
+
+#block-block-7 {
+	text-align: left;
+	#sidr-menu-episode {
 		color: $colorMidGrey;
+		&:before {
+			content: "≡";
+			font-size: 2em;
+			position: relative;
+			top: 5px;
+			padding-right: 10px;
+
+		}
+
 	}
 }
+
+
 
 
 

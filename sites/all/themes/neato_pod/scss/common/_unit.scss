@@ -1,0 +1,254 @@
+/*
+ *************************  Unit Page (.../department-colleges/dept-college-name) -- Top Featured  **********************************
+ */
+
+.context-unit-page {
+
+	main {
+		#page-title {display:none;}
+
+		#content {
+			.view-id-eva_associated_terms {
+				.views-row {
+					@include span-columns(3);
+					@include omega(4n);
+					padding-bottom: 4em;
+				}
+			}
+
+		}
+	}
+
+
+
+	.featured-outer-one  {
+		padding-bottom: 2.5em;
+		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
+
+		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
+			.views-field-description {
+				padding-top: 1em;
+				.field-content p br { 
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1em !important;    
+				}
+			}			
+		}
+
+
+			
+		#block-fieldblock-7afe5ac42fd76434610c72d58305bf2d .view-display-id-entity_view_1 {
+
+			.views-field-name {
+			font-size: 2em;
+			border-bottom: 1px solid $colorLinkHover;
+			}
+
+		}
+
+		// EVA Field Person Associated Series
+		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
+
+			h2 {
+				display: block;
+				cursor: pointer;
+				color: $action-color;
+				
+			}
+			h2.collapsed:after {
+				content: "   ▲   ";
+			}
+
+			h2:not(.collapsed):after {	
+				content: "   ▼   ";
+			}
+
+			.view-content {
+				display:none; // JQuery toggles
+			}
+
+			margin-top: 2em;
+
+			.views-row {
+				width: auto;
+				padding-top: 1em;
+				padding-bottom: 2em;
+				@include span-columns(2);
+				@include omega(6n);
+				font-size: $description-font-size;
+
+				.views-field-name {
+
+					a {
+						display: block;
+						color: $colorOffBlack;
+						//border-bottom: 1px solid $colorMidGrey;
+						//text-align: center;
+						height: 40px;
+						//padding: 2px;
+						font-size: .9em;
+						border-radius: 0 0 2px 2px;
+					}
+
+				}
+
+			}		
+		}
+
+
+
+	}
+
+
+	.header-middle-bottom-outer {
+		padding-top: 2.5em;
+		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
+	}
+
+
+
+
+}
+
+
+/*
+ *****************  Person (Solr) View (.../people/person-name)  ************************************
+ */
+
+.context-unit-page {
+
+	.view-episode-search-solr- {
+
+		.view-header {
+			margin-top: -55px;
+			padding-bottom: 5px;
+			text-align: center;
+			float: right;
+			color: $colorPrimary;
+			width: 170px;
+			background-color: #fff;
+		  	//color: $font-heading-color;
+			border-radius: 3px 3px 0 ;
+			padding-top: 5px;
+		}
+
+		.views-row {
+			@include clearfix;
+	
+			margin-bottom: 3em; 
+			padding: 0 0 15px 0;
+			//border-top: 1px solid $base-border-color;
+			border-bottom: 1px solid $base-border-color;
+
+			.views-field-title {
+
+				
+				a {
+					display: block;
+					margin-bottom: .5em;
+					font-size: 1.1em;
+					padding: 3px;
+					background-color: $colorBeigeGrey;
+					&:hover {background-color: $colorLightGrey; }
+				}
+				
+			}
+
+			.fieldset-top {
+				
+				//@include span-columns(8);
+
+				.fieldset-top-left {	
+					@include span-columns(3 of 12);
+					img:hover {opacity: .8;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
+				}
+
+				.fieldset-top-middle {	
+					@include clearfix;
+					@include span-columns(7 of 12);
+					font-size: $description-font-size;
+
+					.views-field-body-value {
+						border-bottom: 1px solid $base-border-color; 
+						margin-bottom: .5em;
+						padding-bottom: .5em;
+					}
+
+					.views-field-field-series-name, 
+					.views-field-field-series-field-unit {
+					} 
+
+					.views-field-field-people {
+						vertical-align: bottom;
+					}
+				}
+
+				.fieldset-top-right {
+					@include span-columns(2 of 12);
+					.views-field-field-media-files {
+						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
+						h2 {display: none;}   
+					}
+				}
+			}
+
+		}
+	
+	}
+
+	.sidebar {
+
+		// Unit Image Background
+		#block-fieldblock-dfea7c16f657ccdfe7b463c686203cc9 {
+
+			.field-name-field-unit-image {
+				@include size(100%);
+				background-color: $colorLightGrey;
+				padding: 1em;
+			}
+		}
+
+		#block-fieldblock-6846037a8753c624f3378f2a930e9e43 {
+			background-color: $colorVLightGrey;
+			padding: 5px;
+			margin-top: 1em;
+			border-top: 5px solid $colorGraduateYellow;
+			
+		}
+
+		#block-fieldblock-c34999a72a29e2d8a2d62a9b5e8826ce {
+			margin-top: 2em;
+			border-top: 5px solid $colorGraduateYellow;
+			h2 {
+				background-color: $colorVLightGrey;
+				padding: 5px;
+				color: $colorMidGrey;
+				font-size: .9em;
+
+			}
+
+		}
+
+		// Associated People
+		#block-fieldblock-c34999a72a29e2d8a2d62a9b5e8826ce .view-display-id-entity_view_3 {
+
+			.views-row {
+				padding-bottom: 3em;
+				@include clearfix;
+				font-size: .8em;
+				@include span-columns(4);
+				@include omega(3n);
+
+			}
+		}
+
+
+	}
+}
+
+
+
+
+

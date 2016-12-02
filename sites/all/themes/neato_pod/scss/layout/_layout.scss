@@ -2,7 +2,12 @@ body {
   margin: 0;
   padding: 0;
 
-  
+
+  // Page padding
+  .featured-outer, .main-outer, .header-outer, .breadcrumb-outer, .footer-outer {
+    padding: 0 4%;
+  }
+
 
   header {
     &.header-top { @include span-columns(12); }
@@ -10,17 +15,12 @@ body {
     &.header-middle-right { @include span-columns(6); }
     &.header-bottom-left { @include span-columns(6); }
     &.header-bottom-right { @include span-columns(6); }
-    
-    //padding: 0 2%;
+
   }
-
-
 
   
   main {
     @include outer-container;
-    //padding: 0 3%;
-
   }
 
 
@@ -52,18 +52,17 @@ body {
 
       aside {
         &#sidebar-second {
-          @include span-columns(4);
+          @include span-columns(3);
 
           @include media($tablet) {
               @include span-columns(4);
-
 
           }
         }
       }
 
       section#content {
-        @include span-columns(8);
+        @include span-columns(9);
                 
         @include media($tablet) {
           @include span-columns(4);
@@ -97,7 +96,6 @@ body {
     &.footer-top-left { @include span-columns(6); }
     &.footer-top-right { @include span-columns(6); }
     &.footer-bottom { @include span-columns(12); }
-    //padding: 0 2%;
   }
 
 
@@ -105,7 +103,6 @@ body {
 
 .inner-wrapper {
   @include outer-container;
-  //padding: 0 3%;
 
 }
 

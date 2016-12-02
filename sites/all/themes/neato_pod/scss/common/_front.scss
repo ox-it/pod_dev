@@ -1,0 +1,198 @@
+#featured {
+	//padding: 5px 0 .5em 0;
+}
+.header-middle-bottom {
+	//padding: .8em 0 .6em 0;
+}
+
+
+.front {
+	.header-middle-bottom-outer {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+		background-color: $colorBeigeGrey;
+	}
+	.featured-outer-one {
+		
+	}
+	.featured-outer-two {
+		//background-color: $colorLightGrey;
+	}
+	.featured-outer-three {
+
+	}
+	.featured-outer-four {
+		background-color: $colorLightGrey;
+	}
+	.featured-outer-five {
+		background-color: $colorVLightGrey;
+	}
+}
+
+
+
+
+.front .featured-outer-two {
+	margin: 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid $colorLightGrey;
+	#block-block-8 {
+		width: 50%;
+		float: left;
+	}
+	#block-block-1 {
+		width: 50%;
+		float:right;
+	}
+}
+
+
+/*
+ ******************************** Featured Series  ****************************
+ */
+
+.front {
+
+	#block-views-series_featured-block {
+		.view-series-featured .view-content {
+			@include clearfix;
+
+			.views-row {
+
+			    @include span-columns(3);
+		    	@include omega(4n);
+				margin-bottom: 1em;
+				margin-top: 1em;
+
+				.views-field-name {
+
+				
+					a {
+						display: block;
+						margin-bottom: .5em;
+						font-size: .9em;
+						padding: 3px;
+						text-align: center;
+						background-color: lighten($colorLightGrey, 3%);
+						&:hover {background-color: $colorLightGrey; }
+					}
+				
+				}
+
+			}
+		}
+
+	}
+}
+
+
+
+.view-admin-people .views-row-edit-static {display: none;}
+
+/*
+ ******************************** Featured People  ****************************
+ */
+
+.front {
+	#block-views-people_featured-block {
+		.view-people-featured .view-content {
+			@include clearfix;
+
+			.views-row {
+				
+				@include span-columns(2);
+		    	@include omega(6n);
+				margin-bottom: 2em;
+
+
+				.views-field-name {
+
+				
+					a {
+						display: block;
+						margin-bottom: .5em;
+						font-size: .9em;
+						padding: 3px;
+						text-align: center;
+						background-color: $colorLightGrey;
+						&:hover {background-color: $colorLightGrey; }
+					}
+				
+				}
+
+			}
+		}
+
+	}
+}
+
+.view-admin-people .views-row-edit-static {display: none;}
+
+
+/*
+ ******************************** Featured Categories  ****************************
+ */
+
+.front {
+
+	.categories {
+		padding: 2em 0;
+
+		.category  {
+
+			@include span-columns(3);
+			@include omega(4n); 
+			display: block;
+			}
+		@include clearfix;
+	}
+
+	.hover-tile-outer {
+	  border: 1px solid $base-border-color;
+	  background-color: $colorLightGrey;
+	  margin: $base-spacing/2 0;
+	  display: block;
+	  height: 4em;
+	  cursor: pointer;
+	  padding: 1em 0;
+	  
+	  a {
+	    display: block;
+	    text-align: center;
+	    font-size: 1em;
+	    vertical-align: middle;
+	    //padding: 12px;
+	  }
+	}
+
+	.hover-tile-container {
+	  margin-top: 23px;
+	  transform: scale(0);
+	  opacity: 0;
+	  font-size: .85em;
+	  background: transparentize(#000, 0.5);
+	  color: white;
+	  padding: $base-spacing;
+	  cursor: default;
+
+	  li {
+	  display: inline;
+
+	    &:not(:last-child):after { 
+	      content: "\00a0 | \00a0";
+	    }
+	  }  
+	}
+
+	.hover-tile-outer:hover .hover-tile-container {
+	  transform: scale(1);
+	  opacity: 1;
+	  position: relative;
+	  z-index: 100;
+	  @include transition (opacity .9s ease-in-out);
+	}
+
+}
+
+
+

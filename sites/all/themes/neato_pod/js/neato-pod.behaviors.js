@@ -90,12 +90,13 @@
 
 Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
+
+      // Series menu on <front> and on Episode page ("View all keywords")
       $('#sidr-menu-series').sidr({
         name: 'sidr-menu-series-button',
         displace:false,
         side: 'right',
-        source: '.view-series-gallery',
-        
+        source: '.view-series-gallery', 
       });
   
       $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
@@ -103,32 +104,28 @@ Drupal.behaviors.podOmegaActivateSidr = {
       });
 
 
-      $('#sidr-menu-episode').sidr({
-        name: 'sidr-menu-episode-button',
-        displace:false,
-        source: '#sidebar-first',
-
-      });
-
-
+      // Keyword menu on <front>
       $('#sidr-menu-keywords').sidr({
         name: 'sidr-menu-keywords-button',
         displace:false,
         source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1',
-
       });
 
       $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
           $.sidr('close', 'sidr-menu-keywords-button');  // close the div with the ID of "sidr-menu"
       });
 
+
+      // Facet menu on Episode page
+      $('#sidr-menu-episode').sidr({
+        name: 'sidr-menu-episode-button',
+        displace:false,
+        source: '#sidebar-first',
+      });
+
       $('#sidr-id-sidr-close-episode-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
           $.sidr('close', 'sidr-menu-episode-button');  // close the div with the ID of "sidr-menu"
       });
-
-      
-
-
 
   }
 };
@@ -177,7 +174,7 @@ Drupal.behaviors.podOmegaHideSeek = {
         });
 
 
-        // Sidebar search boxes for Episode (both static and Sidr pop-out)
+        // Sidebar search boxes for Episode page view (both static and Sidr pop-out)
 
         
         // Keywords search box (Sidr pop-out sidebar) 
@@ -234,11 +231,6 @@ Drupal.behaviors.podOmegaHideSeek = {
 
 
 
-
-
-
-
-
     }
 
 };
@@ -246,10 +238,22 @@ Drupal.behaviors.podOmegaHideSeek = {
 Drupal.behaviors.personAssociated = {
   attach: function(context) {
 
-    $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields h2").click(function () {
+    $("#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-eva-associated-terms h2").click(function () {
 
-      $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields .view-content").slideToggle("slow");
-      $("#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-eva-display-fields h2").toggleClass('collapsed');
+      $("#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-eva-associated-terms .view-content").slideToggle("slow");
+      $("#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-eva-associated-terms h2").toggleClass('collapsed');
+      });
+
+    }
+};
+
+Drupal.behaviors.unitAssociated = {
+  attach: function(context) {
+
+    $("#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-eva-associated-terms h2").click(function () {
+
+      $("#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-eva-associated-terms .view-content").slideToggle("slow");
+      $("#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-eva-associated-terms h2").toggleClass('collapsed');
       });
 
     }

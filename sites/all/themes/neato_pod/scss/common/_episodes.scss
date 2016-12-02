@@ -1,8 +1,48 @@
-main #content #page-title {
-	font-size: 1.5em;
-	//padding-bottom: 10px;
-	 
+/*
+ ******************************** Search API/ Solr "Current Search block"  ****************************
+ */
+
+.context-episode-page {
+
+	.header-middle-bottom-outer {
+		padding-top: 2.5em;
+		padding-bottom: 2.5em;
+		background-color: $colorMidGrey; //$colorBooksBlog; //$colorMidGrey;
+	}
+
+	.views-exposed-form {
+		float: left;
+		width: 75%;
+	}
+
+	.block-current-search {		
+		float: right;
+		width: 25%;
+
+		.current-search-item {
+			h3 {
+				margin: 0;
+				background-color: $colorLinkHover;
+				padding: 1.1em;
+				display: block;
+				color: $font-heading-color;
+		  		border-radius: $base-border-radius;
+		  		letter-spacing: .1em;
+			}
+			.item-list {
+				//text-align: right;
+				padding-top: 10px;
+				color: $colorLightGrey;
+				font-size: 1.1em;
+				a {color: $colorDarkGrey;}
+
+			}
+		}
+
+	}
 }
+
+
 
 
 /*
@@ -14,47 +54,11 @@ main #content #page-title {
 	.view-episode-search-solr- {
 
 		.views-row {
-			//background-color: $colorVLightGrey;
-			margin-bottom: 60px; 
+			margin-bottom: 3em; 
 			padding: 0 0 10px 0;
-			//border-top: 1px solid $base-border-color;
-			//border-bottom: 1px solid $base-border-color;
-
-			.fieldset-top {
-				@include clearfix;
-
-				.fieldset-top-left {
-					@include span-columns(2.5);
-					img:hover {opacity: .8;}
-					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorLightGrey;}
-				}
-				.fieldset-top-middle {
-					@include span-columns(7.5);
-					font-size: $description-font-size;
-				}
-				.fieldset-top-right {
-
-					text-align: right; 
-						img {
-							width: 13%;
-						}
-
-					}
-
-			}
-
-			.fieldset-bottom {
-				border-top: 1px solid $base-border-color;
-				margin-top: $base-spacing/2;
-				//padding-top: $base-spacing/2;
-				
-			}
 
 			.views-field-title {
-				font-size: 1.3em;
-				//border-top: 2px solid $base-border-color;
-				//border-bottom: 1px solid $base-border-color;
-				
+				font-size: 1.1em;
 				margin-bottom: .5em;
 				a {
 					background-color: $colorBeigeGrey;
@@ -67,22 +71,54 @@ main #content #page-title {
 				}
 			}
 
-			.views-field-body-value {
-				border-bottom: 1px solid $base-border-color; 
-				margin-bottom: .5em;
+			.fieldset-top {
+				@include clearfix;
+
+				.fieldset-top-left {	
+					@include span-columns(3 of 12);
+					img:hover {opacity: .8;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
+				}
+
+				.fieldset-top-middle {	
+					@include clearfix;
+					@include span-columns(7 of 12);
+					font-size: $description-font-size;
+
+					.views-field-body-value {
+						border-bottom: 1px solid $base-border-color; 
+						margin-bottom: .5em;
+						padding-bottom: .5em;
+					}
+
+					.views-field-field-series-name, 
+					.views-field-field-series-field-unit {
+					} 
+
+					.views-field-field-people {
+						vertical-align: bottom;
+					}
+				}
+
+				.fieldset-top-right {
+					@include span-columns(2 of 12);
+					.views-field-field-media-files {
+						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
+						h2 {display: none;}   
+					}
+				}
+
 			}
 
-			.views-field-field-series-name, 
-			.views-field-field-series-field-unit {
-			} 
-
-			.views-field-field-people {
-				vertical-align: bottom;
+			.fieldset-bottom {
+				border-top: 1px solid $base-border-color;
+				margin-top: $base-spacing/2;
+				//padding-top: $base-spacing/2;
+				
 			}
 
 
 		}
-
 
 		
 	}

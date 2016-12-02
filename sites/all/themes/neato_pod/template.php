@@ -28,7 +28,7 @@ function neato_pod_preprocess_block(&$variables) {
 
     // Add hideseek keyword search box to *Sidr* episode sidebar
     if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' && $variables['block']->module == 'facetapi') {
-        $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".facetapi-facet-field-keywords"><a id="menu-episode" href="#menu-episode-sidr">View All Keywords</a>';
+        $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".facetapi-facet-field-keywords"><a id="sidr-menu-keywords" href="#sidr-menu-keywords-button">View All Keywords</a>';
         $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
     }
 
@@ -48,6 +48,7 @@ function neato_pod_preprocess_block(&$variables) {
     if ($variables['block']->module == 'facetapi' && $variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
         $variables['title_prefix'] = '<a id="sidr-close-episode-menu">✕</a>';
     }
+
 
 }
 

@@ -41,6 +41,7 @@ stylesheets[all][] = js/sidr/dist/stylesheets/jquery.sidr.bare.css
 regions[header-top]	         		= Header Top
 regions[header-middle-left]     	= Header Middle Left
 regions[header-middle-right]    	= Header Middle Right
+regions[header-middle-bottom]    	= Header Middle Bottom
 regions[header-bottom-left]     	= Header Bottom Left
 regions[header-bottom-right]    	= Header Bottom Right
 regions[featured-one]          		= Featured One

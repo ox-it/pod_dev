@@ -1,109 +1,68 @@
 /*
- ********************************   Series Page   **************************************************
- */
-
-
-.context-series-page {
-	main {
-		#page-title {display:none;}
-
-		#content {
-			.vocabulary-series {
-				:not(.collapsed) .field-group-format-toggler a:after {
-					content: "   ▲   ";
-				}
-
-				.collapsed .field-group-format-toggler a:after {
-					content: "   ▼   ";
-				}
-
-				.taxonomy-term-description br { 
-					content: "A" !important;
-				    display: block !important;
-				    margin-bottom: 1.2em !important;
-				}
-
-			}
-
-		}
-	}	
-
-	#featured  {
-
-		.view-eva-display-fields {
-			margin-top: 3em;
-
-			.views-field-name {
-				font-size: 1.8em;
-				border-bottom: 1px solid $colorLinkHover;
-			}
-
-			.views-field-description {
-				padding-top: $base-spacing;
-			}
-
-			.views-field-description .field-content p { 
-				// content: "A" !important;
-			 //    display: block !important;
-			    margin-bottom: 1em !important;
-			}
-
-			br {
-				content: "A" !important;
-			    display: block !important;
-			    margin-bottom: 1em !important;
-
-			}
-		}
-	}
-}
-
-
-
-/*
- *****************  Series View (.../series)  **************************************************
+ *****************  Series Gallery View (.../series)  **************************************************
  */
 
 .view-series-gallery {
+
+	.view-header {
+		border-top: 2px solid $colorBeigeGrey;
+		color: $colorPrimary;
+		padding: 3px 0;
+		margin-bottom: $base-spacing;
+	}
+
 	.views-row {
 
     	@include span-columns(6);
     	@include omega(2n);
-		margin-bottom: 5em;
-
-		//border-top: 1px solid $base-border-color;
-		//border-bottom: 1px solid $base-border-color;
+		margin-bottom: 4em;
 
 		@include media($tablet) {
 			border: 1px solid $base-border-color;
 			padding: 20px;	
 		}
 
-		.fieldset-series-wrapper {
-			@include clearfix;
+		.views-field-name {
+			font-size: 1em;
+			background-color: $colorVeryLightBlue;
+			border-radius: $base-border-radius;
+			margin-bottom: .6em;
 
-			.fieldset-series-left { 
-				@include span-columns(3 of 6);
-				//margin-bottom: 2em;
-				
-				@include media($tablet) {
-					@include span-columns(6 of 6);
-
-				}
-
-				.views-field-field-series-album-cover img:hover   {
-					opacity: .8;
-					
+			a {
+				display: block;
+				padding: 3px 10px;
+				min-height: 3em;
+				&:hover {
+					background-color: $colorLightGrey;
+					color: $colorPrimary;
 				}
 			}
 
+      		@include media($tablet) {
+				font-size: 1em;
+				min-height: 4em;
+			}
+    	}
 
+
+		.fieldset-series-wrapper {
+			@include clearfix;
+			padding-bottom: 1em;
+
+			.fieldset-series-left { 
+				@include span-columns(3 of 6);
+				
+				@include media($tablet) {
+					@include span-columns(6 of 6);
+				}
+
+			}
 
 			.fieldset-series-right {
 				@include span-columns(3 of 6);
-				height: 21em;
+				height: 19em;
 				@include shift(-.2);
-				//overflow: scroll;
+				color: $font-description-color;
 				font-size: $description-font-size;
 
 				br { 
@@ -117,65 +76,156 @@
 					height: 10em;
 					
 				}
-			}
 
+				.views-field-description {
+			    	@include media($tablet) {
+						max-height: 54px; 
+						overflow: hidden;
+					}
+    			}
+
+				.views-field-nid, .views-field-created {
+			    	//border-bottom: 1px solid $base-border-color;
+			    	margin-bottom: .5em;
+			    	padding: 3px 0;
+			    }
+			}
 		}
 
 		.fieldset-series-bottom {
-		//@include clearfix;
-
 			border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
 	    	margin-bottom: 5px;
 	    	padding: 5px;
-
 		}
-
-
-		.views-field-name {
-			//height: auto;
-			
-			font-size: 1.2em;
-			background-color: $colorVeryLightBlue;
-			border-radius: $base-border-radius;
-			margin-bottom: .6em;
-
-			a {
-				display: block;
-				padding: 10px;
-				min-height: 4em;
-				&:hover {
-					background-color: $colorLightGrey;
-					color: $colorPrimary;
-				}
-			}
-      
-
-      		@include media($tablet) {
-				font-size: 1em;
-				min-height: 4em;
-			}
-    	}
-
-    	.views-field-nid, .views-field-created {
-	    	border-bottom: 1px solid $base-border-color;
-	    	margin-bottom: 5px;
-	    	padding: 3px;
-	    }
-
-	    .views-field-description {
-
-	    	@include media($tablet) {
-				height: 54px; 
-				overflow: hidden;
-
-			}
-
-    	}
 
 	}
 
 }
+
+/*
+ ********************************   Series Page   **************************************************
+ */
+
+
+.context-series-page {
+	main {
+		#page-title {display:none;}
+	}	
+
+
+	.header-middle-bottom-outer {
+		padding-top: 2.5em;
+		background-color: $colorIconBlueGrey;
+
+	}
+
+	.featured-outer-one {
+		padding-bottom: 2.5em;
+		background-color: $colorIconBlueGrey;
+
+
+		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba .view-display-id-entity_view_3 {
+			.views-field-name {
+				padding-top: 1em;
+				font-size: 1.8em;
+				border-bottom: 1px solid $colorLinkHover;
+			}
+		}
+
+		#block-fieldblock-64071884587fd9f5976892abab11b1fc {
+			
+			.view-display-id-entity_view_5 {
+
+				.views-field-description {
+					padding-top: 1em;
+
+					.field-content p { 
+						// content: "A" !important;
+				 		//  display: block !important;
+				    	margin-bottom: 1em !important;
+					}
+
+					br {
+						content: "A" !important;
+					    display: block !important;
+					    margin-bottom: 1em !important;
+
+					}
+				}
+			}
+		}
+		
+		// The subscribe buttons 
+		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
+			@include clearfix;
+			padding-top: 1em;
+
+			.view-eva-subscribe-links  {
+
+				h2.title {
+					color: $colorMidGrey;
+					width: 70px; 
+					text-align: center;
+					margin-right: 2em;
+					float: left;
+					font-size: .7em;
+					border: 1px solid $colorMidGrey;
+					padding: 8px 0 7px 0;
+					border-radius: $base-border-radius;
+
+				}
+
+				.view-content {
+
+					a {
+						background-color: $action-color;
+						color: $colorLightGrey;
+						margin-right: 1.5em;
+						font-size: .9em;
+						width: 150px;
+						float: left;
+						display: block;
+						padding: 5px;
+						vertical-align: middle;
+						border-radius: $base-border-radius;
+						margin-bottom: 1em;
+					}
+
+					.views-field-field-itunes-u-audio-code a, 
+					.views-field-field-itunes-u-video-code a,
+					.views-field-field-itunes-u-document-code a {
+						background-image: url("../images/itunes_u.png");
+						background-repeat: no-repeat;
+						background-size: 21%;
+						padding-left: 40px;
+
+					}
+
+					.views-field-field-mediapub-nid a {
+						background-image: url("../images/rss_icon.png");
+						background-repeat: no-repeat;
+						background-size: 22%;
+						background-position: -5px -1px;
+						padding-left: 35px;
+
+					}
+				}
+
+			}
+
+		}
+
+
+
+
+
+	}
+
+
+
+}
+
 
 
 /*
@@ -186,40 +236,34 @@
 .context-series-page {
 
 	.view-episode-search-solr- {
+
+		.view-header {
+			margin-top: -55px;
+			padding-bottom: 5px;
+			text-align: center;
+			float: right;
+			color: $colorPrimary;
+			width: 170px;
+			background-color: #fff;
+		  	//color: $font-heading-color;
+			border-radius: 3px 3px 0 ;
+			padding-top: 5px;
+		}
+
+		.view-content {@include clearfix;}
 	
 		.views-row {
 			margin-bottom: 3em; 
 			padding: 0 0 10px 0;
-			//border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
-
-			.fieldset-top {
-				@include clearfix;
-
-				.fieldset-top-left {
-					@include span-columns(0);
-				}
-				.fieldset-top-middle {
-					@include span-columns(10);
-					font-size: $description-font-size;
-				}
-				.fieldset-top-right {
-
-					text-align: right; 
-						img {
-							width: 13%;
-						}
-					     
-					}
-				}
 
 			.views-field-title a {
 				//border-top: 1px solid $base-border-color;
 				display: block;
 				border-radius: $base-border-radius;
-				font-size: 1.3em;
+				font-size: 1.1em;
 				background-color: $colorBeigeGrey;
-				padding: 5px;
+				padding: 3px;
 				margin-bottom: .5em;
 
 				&:hover {
@@ -227,19 +271,138 @@
 				}
 			}
 
-			.views-field-body-value {
-				border-bottom: 1px solid $base-border-color; 
-				margin-bottom: .5em;
-			}
+			.fieldset-top {
+				@include clearfix;
 
-			.views-field-field-series-name, 
-			.views-field-field-series-field-unit {
-			} 
+				.fieldset-top-left {	
+				}
 
-			.views-field-field-people {
-				vertical-align: bottom;
-			}
+				.fieldset-top-middle {	
+					@include clearfix;
+					@include span-columns(10 of 12);
+					font-size: $description-font-size;
+
+					.views-field-body-value {
+						border-bottom: 1px solid $base-border-color; 
+						margin-bottom: .5em;
+						padding-bottom: .5em;
+					}
+
+					.views-field-field-series-name, 
+					.views-field-field-series-field-unit {
+					} 
+
+					.views-field-field-people {
+						vertical-align: bottom;
+					}
+				}
+
+				.fieldset-top-right {
+					@include span-columns(2 of 12);
+					.views-field-field-media-files {
+						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
+						h2 {display: none;}   
+					}
+				}
+
+				}
 
 		}
+
+
 	}
+
+	#sidebar-first {
+
+
+		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba {
+			background-color: $colorBeigeGrey;
+			padding: 5px;
+			//text-align: center;
+			color: $colorMidGrey;
+			margin-bottom: $base-spacing;
+		}
+		#block-fieldblock-930ac34e1bf7b2e5e0bdb144db8a5d2c {
+			background-color: $colorVLightGrey;
+			margin-bottom: $base-spacing/2;
+
+			h2 {
+				background-color: $colorIconBlueGrey;
+				padding: 5px;
+				color: $colorMidGrey;
+				font-size: .9em;
+			}
+			
+			background-color: $colorBeigeGrey;
+			//text-align: center;
+			margin-bottom: $base-spacing;
+			padding-bottom: $base-spacing/2;
+			a {
+				display: block;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+
+		}
+		#block-fieldblock-42d99c56b52cb2270df884230914d4c8 {
+			background-color: $colorVLightGrey;
+			margin-bottom: $base-spacing/2;
+
+			h2 {
+				background-color: $colorIconBlueGrey;
+				padding: 5px;
+				color: $colorMidGrey;
+				font-size: .9em;
+			}
+			
+			background-color: $colorBeigeGrey;
+			//text-align: center;
+			margin-bottom: $base-spacing;
+			padding-bottom: $base-spacing/2;
+			a {
+				display: block;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+
+		}
+
+		// #block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
+
+		// @include clearfix;
+		// margin-bottom: 2em;
+
+		// 	.view-eva-subscribe-links {
+
+		// 		h2 {
+		// 			background-color: $colorIconBlueGrey;
+		// 			padding: 2px;
+		// 			color: $colorLinkHover;
+		// 			font-size: .9em;
+
+		// 		}
+
+		// 		a {
+		// 			// @include span-columns(2 of 4);
+		// 			// @include omega();
+		// 			background-color: $colorVLightGrey;
+		// 			width: 50%;
+		// 			height: 40px;
+		// 			float: left;
+		// 			display: block;
+
+					
+					
+		// 			padding: 5px;
+
+		// 		}
+		// 	}
+
+		// }
+	}
+
 }

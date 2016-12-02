@@ -1,65 +1,106 @@
+/*
+ *****************  People Gallery View (.../people)  **************************************************
+ */
+
+.page-people .view-people-view {
+
+	.view-header {
+		border-top: 2px solid $colorBeigeGrey;
+		color: $colorPrimary;
+		padding: 3px 0;
+		margin-bottom: $base-spacing;
+	}
+
+	.views-row {
+
+		// @include span-columns(2);
+    	// @include omega(6n);
+    	// Using explicit floats here, not the grid, as want larger grid gutters. 
+        float: left;
+        width: 19%;
+        //padding: 1%;
+        display: inline-block;
+        margin: 0 8% 2% 0;
+        &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
+        &:nth-child(4n) { margin-right: 0; } 
+
+		margin-bottom: 3em;
+
+		.views-field-name {
+			background-color: $colorBeigeGrey;
+			text-align: center;
+			padding: 2px;
+			border-radius: 2px 2px 0 0;
+
+		}
+
+		.views-field-field-unit {
+			background-color: $colorBeigeGrey;
+			text-align: center;
+			padding: 2px;
+			font-size: .8em;
+			border-radius: 0 0 2px 2px;
+
+		}
+
+		.views-field-name {
+			background-color: $colorLightGrey;
+		}
+
+	}
+
+}
+
 
 /*
- ********************************   People Page   **************************************************
+ *************************  Person Page (.../people/person-name) -- Top Featured  **********************************
  */
 
 .context-people-page {
 
 	main {
-
 		#page-title {display:none;}
-
-		#block-block-4  {
-			
-			max-width:100%;
-          	height:320px;
-          	background: url("../images/people-avatar.png") no-repeat;
-          	background-size: 100%;
-
-          	p {display: none;}
-
-		}
-
-		#content {
-
-			//Can use if using "field_group" module
-
-			// .vocabulary-people {
-			// 	:not(.collapsed) .field-group-format-toggler a:after {
-			// 		content: "   ▲   ";
-			// 	}
-
-			// 	.collapsed .field-group-format-toggler a:after {
-			// 		content: "   ▼   ";
-			// 	}	
-			// }
-
-		}
-
-		// aside section {
-		// 	.field-name-field-people-image {
-		// 		.field-items {
-		// 			max-width:100%;
-		//       		height:325px;
-		//           	background: url("../images/people-avatar.png") no-repeat;
-		//           	background-size: 100%;
-		// 		}
-		// 		.field-item {color: transparent;}
-		// 	}
-		// }
 	}
 
-	#featured  {
 
+	.header-middle-bottom-outer {
+		padding-top: 2.5em;
+		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
+	}
 
+	.featured-outer-one  {
+		padding-bottom: 2.5em;
+		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
+		
+		// EVA Field Person Name
+		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a .view-display-id-entity_view_2 {
+			
+			.views-field-name-1 {
+				padding-top: 1em;
+				font-size: 2em;
+				border-bottom: 1px solid $colorLinkHover;
+			}
+		}
+		// EVA Field Person Description
+		#block-fieldblock-77e58f65f54c4a3b1f9304de010e7c26 .view-display-id-entity_view_4 {
 
-		#block-fieldblock-3dbe9f8cbf1b14bec2bd52b6292ca403 .view-display-id-entity_view_1 {
+			.views-field-description  {
+				padding-top: 1em;
+
+				.field-content p br { 
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1em !important;    
+				}
+			}
+		}
+
+		// EVA Field Person Associated Series
+		#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-display-id-entity_view_1 {
 
 			h2 {
 				display: block;
-				//border-bottom: 1px solid $colorLinkHover;
 				cursor: pointer;
-				
 				color: $action-color;
 				
 			}
@@ -85,145 +126,161 @@
 				@include omega(6n);
 				font-size: $description-font-size;
 
+				.views-field-name {
+
+					a {
+						display: block;
+						color: $colorOffBlack;
+						//border-bottom: 1px solid $colorMidGrey;
+						//text-align: center;
+						height: 40px;
+						//padding: 2px;
+						font-size: .9em;
+						border-radius: 0 0 2px 2px;
+					}
+
+				}
 
 			}		
 		}
-
-		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a .view-display-id-entity_view_2 {
-			margin-top: 2em;
-			
-
-			.views-field-name-1 {
-				font-size: 2em;
-				border-bottom: 1px solid $colorLinkHover;
-			}
-
-			.views-field-description  {
-	
-				padding-top: $base-spacing;
-			}
-
-			.views-field-description .field-content p br { 
-				content: "A" !important;
-			    display: block !important;
-			    margin-bottom: 1em !important;
-			    
-			}
-
-
-
-		}
-
 	}
 
 }
 
 
-
 /*
- *****************  People View (.../people)  **************************************************
+ *****************  Person (Solr) View (.../people/person-name)  ************************************
  */
 
-
-
-.page-people .view-people-view {
-	.views-row {
-
-    	// @include span-columns(2);
-    	// @include omega(6n);
-    	// 
-    	// Using explicit floats here, not the grid, as want larger grid gutters. 
-
-        float: left;
-        width: 19%;
-        //padding: 1%;
-        display: inline-block;
-        margin: 0 8% 2% 0;
-        &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
-        &:nth-child(4n) { margin-right: 0; } 
-
-		margin-bottom: 3em;
-
-
-		.views-field-field-people-image .field-content:empty { 
-			max-width:100%;
-          	height:200px;
-          	background: url("../images/people-avatar.png") no-repeat;
-          	background-size: 100%;
-		}
-
-	}
-
-
-}
-
-/*
- *****************  People (Solr) View (.../people/person-name)************************************
- */
-
-.page-taxonomy .vocabulary-people {
+.context-people-page {
 
 	.view-episode-search-solr- {
 
+		.view-header {
+			margin-top: -55px;
+			padding-bottom: 5px;
+			text-align: center;
+			float: right;
+			color: $colorPrimary;
+			width: 170px;
+			background-color: #fff;
+		  	//color: $font-heading-color;
+			border-radius: 3px 3px 0 ;
+			padding-top: 5px;
+		}
+
 		.views-row {
+			@include clearfix;
 	
-			margin-bottom: 35px; 
+			margin-bottom: 3em; 
 			padding: 0 0 15px 0;
 			//border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
 
-			.fieldset-top {
-				@include clearfix;
-
-				.fieldset-top-left {	
-					@include span-columns(2.5);
-					img:hover {opacity: .8;}
-					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
-				}
-
-				.fieldset-top-middle {	
-					@include span-columns(7.5);
-					font-size: $description-font-size;
-				}
-
-				.fieldset-top-right {
-
-					text-align: right; 
-					img {
-						width: 13%;
-					}     
-				}
-			}
-
 			.views-field-title {
+
 				
-				
-				//padding: 5px;
-				margin-bottom: .5em;
 				a {
 					display: block;
-					font-size: 1.3em;
+					margin-bottom: .5em;
+					font-size: 1.1em;
+					padding: 3px;
 					background-color: $colorBeigeGrey;
 					&:hover {background-color: $colorLightGrey; }
 				}
 				
 			}
 
-			.views-field-body-value {
-				//border-bottom: 1px solid $base-border-color; 
-				margin-bottom: .5em;
-			}
+			.fieldset-top {
+				
+				//@include span-columns(8);
 
-			.views-field-field-series-name, 
-			.views-field-field-series-field-unit {
-			} 
+				.fieldset-top-left {	
+					@include span-columns(3 of 12);
+					img:hover {opacity: .8;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
+				}
 
-			.views-field-field-people {
-				vertical-align: bottom;
+				.fieldset-top-middle {	
+					@include clearfix;
+					@include span-columns(7 of 12);
+					font-size: $description-font-size;
+
+					.views-field-body-value {
+						border-bottom: 1px solid $base-border-color; 
+						margin-bottom: .5em;
+						padding-bottom: .5em;
+					}
+
+					.views-field-field-series-name, 
+					.views-field-field-series-field-unit {
+					} 
+
+					.views-field-field-people {
+						vertical-align: bottom;
+					}
+				}
+
+				.fieldset-top-right {
+					@include span-columns(2 of 12);
+					.views-field-field-media-files {
+						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
+						h2 {display: none;}   
+					}
+				}
 			}
 
 		}
 	
+	}
+
+	.sidebar {
+		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a {
+			background-color: $colorBeigeGrey;
+			padding: 5px;
+			color: $colorMidGrey;
+			text-align: center;
+			margin-bottom: $base-spacing;
+		}
+		#block-fieldblock-cdd8d27af833196db5fd48c8da91d8d8 {
+			h2 {
+				background-color: $colorGraduateLightGreen;
+				padding: 5px;
+				color: $colorMidGrey;
+				font-size: .9em;
+			}
+			
+			background-color: $colorBeigeGrey;
+			//text-align: center;
+			margin-bottom: $base-spacing;
+			padding-bottom: $base-spacing/2;
+			a {
+				display: block;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+		}
+		#block-fieldblock-54f7e23c84e601be1dc3f7dffffeec2b {
+			h2 {
+				background-color: $colorGraduateLightGreen;
+				padding: 5px;
+				color: $colorMidGrey;
+				font-size: .9em;
+			}
+			background-color: $colorBeigeGrey;
+			//text-align: center;
+			margin-bottom: $base-spacing;
+			padding-bottom: $base-spacing/2;
+			a {
+				display: block;
+				padding: 2px;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+		}
 	}
 }
 

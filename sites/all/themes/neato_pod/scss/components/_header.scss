@@ -7,12 +7,12 @@
 .header-middle-outer {
 	background-color: $colorPrimary; //$colorCopyrightGrey; //$colorWashedOutBlue;/
 	//opacity: .7;
-	height: 110px; 
-	padding: 20px;
+	height: 100px; 
+
 }
 
 .header-middle { 
-	display: block; 
+	padding-top: 1em;
 }
 
 .header-middle-right .block {

@@ -3,7 +3,7 @@
 <!-- "inner-wrapper" applies 'outer-container' NEAT grid: see layout.scss-->
 
  <!-- ______________________ HEADER _______________________ -->
-  <div role="header" class="header-top-outer">
+  <div role="header" class="header-outer header-top-outer">
     
     <div class="no-inner-wrapper header-top">  
       <?php if (!empty($page['header-top'])): ?>
@@ -16,7 +16,7 @@
   </div>
 
 
-  <div role="header" class="header-middle-outer">
+  <div role="header" class="header-outer header-middle-outer">
 
     <div class="no-inner-wrapper header-middle">
 
@@ -36,8 +36,22 @@
     
   </div>
 
+  <div role="header" class="header-outer header-middle-bottom-outer">
 
-  <div role="header" class="header-bottom-outer">
+    <div class="inner-wrapper header-middle-bottom">
+
+      <?php if (!empty($page['header-middle-bottom'])): ?>
+        <header id="site-header" class="header-middle-bottom"> 
+            <?php print render($page['header-middle-bottom']); ?>   
+        </header>
+      <?php endif; ?>
+
+    </div>
+    
+  </div>
+
+
+  <div role="header" class="header-outer header-bottom-outer">
 
     <div class="inner-wrapper header-bottom">
 
@@ -63,9 +77,9 @@
   <div class="featured-outer featured-outer-one">
 
       <?php if (!empty($page['featured-one'])): ?>
-        <header id="featured" class="inner-wrapper">      
+        <section id="featured" class="inner-wrapper">      
             <?php print render($page['featured-one']); ?>
-        </header>
+        </section>
       <?php endif; ?>
 
   </div>
@@ -73,8 +87,38 @@
   <div class="featured-outer featured-outer-two">
 
       <?php if (!empty($page['featured-two'])): ?>
-        <header id="featured-two" class="inner-wrapper">      
+        <section id="featured-two" class="inner-wrapper">      
             <?php print render($page['featured-two']); ?>
+        </section>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-three">
+
+      <?php if (!empty($page['featured-three'])): ?>
+        <section id="featured-three" class="inner-wrapper">      
+            <?php print render($page['featured-three']); ?>
+        </section>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-four">
+
+      <?php if (!empty($page['featured-four'])): ?>
+        <section id="featured-four" class="inner-wrapper">      
+            <?php print render($page['featured-four']); ?>
+        </section>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-five">
+
+      <?php if (!empty($page['featured-five'])): ?>
+        <header id="featured-five" class="inner-wrapper">      
+            <?php print render($page['featured-five']); ?>
         </header>
       <?php endif; ?>
 
@@ -147,7 +191,7 @@
 
 <!-- ______________________ FOOTER _______________________ -->
 
-  <div role="footer" class="footer-top-outer">
+  <div role="footer" class="footer-outer footer-top-outer">
 
     <div class="inner-wrapper">
       <?php if (!empty($page['footer_top_left'])): ?>
@@ -165,7 +209,7 @@
 
   </div>
 
-  <div role="footer" class="footer-bottom-outer">
+  <div role="footer" class="footer-outer footer-bottom-outer">
 
     <div class="no-inner-wrapper">
       <?php if (!empty($page['footer_hidden_one'])): ?>
