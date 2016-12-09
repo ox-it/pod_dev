@@ -19,13 +19,63 @@
 		//background-color: $colorLightGrey;
 	}
 	.featured-outer-three {
+		background-image: url("../images/oxford-panorama.jpg");
+		background-size: 110%;
+		background-position: 0 -70px;
+		@include media($hero) {
+			background-size: 120%;
+			background-position: 0 -50px;
+		}
+
 
 	}
 	.featured-outer-four {
+		
+		padding-bottom: 4em;
 		background-color: $colorLightGrey;
+		h2 {
+			border-bottom: 1px solid darken($colorLightGrey, 10%);
+			text-align: center;
+			padding: 2em 0 1.5em 0;
+			font-size: 200%;
+		}
+		#block-views--exp-series_gallery-page {
+			margin-top: 4em;
+		}
+		.view-series-featured {
+			
+			.view-content {
+				margin-right: -50px;
+
+				 .owl-wrapper-outer {
+		
+					.owl-item {
+						padding-right: 50px;
+					}
+				 }
+
+					.owl-pagination {
+						text-align: right;
+						margin: 2em 50px 4em 0;// Overrides the margin hack above
+						border-top: 1px solid darken($colorLightGrey, 10%);
+
+					}
+
+			}
+		}
 	}
 	.featured-outer-five {
+		padding-bottom: 4em;
 		background-color: $colorVLightGrey;
+			h2 {
+			border-bottom: 1px solid darken($colorLightGrey, 10%);
+			text-align: center;
+			padding: 2em 0 1.5em 0;
+			font-size: 200%;
+		}
+		#block-views--exp-people_view-page {
+			margin-top: 4em;
+		}
 	}
 }
 

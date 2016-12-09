@@ -46,12 +46,27 @@
 
 
 /*
- *****************  Search (Solr) View (.../solr)  **************************************************
+ *****************  Solr result views for episodes on Episode page, Series page, and People page ********************************
+ * The layout is overridden below for the Series page, as the Series results to not include Series cover images
+ * in the .fieldset-top-left
  */
 
-.page-solr {
+.page-solr, .context-people-page, .context-series-page, .context-unit-page {
+
+
 
 	.view-episode-search-solr- {
+
+		.view-header {
+			float: right;
+			padding: 5px;
+			background-color: #fff;
+			margin-bottom: 30px;
+			margin-top: -55px;
+			width: 180px;
+			text-align: center;
+			border-radius: 2px;
+		}
 
 		.views-row {
 			margin-bottom: 3em; 
@@ -61,12 +76,12 @@
 				font-size: 1.1em;
 				margin-bottom: .5em;
 				a {
-					background-color: $colorBeigeGrey;
+					background-color: $colorLightGrey;
 					display: block;
 					border-radius: $base-border-radius;
 					padding: 5px;
 					&:hover {
-						background-color: $colorLightGrey;
+						background-color: darken($colorLightGrey, 15%);
 					}
 				}
 			}
@@ -121,6 +136,36 @@
 		}
 
 		
+	}
+
+}
+
+
+// This overrides the layout above -- as the Series results do not include a Series cover.
+.context-series-page {
+
+	.view-episode-search-solr- {
+
+		.views-row {
+			.fieldset-top {
+
+				.fieldset-top-left {
+
+				}
+
+				.fieldset-top-middle {
+					@include span-columns(10 of 12);
+
+				}
+
+				.fieldset-top-right {
+					@include span-columns(2 of 12);
+
+				}
+
+			}
+
+		}
 	}
 
 }

@@ -14,7 +14,7 @@ $max-width: 1250px;
 $visual-grid-color: #EEEEEE;
 $visual-grid-opacity: 0.4;
 
-
+$hero: new-breakpoint(max-width 1700px 12);
 $tablet: new-breakpoint(max-width 1000px 6);
 $mobile: new-breakpoint(max-width 480px 4);
 

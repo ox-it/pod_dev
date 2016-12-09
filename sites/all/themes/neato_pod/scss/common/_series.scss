@@ -104,11 +104,12 @@
 }
 
 /*
- ********************************   Series Page   **************************************************
+ ********************************   Series Page (.../series/series-name) Title/Description  **************************************************
  */
 
 
 .context-series-page {
+
 	main {
 		#page-title {display:none;}
 	}	
@@ -216,193 +217,10 @@
 
 		}
 
-
-
-
-
-	}
-
-
-
-}
-
-
-
-/*
- *****************  Series (Solr) View (.../series/series-name)************************************
- *  Uses the same view as "Search (Solr) View" above
- */
-
-.context-series-page {
-
-	.view-episode-search-solr- {
-
-		.view-header {
-			margin-top: -55px;
-			padding-bottom: 5px;
-			text-align: center;
-			float: right;
-			color: $colorPrimary;
-			width: 170px;
-			background-color: #fff;
-		  	//color: $font-heading-color;
-			border-radius: 3px 3px 0 ;
-			padding-top: 5px;
-		}
-
-		.view-content {@include clearfix;}
-	
-		.views-row {
-			margin-bottom: 3em; 
-			padding: 0 0 10px 0;
-			border-bottom: 1px solid $base-border-color;
-
-			.views-field-title a {
-				//border-top: 1px solid $base-border-color;
-				display: block;
-				border-radius: $base-border-radius;
-				font-size: 1.1em;
-				background-color: $colorBeigeGrey;
-				padding: 3px;
-				margin-bottom: .5em;
-
-				&:hover {
-					background-color: $colorLightGrey;
-				}
-			}
-
-			.fieldset-top {
-				@include clearfix;
-
-				.fieldset-top-left {	
-				}
-
-				.fieldset-top-middle {	
-					@include clearfix;
-					@include span-columns(10 of 12);
-					font-size: $description-font-size;
-
-					.views-field-body-value {
-						border-bottom: 1px solid $base-border-color; 
-						margin-bottom: .5em;
-						padding-bottom: .5em;
-					}
-
-					.views-field-field-series-name, 
-					.views-field-field-series-field-unit {
-					} 
-
-					.views-field-field-people {
-						vertical-align: bottom;
-					}
-				}
-
-				.fieldset-top-right {
-					@include span-columns(2 of 12);
-					.views-field-field-media-files {
-						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
-						h2 {display: none;}   
-					}
-				}
-
-				}
-
-		}
-
-
-	}
-
-	#sidebar-first {
-
-
-		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba {
-			background-color: $colorBeigeGrey;
-			padding: 5px;
-			//text-align: center;
-			color: $colorMidGrey;
-			margin-bottom: $base-spacing;
-		}
-		#block-fieldblock-930ac34e1bf7b2e5e0bdb144db8a5d2c {
-			background-color: $colorVLightGrey;
-			margin-bottom: $base-spacing/2;
-
-			h2 {
-				background-color: $colorIconBlueGrey;
-				padding: 5px;
-				color: $colorMidGrey;
-				font-size: .9em;
-			}
-			
-			background-color: $colorBeigeGrey;
-			//text-align: center;
-			margin-bottom: $base-spacing;
-			padding-bottom: $base-spacing/2;
-			a {
-				display: block;
-				&:hover {
-					background-color: $colorLightGrey;
-				}
-			}
-
-
-		}
-		#block-fieldblock-42d99c56b52cb2270df884230914d4c8 {
-			background-color: $colorVLightGrey;
-			margin-bottom: $base-spacing/2;
-
-			h2 {
-				background-color: $colorIconBlueGrey;
-				padding: 5px;
-				color: $colorMidGrey;
-				font-size: .9em;
-			}
-			
-			background-color: $colorBeigeGrey;
-			//text-align: center;
-			margin-bottom: $base-spacing;
-			padding-bottom: $base-spacing/2;
-			a {
-				display: block;
-				&:hover {
-					background-color: $colorLightGrey;
-				}
-			}
-
-
-		}
-
-		// #block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
-
-		// @include clearfix;
-		// margin-bottom: 2em;
-
-		// 	.view-eva-subscribe-links {
-
-		// 		h2 {
-		// 			background-color: $colorIconBlueGrey;
-		// 			padding: 2px;
-		// 			color: $colorLinkHover;
-		// 			font-size: .9em;
-
-		// 		}
-
-		// 		a {
-		// 			// @include span-columns(2 of 4);
-		// 			// @include omega();
-		// 			background-color: $colorVLightGrey;
-		// 			width: 50%;
-		// 			height: 40px;
-		// 			float: left;
-		// 			display: block;
-
-					
-					
-		// 			padding: 5px;
-
-		// 		}
-		// 	}
-
-		// }
 	}
 
 }
+
+
+
+

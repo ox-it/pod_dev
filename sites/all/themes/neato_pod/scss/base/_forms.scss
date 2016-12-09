@@ -152,7 +152,7 @@ select {
   box-shadow: none;
   height: 3.4em;
   font-size: 1.1em;
-  border: 1px solid $base-border-color;
+  border: 1px solid darken($colorLightGrey, 40%);
   padding: 12px;
   border-radius: $base-border-radius-search;
   }

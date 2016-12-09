@@ -42,7 +42,6 @@
 		
 	}
 
-
 	// .facetapi-facet-title-az-glossary {
 	// 	@include clearfix;
 	// }
@@ -63,6 +62,143 @@
 
 }
 
+
+
+.context-series-page, .context-people-page, .context-unit-page {
+
+	#sidebar-first {
+
+		.block-fieldblock {
+			background-color: $colorBeigeGrey;
+
+			.field-item a {
+				padding: 5px;
+				display: block;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+		}
+
+		h2 {
+			padding: 5px;
+			font-size: .9em;
+		}
+
+
+	}
+}
+
+.context-unit-page {
+
+	#sidebar-first {
+
+		// Unit Image Block Background
+		#block-fieldblock-dfea7c16f657ccdfe7b463c686203cc9 {
+
+			.field-name-field-unit-image {
+				@include size(100%);
+				padding: 1em;
+			}
+		}
+
+		#block-fieldblock-6846037a8753c624f3378f2a930e9e43 {
+			margin-top: 3px;
+			//border-top: 1px solid $colorGraduateYellow;
+			color: $colorMidGrey;
+		}
+
+		// Associated People
+		#block-fieldblock-c34999a72a29e2d8a2d62a9b5e8826ce {
+			h2 {
+				background-color: $colorGraduateYellow;
+			}
+			margin-top: 2em;
+			background-color: transparent;
+
+			.view-display-id-entity_view_3 {
+
+				.views-row {
+					padding: 1em 0 2em 0;
+					@include clearfix;
+					font-size: .8em;
+					@include span-columns(4);
+					@include omega(3n);
+
+				}
+			}
+
+		}
+
+
+
+	}
+}
+
+
+.context-series-page {
+
+	#sidebar-first {
+
+		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba {
+			margin-top: 3px;
+			//border-top: 1px solid $colorIconBlueGrey;
+			padding: 5px;
+			color: $colorMidGrey;
+		}
+
+		#block-fieldblock-930ac34e1bf7b2e5e0bdb144db8a5d2c {
+			margin-top: 2em;
+			padding-bottom: 5px;
+			h2 {
+				background-color: $colorIconBlueGrey;
+			}
+		}
+
+		#block-fieldblock-42d99c56b52cb2270df884230914d4c8 {
+			margin-top: 2em;
+			padding-bottom: 5px;
+			h2 {
+				background-color: $colorIconBlueGrey;
+
+			}
+
+		}
+	}
+
+}
+
+.context-people-page {
+
+	#sidebar-first {
+
+		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a {
+			margin-top: 3px;
+			//border-top: 1px solid $colorGraduateLightGreen;
+			color: $colorMidGrey;
+			text-align: center;
+		}
+
+		#block-fieldblock-cdd8d27af833196db5fd48c8da91d8d8 {
+			margin-top: 2em;
+			padding-bottom: 5px;
+			h2 {
+				background-color: $colorGraduateLightGreen;
+			}	
+		}
+
+		#block-fieldblock-54f7e23c84e601be1dc3f7dffffeec2b {
+			margin-top: 2em;
+			padding-bottom: 5px;
+			h2 {
+				background-color: $colorGraduateLightGreen;
+
+			}
+
+		}
+	}
+}
 
 
 
