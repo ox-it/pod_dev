@@ -3027,7 +3027,7 @@ function ox_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Series Featured';
+  $handler->display->display_options['title'] = 'Featured Series';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -3035,7 +3035,8 @@ function ox_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'owlcarousel';
+  $handler->display->display_options['style_options']['instance'] = 'owlcarousel_settings_featured-series';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Taxonomy term: Album Cover */
   $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';

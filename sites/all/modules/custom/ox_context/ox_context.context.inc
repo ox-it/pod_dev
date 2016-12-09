@@ -142,13 +142,25 @@ function ox_context_context_default_contexts() {
           'module' => 'views',
           'delta' => 'series_featured-block',
           'region' => 'featured-four',
-          'weight' => '-10',
+          'weight' => '-36',
+        ),
+        'views--exp-series_gallery-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-series_gallery-page',
+          'region' => 'featured-four',
+          'weight' => '-35',
         ),
         'views-people_featured-block' => array(
           'module' => 'views',
           'delta' => 'people_featured-block',
           'region' => 'featured-five',
           'weight' => '-10',
+        ),
+        'views--exp-people_view-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-people_view-page',
+          'region' => 'featured-five',
+          'weight' => '-9',
         ),
         'views-series_gallery-block_1' => array(
           'module' => 'views',
