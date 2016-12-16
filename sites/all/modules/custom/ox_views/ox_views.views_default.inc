@@ -2414,14 +2414,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  /* Field: Taxonomy term: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Taxonomy term: Image */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
   $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
@@ -2433,6 +2425,14 @@ function ox_views_views_default_views() {
     'image_style' => 'people',
     'image_link' => 'content',
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   /* Field: Field: Oxford Unit */
   $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
   $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
@@ -3038,6 +3038,12 @@ function ox_views_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'owlcarousel';
   $handler->display->display_options['style_options']['instance'] = 'owlcarousel_settings_featured-series';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/series" class="series-more-link">View all podcast series</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   /* Field: Taxonomy term: Album Cover */
   $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
   $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
@@ -3335,6 +3341,186 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['block_description'] = 'Sidr Series Block';
   $export['series_gallery'] = $view;
+
+  $view = new view();
+  $view->name = 'unit_featured';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Unit Featured';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Featured Department & Colleges';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/departments-colleges" class="unit-more-link">View all departments & colleges</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  /* Field: Taxonomy term: Image */
+  $handler->display->display_options['fields']['field_unit_image']['id'] = 'field_unit_image';
+  $handler->display->display_options['fields']['field_unit_image']['table'] = 'field_data_field_unit_image';
+  $handler->display->display_options['fields']['field_unit_image']['field'] = 'field_unit_image';
+  $handler->display->display_options['fields']['field_unit_image']['label'] = '';
+  $handler->display->display_options['fields']['field_unit_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_unit_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_unit_image']['settings'] = array(
+    'image_style' => 'people',
+    'image_link' => 'content',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'units' => 'units',
+  );
+  /* Filter criterion: Taxonomy term: Image (field_unit_image:fid) */
+  $handler->display->display_options['filters']['field_unit_image_fid']['id'] = 'field_unit_image_fid';
+  $handler->display->display_options['filters']['field_unit_image_fid']['table'] = 'field_data_field_unit_image';
+  $handler->display->display_options['filters']['field_unit_image_fid']['field'] = 'field_unit_image_fid';
+  $handler->display->display_options['filters']['field_unit_image_fid']['operator'] = 'not empty';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_description'] = 'Unit Featured Block';
+  $export['unit_featured'] = $view;
+
+  $view = new view();
+  $view->name = 'unit_gallery';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Unit Gallery';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Departments & Colleges';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'views_term_top_ancestor',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Taxonomy term: Taxonomy term using Oxford Unit */
+  $handler->display->display_options['relationships']['reverse_field_unit_taxonomy_term']['id'] = 'reverse_field_unit_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_unit_taxonomy_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_unit_taxonomy_term']['field'] = 'reverse_field_unit_taxonomy_term';
+  /* Relationship: Taxonomy term: Content using Series */
+  $handler->display->display_options['relationships']['reverse_field_series_node']['id'] = 'reverse_field_series_node';
+  $handler->display->display_options['relationships']['reverse_field_series_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_series_node']['field'] = 'reverse_field_series_node';
+  $handler->display->display_options['relationships']['reverse_field_series_node']['relationship'] = 'reverse_field_unit_taxonomy_term';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '[name] ([nid])';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Field: Taxonomy term: Top-level ancestor */
+  $handler->display->display_options['fields']['views_term_top_ancestor']['id'] = 'views_term_top_ancestor';
+  $handler->display->display_options['fields']['views_term_top_ancestor']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['views_term_top_ancestor']['field'] = 'views_term_top_ancestor';
+  $handler->display->display_options['fields']['views_term_top_ancestor']['label'] = '';
+  $handler->display->display_options['fields']['views_term_top_ancestor']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['views_term_top_ancestor']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_term_top_ancestor']['link_to_taxonomy'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['relationship'] = 'parent';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Taxonomy term: Vocabulary */
+  $handler->display->display_options['filters']['vid']['id'] = 'vid';
+  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['vid']['field'] = 'vid';
+  $handler->display->display_options['filters']['vid']['value'] = array(
+    6 => '6',
+  );
+  $handler->display->display_options['filters']['vid']['group'] = 1;
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['filters']['nid']['operator'] = '>';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '0';
+  $handler->display->display_options['filters']['nid']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['value'] = 'Continuing Education';
+  $handler->display->display_options['filters']['name']['group'] = 2;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'departments-colleges';
+  $export['unit_gallery'] = $view;
 
   return $export;
 }

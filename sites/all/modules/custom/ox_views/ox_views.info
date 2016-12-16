@@ -24,3 +24,5 @@ features[views_view][] = series_episodes_file_
 features[views_view][] = series_episodes_solr_
 features[views_view][] = series_featured
 features[views_view][] = series_gallery
+features[views_view][] = unit_featured
+features[views_view][] = unit_gallery
