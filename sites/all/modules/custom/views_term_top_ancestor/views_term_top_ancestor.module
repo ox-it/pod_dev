@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Code for the Views Top Ancestor module
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_term_top_ancestor_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Find the top-level ancestor of a taxonomy term.
+ *
+ * @param int $tid
+ *   A taxonomy term ID.
+ * @return object
+ *   The top-most ancestor of the given term, as a taxonomy term object.
+ */
+function _views_term_top_ancestor($tid) {
+  $ancestors = taxonomy_get_parents_all($tid);
+  // If this term has no ancestors, it is a top-level term.
+  if (empty($ancestors)) {
+    return taxonomy_term_load($tid);
+  }
+  // Otherwise, the last element in the array is the top-level term.
+  return $ancestors[count($ancestors)-1];
+}

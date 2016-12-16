@@ -1,0 +1,6 @@
+name = Views Top Ancestor
+core = 7.x
+package = Podcasts.ox
+dependencies[] = taxonomy
+dependencies[] = views
+files[] = views_term_top_ancestor_handler.inc
