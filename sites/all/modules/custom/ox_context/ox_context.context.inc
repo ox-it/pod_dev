@@ -123,44 +123,38 @@ function ox_context_context_default_contexts() {
         'block-8' => array(
           'module' => 'block',
           'delta' => '8',
-          'region' => 'featured-two',
+          'region' => 'featured-one',
           'weight' => '-10',
         ),
         'block-1' => array(
           'module' => 'block',
           'delta' => '1',
-          'region' => 'featured-two',
+          'region' => 'featured-one',
           'weight' => '-9',
         ),
         'block-2' => array(
           'module' => 'block',
           'delta' => '2',
-          'region' => 'featured-three',
+          'region' => 'featured-two',
           'weight' => '-10',
         ),
         'views-series_featured-block' => array(
           'module' => 'views',
           'delta' => 'series_featured-block',
-          'region' => 'featured-four',
-          'weight' => '-36',
-        ),
-        'views--exp-series_gallery-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-series_gallery-page',
-          'region' => 'featured-four',
-          'weight' => '-35',
+          'region' => 'featured-three',
+          'weight' => '-10',
         ),
         'views-people_featured-block' => array(
           'module' => 'views',
           'delta' => 'people_featured-block',
-          'region' => 'featured-five',
+          'region' => 'featured-four',
           'weight' => '-10',
         ),
-        'views--exp-people_view-page' => array(
+        'views-unit_featured-block' => array(
           'module' => 'views',
-          'delta' => '-exp-people_view-page',
+          'delta' => 'unit_featured-block',
           'region' => 'featured-five',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'views-series_gallery-block_1' => array(
           'module' => 'views',
@@ -416,6 +410,7 @@ function ox_context_context_default_contexts() {
       'values' => array(
         'solr' => 'solr',
         'solr*' => 'solr*',
+        'series/*/*' => 'series/*/*',
       ),
     ),
   );
@@ -488,6 +483,7 @@ function ox_context_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
+        '~series/*/*' => '~series/*/*',
         'series/*' => 'series/*',
       ),
     ),
@@ -518,6 +514,7 @@ function ox_context_context_default_contexts() {
       'values' => array(
         'series' => 'series',
         'series/*' => 'series/*',
+        '~series/*/*' => '~series/*/*',
       ),
     ),
     'taxonomy_term' => array(
@@ -628,6 +625,34 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_sidr'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'context_unit_gallery';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'departments-colleges' => 'departments-colleges',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-9' => array(
+          'module' => 'block',
+          'delta' => '9',
+          'region' => 'header-middle-bottom',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_unit_gallery'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

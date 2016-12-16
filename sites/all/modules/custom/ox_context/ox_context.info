@@ -25,6 +25,7 @@ features[context][] = context_searchapi_solr
 features[context][] = context_series_name
 features[context][] = context_series_page
 features[context][] = context_sidr
+features[context][] = context_unit_gallery
 features[context][] = context_unit_page
 features[ctools][] = context:context:3
 features[features_api][] = api:2
