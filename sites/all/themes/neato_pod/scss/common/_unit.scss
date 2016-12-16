@@ -20,9 +20,19 @@
 	}
 
 
+	.header-middle-bottom-outer {
+		
+		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
+		#block-block-9 {
+			padding: 3em 0;
+
+		}
+	}
+
+
 
 	.featured-outer-one  {
-		padding-bottom: 2.5em;
+		//padding-bottom: 2.5em;
 		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
 
 		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
@@ -41,14 +51,16 @@
 		#block-fieldblock-7afe5ac42fd76434610c72d58305bf2d .view-display-id-entity_view_1 {
 
 			.views-field-name {
-			font-size: 2em;
-			border-bottom: 1px solid $colorLinkHover;
+				padding-top: 1.5em;
+				font-size: 2em;
+				border-bottom: 1px solid $colorLinkHover;
 			}
 
 		}
 
 		// EVA Field Person Associated Series
 		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
+			padding-bottom: 2em;
 
 			h2 {
 				display: block;
@@ -101,10 +113,7 @@
 	}
 
 
-	.header-middle-bottom-outer {
-		padding-top: 2.5em;
-		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
-	}
+
 
 
 
@@ -112,6 +121,49 @@
 }
 
 
+/*
+ *************************  Unit Gallery (.../department-colleges)  **********************************
+ */
+
+
+
+
+.context-unit-page  {
+
+	.view-unit-gallery {
+		.item-list {
+			@include clearfix;
+			margin: 2em 0 5em 0;
+			h3 {
+				color: $colorMidGrey;
+				border-top: 4px solid $colorGraduateYellow;
+				font-size: 1.4em;
+			}
+
+		}
+
+		.views-row .views-field {
+			
+			@include span-columns(6);
+			@include omega(n);
+			display: inline-block;
+			padding-right: 3em;
+			font-size: 1.1em;
+			
+			a {
+				padding: 3px 3em 3px 0;
+				border-bottom: 1px solid $colorLightGrey;
+				display: block;
+				padding-right: 10px;
+				&:hover {
+					background-color: $colorVLightGrey;
+				}
+			}
+
+		}
+
+	}
+}
 
 
 

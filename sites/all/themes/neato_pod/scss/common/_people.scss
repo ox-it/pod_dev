@@ -12,6 +12,9 @@
 	}
 
 	.views-row {
+		img {
+			border-radius: 5px 5px 0 0;
+		}
 
 		// @include span-columns(2);
     	// @include omega(6n);
@@ -27,24 +30,20 @@
 		margin-bottom: 3em;
 
 		.views-field-name {
-			background-color: $colorBeigeGrey;
+			background-color: $colorLightGrey;
 			text-align: center;
 			padding: 2px;
-			border-radius: 2px 2px 0 0;
+			//border-radius: 0 0;
 
 		}
 
 		.views-field-field-unit {
 			background-color: $colorBeigeGrey;
 			text-align: center;
-			padding: 2px;
+			padding: 0;
 			font-size: .8em;
-			border-radius: 0 0 2px 2px;
+			border-radius: 2px 2px 0 0 ;
 
-		}
-
-		.views-field-name {
-			background-color: $colorLightGrey;
 		}
 
 	}
@@ -64,21 +63,29 @@
 
 
 	.header-middle-bottom-outer {
-		padding-top: 2.5em;
+		padding-top: 3em;
+		padding-bottom: 3em;
 		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
 	}
 
+	#block-views--exp-people_view-page {
+		
+		filter: opacity(.9);
+
+	}
+
 	.featured-outer-one  {
-		padding-bottom: 2.5em;
-		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
+		//padding-bottom: 3em;
+		background-color: lighten($colorGraduateLightGreen, 3%); //$colorBooksBlog; //$colorMidGrey;
+		
 		
 		// EVA Field Person Name
 		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a .view-display-id-entity_view_2 {
 			
 			.views-field-name-1 {
-				padding-top: 1em;
+				padding-top: .5em;
 				font-size: 2em;
-				border-bottom: 1px solid $colorLinkHover;
+				//border-top: 1px solid $colorLinkHover;
 			}
 		}
 		// EVA Field Person Description
@@ -97,8 +104,10 @@
 
 		// EVA Field Person Associated Series
 		#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-display-id-entity_view_1 {
+			padding-bottom: 2em;
 
 			h2 {
+
 				display: block;
 				cursor: pointer;
 				color: $action-color;

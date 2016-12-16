@@ -116,23 +116,33 @@
 
 
 	.header-middle-bottom-outer {
-		padding-top: 2.5em;
 		background-color: $colorIconBlueGrey;
+		padding-top: 3em;
+		padding-bottom: 3em;
+
+	}
+
+	#block-views--exp-series_gallery-page {
+		
+		filter: opacity(.9);
 
 	}
 
 	.featured-outer-one {
-		padding-bottom: 2.5em;
-		background-color: $colorIconBlueGrey;
+		//padding-bottom: 2em;
+		background-color: lighten($colorIconBlueGrey, 5%);
+		
 
 
 		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba .view-display-id-entity_view_3 {
 			.views-field-name {
-				padding-top: 1em;
-				font-size: 1.8em;
-				border-bottom: 1px solid $colorLinkHover;
+				padding-top: .5em;
+				font-size: 2em;
+				//border-bottom: 1px solid $colorLinkHover;
 			}
 		}
+
+
 
 		#block-fieldblock-64071884587fd9f5976892abab11b1fc {
 			
@@ -160,9 +170,11 @@
 		// The subscribe buttons 
 		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
 			@include clearfix;
+			padding-bottom: 2em;
 			padding-top: 1em;
 
 			.view-eva-subscribe-links  {
+
 
 				h2.title {
 					color: $colorMidGrey;
@@ -199,9 +211,9 @@
 						background-image: url("../images/itunes_u.png");
 						background-repeat: no-repeat;
 						background-size: 21%;
-						padding-left: 40px;
-
+						padding-left: 45px;
 					}
+					.views-field-field-itunes-u-document-code a {width: 170px;}
 
 					.views-field-field-mediapub-nid a {
 						background-image: url("../images/rss_icon.png");

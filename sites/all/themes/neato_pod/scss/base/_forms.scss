@@ -142,6 +142,54 @@ select {
   }
 }
 
+/// Unit Gallery Page (hideseek search box)
+#block-block-9 {
+
+  position: relative;
+
+  input {
+    background-color: $colorVLightGrey;
+    border: 1px solid lighten($action-color, 30%);
+    border-radius: $base-border-radius-search;
+    font-size: 1.3em;
+    padding: $base-spacing / 2.3;
+    //width: 388px;
+
+    &:hover {
+      border-color: darken($base-border-color, 30%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      box-shadow: $form-box-shadow-focus;
+      outline: none;
+    }
+  }
+}
+
+
+.block-facetapi-keywords, .block-facetapi-units {
+  input {
+    background-color: $colorVLightGrey;
+    border: 1px solid lighten($action-color, 50%);
+    border-radius: $base-border-radius-search;
+    font-size: 1em;
+    padding: $base-spacing / 2.3;
+    width: 100%;
+
+    &:hover {
+      border-color: darken($base-border-color, 30%);
+    }
+
+    &:focus {
+      border-color: $action-color;
+      box-shadow: $form-box-shadow-focus;
+      outline: none;
+    }
+
+  }
+}
+
 /*
  ******************************** Chosen dropdown filter overrides ***********************************
  */

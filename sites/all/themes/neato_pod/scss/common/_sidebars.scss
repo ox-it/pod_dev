@@ -14,15 +14,26 @@
 		margin: 0 0 $base-spacing 0;
 		//background-color: $colorBeigeGrey;
 		//padding: 20px;
+		background-color: $colorVLightGrey;
+		padding: 4px;
+
+
+
 
 
 		h2 {
-			background-color: $colorIconBlueGrey;
+			background-color: $colorLinkHover;
 			padding: .75em;
 			color: $font-heading-white;
-			border-radius: $base-border-radius;
+			border-radius: 1px;
 		}
 	}
+
+	#sidr-menu-keywords {
+		display: block;
+		padding-bottom: 15px;
+		padding-left: 5px;
+		}
 
 	.block-facetapi-units, .block-facetapi-keywords {
 		//border-top: 1px solid $base-border-color;
@@ -32,6 +43,7 @@
 			max-height: 20em;
 			overflow-y: scroll;
 		}
+
 	}
 
 	.block-facetapi-units ul.facetapi-facetapi-links,

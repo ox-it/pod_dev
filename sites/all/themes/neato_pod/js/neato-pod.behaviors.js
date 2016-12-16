@@ -229,6 +229,17 @@ Drupal.behaviors.podOmegaHideSeek = {
           ignore_accents: false
         });
 
+        // Unit Gallery search box (static sidebar)
+        $('#hideseek-unit-page').hideseek({
+          list: '.view-unit-gallery .view-content',      
+          nodata:         'No corresponding department or college',
+          attribute:      'text',
+          highlight:      true,
+          ignore:         '',
+          navigation:     false,
+          ignore_accents: false
+        });
+
 
 
     }
@@ -258,6 +269,18 @@ Drupal.behaviors.unitAssociated = {
 
     }
 };
+
+
+Drupal.behaviors.headerScroll = {
+  attach: function(context) {
+
+        $(window).on("scroll touchmove", function () {
+        $('.header-middle-outer').toggleClass('header_scroll', $(document).scrollTop() > 10);
+    });
+
+  }
+};
+
 
 
 

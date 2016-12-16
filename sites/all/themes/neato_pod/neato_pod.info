@@ -33,6 +33,7 @@ base theme = neato
 stylesheets[all][] = css/neato_pod.css
 stylesheets[all][] = css/neato_pod.reset.css
 stylesheets[all][] = js/sidr/dist/stylesheets/jquery.sidr.bare.css
+stylesheets[all][] = js/meanMenu/meanmenu.css
 
 
 ; ========================================
@@ -63,5 +64,6 @@ regions[footer_hidden_two]   		= Footer Hidden Two
 scripts[] = js/neato-pod.behaviors.js
 scripts[] = js/sidr/dist/jquery.sidr.min.js 
 scripts[] = js/hideseek/jquery.hideseek.min.js
+scripts[] = js/meanMenu/jquery.meanmenu.js
 
 
