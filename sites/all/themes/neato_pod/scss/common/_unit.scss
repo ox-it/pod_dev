@@ -37,7 +37,10 @@
 
 		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
 			.views-field-description {
-				padding-top: 1em;
+				padding: 2em 0;
+				font-size: 1.2em;
+				color: darken($colorMidGrey, 10%);
+				
 				.field-content p br { 
 					content: "A" !important;
 				    display: block !important;
@@ -58,11 +61,22 @@
 
 		}
 
-		// EVA Field Person Associated Series
-		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
-			padding-bottom: 2em;
+	}
 
+}
+
+
+// EVA Field Person Associated Series
+.context-unit-page {
+
+	.featured-outer-two {
+		background-color: $colorLightGrey;
+
+
+		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
 			h2 {
+				padding: 1em 0;
+				font-size: 1.1em;
 				display: block;
 				cursor: pointer;
 				color: $action-color;
@@ -80,12 +94,9 @@
 				display:none; // JQuery toggles
 			}
 
-			margin-top: 2em;
-
 			.views-row {
 				width: auto;
-				padding-top: 1em;
-				padding-bottom: 2em;
+				padding: 2em 0;
 				@include span-columns(2);
 				@include omega(6n);
 				font-size: $description-font-size;
@@ -95,10 +106,7 @@
 					a {
 						display: block;
 						color: $colorOffBlack;
-						//border-bottom: 1px solid $colorMidGrey;
-						//text-align: center;
 						height: 40px;
-						//padding: 2px;
 						font-size: .9em;
 						border-radius: 0 0 2px 2px;
 					}
@@ -107,19 +115,8 @@
 
 			}		
 		}
-
-
-
 	}
-
-
-
-
-
-
-
 }
-
 
 /*
  *************************  Unit Gallery (.../department-colleges)  **********************************

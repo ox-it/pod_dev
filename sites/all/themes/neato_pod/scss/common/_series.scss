@@ -6,7 +6,9 @@
 
 	.view-header {
 		border-top: 2px solid $colorBeigeGrey;
-		color: $colorPrimary;
+		font-size: 2em;
+		text-align: center;
+		color: $colorMidGrey;
 		padding: 3px 0;
 		margin-bottom: $base-spacing;
 	}
@@ -24,7 +26,7 @@
 
 		.views-field-name {
 			font-size: 1em;
-			background-color: $colorVeryLightBlue;
+			background-color: $colorLightGrey;
 			border-radius: $base-border-radius;
 			margin-bottom: .6em;
 
@@ -33,7 +35,7 @@
 				padding: 3px 10px;
 				min-height: 3em;
 				&:hover {
-					background-color: $colorLightGrey;
+					background-color: darken($colorLightGrey, 10%);
 					color: $colorPrimary;
 				}
 			}
@@ -117,8 +119,8 @@
 
 	.header-middle-bottom-outer {
 		background-color: $colorIconBlueGrey;
-		padding-top: 3em;
-		padding-bottom: 3em;
+		padding-top: 4em;
+		padding-bottom: 4em;
 
 	}
 
@@ -138,7 +140,7 @@
 			.views-field-name {
 				padding-top: .5em;
 				font-size: 2em;
-				//border-bottom: 1px solid $colorLinkHover;
+				border-bottom: 1px solid $colorLinkHover;
 			}
 		}
 
@@ -149,12 +151,14 @@
 			.view-display-id-entity_view_5 {
 
 				.views-field-description {
-					padding-top: 1em;
+					padding: 2em 0;
+					font-size: 1.2em;
+					color: darken($colorMidGrey, 20%);
 
 					.field-content p { 
 						// content: "A" !important;
 				 		//  display: block !important;
-				    	margin-bottom: 1em !important;
+				    	padding-bottom: 1em !important;
 					}
 
 					br {
@@ -167,25 +171,39 @@
 			}
 		}
 		
-		// The subscribe buttons 
+
+
+	}
+
+}
+
+
+// The subscribe buttons 
+.context-series-page {
+
+	.featured-outer-two {
+		background-color: $colorLightGrey;
+
 		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
 			@include clearfix;
-			padding-bottom: 2em;
-			padding-top: 1em;
+			//padding-top: 1em;
 
 			.view-eva-subscribe-links  {
 
 
 				h2.title {
-					color: $colorMidGrey;
-					width: 70px; 
+					margin: 0 0 0 0;
+					color: $colorVLightGrey;
+					width: 100px; 
 					text-align: center;
 					margin-right: 2em;
 					float: left;
-					font-size: .7em;
-					border: 1px solid $colorMidGrey;
-					padding: 8px 0 7px 0;
-					border-radius: $base-border-radius;
+					font-size: .9em;
+					padding-top: 6px;
+					height: 28px;
+					//border: 1px solid $colorMidGrey;
+					background-color: lighten($colorMidGrey, 10%);
+					//border-radius: $base-border-radius;
 
 				}
 
@@ -201,8 +219,8 @@
 						display: block;
 						padding: 5px;
 						vertical-align: middle;
-						border-radius: $base-border-radius;
-						margin-bottom: 1em;
+						//border-radius: $base-border-radius;
+						//margin-bottom: 1em;
 					}
 
 					.views-field-field-itunes-u-audio-code a, 
@@ -228,11 +246,8 @@
 			}
 
 		}
-
 	}
 
 }
-
-
 
 

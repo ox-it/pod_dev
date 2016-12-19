@@ -1,26 +1,18 @@
 
 
-.header-top-outer, .header-bottom-outer, .footer-top-outer {
-	background-color: $colorBeigeGrey;
-}
-
-
-
-
-
 .header-middle-outer {
-	.header-middle {
-		margin-top: 1.5em;
-	}
-	
 	background-color: $colorPrimary; 
-	height: 100px; 
+	height: 90px; 
+	transition: height 500ms; 
 	position:fixed; 
 	top:0px; 
 	margin: auto; 
-	z-index:100000;
-	padding-top: 100px; 
+	z-index:10000;
 	width:100%;
+
+	.header-middle {
+		margin-top: 1.5em;
+	}
 
 
 	#block-system-main-menu ul.menu li {
@@ -32,8 +24,7 @@
 		a {
 			display: block;
 			font-variant: small-caps;
-			//transition: font-size 500ms;
-			font-size: 1.4em;
+			font-size: 1.3em;
 			color: $font-heading-color;
 			padding: .3em 1em;
 			border: 1px solid darken($colorLinkHover, 12%); 
@@ -46,15 +37,15 @@
 	#logo-block {
 		background: url("../images/oxford-logo-square.png") no-repeat;
 		background-size: 100%;
-		height: 100px;
-		width: 100px;
+		height: 90px;
+		width: 90px;
 		float: left; 
 
 	}
 
 	#site-name-block {
 		font-family: $lucida-grande; 
-		font-size: 1.5em;
+		font-size: 2em;
 		padding-left: $base-spacing;
 		color: $colorVLightGrey;
 	}
@@ -63,10 +54,15 @@
 
 // The .header_scoll is a jQuery addClass toggle 
 .header-middle-outer.header_scroll {
+
+	height: 57px;
+	transition: height 500ms; 
+
 	.header-middle {
 		margin-top: .7em;
 	}
-	height: 57px;
+
+	
 
 
 	#block-system-main-menu ul.menu li {
@@ -102,15 +98,18 @@
 
 
 // *****   Required to offset the Fixed height above -- plus the Admin menu when logged-in  **********
-.header-middle-bottom-outer {margin-top: 99px;}
-.logged-in .header-middle-bottom-outer {margin-top: 119px;}
+.header-middle-bottom-outer {margin-top: 90px; transition: margin-top 500ms; }
+.header-middle-bottom-outer.header_scroll {margin-top: 57px; transition: margin-top 500ms;}
+.logged-in .header-middle-bottom-outer {margin-top: 99px;}
 .logged-in .header-middle-outer  {top: 20px}
+#admin-menu {position: relative; z-index: 10001;}
 // ************************************************************
 
 
 .mobile-menu-button {
 	float: right;
 }
+
 #mobile-menu-wrapper {
 
 	#mobile-menu-inner {

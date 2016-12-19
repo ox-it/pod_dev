@@ -6,7 +6,10 @@
 
 	.view-header {
 		border-top: 2px solid $colorBeigeGrey;
-		color: $colorPrimary;
+		font-size: 2em;
+		color: $colorMidGrey;
+		text-align: center;
+		
 		padding: 3px 0;
 		margin-bottom: $base-spacing;
 	}
@@ -63,8 +66,8 @@
 
 
 	.header-middle-bottom-outer {
-		padding-top: 3em;
-		padding-bottom: 3em;
+		padding-top: 4em;
+		padding-bottom: 4em;
 		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
 	}
 
@@ -85,14 +88,16 @@
 			.views-field-name-1 {
 				padding-top: .5em;
 				font-size: 2em;
-				//border-top: 1px solid $colorLinkHover;
+				border-bottom: 1px solid $colorLinkHover;
 			}
 		}
 		// EVA Field Person Description
 		#block-fieldblock-77e58f65f54c4a3b1f9304de010e7c26 .view-display-id-entity_view_4 {
 
 			.views-field-description  {
-				padding-top: 1em;
+				padding: 2em 0;
+				font-size: 1.2em;
+				color: darken($colorMidGrey, 20%);
 
 				.field-content p br { 
 					content: "A" !important;
@@ -102,12 +107,21 @@
 			}
 		}
 
-		// EVA Field Person Associated Series
+	}
+
+}
+
+// EVA Field Person Associated Series
+.context-people-page {
+	.featured-outer-two {
+		background-color: $colorLightGrey;
+		
+
 		#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-display-id-entity_view_1 {
-			padding-bottom: 2em;
 
 			h2 {
-
+				padding: 1em 0;
+				font-size: 1.1em;
 				display: block;
 				cursor: pointer;
 				color: $action-color;
@@ -125,12 +139,9 @@
 				display:none; // JQuery toggles
 			}
 
-			margin-top: 2em;
-
 			.views-row {
 				width: auto;
-				padding-top: 1em;
-				padding-bottom: 2em;
+				padding: 2em 0;
 				@include span-columns(2);
 				@include omega(6n);
 				font-size: $description-font-size;
@@ -140,10 +151,7 @@
 					a {
 						display: block;
 						color: $colorOffBlack;
-						//border-bottom: 1px solid $colorMidGrey;
-						//text-align: center;
 						height: 40px;
-						//padding: 2px;
 						font-size: .9em;
 						border-radius: 0 0 2px 2px;
 					}
@@ -153,8 +161,8 @@
 			}		
 		}
 	}
-
 }
+
 
 
 

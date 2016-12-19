@@ -3,7 +3,7 @@ button {
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   background-color: $colorLinkHover;
-  border-radius: $base-border-radius-search;
+  border-radius: $base-border-radius;
   border: none;
   color: $font-heading-color;
   cursor: pointer;
@@ -12,7 +12,7 @@ button {
   font-size: $base-font-size;
   font-weight: 600;
   line-height: 1;
-  padding: 1.22em 1.2em;
+  padding: 1.4em 1.2em;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;

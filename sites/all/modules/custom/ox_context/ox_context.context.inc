@@ -276,8 +276,8 @@ function ox_context_context_default_contexts() {
         'fieldblock-8d83dd80917f5b47c5567abe2f2782e2' => array(
           'module' => 'fieldblock',
           'delta' => '8d83dd80917f5b47c5567abe2f2782e2',
-          'region' => 'featured-one',
-          'weight' => '-7',
+          'region' => 'featured-two',
+          'weight' => '-10',
         ),
         'fieldblock-7d9066c7669a89290d050e50e280919a' => array(
           'module' => 'fieldblock',
@@ -550,8 +550,8 @@ function ox_context_context_default_contexts() {
         'fieldblock-0c7862d7c08985ffc1ae025e83178979' => array(
           'module' => 'fieldblock',
           'delta' => '0c7862d7c08985ffc1ae025e83178979',
-          'region' => 'featured-one',
-          'weight' => '-7',
+          'region' => 'featured-two',
+          'weight' => '-10',
         ),
         'fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51' => array(
           'module' => 'fieldblock',
@@ -694,7 +694,7 @@ function ox_context_context_default_contexts() {
         'fieldblock-8c2171cdad0585deed12a3f528f962b4' => array(
           'module' => 'fieldblock',
           'delta' => '8c2171cdad0585deed12a3f528f962b4',
-          'region' => 'featured-one',
+          'region' => 'featured-two',
           'weight' => '-10',
         ),
         'fieldblock-dfea7c16f657ccdfe7b463c686203cc9' => array(

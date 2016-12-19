@@ -102,9 +102,9 @@ select {
   input {
     background-color: $colorVLightGrey;
     border: 1px solid lighten($action-color, 30%);
-    border-radius: $base-border-radius-search;
-    font-size: 1.3em;
-    padding: $base-spacing / 2.3;
+    border-radius: $base-border-radius;
+    font-size: 1.4em;
+    padding: .7em;
     width: 388px;
 
     &:hover {
@@ -124,7 +124,7 @@ select {
   input {
     background-color: $colorVLightGrey;
     border: 1px solid lighten($action-color, 50%);
-    border-radius: $base-border-radius-search;
+    border-radius: $base-border-radius;
     font-size: 1em;
     padding: $base-spacing / 2.3;
     width: 100%;
@@ -150,9 +150,9 @@ select {
   input {
     background-color: $colorVLightGrey;
     border: 1px solid lighten($action-color, 30%);
-    border-radius: $base-border-radius-search;
-    font-size: 1.3em;
-    padding: $base-spacing / 2.3;
+    border-radius: $base-border-radius;
+    font-size: 1.4em;
+    padding: .7em;
     //width: 388px;
 
     &:hover {
@@ -172,7 +172,7 @@ select {
   input {
     background-color: $colorVLightGrey;
     border: 1px solid lighten($action-color, 50%);
-    border-radius: $base-border-radius-search;
+    border-radius: $base-border-radius;
     font-size: 1em;
     padding: $base-spacing / 2.3;
     width: 100%;
@@ -202,7 +202,7 @@ select {
   font-size: 1.1em;
   border: 1px solid darken($colorLightGrey, 40%);
   padding: 12px;
-  border-radius: $base-border-radius-search;
+  border-radius: $base-border-radius;
   }
   .chosen-drop {
     

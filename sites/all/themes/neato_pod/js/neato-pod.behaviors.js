@@ -274,9 +274,10 @@ Drupal.behaviors.unitAssociated = {
 Drupal.behaviors.headerScroll = {
   attach: function(context) {
 
-        $(window).on("scroll touchmove", function () {
-        $('.header-middle-outer').toggleClass('header_scroll', $(document).scrollTop() > 10);
-    });
+      $(window).on("scroll touchmove", function () {
+        $('.header-middle-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
+        $('.header-middle-bottom-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
+      });
 
   }
 };
