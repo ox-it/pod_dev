@@ -53,15 +53,17 @@ body {
     main {
       aside {
         &#sidebar-first {
-          @include span-columns(4);
-          
+          @include span-columns(4); 
+
         }
       }
 
       section#content {
-        @include span-columns(8);
+          @include span-columns(8);
+
+        }
       }
-    }
+
   }
 
   &.one-sidebar.sidebar-second {
@@ -71,20 +73,11 @@ body {
         &#sidebar-second {
           @include span-columns(3);
 
-          @include media($tablet) {
-              @include span-columns(4);
-
-          }
         }
       }
 
       section#content {
         @include span-columns(9);
-                
-        @include media($tablet) {
-          @include span-columns(4);
-
-        }
 
       }
     }

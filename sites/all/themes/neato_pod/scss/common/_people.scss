@@ -2,14 +2,20 @@
  *****************  People Gallery View (.../people)  **************************************************
  */
 
-.page-people .view-people-view {
+.context-people-gallery {
+
+
+	.header-middle-bottom-outer {
+		background-color: $colorGraduateLightGreen;
+		padding-top: 4em;
+		padding-bottom: 4em;
+	}
 
 	.view-header {
 		border-top: 2px solid $colorBeigeGrey;
 		font-size: 2em;
 		color: $colorMidGrey;
 		text-align: center;
-		
 		padding: 3px 0;
 		margin-bottom: $base-spacing;
 	}
@@ -24,7 +30,6 @@
     	// Using explicit floats here, not the grid, as want larger grid gutters. 
         float: left;
         width: 19%;
-        //padding: 1%;
         display: inline-block;
         margin: 0 8% 2% 0;
         &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
@@ -66,28 +71,22 @@
 
 
 	.header-middle-bottom-outer {
-		padding-top: 4em;
-		padding-bottom: 4em;
-		background-color: $colorGraduateLightGreen; //$colorBooksBlog; //$colorMidGrey;
+		background-color: $colorGraduateLightGreen;
 	}
 
-	#block-views--exp-people_view-page {
-		
-		filter: opacity(.9);
-
-	}
 
 	.featured-outer-one  {
-		//padding-bottom: 3em;
-		background-color: lighten($colorGraduateLightGreen, 3%); //$colorBooksBlog; //$colorMidGrey;
+		
+		background-color: $colorGraduateLightGreen;
 		
 		
 		// EVA Field Person Name
 		#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a .view-display-id-entity_view_2 {
 			
 			.views-field-name-1 {
-				padding-top: .5em;
-				font-size: 2em;
+				color: $colorLightPrimary;
+				padding-top: 2em;
+				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
 			}
 		}
@@ -95,7 +94,8 @@
 		#block-fieldblock-77e58f65f54c4a3b1f9304de010e7c26 .view-display-id-entity_view_4 {
 
 			.views-field-description  {
-				padding: 2em 0;
+				padding-top: 1.5em;
+				padding-bottom: 4em;
 				font-size: 1.2em;
 				color: darken($colorMidGrey, 20%);
 
@@ -115,6 +115,8 @@
 .context-people-page {
 	.featured-outer-two {
 		background-color: $colorLightGrey;
+
+		
 		
 
 		#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-display-id-entity_view_1 {
@@ -124,15 +126,24 @@
 				font-size: 1.1em;
 				display: block;
 				cursor: pointer;
+				text-align: center;
 				color: $action-color;
+				background-color: $colorLightGrey;
+
+				&:hover {
+					background-color: lighten($colorLightGrey, 3%);
+				}
+
 				
 			}
-			h2.collapsed:after {
+			h2.collapsed:after, h2.collapsed:before {
 				content: "   ▲   ";
+				margin:  0 1em;
 			}
 
-			h2:not(.collapsed):after {	
+			h2:not(.collapsed):after, h2:not(.collapsed):before {	
 				content: "   ▼   ";
+				margin:  0 1em;
 			}
 
 			.view-content {
@@ -140,8 +151,9 @@
 			}
 
 			.views-row {
+				height: 230px;
 				width: auto;
-				padding: 2em 0;
+				padding: 1em 0;
 				@include span-columns(2);
 				@include omega(6n);
 				font-size: $description-font-size;
@@ -152,7 +164,7 @@
 						display: block;
 						color: $colorOffBlack;
 						height: 40px;
-						font-size: .9em;
+						font-size: 1em;
 						border-radius: 0 0 2px 2px;
 					}
 

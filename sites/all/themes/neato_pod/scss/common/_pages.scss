@@ -3,8 +3,15 @@
 	//padding-bottom: 10px; 
 }
 
+.context-people-page, .context-series-page, .context-unit-page, .context-unit-gallery, .context-people-gallery, .context-series-gallery {
+	main {padding-top: 5em;}  // See also the more general "main" padding-top on _page.scss
+}
+
+.page-solr {
+	main {padding-top: 3em;}
+}
+
  main {
- 	padding-top: 4em;
  	padding-bottom: 15em;
  }
 

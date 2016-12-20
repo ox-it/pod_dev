@@ -1,137 +1,25 @@
 /*
- *************************  Unit Page (.../department-colleges/dept-college-name) -- Top Featured  **********************************
- */
-
-.context-unit-page {
-
-	main {
-		#page-title {display:none;}
-
-		#content {
-			.view-id-eva_associated_terms {
-				.views-row {
-					@include span-columns(3);
-					@include omega(4n);
-					padding-bottom: 4em;
-				}
-			}
-
-		}
-	}
-
-
-	.header-middle-bottom-outer {
-		
-		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
-		#block-block-9 {
-			padding: 3em 0;
-
-		}
-	}
-
-
-
-	.featured-outer-one  {
-		//padding-bottom: 2.5em;
-		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
-
-		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
-			.views-field-description {
-				padding: 2em 0;
-				font-size: 1.2em;
-				color: darken($colorMidGrey, 10%);
-				
-				.field-content p br { 
-					content: "A" !important;
-				    display: block !important;
-				    margin-bottom: 1em !important;    
-				}
-			}			
-		}
-
-
-			
-		#block-fieldblock-7afe5ac42fd76434610c72d58305bf2d .view-display-id-entity_view_1 {
-
-			.views-field-name {
-				padding-top: 1.5em;
-				font-size: 2em;
-				border-bottom: 1px solid $colorLinkHover;
-			}
-
-		}
-
-	}
-
-}
-
-
-// EVA Field Person Associated Series
-.context-unit-page {
-
-	.featured-outer-two {
-		background-color: $colorLightGrey;
-
-
-		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
-			h2 {
-				padding: 1em 0;
-				font-size: 1.1em;
-				display: block;
-				cursor: pointer;
-				color: $action-color;
-				
-			}
-			h2.collapsed:after {
-				content: "   ▲   ";
-			}
-
-			h2:not(.collapsed):after {	
-				content: "   ▼   ";
-			}
-
-			.view-content {
-				display:none; // JQuery toggles
-			}
-
-			.views-row {
-				width: auto;
-				padding: 2em 0;
-				@include span-columns(2);
-				@include omega(6n);
-				font-size: $description-font-size;
-
-				.views-field-name {
-
-					a {
-						display: block;
-						color: $colorOffBlack;
-						height: 40px;
-						font-size: .9em;
-						border-radius: 0 0 2px 2px;
-					}
-
-				}
-
-			}		
-		}
-	}
-}
-
-/*
  *************************  Unit Gallery (.../department-colleges)  **********************************
  */
 
 
+.context-unit-gallery  {
 
+	#page-title {display:none;}
 
-.context-unit-page  {
+	.header-middle-bottom-outer {
+		padding-top: 4em;
+		padding-bottom: 4em;
+		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
+	}
 
 	.view-unit-gallery {
 		.item-list {
 			@include clearfix;
 			margin: 2em 0 5em 0;
 			h3 {
+				padding-top: .2em;
+				padding-bottom: .5em;
 				color: $colorMidGrey;
 				border-top: 4px solid $colorGraduateYellow;
 				font-size: 1.4em;
@@ -163,8 +51,122 @@
 }
 
 
+/*
+ *************************  Unit Page (.../department-colleges/dept-college-name) -- Top Featured  **********************************
+ */
+
+.context-unit-page {
+
+	main {
+		#page-title {display: none;}
+
+		#content {
+			.view-id-eva_associated_terms {
+				.views-row {
+					@include span-columns(3);
+					@include omega(4n);
+					padding-bottom: 4em;
+				}
+			}
+
+		}
+	}
 
 
 
 
+	.featured-outer-one  {
+		background-color: $colorGraduateYellow; 
+
+		#block-fieldblock-7afe5ac42fd76434610c72d58305bf2d .view-display-id-entity_view_1 {
+
+			.views-field-name {
+				color: $colorLightPrimary;
+				padding-top: 2em;
+				font-size: 2.4em;
+				border-bottom: 1px solid $colorLinkHover;
+			}
+
+		}
+
+		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
+
+			.views-field-description {
+				padding-top: 1.5em;
+				padding-bottom: 4em;
+				font-size: 1.2em;
+				color: darken($colorMidGrey, 10%);
+				
+				.field-content p br { 
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1em !important;    
+				}
+			}			
+		}
+
+	}
+
+}
+
+
+// EVA Field Person Associated Series
+.context-unit-page {
+
+	.featured-outer-two {
+		background-color: $colorLightGrey;
+	}
+
+
+		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
+			h2 {
+				padding: 1em 0;
+				font-size: 1.1em;
+				display: block;
+				cursor: pointer;
+				text-align: center;
+				color: $action-color;
+				&:hover {
+					background-color: lighten($colorLightGrey, 3%);
+				}
+				
+			}
+
+			h2.collapsed:after, h2.collapsed:before {
+				content: "   ▲   ";
+				padding: 0 1em;
+			}
+
+			h2:not(.collapsed):after, h2:not(.collapsed):before {	
+				content: "   ▼   ";
+				padding: 0 1em;
+			}
+
+			.view-content {
+				display:none; // JQuery toggles
+			}
+
+			.views-row {
+				height: 230px;
+				width: auto;
+				padding: 1em 0;
+				@include span-columns(2);
+				@include omega(6n);
+				font-size: $description-font-size;
+
+				.views-field-name {
+
+					a {
+						display: block;
+						color: $colorOffBlack;
+						height: 40px;
+						font-size: .9em;
+						border-radius: 0 0 2px 2px;
+					}
+
+				}
+
+			}		
+		}
+}
 

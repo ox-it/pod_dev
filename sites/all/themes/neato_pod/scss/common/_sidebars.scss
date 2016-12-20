@@ -1,57 +1,115 @@
-.context-episode-page .sidebar {
+/*
+ *****************  Responsive sidebar to refine Solr search   **************************************************
+ * This overwrites the basic layout in _layout.scss
+ */
 
-	input {
-		margin-bottom: $base-spacing / 2;
-	}
+.context-episode-page {
+
+	&.one-sidebar.sidebar-first {
+
+    main {
+      aside {
+        &#sidebar-first {
+          @include span-columns(4); 
+          @include media($tablet) {
+              @include span-columns(0);
+              display: none;
+          }
+        }
+      }
+
+      section#content {
+          @include span-columns(8);
+          @include media($tablet) {
+              @include span-columns(6);
+          }
+        }
+      }
+
+  	}
+
+	.featured-outer-two {
+	 
+	  	display: none;
+
+	  	@include media($tablet) {
+	  		display: block;
+	  		font-size: 1.6em;
+	  		float: right;
+	  		padding-bottom: 1em;
+	  		//background-color: red;
+	  	}
+
+  	}
+ }
+
+
+
+ /*
+ *****************  Solr Search Episode sidebar  **************************************************
+ */
+
+
+.context-episode-page {
+
+	#sidebar-first {
+
+		position: none;
+		font-size: $sidebar-font-size;
+
+		input {
+			margin-bottom: $base-spacing / 2;
+			background-color: #fff;
+		}
 	
-	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
-
-	position: none;
-	font-size: $sidebar-font-size;
+		.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
 
 
-	.block-facetapi {
-		margin: 0 0 $base-spacing 0;
-		//background-color: $colorBeigeGrey;
-		//padding: 20px;
-		background-color: $colorVLightGrey;
-		padding: 4px;
+		.block-facetapi {
+			margin: 0 0 $base-spacing 0;
+			background-color: $colorVLightGrey;
+			//padding: 4px;
 
 
+			h2 {
+				background-color: $colorLinkHover;
+				padding: .75em;
+				color: $font-heading-white;
+				border-radius: 1px;
+			}
 
+			.item-list {
+				padding: 4px;
+			}
 
+			#sidr-menu-keywords {
+				display: block;
+				padding-bottom: 15px;
+				padding-left: 5px;
+			}
 
-		h2 {
-			background-color: $colorLinkHover;
-			padding: .75em;
-			color: $font-heading-white;
-			border-radius: 1px;
-		}
-	}
-
-	#sidr-menu-keywords {
-		display: block;
-		padding-bottom: 15px;
-		padding-left: 5px;
 		}
 
-	.block-facetapi-units, .block-facetapi-keywords {
-		//border-top: 1px solid $base-border-color;
-		margin: 0 0 $base-spacing 0;
+		.block-facetapi-units, .block-facetapi-keywords {
+
+			margin: 0 0 2em 0;
 				
-		.item-list {
-			max-height: 20em;
-			overflow-y: scroll;
+			.item-list {
+				max-height: 20em;
+				overflow-y: scroll;
+			}
+
+			ul.facetapi-facetapi-links {
+				//padding-right: -20px;
+
+				li {
+					border-bottom: 1px solid $base-border-color;
+				}
+
+			}
+
 		}
-
-	}
-
-	.block-facetapi-units ul.facetapi-facetapi-links,
-	.block-facetapi-keywords ul.facetapi-facetapi-links {
-		
-		padding-right: -20px;
-		li {border-bottom: 1px solid $base-border-color;}
-		
+	
 	}
 
 	// .facetapi-facet-title-az-glossary {
@@ -74,6 +132,10 @@
 
 }
 
+
+/*
+ *****************  Sidebar for series, people, unit pages  **************************************************
+ */
 
 
 .context-series-page, .context-people-page, .context-unit-page {

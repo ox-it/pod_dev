@@ -2,7 +2,15 @@
  *****************  Series Gallery View (.../series)  **************************************************
  */
 
-.view-series-gallery {
+.context-series-gallery {
+
+	.header-middle-bottom-outer {
+		background-color: $colorIconBlueGrey;
+		padding-top: 4em;
+		padding-bottom: 4em;
+
+	}
+
 
 	.view-header {
 		border-top: 2px solid $colorBeigeGrey;
@@ -117,29 +125,17 @@
 	}	
 
 
-	.header-middle-bottom-outer {
-		background-color: $colorIconBlueGrey;
-		padding-top: 4em;
-		padding-bottom: 4em;
 
-	}
-
-	#block-views--exp-series_gallery-page {
-		
-		filter: opacity(.9);
-
-	}
 
 	.featured-outer-one {
-		//padding-bottom: 2em;
-		background-color: lighten($colorIconBlueGrey, 5%);
+		background-color: $colorIconBlueGrey;
 		
-
-
 		#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba .view-display-id-entity_view_3 {
+
 			.views-field-name {
-				padding-top: .5em;
-				font-size: 2em;
+				color: $colorLightPrimary;
+				padding-top: 2em;
+				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
 			}
 		}
@@ -151,7 +147,8 @@
 			.view-display-id-entity_view_5 {
 
 				.views-field-description {
-					padding: 2em 0;
+					padding-top: 1.5em;
+					padding-bottom: 3em;
 					font-size: 1.2em;
 					color: darken($colorMidGrey, 20%);
 
@@ -184,28 +181,47 @@
 	.featured-outer-two {
 		background-color: $colorLightGrey;
 
+
 		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
 			@include clearfix;
 			//padding-top: 1em;
 
 			.view-eva-subscribe-links  {
 
-
 				h2.title {
 					margin: 0 0 0 0;
-					color: $colorVLightGrey;
-					width: 100px; 
+					color: #fff;
+					font-variant: small-caps;
+					width: 120px; 
 					text-align: center;
+					padding-left: 5px;
 					margin-right: 2em;
 					float: left;
-					font-size: .9em;
+					font-size: 1.5em;
 					padding-top: 6px;
-					height: 28px;
-					//border: 1px solid $colorMidGrey;
-					background-color: lighten($colorMidGrey, 10%);
-					//border-radius: $base-border-radius;
-
+					height: 38px;
+					background-color: darken($colorLightGrey, 10%);
+					position: relative;
 				}
+
+                // Arrow, created by: http://www.cssarrowplease.com
+				h2.title:after {
+
+						left: 100%;
+						top: 50%;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+						border-color: rgba(201, 198, 189, 0);
+						border-left-color: #C9C6BD;
+						border-width: 19px;
+						margin-top: -19px;
+					
+				}
+
 
 				.view-content {
 
@@ -220,7 +236,11 @@
 						padding: 5px;
 						vertical-align: middle;
 						//border-radius: $base-border-radius;
-						//margin-bottom: 1em;
+						margin: .4em;
+						&:hover {
+							background-color: lighten($action-color, 10%);
+						}
+						
 					}
 
 					.views-field-field-itunes-u-audio-code a, 
@@ -230,6 +250,7 @@
 						background-repeat: no-repeat;
 						background-size: 21%;
 						padding-left: 45px;
+
 					}
 					.views-field-field-itunes-u-document-code a {width: 170px;}
 

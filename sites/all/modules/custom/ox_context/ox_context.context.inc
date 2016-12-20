@@ -205,6 +205,37 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_people_gallery';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'people' => 'people',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-people_view-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-people_view-page',
+          'region' => 'header-middle-bottom',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-people-gallery',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_people_gallery'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_people_name';
   $context->description = '';
   $context->tag = '';
@@ -239,7 +270,6 @@ function ox_context_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'people' => 'people',
         'people/*' => 'people/*',
       ),
     ),
@@ -255,12 +285,6 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-people_view-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-people_view-page',
-          'region' => 'header-middle-bottom',
-          'weight' => '-10',
-        ),
         'fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a' => array(
           'module' => 'fieldblock',
           'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
@@ -426,8 +450,8 @@ function ox_context_context_default_contexts() {
         'current_search-episode_current_search_solr' => array(
           'module' => 'current_search',
           'delta' => 'episode_current_search_solr',
-          'region' => 'header-middle-bottom',
-          'weight' => '-9',
+          'region' => 'featured-one',
+          'weight' => '-10',
         ),
         'block-7' => array(
           'module' => 'block',
@@ -477,6 +501,37 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_series_gallery';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'series' => 'series',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-series_gallery-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-series_gallery-page',
+          'region' => 'header-middle-bottom',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-series-gallery',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_series_gallery'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_series_name';
   $context->description = '';
   $context->tag = '';
@@ -512,7 +567,6 @@ function ox_context_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'series' => 'series',
         'series/*' => 'series/*',
         '~series/*/*' => '~series/*/*',
       ),
@@ -529,12 +583,6 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-series_gallery-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-series_gallery-page',
-          'region' => 'header-middle-bottom',
-          'weight' => '-10',
-        ),
         'fieldblock-f3b41b0d6b540a613d7f82df1568a0ba' => array(
           'module' => 'fieldblock',
           'delta' => 'f3b41b0d6b540a613d7f82df1568a0ba',
@@ -650,6 +698,9 @@ function ox_context_context_default_contexts() {
         ),
       ),
     ),
+    'theme_html' => array(
+      'class' => 'context-unit-gallery',
+    ),
   );
   $context->condition_mode = 0;
   $export['context_unit_gallery'] = $context;
@@ -663,7 +714,6 @@ function ox_context_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'departments-colleges' => 'departments-colleges',
         'departments-colleges/*' => 'departments-colleges/*',
       ),
     ),

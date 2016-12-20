@@ -134,7 +134,7 @@
   <?php endif; ?>
 
 <!-- ______________________ BREADCRUMB _______________________ -->
-  
+<!--   
   <div class="breadcrumb-outer">
 
     <?php if ($breadcrumb): ?>
@@ -143,7 +143,7 @@
       </header>
     <?php endif; ?>
 
-  </div>
+  </div> -->
 
 
 
