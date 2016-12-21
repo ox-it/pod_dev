@@ -28,8 +28,8 @@
 		margin-bottom: 4em;
 
 		@include media($tablet) {
-			border: 1px solid $base-border-color;
-			padding: 20px;	
+			background-color: $colorVLightGrey;
+			padding: 5px;	
 		}
 
 		.views-field-name {
@@ -66,12 +66,17 @@
 					@include span-columns(6 of 6);
 				}
 
+				@include media($mobile) {
+					@include span-columns(4 of 4);
+				}
+
 			}
 
 			.fieldset-series-right {
 				@include span-columns(3 of 6);
 				height: 19em;
-				@include shift(-.2);
+				//@include shift(-.2);
+				padding-right: 10px;
 				color: $font-description-color;
 				font-size: $description-font-size;
 
@@ -85,6 +90,10 @@
 					@include span-columns(6 of 6);
 					height: 10em;
 					
+				}
+
+				@include media($mobile) {
+					@include span-columns(4 of 4);
 				}
 
 				.views-field-description {
@@ -102,11 +111,17 @@
 			}
 		}
 
+
 		.fieldset-series-bottom {
 			border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
 	    	margin-bottom: 5px;
 	    	padding: 5px;
+		}
+
+		@include media($mobile) {
+			@include span-columns(4);
+			@include omega(1n);
 		}
 
 	}

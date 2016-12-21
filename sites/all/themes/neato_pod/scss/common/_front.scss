@@ -1,9 +1,3 @@
-#featured {
-	//padding: 5px 0 .5em 0;
-}
-.header-middle-bottom {
-	//padding: .8em 0 .6em 0;
-}
 
 
 .front {
@@ -32,6 +26,7 @@
 	}
 
 	.featured-outer-two {
+
 		background-image: url("../images/ox_city_3.jpg");
 		//filter: grayscale(.5);
 		filter: opacity(.6);
@@ -84,26 +79,27 @@
 			}
 			
 			.view-content {
-				margin-right: -50px;
 
-				 .owl-wrapper-outer {
+				//margin-right: -50px;
+
+				 // .owl-wrapper-outer {
 		
-					.owl-item {
-						padding-right: 50px;
-					}
-				 }
+					// .owl-item {
+					// 	//padding-right: 50px;
+					// }
+				 // }
 
-					.owl-pagination {
-						//text-align: right;
-						margin: 2em 50px 1em 0;// Overrides the margin hack above
-						border-top: 1px solid darken($colorLightGrey, 10%);
-						span.owl-numbers {
-							margin-top: 2em;
-							font-size: 1.2em;
-							padding: 10px 20px;
-						}
+					// .owl-pagination {
+					// 	//text-align: right;
+					// 	margin: 2em 50px 1em 0;// Overrides the margin hack above
+					// 	border-top: 1px solid darken($colorLightGrey, 10%);
+					// 	span.owl-numbers {
+					// 		margin-top: 2em;
+					// 		font-size: 1.2em;
+					// 		padding: 10px 20px;
+					// 	}
 
-					}
+					// }
 
 			}
 
@@ -183,6 +179,11 @@
 				margin-bottom: 1em;
 				margin-top: 1em;
 
+				@include media($mobile) {
+					@include span-columns(2);
+					@include omega(2n);
+				}
+
 				.views-field-name {
 
 				
@@ -223,6 +224,11 @@
 		    	@include omega(6n);
 				margin-bottom: 2em;
 
+				@include media($mobile) {
+					@include span-columns(2);
+					@include omega(2n);
+				}
+
 
 				.views-field-name {
 
@@ -262,6 +268,11 @@
 				@include span-columns(2);
 		    	@include omega(6n);
 				margin-bottom: 2em;
+
+				@include media($mobile) {
+					@include span-columns(2);
+					@include omega(2n);
+				}
 
 
 				.views-field-name {

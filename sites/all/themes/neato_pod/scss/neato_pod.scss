@@ -25,9 +25,6 @@
 // Import Bitters. Includes Grid Setting Overrides, which must be imported before Neat
 @import "base/base";
 
-// // Neat Grid Setting Overrides -- must be imported before Neat
-// @import "bitters/grid-settings";
-
 // Import Neat.
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
@@ -53,6 +50,7 @@
 @import "components/hero";
 @import "components/flexbox";
 @import "components/footer";
+@import "components/form-buttons";
 @import "components/grid-list-toggle";
 @import "components/header";
 @import "components/sidr";

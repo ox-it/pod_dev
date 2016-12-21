@@ -25,15 +25,16 @@
 			border-radius: 5px 5px 0 0;
 		}
 
-		// @include span-columns(2);
-    	// @include omega(6n);
-    	// Using explicit floats here, not the grid, as want larger grid gutters. 
-        float: left;
-        width: 19%;
-        display: inline-block;
-        margin: 0 8% 2% 0;
-        &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
-        &:nth-child(4n) { margin-right: 0; } 
+		@include span-columns(3);
+  		@include omega(4n);
+  		//@include omega-reset(4n);
+    	//Using explicit floats here, not the grid, as want larger grid gutters. 
+        // float: left;
+        // width: 19%;
+        // display: inline-block;
+        // margin: 0 8% 2% 0;
+        // &:nth-child(4n+1) {clear: both;} // because of diff height on pdf image
+        // &:nth-child(4n) { margin-right: 0; } 
 
 		margin-bottom: 3em;
 
@@ -53,6 +54,27 @@
 			border-radius: 2px 2px 0 0 ;
 
 		}
+
+
+
+
+		@include media($tablet) {
+			@include omega-reset(4n, 6);
+			@include span-columns(2 of 6);
+			@include omega(3n);
+			//&:nth-child(4n) { margin-right: 5em; } 
+		}
+
+		@include media($mobile) {
+			@include omega-reset(3n, 4);
+			@include span-columns(2 of 4);
+			@include omega(2n);
+		}
+
+
+
+
+
 
 	}
 

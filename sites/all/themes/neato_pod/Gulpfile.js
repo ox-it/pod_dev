@@ -125,7 +125,7 @@ gulp.task('watch', function() {
     port: config.browserSync.port || 8080,
     proxy: config.browserSync.hostname || "pod-dev.dev",
     open: config.browserSync.openAutomatically || false,
-    reloadDelay: config.browserSync.reloadDelay || 50
+    reloadDelay: config.browserSync.reloadDelay || 5
   });
 
   // watch scss for changes and clear drupal theme cache on change

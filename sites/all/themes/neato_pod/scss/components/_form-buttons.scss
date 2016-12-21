@@ -1,0 +1,224 @@
+/* Note: form-buttons.scss are base/_forms.scss and base/_buttons.scss overrides
+
+
+****************************************************************************************************
+****************************************************************************************************
+*************************       FORM overrides        **********************************************
+****************************************************************************************************
+****************************************************************************************************
+
+
+/*
+ ************************ Episode Solr Search (overrides general styling above)  ****************************
+ */
+
+.front, .context-episode-page, .context-people-gallery, .context-series-gallery {
+
+  .views-widget {
+
+    input {
+
+
+
+      background-color: $colorVLightGrey;
+      border: 1px solid lighten($action-color, 30%);
+      border-radius: $base-border-radius;
+      font-size: 1.4em;
+      padding: .7em;
+      width: 388px;
+
+      &:hover {
+        border-color: darken($base-border-color, 30%);
+      }
+
+      &:focus {
+        border-color: $action-color;
+        box-shadow: $form-box-shadow-focus;
+        outline: none;
+      }
+
+
+      @include media ($mobile) {
+        width: 305px;
+      }
+
+
+    }
+
+  }
+
+}
+
+
+/*
+ ************************ Episode Solr Search (overrides general styling above)  ****************************
+ */
+
+
+// .block-facetapi-keywords, .block-facetapi-units {
+//   input {
+//     background-color: $colorVLightGrey;
+//     border: 1px solid red;
+//     border-radius: $base-border-radius;
+//     font-size: 1em;
+//     padding: $base-spacing / 2.3;
+//     width: 100%;
+
+//     &:hover {
+//       border-color: darken($base-border-color, 30%);
+//     }
+
+//     &:focus {
+//       border-color: $action-color;
+//       box-shadow: $form-box-shadow-focus;
+//       outline: none;
+//     }
+
+//   }
+// }
+
+
+/*
+ **************************** Unit Gallery Page (hideseek search box)  ****************************
+ */
+
+.context-unit-gallery {
+
+  #block-block-9 {
+
+    position: relative;
+
+    input {
+      background-color: $colorVLightGrey;
+      border: 1px solid lighten($action-color, 30%);
+      border-radius: $base-border-radius;
+      font-size: 1.4em;
+      padding: .7em;
+      //width: 388px;
+
+      &:hover {
+        border-color: darken($base-border-color, 30%);
+      }
+
+      &:focus {
+        border-color: $action-color;
+        box-shadow: $form-box-shadow-focus;
+        outline: none;
+      }
+    }
+  }
+
+}
+
+
+
+
+/*
+ ******************************** Chosen dropdown filter overrides ***********************************
+ */
+
+div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
+  //width: 388px !important;
+
+  @include media ($mobile) {
+        width: 305px !important;
+    }
+  }
+
+.chosen-container {
+
+
+
+
+  .chosen-single {
+
+    background: none;
+    box-shadow: none;
+    height: 3.4em;
+    font-size: 1.1em;
+    border: 1px solid darken($colorLightGrey, 40%);
+    padding: 12px;
+    border-radius: $base-border-radius;
+    width: auto;
+
+    div b {
+      position: relative;
+      top: 10px;
+      left: 3px;
+    }
+
+    @include media ($mobile) {
+        width: 305px;
+    }
+
+  }
+
+  .chosen-drop {
+
+    @include media ($mobile) {
+        width: 305px;
+    }
+
+  }
+
+}
+
+//.chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
+
+
+/*
+***************************** Load More button **************************************
+ */
+
+.view-people-view .item-list .pager li a, .view-series-gallery .item-list .pager li a {
+
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  font-family: $base-font-family;
+  font-size: 2em;
+  margin-bottom: $base-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color;
+  width: 100%;
+
+  &:hover {
+    border-color: red;
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+
+}
+
+
+/*
+****************************************************************************************************
+****************************************************************************************************
+*************************       Button overrides        **********************************************
+****************************************************************************************************
+****************************************************************************************************
+*/
+
+
+
+/*
+ ************************ Exposed form Buttons views widget resets  ****************************
+ */
+
+
+
+.views-exposed-form .views-exposed-widget {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  padding-top: 0;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 0;
+}
