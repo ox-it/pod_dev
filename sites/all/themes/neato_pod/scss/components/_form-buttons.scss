@@ -39,7 +39,7 @@
 
 
       @include media ($mobile) {
-        width: 305px;
+        width: 290px;
       }
 
 
@@ -117,11 +117,18 @@
  ******************************** Chosen dropdown filter overrides ***********************************
  */
 
+#edit-field-unit-tid-selective-wrapper {
+    @include media ($mobile) {
+        width: 290px !important;
+    }
+
+}
+
 div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
-  //width: 388px !important;
+  //width: 290px !important;
 
   @include media ($mobile) {
-        width: 305px !important;
+        width: 290px !important;
     }
   }
 
@@ -148,7 +155,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
     }
 
     @include media ($mobile) {
-        width: 305px;
+        width: 290px;
     }
 
   }
@@ -156,7 +163,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
   .chosen-drop {
 
     @include media ($mobile) {
-        width: 305px;
+        width: 290px;
     }
 
   }
