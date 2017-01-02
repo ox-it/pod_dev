@@ -32,8 +32,6 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'empty_fields_emptyfieldtext_empty_text' => '',
-          'empty_fields_handler' => '',
           'image_link' => '',
           'image_style' => 'medium',
         ),
@@ -44,7 +42,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'file',
@@ -57,7 +55,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36363,
+      'default_image' => 36384,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -141,7 +139,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'file',
@@ -191,7 +189,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'file',
@@ -238,7 +236,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'file',
@@ -289,7 +287,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'file',
@@ -464,7 +462,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36365,
+      'default_image' => 36386,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -957,7 +955,7 @@ function ox_podcasts_field_default_field_instances() {
       'alt_field_hide' => 0,
       'alt_field_sync_title' => 0,
       'alt_field_update_on_edit' => 0,
-      'default_image' => 36364,
+      'default_image' => 36385,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1022,9 +1020,10 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1068,7 +1067,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1105,9 +1104,10 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1146,7 +1146,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1185,7 +1185,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1223,8 +1223,9 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -1268,9 +1269,10 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1307,9 +1309,10 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
+        'type' => 'list_default',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1346,7 +1349,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1428,9 +1431,10 @@ function ox_podcasts_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'file',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'type' => 'file_table',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1503,7 +1507,7 @@ function ox_podcasts_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1540,10 +1544,11 @@ function ox_podcasts_field_default_field_instances() {
     'description' => 'Enter a comma-separated list of contributors to this podcast episode.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1579,10 +1584,10 @@ function ox_podcasts_field_default_field_instances() {
     'description' => 'Choose the series to which this episode belongs.',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2841,7 +2846,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -2904,7 +2909,7 @@ function ox_podcasts_field_default_field_instances() {
           'image_style' => 'series',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -3110,7 +3115,7 @@ function ox_podcasts_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',

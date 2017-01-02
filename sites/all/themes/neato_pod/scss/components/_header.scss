@@ -3,7 +3,7 @@
 .header-middle-outer {
 	background-color: $colorPrimary; 
 	height: 90px; 
-	transition: height 500ms; 
+	//transition: height 500ms; 
 	position:fixed; 
 	top:0px; 
 	margin: auto; 
@@ -14,24 +14,39 @@
 		margin-top: 1.5em;
 	}
 
+	.header-middle-right {
 
-	#block-system-main-menu ul.menu li {
-	    margin-left: 1em;
+
+	}
+
+
+	#block-system-main-menu {
 		float: right;
-		background-color: lighten($colorPrimary, 2%);
-	
+		
 
-		a {
-			display: block;
-			font-variant: small-caps;
-			font-size: 1.3em;
-			color: $font-heading-color;
-			padding: .3em 1em;
-			border: 1px solid darken($colorLinkHover, 12%); 
-			border-radius: $base-border-radius;
+		ul.menu {
+			
 
+			li {
+			    margin-left: 1em;
+				float: left;
+				background-color: lighten($colorPrimary, 2%);
+			
+
+				a {
+					display: block;
+					font-variant: small-caps;
+					font-size: 1.3em;
+					font-weight: bolder;
+					color: $font-heading-color;
+					padding: .3em;
+					border: 1px solid darken($colorLinkHover, 12%); 
+					border-radius: $base-border-radius;
+
+				}
+
+			}
 		}
-
 	}
 
 	#logo-block {
@@ -44,19 +59,19 @@
 	}
 
 	#site-name-block {
-		font-family: $lucida-grande; 
-		font-size: .7em;
-		padding-left: $base-spacing;
-		color: $colorVLightGrey;
+		position: fixed;
+		font-size: 2em;
+		padding-left: 50px;
+	
 	}
-
 }
+
 
 // The .header_scoll is a jQuery addClass toggle 
 .header-middle-outer.header_scroll {
 
 	height: 57px;
-	transition: height 500ms; 
+	//transition: height 500ms; 
 
 	.header-middle {
 		margin-top: .7em;
@@ -77,7 +92,7 @@
 			font-variant: small-caps;
 			font-size: 1.2em;
 			color: $font-heading-color;
-			padding: 5px 1em;
+			padding: .3em .5em;
 			border: 1px solid darken($colorLinkHover, 12%); 
 			border-radius: $base-border-radius;
 
@@ -98,8 +113,8 @@
 
 
 // *****   Required to offset the Fixed height above -- plus the Admin menu when logged-in  **********
-.header-middle-bottom-outer {margin-top: 90px; transition: margin-top 500ms; }
-.header-middle-bottom-outer.header_scroll {margin-top: 57px; transition: margin-top 500ms;}
+.header-middle-bottom-outer {margin-top: 90px; /*transition: margin-top 500ms;*/ }
+.header-middle-bottom-outer.header_scroll {margin-top: 57px; /*transition: margin-top 500ms;*/}
 .logged-in .header-middle-bottom-outer {margin-top: 99px;}
 .logged-in .header-middle-outer  {top: 20px}
 #admin-menu {position: relative; z-index: 10001;}
@@ -116,8 +131,9 @@
 		position: fixed !important;
 
 		#mobile-menu {
+			border-bottom: 1px solid $colorMidGrey;
+			margin-bottom: 10px;
 			ul {
-				border-bottom: 1px solid $colorMidGrey;
 				padding-top: 50px;
 			}
 			opacity: .9;
@@ -131,9 +147,15 @@
 				border-left: none;
 				border-top: 1px solid $colorMidGrey;
 				a {
+					font-variant: small-caps;
+					color: $colorLightGrey;
 					padding: 15px 0;
 					display: block;
 					font-size: 1.3em;
+				}
+				&:hover {
+					background-color: darken($colorMidGrey, 25%);;
+
 				}
 			}
 
@@ -143,16 +165,6 @@
 	}
 
 }
-
-
-
-
-	
-
-
-
-
-
 
 
 

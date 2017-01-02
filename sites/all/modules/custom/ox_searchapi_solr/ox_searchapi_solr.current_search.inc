@@ -22,7 +22,7 @@ function ox_searchapi_solr_current_search_default_items() {
         'label' => 'Episode Count',
         'text' => 'Search found [facetapi_results:result-count] Item',
         'plural' => 1,
-        'text_plural' => '[facetapi_results:result-count] items  ―  page [facetapi_results:page-number] / [facetapi_results:page-total] ',
+        'text_plural' => '[facetapi_results:result-count] episodes  ―  page [facetapi_results:page-number] / [facetapi_results:page-total] ',
         'plural_condition' => 'facetapi_results:result-count',
         'wrapper' => 1,
         'element' => 'h3',

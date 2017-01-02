@@ -1,0 +1,414 @@
+/*
+ **********************   Episode Page (.../series/episode-name) Title/Description  *****************************
+ */
+
+
+.context-episode-page {
+
+	main {
+		margin-top: 3em;
+		#page-title {display:none;}
+
+		//People links
+		#block-fieldblock-e7dc4b3cd7e53a43ab7070c246a8003f {
+			padding: 5px;
+			margin-bottom: 1em;
+			background-color: $colorGraduateLightGreen;
+			font-variant: small-caps;
+			font-size: 1.4em;
+			
+				&:before {
+					content: "People";
+					
+					color: $colorVLightGrey;
+					//padding-right: 10px;
+					width: auto;
+					float: left;
+					padding: 0 10px;
+				}
+
+			.field-item {
+				//float: left;
+				display: inline-block;
+				padding: 0 10px;
+
+
+			}
+
+		}
+
+		#block-fieldblock-16e816e45c986dcf5e236f70e09d6b54 {
+			margin-top: 5em;
+			@include media($mobile) {
+				margin-top: 1em;
+			}
+			.field-name-field-media-files {
+				table tr th {
+					display: none;
+					a {
+						display: block;
+					}
+				}
+			}
+			&:before {
+				content: "Download Media Files";
+				font-weight: normal;
+				background-color: $colorLightGrey;
+				padding: 5px 10px;
+				display: block;
+				font-variant: small-caps;
+				font-size: 1.4em;
+				color: $colorMidGrey;
+				//margin-bottom: 5px;
+
+			}
+
+
+
+		}
+
+		#block-views-9b7fe8d2964fd2d8c6ee04b0e59788e2 {
+			.view-episode-node-view {
+				.views-row {
+					margin-bottom: 3em;
+				}
+			}
+
+		}
+
+		// .view-episode-node-view {
+		// 	.file-video:before {
+		// 		content: "Video Stream";
+			
+		// 		font-weight: normal;
+		// 		background-color: $colorLightGrey;
+		// 		padding: 2px 10px;
+				
+		// 		display: block;
+		// 		font-variant: small-caps;
+		// 		font-size: 1.1em;
+		// 		color: $colorMidGrey;
+		// 		//margin-bottom: 5px;
+		// 	}
+		// 	.file-audio:before {
+		// 		content: "Audio Stream";
+
+		// 		font-weight: normal;
+		// 		background-color: $colorLightGrey;
+		// 		padding: 2px 10px;
+				
+		// 		display: block;
+		// 		font-variant: small-caps;
+		// 		font-size: 1.1em;
+		// 		color: $colorMidGrey;
+		// 		//margin-bottom: 5px;
+		// 	}
+
+		// }
+
+		#block-fieldblock-246fe9672be939b4eabf987d9769fd64 {
+			margin-top: 3em;
+			h2 {
+				content: "Download Media Files";
+				font-weight: normal;
+				background-color: $colorLightGrey;
+				padding: 5px 10px;
+				display: block;
+				font-variant: small-caps;
+				font-size: 1.4em;
+				color: $colorMidGrey;
+				margin-bottom: 0;
+
+			}
+			.field-name-field-licence {
+				border-bottom: 1px solid $colorLightGrey;
+				background-image: url("../images/cc-medium.png");
+				background-repeat: no-repeat;
+				background-size: 50%;
+				height: 7em;
+				margin: 1em 0;
+				.field-item {
+					display: none;
+				}
+				@include media($tablet) {
+					height: 5em;
+				}
+				@include media($mobile) {
+					height: 3em;
+				}
+
+			}
+		}
+
+
+	}	
+
+
+
+
+	.featured-outer-one {
+		padding-bottom: 2em;
+		background-color: $colorLightGrey;
+		
+		#block-fieldblock-147b4153c84cfc7b04f931d31b0526da  {
+
+			.views-field-title {
+				color: $colorLightPrimary;
+				padding-top: 2em;
+				font-size: 2.4em;
+				border-bottom: 1px solid $colorLinkHover;
+
+				@include media($tablet) {
+					font-size: 2em;
+				}
+
+				@include media($mobile) {
+					font-size: 1.4em;
+				}
+			}
+		}
+
+		// // EVA Field Series Image (extra image in context_series_name)
+		// #block-fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51 {
+		// 	.field-name-field-series-album-cover {
+		// 		img {
+		// 			display: none;
+		// 			@include media($mobile) {
+		// 				display: block;
+		// 				margin: 1em auto 0 auto;
+		// 			}
+
+		// 		}
+		// 	}
+		// }
+
+
+
+		#block-fieldblock-bab0a9cf996c7c050ff661f639d1d1d5 {
+
+			.field-name-body {
+				padding-top: 1.5em;
+				padding-bottom: .5em;
+				font-size: 1.2em;
+				color: darken($colorMidGrey, 20%);
+
+
+				.field-item p { 
+					// content: "A" !important;
+			 		//  display: block !important;
+			    	padding-bottom: 1em !important;
+				}
+
+				br {
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1em !important;
+
+				}
+
+				@include media($mobile) {
+					font-size: 1em;
+				}
+			}
+		}
+
+		#block-fieldblock-6df17c2717ea214b799783df4c831520 {
+
+			.field-name-field-episode-description-long {
+				padding-top: 1.5em;
+				padding-bottom: 1em;
+				font-size: 1.2em;
+				color: darken($colorMidGrey, 20%);
+
+				.field-item p { 
+					// content: "A" !important;
+			 		//  display: block !important;
+			    	padding-bottom: 1em !important;
+				}
+
+				br {
+					content: "A" !important;
+				    display: block !important;
+				    margin-bottom: 1em !important;
+
+				}
+
+			}
+		}
+
+
+
+	}
+
+}
+
+
+
+.sidebar-second {
+
+	#block-fieldblock-630a57856486cdfd6ffae3f01d91f1de {
+		.view-episode-page {
+			.views-field-name a {
+				margin-top: 5px;
+				padding: 5px;
+				background-color: $colorBeigeGrey;
+				display: block;
+				font-size: 1.4em;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+			.views-label-field-series-album-cover {
+				background-color: $colorIconBlueGrey;
+				padding: 5px 10px;
+				display: block;
+				font-variant: small-caps;
+				font-size: 1.4em;
+				color: $colorVLightGrey;
+				margin-bottom: 1em
+
+			}
+
+			.views-field-field-series-album-cover {
+				
+				@include media($mobile) {
+					background-color: $colorVLightGrey;
+					padding-bottom: 1em;
+
+					img {
+						display: block;
+						margin: 0 auto;
+						
+					}
+				}
+				
+			}
+
+
+		}
+		@include media($mobile) {
+			margin-top: 3em;
+		}
+	}
+
+	#block-fieldblock-7b10cc1cab6a98fd855a85ecf788b262 {
+		margin-top: 3em;
+
+		.view-header {
+			background-color: $colorGraduateYellow;
+			padding: 5px 10px;
+			display: block;
+			font-variant: small-caps;
+			font-size: 1.4em;
+			color: $colorVLightGrey;
+			margin-bottom: 5px;
+		}
+		.view-content {
+			background-color: $colorBeigeGrey;
+			.views-field-name a {
+				margin-top: 5px;
+				padding: 5px;
+				
+				display: block;
+				&:hover {
+					background-color: $colorLightGrey;
+				}
+			}
+
+		}
+	
+	}
+
+	#block-fieldblock-f2a1d4eeeeba6a4d281270c27feda668 {
+		margin-top: 3em;
+
+		h2 {
+			font-weight: normal;
+			background-color: $colorLinkHover;
+			padding: 5px 10px;
+			display: block;
+			font-variant: small-caps;
+			font-size: 1.4em;
+			color: $colorVLightGrey;
+			margin-bottom: 5px;
+
+		}
+		.field-name-field-keywords {
+			.field-items {
+				background-color: $colorBeigeGrey;
+				padding: .2em 0;
+				a {
+					display: block;
+					margin: .3em 0;
+					padding: 0 .5em;
+					&:hover {
+						background-color: $colorLightGrey;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	#block-fieldblock-e35d38c08e89f66e8a25a05d91352fda {
+		margin-top: 3em;
+		h2 {
+			font-weight: normal;
+			background-color: $colorMidGrey;
+			padding: 5px 10px;
+			display: block;
+			font-variant: small-caps;
+			font-size: 1.4em;
+			color: $colorVLightGrey;
+			margin-bottom: 5px;
+
+		}
+
+		.field-name-field-itunes-u-category {
+			.field-items {
+				background-color: $colorBeigeGrey;
+				padding: .2em 0;
+				a {
+					display: block;
+					margin: .3em 0;
+					padding: 0 .5em;
+					&:hover {
+						background-color: $colorLightGrey;
+					}
+				}
+			}
+
+		}
+	}
+
+}
+
+
+
+/*
+ *****************  Responsive Sidebar on episode  **************************************************
+ */
+
+.context-episode-page {
+
+	@include media($mobile) {
+	  	&.one-sidebar.sidebar-second {
+	    main {
+
+	      aside {
+	        &#sidebar-second {
+	          @include span-columns(4 of 4);
+
+	        }
+	      }
+
+	      section#content {
+	        @include span-columns(4 of 4);
+
+	      }
+	    }
+	  }
+	}
+ }

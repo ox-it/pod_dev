@@ -27,58 +27,55 @@
     	@include omega(2n);
 		margin-bottom: 4em;
 
-		@include media($tablet) {
-			background-color: $colorVLightGrey;
-			padding: 5px;	
-		}
-
 		.views-field-name {
-			font-size: 1em;
-			background-color: $colorLightGrey;
-			border-radius: $base-border-radius;
-			margin-bottom: .6em;
+
+			margin-bottom: .3em;
 
 			a {
+				font-size: 1.1em;
+				min-height: 3.2em;
+				background-color: $colorLightGrey;
+				border-radius: $base-border-radius;
 				display: block;
 				padding: 3px 10px;
-				min-height: 3em;
+
 				&:hover {
 					background-color: darken($colorLightGrey, 10%);
 					color: $colorPrimary;
 				}
+				@include media($tablet) {
+					font-size: 1.5em;
+				}
+				@include media($mobile) {
+					font-size: 1em;
+				}
 			}
 
-      		@include media($tablet) {
-				font-size: 1em;
-				min-height: 4em;
-			}
+
     	}
 
 
 		.fieldset-series-wrapper {
 			@include clearfix;
-			padding-bottom: 1em;
 
 			.fieldset-series-left { 
 				@include span-columns(3 of 6);
 				
 				@include media($tablet) {
-					@include span-columns(6 of 6);
+					@include span-columns(2 of 6);
 				}
 
 				@include media($mobile) {
-					@include span-columns(4 of 4);
+					@include span-columns(1.7 of 4);
 				}
 
 			}
 
 			.fieldset-series-right {
 				@include span-columns(3 of 6);
-				height: 19em;
-				//@include shift(-.2);
 				padding-right: 10px;
 				color: $font-description-color;
-				font-size: $description-font-size;
+				font-size: .9em;
 
 				br { 
 					content: "A" !important;
@@ -87,24 +84,36 @@
 				}
 
 				@include media($tablet) {
-					@include span-columns(6 of 6);
-					height: 10em;
-					
+					@include span-columns(4 of 6);	
+					font-size: 1.1em;			
 				}
 
 				@include media($mobile) {
-					@include span-columns(4 of 4);
+					@include span-columns(2.3 of 4);	
+					font-size: .8em;			
 				}
 
+
 				.views-field-description {
-			    	@include media($tablet) {
-						max-height: 54px; 
+					
+			    	@include media($mobile) {
+						max-height: 105px; 
 						overflow: hidden;
 					}
     			}
 
-				.views-field-nid, .views-field-created {
-			    	//border-bottom: 1px solid $base-border-color;
+				.views-field-nid {
+					border-bottom: 1px solid $base-border-color;
+					font-size: 1.3em;
+			    	margin-bottom: .5em;
+			    	padding: 3px 0;
+			    	@include media($mobile) {
+			    		font-size: 1em;
+			    		margin-bottom: .1em;
+			    	}
+			    }
+
+			    .views-field-created {
 			    	margin-bottom: .5em;
 			    	padding: 3px 0;
 			    }
@@ -115,12 +124,16 @@
 		.fieldset-series-bottom {
 			border-top: 1px solid $base-border-color;
 			border-bottom: 1px solid $base-border-color;
-	    	margin-bottom: 5px;
-	    	padding: 5px;
+	    	padding: .3em;
+	    	margin-top: .5em;
+			@include media($mobile) {
+	    		font-size: .8em;
+	    		
+	    	}
 		}
 
-		@include media($mobile) {
-			@include span-columns(4);
+		@include media($tablet) {
+			@include span-columns(6);
 			@include omega(1n);
 		}
 
@@ -129,7 +142,7 @@
 }
 
 /*
- ********************************   Series Page (.../series/series-name) Title/Description  **************************************************
+ ********************************   Series Page (.../series/series-name) Title/Description ****************************************
  */
 
 
@@ -152,6 +165,28 @@
 				padding-top: 2em;
 				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
+
+				@include media($tablet) {
+					font-size: 2em;
+				}
+
+				@include media($mobile) {
+					font-size: 1.4em;
+				}
+			}
+		}
+
+		// EVA Field Series Image (extra image in context_series_name)
+		#block-fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51 {
+			.field-name-field-series-album-cover {
+				img {
+					display: none;
+					@include media($mobile) {
+						display: block;
+						margin: 1em auto 0 auto;
+					}
+
+				}
 			}
 		}
 
@@ -167,6 +202,7 @@
 					font-size: 1.2em;
 					color: darken($colorMidGrey, 20%);
 
+
 					.field-content p { 
 						// content: "A" !important;
 				 		//  display: block !important;
@@ -179,6 +215,10 @@
 					    margin-bottom: 1em !important;
 
 					}
+
+					@include media($mobile) {
+						font-size: 1em;
+					}
 				}
 			}
 		}
@@ -190,33 +230,58 @@
 }
 
 
-// The subscribe buttons 
-.context-series-page {
+
+/*
+ *****************  Subscribe section on each series  ***********************************
+ */
+
+
+.context-series-page, .context-episode-page {
 
 	.featured-outer-two {
 		background-color: $colorLightGrey;
 
+		@include media($tablet) {
+			padding-top: .5em;
+			padding-bottom: .5em;
+		}
+		
 
-		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979 {
+
+		#block-fieldblock-0c7862d7c08985ffc1ae025e83178979, #block-fieldblock-4339cdcb3735174b76775d6ddac3dd5f {
 			@include clearfix;
-			//padding-top: 1em;
+			height: 38px;
+			
 
 			.view-eva-subscribe-links  {
+				height: 100%;
+
 
 				h2.title {
+					float: left;
 					margin: 0 0 0 0;
 					color: #fff;
-					font-variant: small-caps;
-					width: 120px; 
-					text-align: center;
-					padding-left: 5px;
-					margin-right: 2em;
-					float: left;
-					font-size: 1.5em;
-					padding-top: 6px;
 					height: 38px;
+					font-variant: small-caps;
+					width: 110px; 
+					text-align: center;
+					padding: 8px 0 0 5px;
+					margin-right: 2em;
+					display: block;
+					height: 100%;
+					font-size: 1.3em;
 					background-color: darken($colorLightGrey, 10%);
 					position: relative;
+
+
+					@include media($tablet) {
+						float: none;
+						width: 30%;
+						padding: 3px 0;
+						height: 25px;
+						font-size: 1.2em;
+						//background-color: transparent;
+					}
 				}
 
                 // Arrow, created by: http://www.cssarrowplease.com
@@ -234,27 +299,36 @@
 						border-left-color: #C9C6BD;
 						border-width: 19px;
 						margin-top: -19px;
-					
+
+						@include media($tablet) {
+							border-width: 12px;
+							margin-top: -12px;
+						}						
 				}
 
-
+				.view-display-id-attachment_1 {float:left;}
 				.view-content {
+
+
 
 					a {
 						background-color: $action-color;
 						color: $colorLightGrey;
-						margin-right: 1.5em;
+						//margin-left: 1.5em;
 						font-size: .9em;
-						width: 150px;
+						width: 145px;
 						float: left;
 						display: block;
 						padding: 5px;
 						vertical-align: middle;
-						//border-radius: $base-border-radius;
-						margin: .4em;
+						margin: .5em .4em 0 0;
 						&:hover {
 							background-color: lighten($action-color, 10%);
 						}
+						@include media($mobile) {
+							width: 135px;
+							margin: .5em .3em 0 0;
+						}	
 						
 					}
 
@@ -266,6 +340,7 @@
 						background-size: 21%;
 						padding-left: 45px;
 
+
 					}
 					.views-field-field-itunes-u-document-code a {width: 170px;}
 
@@ -274,7 +349,8 @@
 						background-repeat: no-repeat;
 						background-size: 22%;
 						background-position: -5px -1px;
-						padding-left: 35px;
+						padding-left: 40px;
+
 
 					}
 				}
@@ -285,5 +361,48 @@
 	}
 
 }
+
+.context-episode-page {
+	.featured-outer-two {
+		background-color: darken($colorLightGrey, 4%);
+	}
+}
+
+/*
+ *****************  Responsive Sidebar on series  **************************************************
+ */
+
+ .context-series-page {
+
+ 	@include media($mobile) {
+
+ 		&.one-sidebar.sidebar-first {
+		    main {
+		      aside {
+		        &#sidebar-first {
+		          @include span-columns(4); 
+
+ 					//Hide the sidebar image and the sidebar title block.
+		            #block-fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51,
+  					#block-fieldblock-f3b41b0d6b540a613d7f82df1568a0ba {
+						display: none;
+					}
+		        }
+		      }
+
+		      section#content {
+		          @include span-columns(4);
+
+		        }
+		    }
+
+
+
+  		}
+
+
+
+ 	}
+ }
 
 

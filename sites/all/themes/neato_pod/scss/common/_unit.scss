@@ -8,8 +8,8 @@
 	#page-title {display:none;}
 
 	.header-middle-bottom-outer {
-		padding-top: 4em;
-		padding-bottom: 4em;
+		padding-top: 4.5em;
+		padding-bottom: 4.5em;
 		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
 	}
 
@@ -95,15 +95,60 @@
 				padding-top: 2em;
 				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
+
+				@include media($tablet) {
+					font-size: 2em;
+				}
+
+				@include media($mobile) {
+					font-size: 1.4em;
+				}
 			}
 
+		}
+
+		// EVA Field Series Image (extra image in context_unit_name)
+		#block-fieldblock-dfea7c16f657ccdfe7b463c686203cc9 {
+			.field-name-field-unit-image {
+				margin-top: 1em;
+				//border: 1px solid lighten($colorGraduateYellow, 15%);
+				background-color: lighten($colorGraduateYellow, 8%);
+
+				img {
+					display: none;
+					@include media($mobile) {
+						display: block;
+						margin: 1em auto 0 auto;
+						//background-color: lighten($colorGraduateYellow, 15%);
+						padding: 2em;
+					}
+
+				}
+			}
+		}
+
+		// Eva field department link (extra link in context_unit_name)
+		#block-fieldblock-6846037a8753c624f3378f2a930e9e43 a {
+			display: none;
+			@include media($mobile) {
+				display: block;
+				text-align: center;
+				padding: 5px;
+				border-bottom: 1px solid lighten($colorGraduateYellow, 8%);
+				&:hover {
+					background-color: $colorVLightGrey;
+					opacity: .5;
+					color: #000;
+				}
+			
+			}
 		}
 
 		#block-fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af .view-display-id-entity_view_6 {
 
 			.views-field-description {
-				padding-top: 1.5em;
-				padding-bottom: 4em;
+				padding-top: .5em;
+				padding-bottom: 3em;
 				font-size: 1.2em;
 				color: darken($colorMidGrey, 10%);
 				
@@ -112,11 +157,13 @@
 				    display: block !important;
 				    margin-bottom: 1em !important;    
 				}
+
+				@include media($mobile) {
+					font-size: 1em;
+				}
 			}			
 		}
-
 	}
-
 }
 
 
@@ -129,40 +176,54 @@
 
 
 		#block-fieldblock-8c2171cdad0585deed12a3f528f962b4 .view-display-id-entity_view_6 {
-			h2 {
-				padding: 1em 0;
-				font-size: 1.1em;
-				display: block;
-				cursor: pointer;
-				text-align: center;
-				color: $action-color;
-				&:hover {
-					background-color: lighten($colorLightGrey, 3%);
-				}
-				
+
+				h2 {
+					margin: 0;
+					padding: 1em 0;
+					font-size: 1.3em;
+					display: block;
+					cursor: pointer;
+					text-align: center;
+					color: $action-color;
+					background-color: $colorLightGrey;
+
+					&:hover {
+						background-color: lighten($colorLightGrey, 3%);
+					}
+
+					@include media($mobile) {
+						font-size: .9em;
+					}	
 			}
 
 			h2.collapsed:after, h2.collapsed:before {
 				content: "   ▲   ";
-				padding: 0 1em;
+				margin:  0 1em;
 			}
 
 			h2:not(.collapsed):after, h2:not(.collapsed):before {	
 				content: "   ▼   ";
-				padding: 0 1em;
+				margin:  0 1em;
 			}
 
 			.view-content {
-				display:none; // JQuery toggles
+				padding-bottom: 3em;
+				display: none; // JQuery toggles
 			}
 
 			.views-row {
-				height: 230px;
 				width: auto;
 				padding: 1em 0;
 				@include span-columns(2);
 				@include omega(6n);
 				font-size: $description-font-size;
+				height: auto;
+
+
+				@include media($mobile) {
+					@include span-columns(2 of 4);
+					@include omega(2n);
+				}
 
 				.views-field-name {
 
@@ -170,13 +231,51 @@
 						display: block;
 						color: $colorOffBlack;
 						height: 40px;
-						font-size: .9em;
+						font-size: 1em;
 						border-radius: 0 0 2px 2px;
 					}
 
 				}
 
-			}		
+			}
 		}
 }
+
+
+/*
+ *****************  Responsive Sidebar on unit  **************************************************
+ */
+
+ .context-unit-page {
+
+ 	@include media($mobile) {
+
+ 		&.one-sidebar.sidebar-first {
+		    main {
+		      aside {
+		        &#sidebar-first {
+		          @include span-columns(4); 
+
+ 					//Hide the sidebar image and the sidebar title block.
+		            #block-fieldblock-dfea7c16f657ccdfe7b463c686203cc9,
+		            #block-fieldblock-6846037a8753c624f3378f2a930e9e43 {
+						display: none;
+					}
+		        }
+		      }
+
+		      section#content {
+		          @include span-columns(4);
+
+		        }
+		    }
+
+
+
+  		}
+
+
+
+ 	}
+ }
 

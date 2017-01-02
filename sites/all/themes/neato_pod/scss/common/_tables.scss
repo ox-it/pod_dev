@@ -42,7 +42,7 @@ table {
       background-color: $table-hover-background;
     }
     tr:first-child td {
-      border-top: 2px solid $table-border-color;
+      //border-top: 2px solid $table-border-color;
     }
   }
 
@@ -59,7 +59,7 @@ table {
 
     td {
       border-bottom: 0px;
-      border-top: 1px solid $table-border-color;
+      //border-top: 1px solid $table-border-color;
       padding: $table-padding;
 
       button {

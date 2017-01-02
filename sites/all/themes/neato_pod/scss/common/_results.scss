@@ -2,17 +2,17 @@
  ******************************** Search API/ Solr "Current Search block"  ****************************
  */
 
-.context-episode-page {
+.context-results-page {
 
 	.header-middle-bottom-outer {
 		padding-top: 4em;
 		padding-bottom: 4em;
-		background-color: $colorLightGrey; //$colorBooksBlog; //$colorMidGrey;
+		background-color: $colorLightGrey;
 	}
 
 	.views-exposed-form {
-		float: left;
-		width: 75%;
+		// float: left;
+		// width: 75%;
 	}
 
 	.block-current-search {
@@ -25,7 +25,10 @@
 			background-color: $colorBeigeGrey;
 			font-weight: normal;
 			font-size: 1.7em;
-			padding: .4em 0;	
+			padding: .4em 0;
+			@include media($mobile) {
+				font-size: 1.2em;
+			}	
 		}
 
 		.item-list {
@@ -85,7 +88,7 @@
 
 
 /*
- *****************  Solr result views for episodes on Episode page, Series page, and People page ********************************
+ ***********  Solr result views for episodes on Episode page, Series page, and People page ****************
  * The layout is overridden below for the Series page, as the Series results to not include Series cover images
  * in the .fieldset-top-left
  */
@@ -98,13 +101,21 @@
 		.view-header {
 			float: right;
 			padding: 5px;
-			font-size: 1.2em;
+			font-size: 1.3em;
 			color: $colorMidGrey;
-			background-color: $colorVLightGrey;
+			background-color: $colorLinkHover;
+			color: $colorVLightGrey;
 			margin-top: -2.5em;
-			width: 180px;
+			width: 190px;
 			text-align: center;
-			border-radius: 2px;
+			border-radius: 1px;
+			font-variant: small-caps;
+
+
+			@include media($mobile) {				
+				width: 100%;
+				margin-top: -4em;
+			}
 
 		}
 
@@ -113,13 +124,15 @@
 			padding: 0 0 10px 0;
 
 			.views-field-title {
-				font-size: 1.1em;
+				
 				margin-bottom: .5em;
 				a {
+					font-size: 1.3em;
+					font-weight: bold;
 					background-color: $colorLightGrey;
 					display: block;
 					border-radius: $base-border-radius;
-					padding: 5px;
+					padding: 3px 6px 5px 6px;
 					&:hover {
 						background-color: darken($colorLightGrey, 15%);
 					}
@@ -132,13 +145,19 @@
 				.fieldset-top-left {	
 					@include span-columns(3 of 12);
 					img:hover {opacity: .8;}
-					&:hover ~ .fieldset-top-middle .views-field-field-series-name {background-color: $colorBeigeGrey;}
+					&:hover ~ .fieldset-top-middle .views-field-field-series-name {
+						background-color: $colorBeigeGrey;
+					}
 				}
 
 				.fieldset-top-middle {	
 					@include clearfix;
-					@include span-columns(7 of 12);
-					font-size: $description-font-size;
+					@include span-columns(6.5 of 12);
+					font-size: .9em;
+
+					@include media($tablet) {
+						font-size: 1em;
+					}
 
 					.views-field-body-value {
 						border-bottom: 1px solid $base-border-color; 
@@ -156,10 +175,13 @@
 				}
 
 				.fieldset-top-right {
-					@include span-columns(2 of 12);
+					@include span-columns(2.5 of 12);
 					.views-field-field-media-files {
 						// A nasty 'accessibility bug on the h2 invisible-element class!!!!'
-						h2 {display: none;}   
+						h2 {display: none;}
+						img {
+							margin-bottom: 1em;
+						}   
 					}
 				}
 
@@ -175,7 +197,6 @@
 
 		}
 
-		
 	}
 
 }
@@ -190,22 +211,27 @@
 			.fieldset-top {
 
 				.fieldset-top-left {
-
 				}
 
 				.fieldset-top-middle {
-					@include span-columns(10 of 12);
-
+					@include span-columns(9.5 of 12);
 				}
 
 				.fieldset-top-right {
-					@include span-columns(2 of 12);
-
+					@include span-columns(2.5 of 12);
 				}
-
 			}
-
 		}
 	}
+}
 
+/* This offsets the disappearing sidebar image, to push the episode search
+results downward, but NOT on the episode page itself (as it has no
+sidebar image -- otherwise, could go above) */
+.context-series-page, .context-people-page, .context-unit-page {
+	.view-episode-search-solr- {
+		@include media($mobile) {
+			margin-top: 8em;
+		}
+	}
 }

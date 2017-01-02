@@ -12,7 +12,20 @@
  ************************ Episode Solr Search (overrides general styling above)  ****************************
  */
 
-.front, .context-episode-page, .context-people-gallery, .context-series-gallery {
+.front, .context-results-page, .context-people-gallery, .context-series-gallery {
+
+  #edit-search-api-views-fulltext-wrapper {
+    width: 50%;
+
+      @include media ($tablet) {
+        width: 65%;
+      }
+
+      @include media ($mobile) {
+        width: 75%;
+      }
+
+  }
 
   .views-widget {
 
@@ -25,7 +38,7 @@
       border-radius: $base-border-radius;
       font-size: 1.4em;
       padding: .7em;
-      width: 388px;
+      //width: 10em;
 
       &:hover {
         border-color: darken($base-border-color, 30%);
@@ -38,9 +51,8 @@
       }
 
 
-      @include media ($mobile) {
-        width: 290px;
-      }
+
+
 
 
     }

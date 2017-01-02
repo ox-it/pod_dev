@@ -101,6 +101,112 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_episode_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'episode' => 'episode',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'fieldblock-147b4153c84cfc7b04f931d31b0526da' => array(
+          'module' => 'fieldblock',
+          'delta' => '147b4153c84cfc7b04f931d31b0526da',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+        'fieldblock-bab0a9cf996c7c050ff661f639d1d1d5' => array(
+          'module' => 'fieldblock',
+          'delta' => 'bab0a9cf996c7c050ff661f639d1d1d5',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
+        'fieldblock-6df17c2717ea214b799783df4c831520' => array(
+          'module' => 'fieldblock',
+          'delta' => '6df17c2717ea214b799783df4c831520',
+          'region' => 'featured-one',
+          'weight' => '-8',
+        ),
+        'fieldblock-4339cdcb3735174b76775d6ddac3dd5f' => array(
+          'module' => 'fieldblock',
+          'delta' => '4339cdcb3735174b76775d6ddac3dd5f',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'fieldblock-e7dc4b3cd7e53a43ab7070c246a8003f' => array(
+          'module' => 'fieldblock',
+          'delta' => 'e7dc4b3cd7e53a43ab7070c246a8003f',
+          'region' => 'content',
+          'weight' => '-41',
+        ),
+        'views-9b7fe8d2964fd2d8c6ee04b0e59788e2' => array(
+          'module' => 'views',
+          'delta' => '9b7fe8d2964fd2d8c6ee04b0e59788e2',
+          'region' => 'content',
+          'weight' => '-40',
+        ),
+        'views-episode_node_view-block_1' => array(
+          'module' => 'views',
+          'delta' => 'episode_node_view-block_1',
+          'region' => 'content',
+          'weight' => '-39',
+        ),
+        'fieldblock-16e816e45c986dcf5e236f70e09d6b54' => array(
+          'module' => 'fieldblock',
+          'delta' => '16e816e45c986dcf5e236f70e09d6b54',
+          'region' => 'content',
+          'weight' => '-38',
+        ),
+        'fieldblock-246fe9672be939b4eabf987d9769fd64' => array(
+          'module' => 'fieldblock',
+          'delta' => '246fe9672be939b4eabf987d9769fd64',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'fieldblock-630a57856486cdfd6ffae3f01d91f1de' => array(
+          'module' => 'fieldblock',
+          'delta' => '630a57856486cdfd6ffae3f01d91f1de',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'fieldblock-7b10cc1cab6a98fd855a85ecf788b262' => array(
+          'module' => 'fieldblock',
+          'delta' => '7b10cc1cab6a98fd855a85ecf788b262',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'fieldblock-f2a1d4eeeeba6a4d281270c27feda668' => array(
+          'module' => 'fieldblock',
+          'delta' => 'f2a1d4eeeeba6a4d281270c27feda668',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+        'fieldblock-e35d38c08e89f66e8a25a05d91352fda' => array(
+          'module' => 'fieldblock',
+          'delta' => 'e35d38c08e89f66e8a25a05d91352fda',
+          'region' => 'sidebar_second',
+          'weight' => '-6',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-episode-page',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_episode_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_front';
   $context->description = '';
   $context->tag = '';
@@ -249,6 +355,12 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'fieldblock-7d9066c7669a89290d050e50e280919a' => array(
+          'module' => 'fieldblock',
+          'delta' => '7d9066c7669a89290d050e50e280919a',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
         'fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a' => array(
           'module' => 'fieldblock',
           'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
@@ -289,7 +401,7 @@ function ox_context_context_default_contexts() {
           'module' => 'fieldblock',
           'delta' => 'bdcadf5ac654ed7b2d0bed98ddbbca1a',
           'region' => 'featured-one',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'fieldblock-77e58f65f54c4a3b1f9304de010e7c26' => array(
           'module' => 'fieldblock',
@@ -434,7 +546,6 @@ function ox_context_context_default_contexts() {
       'values' => array(
         'solr' => 'solr',
         'solr*' => 'solr*',
-        'series/*/*' => 'series/*/*',
       ),
     ),
   );
@@ -492,7 +603,7 @@ function ox_context_context_default_contexts() {
       ),
     ),
     'theme_html' => array(
-      'class' => 'context-episode-page',
+      'class' => 'context-results-page',
     ),
   );
   $context->condition_mode = 0;
@@ -546,6 +657,12 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'fieldblock-8a7af6a03ced7132e0a84a2c74e6eb51' => array(
+          'module' => 'fieldblock',
+          'delta' => '8a7af6a03ced7132e0a84a2c74e6eb51',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
         'fieldblock-f3b41b0d6b540a613d7f82df1568a0ba' => array(
           'module' => 'fieldblock',
           'delta' => 'f3b41b0d6b540a613d7f82df1568a0ba',
@@ -587,7 +704,7 @@ function ox_context_context_default_contexts() {
           'module' => 'fieldblock',
           'delta' => 'f3b41b0d6b540a613d7f82df1568a0ba',
           'region' => 'featured-one',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'fieldblock-64071884587fd9f5976892abab11b1fc' => array(
           'module' => 'fieldblock',
@@ -708,6 +825,48 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_unit_name';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'departments-colleges/*' => 'departments-colleges/*',
+      ),
+    ),
+    'taxonomy_term' => array(
+      'values' => array(
+        'units' => 'units',
+      ),
+      'options' => array(
+        'term_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'fieldblock-dfea7c16f657ccdfe7b463c686203cc9' => array(
+          'module' => 'fieldblock',
+          'delta' => 'dfea7c16f657ccdfe7b463c686203cc9',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
+        'fieldblock-6846037a8753c624f3378f2a930e9e43' => array(
+          'module' => 'fieldblock',
+          'delta' => '6846037a8753c624f3378f2a930e9e43',
+          'region' => 'featured-one',
+          'weight' => '-8',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_unit_name'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_unit_page';
   $context->description = '';
   $context->tag = '';
@@ -733,13 +892,13 @@ function ox_context_context_default_contexts() {
           'module' => 'fieldblock',
           'delta' => '7afe5ac42fd76434610c72d58305bf2d',
           'region' => 'featured-one',
-          'weight' => '-35',
+          'weight' => '-10',
         ),
         'fieldblock-d5c500a5fa8ad0acb246e0e3fe77d1af' => array(
           'module' => 'fieldblock',
           'delta' => 'd5c500a5fa8ad0acb246e0e3fe77d1af',
           'region' => 'featured-one',
-          'weight' => '-34',
+          'weight' => '-7',
         ),
         'fieldblock-8c2171cdad0585deed12a3f528f962b4' => array(
           'module' => 'fieldblock',

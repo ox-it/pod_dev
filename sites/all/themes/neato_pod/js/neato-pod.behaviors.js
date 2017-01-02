@@ -282,6 +282,19 @@ Drupal.behaviors.headerScroll = {
   }
 };
 
+Drupal.behaviors.keywordLinkChange = {
+  attach: function(context) {
+
+    $('#block-fieldblock-f2a1d4eeeeba6a4d281270c27feda668 .field-name-field-keywords .field-item a').each(function() {
+    
+      var theHref = $( this ).text();
+      var theNewHref = theHref.replace(/ /g, "-");
+      $( this ).attr("href", "/solr/keyword/" + theNewHref);
+
+    })
+  }
+};
+
 
 
 

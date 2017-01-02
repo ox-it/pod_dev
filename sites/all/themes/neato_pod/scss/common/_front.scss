@@ -1,19 +1,31 @@
-
+/*
+ ******************************** Front search bar  ****************************
+ */
 
 .front {
+
 	.header-middle-bottom-outer {
 		padding-top: 4em;
 		padding-bottom: 4em;
 		background-color: $colorLightGrey;
-		//position: fixed;
 		width: 100%;
 	}
 
+
 	.featured-outer-one {
+				background-image: url("../images/ox_city_3.jpg");
+		//filter: grayscale(.5);
+		filter: opacity(.7);
+		//background-color: $colorPrimary;
+		//background-blend-mode: difference;
+		//filter: sepia(.5);
+		background-size: 100%;
+		background-position: 0 -40px;
+		height: 360px;
 		
 		padding-bottom: 5px;
 		background-color: $colorVLightGrey;
-		//border-bottom: 1px solid $colorLightGrey;
+
 			#block-block-8 {
 				width: 50%;
 				float: left;
@@ -25,140 +37,7 @@
 		
 	}
 
-	.featured-outer-two {
-
-		background-image: url("../images/ox_city_3.jpg");
-		//filter: grayscale(.5);
-		filter: opacity(.6);
-		background-color: $colorPrimary;
-		background-blend-mode: difference;
-		//filter: sepia(.5);
-		background-size: 100%;
-		background-position: 0 -50px;
-		//@include media($hero) {
-			//background-size: 120%;
-			//background-position: 0 -50px;
-		//}
-		.category-headline {
-			position: relative;
-			top: 1em;
-			margin-bottom: 20px;
-			border-radius: 3px;
-			font-size: 1.5em;
-			background-color: lighten($colorBeigeGrey, 10%);
-			filter: opacity(.6);
-			color: darken($colorMidGrey, 95%);
-			text-align: center;
-		}
-
-
-	}
-
-	.featured-outer-three {
-		border-top: 50px solid $colorIconBlueGrey;
-		background-color: $colorLightGrey;
-		height: auto;
-		padding-bottom: 4px;
-		
-		h2 {
-			color: darken($colorIconBlueGrey, 30%);
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
-			text-align: center;
-			padding: 1em 0 1.5em 0;
-			font-size: 220%;
-		}
-
-		.view-series-featured {
-
-			.views-field-name {
-				margin-top: 10px;
-				background-color: $colorBeigeGrey;
-				height: 3.5em;
-				padding: 5px;
-				overflow: hidden;
-			}
-			
-			.view-content {
-
-				//margin-right: -50px;
-
-				 // .owl-wrapper-outer {
-		
-					// .owl-item {
-					// 	//padding-right: 50px;
-					// }
-				 // }
-
-					// .owl-pagination {
-					// 	//text-align: right;
-					// 	margin: 2em 50px 1em 0;// Overrides the margin hack above
-					// 	border-top: 1px solid darken($colorLightGrey, 10%);
-					// 	span.owl-numbers {
-					// 		margin-top: 2em;
-					// 		font-size: 1.2em;
-					// 		padding: 10px 20px;
-					// 	}
-
-					// }
-
-			}
-
-			.view-footer {
-				margin-bottom: 4em;
-				text-align: right;
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.2em;
-			}
-		}
-	}
-
-
-	.featured-outer-four {
-		border-top: 50px solid $colorGraduateLightGreen;
-		padding-bottom: 4em;
-		background-color: $colorVLightGrey;
-			h2 {
-			color: darken($colorGraduateLightGreen, 12%);
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
-			text-align: center;
-			padding: 1em 0 1.5em 0;
-			font-size: 220%;
-		}
-		.view-footer {
-			padding-top: 1em;
-			text-align: right;
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
-			font-size: 1.2em;
-		}
-	}
-
-
-	.featured-outer-five {
-		border-top: 50px solid $colorGraduateYellow;
-		padding-bottom: 4em;
-		background-color: $colorLightGrey;
-			h2 {
-			color: darken($colorGraduateYellow, 22%);
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
-			text-align: center;
-			padding: 1em 0 1.5em 0;
-			font-size: 220%;
-		}
-		.view-footer {
-			padding-top: 1em;
-			text-align: right;
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
-			font-size: 1.2em;
-		}
-
-	}
-
-
 }
-
-
-
-
 
 
 
@@ -168,43 +47,94 @@
 
 .front {
 
+	.featured-outer-three {
+
+		border-top: 50px solid $colorIconBlueGrey;
+		padding-bottom: 4px;
+		background-color: $colorLightGrey;
+	
+		h2 {
+			color: darken($colorIconBlueGrey, 30%);
+			border-bottom: 1px solid darken($colorLightGrey, 10%);
+			text-align: center;
+			padding: 1em 0;
+			font-size: 3.5em;
+			font-variant: small-caps;
+		}
+
+	}
+
 	#block-views-series_featured-block {
-		.view-series-featured .view-content {
-			@include clearfix;
 
-			.views-row {
+		.view-series-featured {
 
-			    @include span-columns(3);
-		    	@include omega(4n);
-				margin-bottom: 1em;
-				margin-top: 1em;
+			.view-content {
+				@include clearfix;
 
-				@include media($mobile) {
-					@include span-columns(2);
-					@include omega(2n);
-				}
+				.views-row {
 
-				.views-field-name {
+				    @include span-columns(3);
+			    	@include omega(4n);
+					margin-bottom: 1em;
+					margin-top: 1em;
 
-				
-					a {
-						display: block;
-						margin-bottom: .5em;
-						font-size: .9em;
-						padding: 3px;
-						text-align: center;
-						background-color: lighten($colorLightGrey, 3%);
-						&:hover {background-color: $colorLightGrey; }
+					@include media($mobile) {
+						@include span-columns(2);
+						@include omega(2n);
 					}
-				
-				}
 
+					.views-field-name {
+
+						a {
+							display: block;
+							
+							font-size: .9em;
+							padding: 3px;
+							margin-top: 5px;
+							text-align: center;
+							background-color: $colorBeigeGrey;
+							&:hover {background-color: $colorVLightGrey; }
+						}
+					
+					}
+
+				}
 			}
+
+			// If using the Owl Slider
+			// .view-content {
+			// 	margin-right: -50px;
+			// 	 .owl-wrapper-outer {
+			// 		.owl-item {
+			// 			//padding-right: 50px;
+			// 		}
+			// 	 }
+			// 		.owl-pagination {
+			// 			//text-align: right;
+			// 			margin: 2em 50px 1em 0;// Overrides the margin hack above
+			// 			border-top: 1px solid darken($colorLightGrey, 10%);
+			// 			span.owl-numbers {
+			// 				margin-top: 2em;
+			// 				font-size: 1.2em;
+			// 				padding: 10px 20px;
+			// 			}
+			// 		}
+			// }
+
+
+			.view-footer {
+				margin-top: 3em;
+				margin-bottom: 4em;
+				text-align: right;
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				font-size: 1.2em;
+			}
+
+			
 		}
 
 	}
 }
-
 
 
 
@@ -214,40 +144,68 @@
  */
 
 .front {
+
+	.featured-outer-four {
+
+		border-top: 50px solid $colorGraduateLightGreen;
+		padding-bottom: 4em;
+		background-color: $colorVLightGrey;
+
+			h2 {
+				color: darken($colorGraduateLightGreen, 12%);
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				text-align: center;
+				padding: 1em 0;
+				font-size: 3.5em;
+				font-variant: small-caps;
+			}
+	}
+
 	#block-views-people_featured-block {
-		.view-people-featured .view-content {
-			@include clearfix;
 
-			.views-row {
-				
-				@include span-columns(2);
-		    	@include omega(6n);
-				margin-bottom: 2em;
+		.view-people-featured {
 
-				@include media($mobile) {
+			.view-content {
+				@include clearfix;
+
+				.views-row {
+					
+					margin-bottom: 2em;
 					@include span-columns(2);
-					@include omega(2n);
-				}
+			    	@include omega(6n);
 
-
-				.views-field-name {
-
-				
-					a {
-						display: block;
-						margin-bottom: .5em;
-						font-size: .9em;
-						padding: 3px;
-						text-align: center;
-						background-color: $colorLightGrey;
-						&:hover {background-color: $colorBeigeGrey; }
+					@include media($mobile) {
+						@include span-columns(2);
+						@include omega(2n);
 					}
-				
+
+
+					.views-field-name {
+
+						a {
+							display: block;
+							margin-bottom: .5em;
+							font-size: .9em;
+							padding: 3px;
+							text-align: center;
+							background-color: $colorLightGrey;
+							&:hover {background-color: $colorBeigeGrey; }
+						}
+					
+					}
+
 				}
 
 			}
-		}
 
+			.view-footer {
+				padding-top: 1em;
+				text-align: right;
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				font-size: 1.2em;
+			}
+
+		}
 	}
 }
 
@@ -259,45 +217,71 @@
  */
 
 .front {
+
+	.featured-outer-five {
+
+		border-top: 50px solid $colorGraduateYellow;
+		padding-bottom: 4em;
+		background-color: $colorLightGrey;
+
+			h2 {
+				color: darken($colorGraduateYellow, 22%);
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				text-align: center;
+				padding: 1em 0;
+				font-size: 3.5em;
+				font-variant: small-caps;
+			}
+
+	}
+
+
 	#block-views-unit_featured-block {
-		.view-unit-featured .view-content {
-			@include clearfix;
+		.view-unit-featured {
 
-			.views-row {
-				
-				@include span-columns(2);
-		    	@include omega(6n);
-				margin-bottom: 2em;
+			.view-content {
+				@include clearfix;
 
-				@include media($mobile) {
+				.views-row {
+					
+					margin-bottom: 2em;
 					@include span-columns(2);
-					@include omega(2n);
-				}
+			    	@include omega(6n);
 
-
-				.views-field-name {
-
-				
-					a {
-						display: block;
-						margin-bottom: .5em;
-						font-size: .9em;
-						padding: 3px;
-						text-align: center;
-						background-color: $colorBeigeGrey;
-						margin-top: 5px;
-						&:hover {background-color: $colorVLightGrey; }
+					@include media($mobile) {
+						@include span-columns(2);
+						@include omega(2n);
 					}
-				
-				}
 
+					.views-field-name {
+
+					
+						a {
+							display: block;
+							margin-bottom: .5em;
+							font-size: .9em;
+							padding: 3px;
+							text-align: center;
+							background-color: $colorBeigeGrey;
+							margin-top: 5px;
+							&:hover {background-color: $colorVLightGrey; }
+						}
+					
+					}
+
+				}
+			}
+
+			.view-footer {
+				padding-top: 1em;
+				text-align: right;
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				font-size: 1.2em;
 			}
 		}
 
 	}
 }
-
-
 
 
 /*
@@ -306,7 +290,43 @@
 
 .front {
 
+	.featured-outer-two {
+
+		// background-image: url("../images/ox_city_3.jpg");
+		// //filter: grayscale(.5);
+		// filter: opacity(.6);
+		// background-color: $colorPrimary;
+		// background-blend-mode: difference;
+		// //filter: sepia(.5);
+		// background-size: 100%;
+		// background-position: 0 -50px;
+
+		.category-headline {
+			position: relative;
+			margin-top: -5em;
+			top: -4em;
+			margin-bottom: 20px;
+			border-radius: 3px;
+			font-size: 2.5em;
+			//background-color: lighten($colorBeigeGrey, 10%);
+			//filter: opacity(.6);
+			color: darken($colorLightGrey, 50%);
+			text-align: center;
+			&:before {
+				background-color: none;
+				display: block;
+				clear: both;
+				content: "University of Oxford Podcasts";
+				font-size: 2em;
+			}
+		}
+
+
+	}
+
 	.categories {
+
+		@include clearfix;
 		padding: 2em 0;
 
 		.category  {
@@ -315,19 +335,19 @@
 			@include omega(4n); 
 			display: block;
 			}
-		@include clearfix;
+		
 	}
 
 	.hover-tile-outer {
 	  //border: 1px solid $base-border-color;
 	  //background-color: $colorLightGrey;
 	  background: transparentize($colorPrimary, 0.2);
-	  border-radius: 2px;
+	  border-radius: 1px;
 	  margin: 1em 0;
 	  display: block;
-	  height: 3.5em;
+	  height: 3.2em;
 	  cursor: pointer;
-	  padding: .9em 0;
+	  padding: .7em 0;
 	  &:hover {background: transparentize($colorPrimary, 0.3);}
 	  
 	  a {
@@ -336,7 +356,7 @@
 	  	font-weight: bolder;
 	    display: block;
 	    text-align: center;
-	    font-size: 1em;
+	    font-size: 1.1em;
 	    vertical-align: middle;
 	    //padding: 12px;
 	    
@@ -344,13 +364,14 @@
 	}
 
 	.hover-tile-container {
-	  margin-top: 20px;
-	  border-radius: 2px;
+	  margin-top: 12px;
+	  border-radius: 1px;
 	  transform: scale(0);
 	  opacity: 0;
-	  font-size: .8em;
-	  background: transparentize($colorVLightGrey, 0.1);
-	  color: #000;
+	  font-size: 1em;
+	  background: darken($colorDarkGrey, 50%);
+
+	  color: $colorVLightGrey;
 	  padding: 1em;
 	  cursor: default;
 
@@ -368,7 +389,7 @@
 	  opacity: 1;
 	  position: relative;
 	  z-index: 100;
-	  @include transition (opacity .6s ease-in-out);
+	  @include transition (opacity .3s ease-in-out);
 	}
 
 }

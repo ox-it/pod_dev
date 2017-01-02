@@ -637,6 +637,181 @@ function ox_views_views_default_views() {
   $export['episode_node_view'] = $view;
 
   $view = new view();
+  $view->name = 'episode_page';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Episode Page';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'episode' => 'episode',
+  );
+
+  /* Display: EVA Title */
+  $handler = $view->new_display('entity_view', 'EVA Title', 'entity_view_1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'episode',
+  );
+
+  /* Display: EVA Series Album Cover */
+  $handler = $view->new_display('entity_view', 'EVA Series Album Cover', 'entity_view_2');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Series (field_series) */
+  $handler->display->display_options['relationships']['field_series_tid']['id'] = 'field_series_tid';
+  $handler->display->display_options['relationships']['field_series_tid']['table'] = 'field_data_field_series';
+  $handler->display->display_options['relationships']['field_series_tid']['field'] = 'field_series_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series_tid';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = 'Belongs to series';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'series',
+    'image_link' => 'content',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_series_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'episode',
+  );
+
+  /* Display: EVA Unit */
+  $handler = $view->new_display('entity_view', 'EVA Unit', 'entity_view_3');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Department / College';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'series' => 'series',
+    'categories' => 0,
+    'units' => 0,
+    'keywords' => 0,
+    'people' => 0,
+    'tags' => 0,
+  );
+  /* Relationship: Field: Oxford Unit (field_unit) */
+  $handler->display->display_options['relationships']['field_unit_tid']['id'] = 'field_unit_tid';
+  $handler->display->display_options['relationships']['field_unit_tid']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['relationships']['field_unit_tid']['field'] = 'field_unit_tid';
+  $handler->display->display_options['relationships']['field_unit_tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_unit_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'episode',
+  );
+  $export['episode_page'] = $view;
+
+  $view = new view();
   $view->name = 'episode_search_db_';
   $view->description = '';
   $view->tag = 'default';
@@ -981,6 +1156,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '@total episodes (@start - @end) ';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
@@ -1137,6 +1313,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '@total episodes (@start - @end) ';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1305,6 +1482,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['content'] = '@total episodes (@start - @end) ';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -2076,6 +2254,9 @@ function ox_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'view-eva-subscribe-links';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Taxonomy term: Content using Series */
   $handler->display->display_options['relationships']['reverse_field_series_node']['id'] = 'reverse_field_series_node';
@@ -2113,10 +2294,11 @@ function ox_views_views_default_views() {
     'people' => 'people',
   );
 
-  /* Display: EVA iTunes Subscribe */
-  $handler = $view->new_display('entity_view', 'EVA iTunes Subscribe', 'entity_view_6');
+  /* Display: EVA Subscribe Series */
+  $handler = $view->new_display('entity_view', 'EVA Subscribe Series', 'entity_view_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Subscribe';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: iTunes U Audio Code */
@@ -2176,8 +2358,8 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['show_title'] = 1;
 
-  /* Display: RSS Audio Attach */
-  $handler = $view->new_display('attachment', 'RSS Audio Attach', 'attachment_1');
+  /* Display: RSS Audio Attach (series) */
+  $handler = $view->new_display('attachment', 'RSS Audio Attach (series)', 'attachment_1');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Taxonomy term: Content using Series */
@@ -2196,7 +2378,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
   $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
   $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_audio"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/audio.xml">Audio RSS Feed</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_audio"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/audio.xml">Audio RSS</a></span>';
   $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
     'thousand_separator' => '',
@@ -2236,8 +2418,8 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['attachment_position'] = 'after';
 
-  /* Display: RSS Video Attach */
-  $handler = $view->new_display('attachment', 'RSS Video Attach', 'attachment_2');
+  /* Display: RSS Video Attach (series) */
+  $handler = $view->new_display('attachment', 'RSS Video Attach (series)', 'attachment_2');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: MediaPub NID */
@@ -2246,7 +2428,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
   $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
   $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_video"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/video.xml">Video RSS Feed</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_video"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/video.xml">Video RSS</a></span>';
   $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
     'thousand_separator' => '',
@@ -2283,8 +2465,8 @@ function ox_views_views_default_views() {
   );
   $handler->display->display_options['attachment_position'] = 'after';
 
-  /* Display: RSS Doc Attach */
-  $handler = $view->new_display('attachment', 'RSS Doc Attach', 'attachment_3');
+  /* Display: RSS Doc Attach (series) */
+  $handler = $view->new_display('attachment', 'RSS Doc Attach (series)', 'attachment_3');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: MediaPub NID */
@@ -2293,7 +2475,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
   $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
   $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_document"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/document.xml">Document RSS Feed</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_document"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/document.xml">Document RSS</a></span>';
   $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
     'thousand_separator' => '',
@@ -2312,6 +2494,222 @@ function ox_views_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'entity_view_6' => 'entity_view_6',
     'default' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: EVA iTunes Episode */
+  $handler = $view->new_display('entity_view', 'EVA iTunes Episode', 'entity_view_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Subscribe';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Taxonomy term: Content using Series */
+  $handler->display->display_options['relationships']['reverse_field_series_node']['id'] = 'reverse_field_series_node';
+  $handler->display->display_options['relationships']['reverse_field_series_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_series_node']['field'] = 'reverse_field_series_node';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: iTunes U Audio Code */
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['id'] = 'field_itunes_u_audio_code';
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['table'] = 'field_data_field_itunes_u_audio_code';
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['field'] = 'field_itunes_u_audio_code';
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['label'] = '';
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['alter']['text'] = '<span class="itunesu"><a href="https://itunes.apple.com/gb/itunes-u/id[field_itunes_u_audio_code-value]">iTunes U Audio</a></span>';
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_itunes_u_audio_code']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  /* Field: Taxonomy term: iTunes U Document Code */
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['id'] = 'field_itunes_u_document_code';
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['table'] = 'field_data_field_itunes_u_document_code';
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['field'] = 'field_itunes_u_document_code';
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['label'] = '';
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['alter']['text'] = '<span class="itunesu"><a href="https://itunes.apple.com/gb/itunes-u/id[field_itunes_u_document_code-value]">iTunes U Document</a></span>';
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_itunes_u_document_code']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  /* Field: Taxonomy term: iTunes U Video Code */
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['id'] = 'field_itunes_u_video_code';
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['table'] = 'field_data_field_itunes_u_video_code';
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['field'] = 'field_itunes_u_video_code';
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['label'] = '';
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['alter']['text'] = '<span class="itunesu"><a href="https://itunes.apple.com/gb/itunes-u/id[field_itunes_u_video_code-value]">iTunes U Video</a></span>';
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_itunes_u_video_code']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'episode',
+  );
+  $handler->display->display_options['show_title'] = 1;
+
+  /* Display: RSS Audio Attach (ep) */
+  $handler = $view->new_display('attachment', 'RSS Audio Attach (ep)', 'attachment_4');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: MediaPub NID */
+  $handler->display->display_options['fields']['field_mediapub_nid']['id'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['table'] = 'field_data_field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_audio"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/audio.xml">Audio RSS</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_media_files_fid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'audio' => 'audio',
+  );
+  $handler->display->display_options['displays'] = array(
+    'entity_view_2' => 'entity_view_2',
+    'default' => 0,
+    'entity_view_6' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: RSS Video Attach (ep) */
+  $handler = $view->new_display('attachment', 'RSS Video Attach (ep)', 'attachment_5');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: MediaPub NID */
+  $handler->display->display_options['fields']['field_mediapub_nid']['id'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['table'] = 'field_data_field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_video"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/video.xml">Video RSS</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_media_files_fid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'video' => 'video',
+  );
+  $handler->display->display_options['displays'] = array(
+    'entity_view_2' => 'entity_view_2',
+    'default' => 0,
+    'entity_view_6' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: RSS Doc Attach (ep) */
+  $handler = $view->new_display('attachment', 'RSS Doc Attach (ep)', 'attachment_6');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field: MediaPub NID */
+  $handler->display->display_options['fields']['field_mediapub_nid']['id'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['table'] = 'field_data_field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['field'] = 'field_mediapub_nid';
+  $handler->display->display_options['fields']['field_mediapub_nid']['label'] = '';
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['alter']['text'] = '<span class="feed_document"><a href="http://mediapub.it.ox.ac.uk/feeds/[field_mediapub_nid-value]/document.xml">Document RSS</a></span>';
+  $handler->display->display_options['fields']['field_mediapub_nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mediapub_nid']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: File: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'field_media_files_fid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'document' => 'document',
+  );
+  $handler->display->display_options['displays'] = array(
+    'entity_view_2' => 'entity_view_2',
+    'default' => 0,
+    'entity_view_6' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $export['eva_subscribe_links'] = $view;

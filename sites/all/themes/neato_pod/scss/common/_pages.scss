@@ -4,7 +4,17 @@
 }
 
 .context-people-page, .context-series-page, .context-unit-page, .context-unit-gallery, .context-people-gallery, .context-series-gallery {
-	main {padding-top: 5em;}  // See also the more general "main" padding-top on _page.scss
+
+	    // See also the more general "main" padding-top on _page.scss
+		main {
+			padding-top: 5em;
+
+			@include media($mobile) {
+				padding-top: 1em;
+			}
+
+		}  
+
 }
 
 .page-solr {

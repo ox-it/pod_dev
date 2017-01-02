@@ -56,8 +56,6 @@
 		}
 
 
-
-
 		@include media($tablet) {
 			@include omega-reset(4n, 6);
 			@include span-columns(2 of 6);
@@ -71,18 +69,13 @@
 			@include omega(2n);
 		}
 
-
-
-
-
-
 	}
 
 }
 
 
 /*
- *************************  People Page (.../people/person-name) -- Title/Description **********************************
+ ********** People Page (.../people/person-name) -- Title/Description ****************
  */
 
 .context-people-page {
@@ -110,14 +103,40 @@
 				padding-top: 2em;
 				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
+
+				@include media($tablet) {
+					font-size: 2em;
+				}
+
+				@include media($mobile) {
+					font-size: 1.4em;
+				}
+
+
 			}
 		}
+
+
+		// EVA Field Person Image (extra image in context_people_name)
+		#block-fieldblock-7d9066c7669a89290d050e50e280919a {
+			.field-name-field-people-image {
+				img {
+					display: none;
+					@include media($mobile) {
+						display: block;
+						margin: 1em auto 0 auto;
+					}
+
+				}
+			}
+		}
+
 		// EVA Field Person Description
 		#block-fieldblock-77e58f65f54c4a3b1f9304de010e7c26 .view-display-id-entity_view_4 {
 
 			.views-field-description  {
 				padding-top: 1.5em;
-				padding-bottom: 4em;
+				padding-bottom: 3em;
 				font-size: 1.2em;
 				color: darken($colorMidGrey, 20%);
 
@@ -125,6 +144,10 @@
 					content: "A" !important;
 				    display: block !important;
 				    margin-bottom: 1em !important;    
+				}
+
+				@include media($mobile) {
+					font-size: 1em;
 				}
 			}
 		}
@@ -135,17 +158,17 @@
 
 // EVA Field Person Associated Series
 .context-people-page {
-	.featured-outer-two {
-		background-color: $colorLightGrey;
 
-		
-		
+	.featured-outer-two {
+
+		background-color: $colorLightGrey;
 
 		#block-fieldblock-8d83dd80917f5b47c5567abe2f2782e2 .view-display-id-entity_view_1 {
 
 			h2 {
+				margin: 0;
 				padding: 1em 0;
-				font-size: 1.1em;
+				font-size: 1.3em;
 				display: block;
 				cursor: pointer;
 				text-align: center;
@@ -154,6 +177,10 @@
 
 				&:hover {
 					background-color: lighten($colorLightGrey, 3%);
+				}
+
+				@include media($mobile) {
+					font-size: .9em;
 				}
 
 				
@@ -169,16 +196,22 @@
 			}
 
 			.view-content {
-				display:none; // JQuery toggles
+				display: none; // JQuery toggles
 			}
 
 			.views-row {
-				height: 230px;
 				width: auto;
 				padding: 1em 0;
 				@include span-columns(2);
 				@include omega(6n);
 				font-size: $description-font-size;
+				height: auto;
+
+
+				@include media($mobile) {
+					@include span-columns(2 of 4);
+					@include omega(2n);
+				}
 
 				.views-field-name {
 
@@ -197,6 +230,43 @@
 	}
 }
 
+
+/*
+ *****************  Responsive Sidebar on people  **************************************************
+ */
+
+ .context-people-page {
+
+ 	@include media($mobile) {
+
+ 		&.one-sidebar.sidebar-first {
+		    main {
+		      aside {
+		        &#sidebar-first {
+		          @include span-columns(4); 
+
+ 					//Hide the sidebar image and the sidebar title block.
+		            #block-fieldblock-7d9066c7669a89290d050e50e280919a,
+  					#block-fieldblock-bdcadf5ac654ed7b2d0bed98ddbbca1a {
+						display: none;
+					}
+		        }
+		      }
+
+		      section#content {
+		          @include span-columns(4);
+
+		        }
+		    }
+
+
+
+  		}
+
+
+
+ 	}
+ }
 
 
 
