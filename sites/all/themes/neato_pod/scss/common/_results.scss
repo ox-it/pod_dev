@@ -1,91 +1,3 @@
-/*
- ******************************** Search API/ Solr "Current Search block"  ****************************
- */
-
-.context-results-page {
-
-	.header-middle-bottom-outer {
-		padding-top: 4em;
-		padding-bottom: 4em;
-		background-color: $colorLightGrey;
-	}
-
-	.views-exposed-form {
-		// float: left;
-		// width: 75%;
-	}
-
-	.block-current-search {
-		padding-top: 2em;
-		text-align: center;
-		color: $colorMidGrey;
-
-		h3 {
-			letter-spacing: .1em;
-			background-color: $colorBeigeGrey;
-			font-weight: normal;
-			font-size: 1.7em;
-			padding: .4em 0;
-			@include media($mobile) {
-				font-size: 1.2em;
-			}	
-		}
-
-		.item-list {
-
-			background-color: lighten($colorBeigeGrey, 3%);
-			padding: .1em 0 0 0;
-			text-align: center;
-			ul {
-				padding: .5em 0;
-				
-				li {
-					//display: inline-block;
-					padding: .1em 1em;
-					font-size: 1.1em;
-					//float: left;
-				}
-
-			}
-
-		}
-
-	}
-
-
-	// Current Search block -- if using as a block beside the search bar, floated right
-	// .block-current-search {		
-	// 	float: right;
-	// 	width: 25%;
-
-	// 	.current-search-item {
-	// 		h3 {
-	// 			margin: 0;
-	// 			background-color: $colorLinkHover;
-	// 			padding: 1.3em;
-	// 			display: block;
-	// 			color: $font-heading-color;
-	// 	  		border-radius: 2px 2px 0 0;
-	// 	  		letter-spacing: .1em;
-	// 		}
-	// 		.item-list {
-	// 			//text-align: right;
-	// 			background-color: $colorBeigeGrey;
-				
-	// 			//padding-top: 10px;
-	// 			padding: 10px 5px 1px 10px;
-	// 			color: $colorMidGrey;
-	// 			font-size: 1em;
-	// 			a {color: $colorDarkGrey;}
-
-	// 		}
-	// 	}
-
-	// }
-}
-
-
-
 
 /*
  ***********  Solr result views for episodes on Episode page, Series page, and People page ****************
@@ -132,7 +44,7 @@
 					background-color: $colorLightGrey;
 					display: block;
 					border-radius: $base-border-radius;
-					padding: 3px 6px 5px 6px;
+					padding: 3px 6px;
 					&:hover {
 						background-color: darken($colorLightGrey, 15%);
 					}

@@ -1,122 +1,234 @@
+// .header-top-outer {
+// 	background-color: red;
+// 	transition: height 500ms; 
+// 	position:fixed; 
+// 	top:0; 
+// 	margin: auto; 
+// 	z-index:10000;
+// 	width:100%;
+// 	img {
+// 		float: right;
+// 		height: 30px;
+// 		width: 30px;
+// 	}
+// }
 
-
-.header-middle-outer {
+.header-top-outer {
 	background-color: $colorPrimary; 
 	height: 90px; 
 	//transition: height 500ms; 
 	position:fixed; 
-	top:0px; 
+	top: 0; 
 	margin: auto; 
 	z-index:10000;
 	width:100%;
 
-	.header-middle {
-		margin-top: 1.5em;
+
+	// Social Media Buttons (twitter/facebook)
+	#block-block-11 {
+		float: right;
+		width: 40px;
+		margin-right: 12px;
+		a {
+			opacity: .5;
+			height: 43px;
+			width: 43px;
+			display: block;
+			float: left;
+			margin-bottom: 3px;
+		}
 	}
 
-	.header-middle-right {
-
-
-	}
 
 
 	#block-system-main-menu {
 		float: right;
-		
-
+	
 		ul.menu {
-			
 
 			li {
-			    margin-left: 1em;
 				float: left;
-				background-color: lighten($colorPrimary, 2%);
-			
-
+				width: 140px;
 				a {
+					background-color: lighten($colorPrimary, 2%);
 					display: block;
-					font-variant: small-caps;
-					font-size: 1.3em;
-					font-weight: bolder;
-					color: $font-heading-color;
-					padding: .3em;
-					border: 1px solid darken($colorLinkHover, 12%); 
-					border-radius: $base-border-radius;
+					width: 130px;
+					height: 90px;
+					text-align: center;
+					padding: 25px 15px;
+					text-transform: uppercase;
+					font-size: 1em;
+					color: lighten($colorMidGrey, 30%);
 
+					&:hover {
+						background-color: lighten($colorPrimary, 7%);
+					}
 				}
-
 			}
 		}
 	}
 
+
 	#logo-block {
 		background: url("../images/oxford-logo-square.png") no-repeat;
 		background-size: 100%;
-		height: 90px;
-		width: 90px;
+		height: 94px;
+		width: 94px;
 		float: left; 
+		margin: 10px;
 
 	}
 
-	#site-name-block {
+	#site-name-block  {
+		margin: 10px 0 0 0;
 		position: fixed;
-		font-size: 2em;
-		padding-left: 50px;
-	
+		//border: 1px solid red;
+		opacity: .8;
+		font-size: 5.4em;
+		font-family: arial-black;
+		@include media($header) {
+			font-size: 4em;
+			margin: 30px 0 0 0;
+		}
+		@include media($mobile) {
+			font-size: 2.7em;
+			margin: 49px 0 0 0;
+		}
+	}
+	#collapsed-menu-button {
+		background-color: transparent;
+		border-radius: 0;
+		position: relative;
+		//height: 90px;
+		padding: 0 0 0 0;
+		border: none;
+		font-size: 13em;
+		text-transform: uppercase;
+		font-family: arial-black;
+		margin: -90px 20px 0 0;
+		@include media($header) {
+			font-size: 10em;
+			margin: -58px 20px 0 0;
+		}
+
+		&:before {
+			content: "≡";
+		}
+		&.active:before {
+			content: "✕";
+			font-size: 50%;
+			font-weight: lighter;
+			position: relative;
+			top: -30px;
+			left: -10px;
+			@include media($header) {
+				top: -20px;
+			}
+		}
+
 	}
 }
 
 
 // The .header_scoll is a jQuery addClass toggle 
-.header-middle-outer.header_scroll {
-
+.header-top-outer.header_scroll {
 	height: 57px;
 	//transition: height 500ms; 
 
-	.header-middle {
-		margin-top: .7em;
+	// Social Media Buttons (twitter/facebook)
+	#block-block-11 {
+		float: right;
+		width: 40px;
+		margin-right: 3px;
+
+		a {
+			opacity: .5;
+			height: 27px;
+			width: 27px;
+			display: block;
+			float: left;
+			margin: 1px 0 0 1px;
+		}
 	}
 
 	
+	#block-system-main-menu {
 
+		ul.menu {
+			li { 
+				width: 130px;
+		
+				a {
+					height: 57px;
+					width: 120px;
+					padding: 10px 15px;
+					font-size: .9em;
 
-	#block-system-main-menu ul.menu li {
+					//border: 1px solid darken($colorLinkHover, 12%); 
+					//border-radius: $base-border-radius;
+				}
+			}
+		}
+	}
 
-	    margin-left: 1em;
-		display: inline-block; 
-		margin-top: 1px;
-		background-color: lighten($colorPrimary, 2%);
+	#logo-block {
+		background: url("../images/oxford-logo-rectangle.png") no-repeat;
+		background-size: 100%;
+		height: 57px;
+		width: 180px;
 
-		a {
-			display: block;
-			font-variant: small-caps;
-			font-size: 1.2em;
-			color: $font-heading-color;
-			padding: .3em .5em;
-			border: 1px solid darken($colorLinkHover, 12%); 
-			border-radius: $base-border-radius;
+		float: left; 
+		margin: 0;
+	}
+		#site-name-block  {
+		margin: -24px 5px;
+		position: fixed;
+		opacity: .8;
+		font-size: 4.7em;
+		font-family: arial-black;
+
+		@include media($header) {
+			font-size: 2.5em;
+			margin: 2px 0 0 15px;
+		}
+		@include media($mobile) {
+			font-size: 2.2em;
+			margin: 4px 0 0 15px;
+		}
+	}
+	#collapsed-menu-button {
+		background-color: transparent;
+		border-radius: 0;
+		height: 90px;
+		padding: 0 0 0 0;
+		margin-top: -26px;
+		border: none;
+		font-size: 9em;
+		text-transform: uppercase;
+		position: relative;
+		top: -37px;
+		//right: 10px;
+		&.active:before {
+			content: "✕";
+			font-size: 50%;
+			font-weight: lighter;
+			position: relative;
+			top: -20px;
+			left: -10px;
 
 		}
 
 	}
-	#logo-block {
-		background: url("../images/oxford-logo-rectangle.png") no-repeat;
-		//transition: background 500ms;
-		background-size: 100%;
-		height: 39px;
-		width: 120px;
-		border: 1px solid #fff;
-		float: left; 
-		margin-bottom: 0;
-	}
 }
 
 
+
+
 // *****   Required to offset the Fixed height above -- plus the Admin menu when logged-in  **********
-.header-middle-bottom-outer {margin-top: 90px; /*transition: margin-top 500ms;*/ }
-.header-middle-bottom-outer.header_scroll {margin-top: 57px; /*transition: margin-top 500ms;*/}
-.logged-in .header-middle-bottom-outer {margin-top: 99px;}
-.logged-in .header-middle-outer  {top: 20px}
+.header-middle-outer {margin-top: 90px; /*transition: margin-top 500ms;*/ }
+.header-middle-outer.header_scroll {margin-top: 57px; /*transition: margin-top 500ms;*/}
+.logged-in .header-top-outer {margin-top: 15px;}
+//.logged-in .header-top-outer  {top: 20px}
 #admin-menu {position: relative; z-index: 10001;}
 // ************************************************************
 

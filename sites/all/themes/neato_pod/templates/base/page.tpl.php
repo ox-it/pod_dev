@@ -3,12 +3,12 @@
 <!-- "inner-wrapper" applies 'outer-container' NEAT grid: see layout.scss-->
 
  <!-- ______________________ HEADER _______________________ -->
-  <div role="header" class="header-outer header-top-outer">
+  <div role="header" class="header-outer header-headline-outer">
     
-    <div class="no-inner-wrapper header-top">  
-      <?php if (!empty($page['header-top'])): ?>
-        <header id="site-header" class="header-top">
-            <?php print render($page['header-top']); ?>
+    <div class="no-inner-wrapper header-headline">  
+      <?php if (!empty($page['header-headline'])): ?>
+        <header id="site-header" class="header-headline">
+            <?php print render($page['header-headline']); ?>
         </header>
       <?php endif; ?>
     </div>
@@ -16,19 +16,19 @@
   </div>
 
 
-  <div role="header" class="header-outer header-middle-outer">
+  <div role="header" class="header-outer header-top-outer">
 
     <div class="no-inner-wrapper header-middle">
 
-      <?php if (!empty($page['header-middle-left'])): ?>
-        <header id="site-header" class="header-middle-left"> 
-            <?php print render($page['header-middle-left']); ?>   
+      <?php if (!empty($page['header-top-left'])): ?>
+        <header id="site-header" class="header-top-left"> 
+            <?php print render($page['header-top-left']); ?>   
         </header>
       <?php endif; ?>
 
-      <?php if (!empty($page['header-middle-right'])): ?>
-        <header id="site-header" class="header-middle-right">  
-            <?php print render($page['header-middle-right']); ?>
+      <?php if (!empty($page['header-top-right'])): ?>
+        <header id="site-header" class="header-top-right">  
+            <?php print render($page['header-top-right']); ?>
         </header>
       <?php endif; ?>
 
@@ -36,13 +36,13 @@
     
   </div>
 
-  <div role="header" class="header-outer header-middle-bottom-outer">
+  <div role="header" class="header-outer header-middle-outer">
 
-    <div class="inner-wrapper header-middle-bottom">
+    <div class="inner-wrapper header-middle">
 
-      <?php if (!empty($page['header-middle-bottom'])): ?>
-        <header id="site-header" class="header-middle-bottom"> 
-            <?php print render($page['header-middle-bottom']); ?>   
+      <?php if (!empty($page['header-middle'])): ?>
+        <header id="site-header" class="header-middle"> 
+            <?php print render($page['header-middle']); ?>   
         </header>
       <?php endif; ?>
 
@@ -119,6 +119,16 @@
       <?php if (!empty($page['featured-five'])): ?>
         <header id="featured-five" class="inner-wrapper">      
             <?php print render($page['featured-five']); ?>
+        </header>
+      <?php endif; ?>
+
+  </div>
+
+  <div class="featured-outer featured-outer-six">
+
+      <?php if (!empty($page['featured-six'])): ?>
+        <header id="featured-six" class="inner-wrapper">      
+            <?php print render($page['featured-six']); ?>
         </header>
       <?php endif; ?>
 

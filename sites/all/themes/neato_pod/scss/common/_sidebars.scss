@@ -111,8 +111,12 @@
 
 			#sidr-menu-keywords {
 				display: block;
-				padding-bottom: 15px;
-				padding-left: 5px;
+				padding: 0 0 5px 3px;
+				border-bottom: 1px solid $colorLightGrey;
+				font-variant: small-caps;
+				font-size: 1.2em;
+				//text-align: center;
+				//padding-left: 5px;
 			}
 
 		}
@@ -191,8 +195,14 @@
 		}
 
 		h2 {
+			font-weight: normal;
+			background-color: $colorLinkHover;
 			padding: 5px;
-			font-size: .9em;
+			display: block;
+			font-variant: small-caps;
+			font-size: 1.4em;
+			color: $colorVLightGrey;
+			margin-bottom: 5px;
 		}
 
 
@@ -255,6 +265,7 @@
 			//border-top: 1px solid $colorIconBlueGrey;
 			padding: 5px;
 			color: $colorMidGrey;
+			font-size: 1.5em;
 		}
 
 		#block-fieldblock-930ac34e1bf7b2e5e0bdb144db8a5d2c {

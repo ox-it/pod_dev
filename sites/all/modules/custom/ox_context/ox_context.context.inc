@@ -29,14 +29,20 @@ function ox_context_context_default_contexts() {
         'block-6' => array(
           'module' => 'block',
           'delta' => '6',
-          'region' => 'header-middle-left',
+          'region' => 'header-top-left',
           'weight' => '-10',
+        ),
+        'block-11' => array(
+          'module' => 'block',
+          'delta' => '11',
+          'region' => 'header-top-right',
+          'weight' => '-43',
         ),
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
-          'region' => 'header-middle-right',
-          'weight' => '-10',
+          'region' => 'header-top-right',
+          'weight' => '-42',
         ),
         'system-powered-by' => array(
           'module' => 'system',
@@ -207,6 +213,80 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_episode_solr';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'solr' => 'solr',
+        'solr*' => 'solr*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-episode_search_solr_-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_solr_-page',
+          'region' => 'header-middle',
+          'weight' => '-10',
+        ),
+        'current_search-episode_current_search_solr' => array(
+          'module' => 'current_search',
+          'delta' => 'episode_current_search_solr',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
+          'module' => 'facetapi',
+          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
+          'module' => 'facetapi',
+          'delta' => 'd0QkDcLZVvKKApcDWQIsYZWHl7OBcfql',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+        'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
+          'module' => 'facetapi',
+          'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
+        'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
+          'module' => 'facetapi',
+          'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
+          'region' => 'sidebar_first',
+          'weight' => '-6',
+        ),
+        'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
+          'module' => 'views',
+          'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
+          'region' => 'footer_hidden_two',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-results-page',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_episode_solr'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_front';
   $context->description = '';
   $context->tag = '';
@@ -223,7 +303,7 @@ function ox_context_context_default_contexts() {
         'views--exp-episode_search_solr_-page' => array(
           'module' => 'views',
           'delta' => '-exp-episode_search_solr_-page',
-          'region' => 'header-middle-bottom',
+          'region' => 'header-middle',
           'weight' => '-10',
         ),
         'block-8' => array(
@@ -238,28 +318,40 @@ function ox_context_context_default_contexts() {
           'region' => 'featured-one',
           'weight' => '-9',
         ),
+        'views-episode_series_count-block' => array(
+          'module' => 'views',
+          'delta' => 'episode_series_count-block',
+          'region' => 'featured-one',
+          'weight' => '-8',
+        ),
         'block-2' => array(
           'module' => 'block',
           'delta' => '2',
           'region' => 'featured-two',
           'weight' => '-10',
         ),
+        'views-episode_featured_latest-block_1' => array(
+          'module' => 'views',
+          'delta' => 'episode_featured_latest-block_1',
+          'region' => 'featured-three',
+          'weight' => '-10',
+        ),
         'views-series_featured-block' => array(
           'module' => 'views',
           'delta' => 'series_featured-block',
-          'region' => 'featured-three',
+          'region' => 'featured-four',
           'weight' => '-10',
         ),
         'views-people_featured-block' => array(
           'module' => 'views',
           'delta' => 'people_featured-block',
-          'region' => 'featured-four',
+          'region' => 'featured-five',
           'weight' => '-10',
         ),
         'views-unit_featured-block' => array(
           'module' => 'views',
           'delta' => 'unit_featured-block',
-          'region' => 'featured-five',
+          'region' => 'featured-six',
           'weight' => '-10',
         ),
         'views-series_gallery-block_1' => array(
@@ -327,7 +419,7 @@ function ox_context_context_default_contexts() {
         'views--exp-people_view-page' => array(
           'module' => 'views',
           'delta' => '-exp-people_view-page',
-          'region' => 'header-middle-bottom',
+          'region' => 'header-middle',
           'weight' => '-10',
         ),
       ),
@@ -628,7 +720,7 @@ function ox_context_context_default_contexts() {
         'views--exp-series_gallery-page' => array(
           'module' => 'views',
           'delta' => '-exp-series_gallery-page',
-          'region' => 'header-middle-bottom',
+          'region' => 'header-middle',
           'weight' => '-10',
         ),
       ),
@@ -810,7 +902,7 @@ function ox_context_context_default_contexts() {
         'block-9' => array(
           'module' => 'block',
           'delta' => '9',
-          'region' => 'header-middle-bottom',
+          'region' => 'header-middle',
           'weight' => '-10',
         ),
       ),

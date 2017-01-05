@@ -39,10 +39,10 @@ stylesheets[all][] = js/meanMenu/meanmenu.css
 ; ========================================
 ; Regions
 ; ========================================
-regions[header-top]	         		= Header Top
-regions[header-middle-left]     	= Header Middle Left
-regions[header-middle-right]    	= Header Middle Right
-regions[header-middle-bottom]    	= Header Middle Bottom
+regions[header-headline]	        = Header Headline
+regions[header-top-left]     		= Header Top Left
+regions[header-top-right]    		= Header Top Right
+regions[header-middle]    	        = Header Middle
 regions[header-bottom-left]     	= Header Bottom Left
 regions[header-bottom-right]    	= Header Bottom Right
 regions[featured-one]          		= Featured One
@@ -50,6 +50,7 @@ regions[featured-two]           	= Featured Two
 regions[featured-three]         	= Featured Three
 regions[featured-four]          	= Featured Four
 regions[featured-five]          	= Featured Five
+regions[featured-six]          		= Featured Six
 regions[sidebar_first]       		= Left Sidebar
 regions[content]             		= Content
 regions[sidebar_second]      		= Right Sidebar

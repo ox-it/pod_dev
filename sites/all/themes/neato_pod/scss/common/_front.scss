@@ -4,7 +4,7 @@
 
 .front {
 
-	.header-middle-bottom-outer {
+	.header-middle-outer {
 		padding-top: 4em;
 		padding-bottom: 4em;
 		background-color: $colorLightGrey;
@@ -13,24 +13,85 @@
 
 
 	.featured-outer-one {
-				background-image: url("../images/ox_city_3.jpg");
+		background-image: url("../images/ox_city_3.jpg");
 		//filter: grayscale(.5);
 		filter: opacity(.7);
 		//background-color: $colorPrimary;
 		//background-blend-mode: difference;
 		//filter: sepia(.5);
 		background-size: 100%;
-		background-position: 0 -40px;
-		height: 360px;
-		
+		background-position: 0 0px;
 		padding-bottom: 5px;
 		background-color: $colorVLightGrey;
+		height: 350px;
+
+
+		@include media($tablet) {
+			height: 250px;
+			background-position: 0 0px;
+		}
+		@include media($mobile) {
+			height: 150px;
+		}
+		
+		.view-episode-series-count {
+			padding-top: 1em;
+
+			.view-header  {
+				position: relative;
+				clear: both;
+				text-align: center;
+				font-size: 5em;
+				background: transparentize(#fff, 0.5);
+				color: $colorPrimary;
+				font-weight: 300;
+				letter-spacing: .1em;
+				margin-top: .8em;
+				margin-bottom: .5em;
+				font-variant: small-caps;
+				span {
+					color: transparentize($colorLinkHover, .3);
+					font-style: italic;
+					font-weight: 500;
+				}
+
+				@include media($tablet) {
+					font-size: 3em;	
+				}
+				@include media($mobile) {
+					font-size: 2em;
+				}
+			}
+
+			.view-content {
+				display: block;
+				clear: both;
+				text-align: center;
+				font-size: 2em;
+				background: transparentize(#fff, 0.5);
+				color: darken($colorMidGrey, 20%);
+				font-variant: small-caps;
+
+				@include media($tablet) {
+					font-size: 1.5em;	
+				}
+				@include media($mobile) {
+					font-size: 1em;
+				}
+			}
+
+
+
+		}
+		
 
 			#block-block-8 {
+				display: block;
 				width: 50%;
 				float: left;
 			}
 			#block-block-1 {
+				display: block;
 				width: 50%;
 				float:right;
 			}
@@ -39,7 +100,58 @@
 
 }
 
+/*
+ ******************************** Featured (Latest) Episode  ****************************
+ */
 
+.front {
+
+	.featured-outer-three {
+		//border-top: 20px solid transparentize($colorPrimary, 0.9);;
+		padding-bottom: 4em;
+		background-color: $colorLightGrey;
+
+
+
+		#block-views-episode_featured_latest-block_1 {
+
+			h2 {
+				color: darken($colorIconBlueGrey, 30%);
+				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				text-align: center;
+				padding: 1em 0;
+				font-size: 3.5em;
+				font-variant: small-caps;
+			}
+
+			.views-row {
+				margin: 1.5em 0;
+				@include span-columns(6);
+				@include omega(2n);
+				.fieldset-latest-left {
+					@include span-columns(1.5 of 6);
+				}
+				.fieldset-latest-right {
+					@include span-columns(4.5 of 6);
+					.views-field-title {
+						//line-height: 1.3em;
+						font-size: 1.3em;
+					}
+					.views-field-created {
+						color: darken($colorLightGrey, 25%);
+					}
+				}
+
+				@include media($mobile) {
+					@include span-columns(4 of 4);
+				}
+
+
+			}
+		}
+
+	}
+}
 
 /*
  ******************************** Featured Series  ****************************
@@ -47,15 +159,15 @@
 
 .front {
 
-	.featured-outer-three {
+	.featured-outer-four {
 
 		border-top: 50px solid $colorIconBlueGrey;
 		padding-bottom: 4px;
-		background-color: $colorLightGrey;
+		background-color: $colorVLightGrey;
 	
 		h2 {
 			color: darken($colorIconBlueGrey, 30%);
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
+			border-bottom: 1px solid darken($colorLightGrey, 5%);
 			text-align: center;
 			padding: 1em 0;
 			font-size: 3.5em;
@@ -75,7 +187,7 @@
 
 				    @include span-columns(3);
 			    	@include omega(4n);
-					margin-bottom: 1em;
+					margin-bottom: 3em;
 					margin-top: 1em;
 
 					@include media($mobile) {
@@ -83,17 +195,22 @@
 						@include omega(2n);
 					}
 
+					.views-field-field-series-album-cover:hover ~ .views-field-name a {
+						border-bottom: 1px solid darken($colorLightGrey, 30%);
+						@include transition (border-bottom .4s ease-in-out);
+					}
+
 					.views-field-name {
 
 						a {
+							border-bottom: 1px solid darken($colorLightGrey, 5%);
 							display: block;
-							
-							font-size: .9em;
+							font-size: 1.1em;
 							padding: 3px;
-							margin-top: 5px;
-							text-align: center;
-							background-color: $colorBeigeGrey;
-							&:hover {background-color: $colorVLightGrey; }
+							//margin-top: 5px;
+							//text-align: center;
+							//background-color: $colorBeigeGrey;
+							//&:hover {background-color: $colorVLightGrey; }
 						}
 					
 					}
@@ -122,12 +239,27 @@
 			// }
 
 
-			.view-footer {
-				margin-top: 3em;
-				margin-bottom: 4em;
-				text-align: right;
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.2em;
+			.view-footer a {
+				display: block;
+				text-align: center;
+				margin: 1em auto 4em auto;
+				//border-bottom: 1px solid darken($colorLightGrey, 10%);
+				font-size: 1.3em;
+				background-color: lighten($colorIconBlueGrey, 1%);
+				border-radius: 5em;
+				height: 130px;
+				width: 130px;
+				position: relative;
+				padding: 28px;
+				font-variant: small-caps;
+				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+				&:hover {
+					background: transparentize($colorLinkHover, .5);
+					color: $colorVLightGrey;
+					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+					@include transform(scale(3) rotate(0deg));
+				}
+
 			}
 
 			
@@ -145,15 +277,15 @@
 
 .front {
 
-	.featured-outer-four {
+	.featured-outer-five {
 
 		border-top: 50px solid $colorGraduateLightGreen;
-		padding-bottom: 4em;
-		background-color: $colorVLightGrey;
+		padding-bottom: 1em;
+		background-color: $colorLightGrey;
 
 			h2 {
 				color: darken($colorGraduateLightGreen, 12%);
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				border-bottom: 1px solid $colorBeigeGrey;
 				text-align: center;
 				padding: 1em 0;
 				font-size: 3.5em;
@@ -179,6 +311,11 @@
 						@include omega(2n);
 					}
 
+					.views-field-field-people-image:hover ~ .views-field-name a {
+						border-bottom: 1px solid darken($colorBeigeGrey, 20%);
+						@include transition (border-bottom .4s ease-in-out);
+					}
+
 
 					.views-field-name {
 
@@ -188,8 +325,7 @@
 							font-size: .9em;
 							padding: 3px;
 							text-align: center;
-							background-color: $colorLightGrey;
-							&:hover {background-color: $colorBeigeGrey; }
+							border-bottom: 1px solid $colorBeigeGrey;
 						}
 					
 					}
@@ -198,12 +334,29 @@
 
 			}
 
-			.view-footer {
-				padding-top: 1em;
-				text-align: right;
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.2em;
+			.view-footer a {
+				display: block;
+				text-align: center;
+				margin: 2em auto 4em auto;
+				//border-bottom: 1px solid darken($colorLightGrey, 10%);
+				font-size: 1.3em;
+				background-color: $colorGraduateLightGreen;
+				border-radius: 5em;
+				height: 130px;
+				width: 130px;
+				position: relative;
+				padding: 35px 10px;
+				font-variant: small-caps;
+				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+				&:hover {
+					background: transparentize(darken($colorGraduateLightGreen, 10%), .3);
+					color: $colorVLightGrey;
+					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+					@include transform(scale(3) rotate(0deg));
+				}
+
 			}
+
 
 		}
 	}
@@ -218,15 +371,15 @@
 
 .front {
 
-	.featured-outer-five {
+	.featured-outer-six {
 
 		border-top: 50px solid $colorGraduateYellow;
-		padding-bottom: 4em;
-		background-color: $colorLightGrey;
+		padding-bottom: 1em;
+		background-color: $colorVLightGrey;
 
 			h2 {
 				color: darken($colorGraduateYellow, 22%);
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
+				border-bottom: 1px solid darken($colorLightGrey, 5%);
 				text-align: center;
 				padding: 1em 0;
 				font-size: 3.5em;
@@ -253,16 +406,22 @@
 						@include omega(2n);
 					}
 
+					.views-field-field-unit-image:hover ~ .views-field-name a {
+						border-bottom: 1px solid darken($colorLightGrey, 30%);
+						@include transition (border-bottom .4s ease-in-out);
+					}
+
 					.views-field-name {
 
 					
 						a {
+
 							display: block;
 							margin-bottom: .5em;
 							font-size: .9em;
 							padding: 3px;
-							text-align: center;
-							background-color: $colorBeigeGrey;
+							//text-align: center;
+							border-bottom: 1px solid darken($colorLightGrey, 5%);
 							margin-top: 5px;
 							&:hover {background-color: $colorVLightGrey; }
 						}
@@ -272,11 +431,27 @@
 				}
 			}
 
-			.view-footer {
-				padding-top: 1em;
-				text-align: right;
-				border-bottom: 1px solid darken($colorLightGrey, 10%);
+			.view-footer a {
+				display: block;
+				text-align: center;
+				margin: 2em auto 4em auto;
+				//border-bottom: 1px solid darken($colorLightGrey, 10%);
 				font-size: 1.2em;
+				background-color: $colorGraduateYellow;
+				border-radius: 5em;
+				height: 130px;
+				width: 130px;
+				position: relative;
+				padding: 30px;
+				font-variant: small-caps;
+				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+				&:hover {
+					background: transparentize(darken($colorGraduateYellow, 30%), .3);
+					color: $colorVLightGrey;
+					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
+					@include transform(scale(3) rotate(0deg));
+				}
+
 			}
 		}
 
@@ -292,32 +467,20 @@
 
 	.featured-outer-two {
 
-		// background-image: url("../images/ox_city_3.jpg");
-		// //filter: grayscale(.5);
-		// filter: opacity(.6);
-		// background-color: $colorPrimary;
-		// background-blend-mode: difference;
-		// //filter: sepia(.5);
-		// background-size: 100%;
-		// background-position: 0 -50px;
-
 		.category-headline {
-			position: relative;
-			margin-top: -5em;
-			top: -4em;
-			margin-bottom: 20px;
+			padding: 1em;
 			border-radius: 3px;
-			font-size: 2.5em;
-			//background-color: lighten($colorBeigeGrey, 10%);
-			//filter: opacity(.6);
-			color: darken($colorLightGrey, 50%);
+			font-size: 2em;
+			color: darken($colorLightGrey, 15%);
 			text-align: center;
-			&:before {
-				background-color: none;
-				display: block;
-				clear: both;
-				content: "University of Oxford Podcasts";
+			border-bottom: 1px solid darken($colorLightGrey, 10%);
+
+			@include media($tablet) {
 				font-size: 2em;
+			}
+
+			@include media($mobile) {
+				font-size: 1.5em;
 			}
 		}
 
@@ -327,23 +490,29 @@
 	.categories {
 
 		@include clearfix;
-		padding: 2em 0;
+		padding: 1em 0 2em 0;
 
 		.category  {
-
 			@include span-columns(3);
 			@include omega(4n); 
-			display: block;
+			@include media($tablet) {
+				@include omega-reset(4n, 6);
+				@include span-columns(3 of 6);
+				@include omega(2n);
 			}
+		}
+
+
+
+
 		
 	}
 
 	.hover-tile-outer {
-	  //border: 1px solid $base-border-color;
-	  //background-color: $colorLightGrey;
-	  background: transparentize($colorPrimary, 0.2);
+	  background: $colorLinkHover;
 	  border-radius: 1px;
 	  margin: 1em 0;
+	  font-weight: normal;
 	  display: block;
 	  height: 3.2em;
 	  cursor: pointer;
@@ -353,13 +522,10 @@
 	  a {
 	  	color: #fff;
 	  	font-variant: small-caps;
-	  	font-weight: bolder;
 	    display: block;
 	    text-align: center;
 	    font-size: 1.1em;
-	    vertical-align: middle;
-	    //padding: 12px;
-	    
+	    vertical-align: middle;	    
 	  }
 	}
 
@@ -368,19 +534,20 @@
 	  border-radius: 1px;
 	  transform: scale(0);
 	  opacity: 0;
-	  font-size: 1em;
-	  background: darken($colorDarkGrey, 50%);
+	  font-size: 1.3em;
+	  background: darken($colorDarkGrey, 40%);
+	  font-variant: small-caps;
 
 	  color: $colorVLightGrey;
 	  padding: 1em;
 	  cursor: default;
 
 	  li {
-	  display: inline;
+	  //display: inline;
 
-	    &:not(:last-child):after { 
-	      content: "\00a0 | \00a0";
-	    }
+	    // &:not(:last-child):after { 
+	    //   content: "\00a0 | \00a0";
+	    // }
 	  }  
 	}
 
@@ -389,7 +556,7 @@
 	  opacity: 1;
 	  position: relative;
 	  z-index: 100;
-	  @include transition (opacity .3s ease-in-out);
+	  @include transition (opacity .4s ease-in-out, transform .3s ease);
 	}
 
 }

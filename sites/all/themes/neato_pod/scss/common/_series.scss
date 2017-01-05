@@ -4,7 +4,7 @@
 
 .context-series-gallery {
 
-	.header-middle-bottom-outer {
+	.header-middle-outer {
 		background-color: $colorIconBlueGrey;
 		padding-top: 4em;
 		padding-bottom: 4em;
@@ -16,6 +16,7 @@
 		border-top: 2px solid $colorBeigeGrey;
 		font-size: 2em;
 		text-align: center;
+		font-variant: small-caps;
 		color: $colorMidGrey;
 		padding: 3px 0;
 		margin-bottom: $base-spacing;
@@ -32,12 +33,12 @@
 			margin-bottom: .3em;
 
 			a {
-				font-size: 1.1em;
+				font-size: 1.3em;
 				min-height: 3.2em;
 				background-color: $colorLightGrey;
 				border-radius: $base-border-radius;
 				display: block;
-				padding: 3px 10px;
+				padding: 3px 5px;
 
 				&:hover {
 					background-color: darken($colorLightGrey, 10%);
@@ -307,6 +308,7 @@
 				}
 
 				.view-display-id-attachment_1 {float:left;}
+				
 				.view-content {
 
 
@@ -321,13 +323,13 @@
 						display: block;
 						padding: 5px;
 						vertical-align: middle;
-						margin: .5em .4em 0 0;
+						margin: .5em;
 						&:hover {
 							background-color: lighten($action-color, 10%);
 						}
 						@include media($mobile) {
 							width: 135px;
-							margin: .5em .3em 0 0;
+							
 						}	
 						
 					}

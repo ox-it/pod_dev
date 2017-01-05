@@ -188,7 +188,7 @@ Drupal.behaviors.podOmegaHideSeek = {
           ignore:         '',
           navigation:     false,
           ignore_accents: false,
-          hidden_mode: true
+          //hidden_mode: true
         });
 
         
@@ -201,7 +201,7 @@ Drupal.behaviors.podOmegaHideSeek = {
           ignore:         '',
           navigation:     false,
           ignore_accents: false,
-          hidden_mode: true
+          //hidden_mode: true
         });
 
         // Unit search box (Sidr pop-out sidebar)
@@ -275,8 +275,8 @@ Drupal.behaviors.headerScroll = {
   attach: function(context) {
 
       $(window).on("scroll touchmove", function () {
+        $('.header-top-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
         $('.header-middle-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
-        $('.header-middle-bottom-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
       });
 
   }

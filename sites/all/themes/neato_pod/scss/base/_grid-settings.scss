@@ -10,13 +10,14 @@ $max-width: 1050px;
 
 
 // Bourbon grid display. Comment out to remove display.
-$visual-grid: true;
+//$visual-grid: true;
 $visual-grid-color: #EEEEEE;
 $visual-grid-opacity: 0.4;
 
 $hero: new-breakpoint(max-width 1700px 12);
 $tablet: new-breakpoint(max-width 1000px 6);
 $mobile: new-breakpoint(max-width 550px 4);
+$header: new-breakpoint(max-width 800px 6);
 
 
 

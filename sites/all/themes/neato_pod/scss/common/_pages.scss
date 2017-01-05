@@ -3,11 +3,25 @@
 	//padding-bottom: 10px; 
 }
 
-.context-people-page, .context-series-page, .context-unit-page, .context-unit-gallery, .context-people-gallery, .context-series-gallery {
+.context-unit-gallery, .context-people-gallery, .context-series-gallery {
 
 	    // See also the more general "main" padding-top on _page.scss
 		main {
-			padding-top: 5em;
+			padding-top: 4em;
+
+			@include media($mobile) {
+				padding-top: 1em;
+			}
+
+		}  
+
+}
+
+.context-people-page, .context-series-page, .context-unit-page {
+
+	    // See also the more general "main" padding-top on _page.scss
+		main {
+			padding-top: 6em;
 
 			@include media($mobile) {
 				padding-top: 1em;
