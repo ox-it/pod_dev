@@ -366,7 +366,16 @@ function jw_player_field_formatter_settings_summary($field, $instance, $view_mod
 function jw_player_preset_settings($preset_machine_name) {
   $summary = array();
   $presets = jw_player_preset_load();
-  $preset = $presets[$preset_machine_name];
+  if (!isset($presets[$preset_machine_name])) {
+    $summary['name'] = t('<strong>Error: "@name" preset cannot be found.</strong>', array(
+      '@name' => $preset_machine_name
+    ));
+    $summary['source'] = '';
+    return $summary;
+  }
+  else {
+    $preset = $presets[$preset_machine_name];
+  }
   $preset_settings = $preset['settings'];
   // Name and description.
   $summary['name'] = t('Preset: @name', array('@name' => $preset['preset_name']));
