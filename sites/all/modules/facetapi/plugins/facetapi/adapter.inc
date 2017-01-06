@@ -417,9 +417,8 @@ abstract class FacetapiAdapter {
   /**
    * Returns a facet's active items.
    *
-   * @param array|string $facet
-   *   Either the facet definition as returned by facetapi_facet_load() or the
-   *   machine readable name of the facet.
+   * @param array $facet
+   *   The facet definition as returned by facetapi_facet_load().
    *
    * @return array
    *   An associative array containing (but not limited to):
@@ -726,6 +725,7 @@ abstract class FacetapiAdapter {
       $settings->realm = (string) $realm_name;
       $settings->facet = $facet_name;
       $settings->enabled = 0;
+      $settings->hash = facetapi_hash_delta($name);
       $settings->settings = array();
     }
     else {
@@ -782,6 +782,8 @@ abstract class FacetapiAdapter {
         'display_count' => TRUE,
         'facet_more_text' => 'Show more',
         'facet_fewer_text' => 'Show fewer',
+        'title_override' => 0,
+        'title' => $facet['label'],
       );
 
       // Apply default sort info only if the configuration is "new".
@@ -1305,8 +1307,14 @@ class FacetapiFacet implements ArrayAccess {
     else {
       // Instantiate the empty behavior plugin.
       $id = $settings->settings['empty_behavior'];
-      $class = ctools_plugin_load_class('facetapi', 'empty_behaviors', $id, 'handler');
-      $empty_plugin = new $class($settings);
+      if ($class = ctools_plugin_load_class('facetapi', 'empty_behaviors', $id, 'handler')) {
+        $empty_plugin = new $class($settings);
+      }
+      // Fallback for the case when empty_behavior plugin is not available.
+      else {
+        $class = ctools_plugin_load_class('facetapi', 'empty_behaviors', 'none', 'handler');
+        $empty_plugin = new $class($settings);
+      }
       // Execute the empty behavior plugin.
       $build = $widget_plugin->getBuild();
       $build[$this['field alias']] = $empty_plugin->execute();
