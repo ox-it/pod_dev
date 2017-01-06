@@ -85,6 +85,40 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index_solr::field_licence';
+  $facet->searcher = 'search_api@episode_index_solr';
+  $facet->realm = '';
+  $facet->facet = 'field_licence';
+  $facet->enabled = FALSE;
+  $facet->hash = '1kufz5Sef0zGawP1ienCL9YqGJ5H8Noa';
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '3',
+    'dependencies' => array(
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+      'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => 0,
+    'individual_parent' => 0,
+    'query_type' => 'term',
+    'limit_active_items' => 1,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+    'pretty_paths_alias' => 'license',
+  );
+  $export['search_api@episode_index_solr::field_licence'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@episode_index_solr::field_media_files:file:type';
   $facet->searcher = 'search_api@episode_index_solr';
   $facet->realm = '';
@@ -570,6 +604,65 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
     'title' => 'Keywords » Name',
   );
   $export['search_api@episode_index_solr:block:field_keywords:name'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index_solr:block:field_licence';
+  $facet->searcher = 'search_api@episode_index_solr';
+  $facet->realm = 'block';
+  $facet->facet = 'field_licence';
+  $facet->enabled = TRUE;
+  $facet->hash = 'NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5';
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_checkbox_links',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+      'indexed' => 0,
+      'natural' => 0,
+      'glossary_az' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
+      'natural' => '0',
+      'glossary_az' => '0',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'natural' => '4',
+      'glossary_az' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'License',
+    'soft_limit' => '3',
+    'nofollow' => 1,
+    'show_expanded' => 0,
+    'show_all' => 1,
+    'show_count' => 1,
+    'default_option_label' => '',
+    'reset_option_label' => '',
+    'submit_page' => '',
+    'hide_facet_count' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['search_api@episode_index_solr:block:field_licence'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
