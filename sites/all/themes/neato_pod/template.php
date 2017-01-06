@@ -45,7 +45,7 @@ function neato_pod_preprocess_block(&$variables) {
     }
   
     // Add "X" close button on Episode Sidr popout
-    if ($variables['block']->module == 'facetapi' && $variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
+    if ($variables['block']->module == 'facetapi' && $variables['block']->delta == 'NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5') {
         $variables['title_prefix'] = '<a id="sidr-close-episode-menu">✕</a>';
     }
 

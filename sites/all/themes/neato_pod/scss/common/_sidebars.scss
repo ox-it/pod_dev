@@ -109,6 +109,22 @@
 				padding: 4px;
 			}
 
+			.facetapi-facet-field-licence li {
+				//border: 1px solid red;
+				&:before {
+					content: "cc";
+					color: transparent; // Required if only to show image below
+					background-image: url("../images/cc_logo_small.png");
+							background-size: 18px;
+							position: relative;
+							top: 3px;
+							//float: right;
+							left: 5px;
+							padding: 5px 10px;
+							background-repeat: no-repeat;
+				}
+			}
+
 			#sidr-menu-keywords {
 				display: block;
 				padding: 0 0 5px 3px;

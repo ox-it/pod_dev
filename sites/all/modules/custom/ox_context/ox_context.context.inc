@@ -68,7 +68,7 @@ function ox_context_context_default_contexts() {
   $export['context_breadcrumb'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_episode_node';
   $context->description = '';
@@ -151,31 +151,37 @@ function ox_context_context_default_contexts() {
           'module' => 'fieldblock',
           'delta' => 'e7dc4b3cd7e53a43ab7070c246a8003f',
           'region' => 'content',
-          'weight' => '-41',
+          'weight' => '-10',
         ),
         'views-9b7fe8d2964fd2d8c6ee04b0e59788e2' => array(
           'module' => 'views',
           'delta' => '9b7fe8d2964fd2d8c6ee04b0e59788e2',
           'region' => 'content',
-          'weight' => '-40',
+          'weight' => '-9',
         ),
         'views-episode_node_view-block_1' => array(
           'module' => 'views',
           'delta' => 'episode_node_view-block_1',
           'region' => 'content',
-          'weight' => '-39',
+          'weight' => '-8',
+        ),
+        'fieldblock-4d4f4dfd90a617592ab52dc4a738d36f' => array(
+          'module' => 'fieldblock',
+          'delta' => '4d4f4dfd90a617592ab52dc4a738d36f',
+          'region' => 'content',
+          'weight' => '-7',
         ),
         'fieldblock-16e816e45c986dcf5e236f70e09d6b54' => array(
           'module' => 'fieldblock',
           'delta' => '16e816e45c986dcf5e236f70e09d6b54',
           'region' => 'content',
-          'weight' => '-38',
+          'weight' => '-6',
         ),
         'fieldblock-246fe9672be939b4eabf987d9769fd64' => array(
           'module' => 'fieldblock',
           'delta' => '246fe9672be939b4eabf987d9769fd64',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-5',
         ),
         'fieldblock-630a57856486cdfd6ffae3f01d91f1de' => array(
           'module' => 'fieldblock',
@@ -243,6 +249,12 @@ function ox_context_context_default_contexts() {
           'module' => 'block',
           'delta' => '7',
           'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'facetapi-NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5' => array(
+          'module' => 'facetapi',
+          'delta' => 'NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5',
+          'region' => 'sidebar_first',
           'weight' => '-10',
         ),
         'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
@@ -373,7 +385,7 @@ function ox_context_context_default_contexts() {
   $export['context_front'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_people';
   $context->description = '';
@@ -535,7 +547,7 @@ function ox_context_context_default_contexts() {
   $export['context_people_page'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_search_banner';
   $context->description = '';
@@ -628,7 +640,7 @@ function ox_context_context_default_contexts() {
   $export['context_searchapi'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_searchapi_solr';
   $context->description = '';
@@ -838,7 +850,7 @@ function ox_context_context_default_contexts() {
   $export['context_series_page'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_sidr';
   $context->description = '';

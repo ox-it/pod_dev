@@ -50,7 +50,7 @@
 				float: left;
 				width: 140px;
 				a {
-					background-color: lighten($colorPrimary, 2%);
+					background-color: lighten($colorPrimary, 5%);
 					display: block;
 					width: 130px;
 					height: 90px;
@@ -61,7 +61,7 @@
 					color: lighten($colorMidGrey, 30%);
 
 					&:hover {
-						background-color: lighten($colorPrimary, 7%);
+						background-color: lighten($colorPrimary, 10%);
 					}
 				}
 			}

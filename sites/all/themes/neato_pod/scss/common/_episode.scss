@@ -125,13 +125,41 @@
 			}
 
 		}
-
-		#block-fieldblock-16e816e45c986dcf5e236f70e09d6b54 {
+		
+		//Created Date block
+		#block-fieldblock-4d4f4dfd90a617592ab52dc4a738d36f {
 			margin-top: 5em;
 			@include media($mobile) {
-				margin-top: 1em;
+				margin-top: 3em;
+			}
+			.view-episode-page {
+				background-color: $colorVLightGrey;
+				.views-field-created {
+					padding: 0 5px 10px 15px;
+					font-variant: small-caps;
+					font-size: 1.1em;
+				}
+				h2 {
+					font-weight: normal;
+					background-color: $colorLightGrey;
+					padding: 5px 10px;
+					display: block;
+					font-variant: small-caps;
+					font-size: 1.4em;
+					color: $colorMidGrey;
+				}
+			}
+
+		}
+		
+		//Download Media Files block
+		#block-fieldblock-16e816e45c986dcf5e236f70e09d6b54 {
+			margin-top: 4em;
+			@include media($mobile) {
+				margin-top: 3em;
 			}
 			.field-name-field-media-files {
+				tr {background-color: $colorVLightGrey;}
 				table tr th {
 					display: none;
 					a {
@@ -196,9 +224,11 @@
 		// }
 
 		#block-fieldblock-246fe9672be939b4eabf987d9769fd64 {
-			margin-top: 5em;
+			margin-top: 4em;
+			@include media($mobile) {
+				margin-top: 3em;
+			}
 			h2 {
-				content: "Download Media Files";
 				font-weight: normal;
 				background-color: $colorLightGrey;
 				padding: 5px 10px;
@@ -207,7 +237,6 @@
 				font-size: 1.4em;
 				color: $colorMidGrey;
 				margin-bottom: 0;
-
 			}
 			.field-name-field-licence {
 				border-bottom: 1px solid $colorLightGrey;

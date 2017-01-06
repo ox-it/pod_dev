@@ -907,6 +907,41 @@ function ox_views_views_default_views() {
   $handler->display->display_options['bundles'] = array(
     0 => 'episode',
   );
+
+  /* Display: EVA Date */
+  $handler = $view->new_display('entity_view', 'EVA Date', 'entity_view_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Created Date';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
+    'episode' => 'episode',
+  );
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'episode',
+  );
+  $handler->display->display_options['show_title'] = 1;
   $export['episode_page'] = $view;
 
   $view = new view();
@@ -1223,6 +1258,155 @@ function ox_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
+  $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_2']['label'] = 'fieldset-top';
+  $handler->display->display_options['fields']['fieldset_2']['children'] = array(
+    0 => 'title',
+    1 => 'fieldset',
+    2 => 'fieldset_5',
+    3 => 'fieldset_1',
+  );
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'fieldset_top-left';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_series_album_cover',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  /* Field: Taxonomy term: Album Cover */
+  $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['fields']['field_series_album_cover']['field'] = 'field_series_album_cover';
+  $handler->display->display_options['fields']['field_series_album_cover']['relationship'] = 'field_series';
+  $handler->display->display_options['fields']['field_series_album_cover']['label'] = '';
+  $handler->display->display_options['fields']['field_series_album_cover']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series_album_cover']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_series_album_cover']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
+  $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
+  $handler->display->display_options['fields']['fieldset_5']['children'] = array(
+    0 => 'body_value',
+    1 => 'created',
+    2 => 'field_licence',
+    3 => 'nothing',
+    4 => 'field_series_name',
+    5 => 'field_series_field_unit',
+    6 => 'field_people',
+  );
+  $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
+  /* Field: The main body text: Text (indexed) */
+  $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
+  $handler->display->display_options['fields']['body_value']['label'] = '';
+  $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Licence */
+  $handler->display->display_options['fields']['field_licence']['id'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_licence']['field'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['label'] = '';
+  $handler->display->display_options['fields']['field_licence']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['text'] = 'CC';
+  $handler->display->display_options['fields']['field_licence']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="created-float">Created: [created]</div><div class="license-float">[field_licence]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Series: Name (indexed) */
+  $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_name']['field'] = 'field_series_name';
+  $handler->display->display_options['fields']['field_series_name']['label'] = 'Series';
+  $handler->display->display_options['fields']['field_series_name']['link_to_entity'] = 1;
+  /* Field: Series: Oxford Unit (indexed) */
+  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Oxford Unit';
+  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Indexed Node: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'fieldset-top-right';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_media_files',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  /* Field: Indexed Node: Media Files */
+  $handler->display->display_options['fields']['field_media_files']['id'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_media_files']['field'] = 'field_media_files';
+  $handler->display->display_options['fields']['field_media_files']['label'] = '';
+  $handler->display->display_options['fields']['field_media_files']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media_files']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media_files']['settings'] = array(
+    'file_view_mode' => 'preview',
+  );
+  $handler->display->display_options['fields']['field_media_files']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_media_files']['multi_type'] = 'ul';
+  /* Field: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
+  $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_4']['label'] = 'fieldset-bottom';
+  $handler->display->display_options['fields']['fieldset_4']['children'] = array(
+    0 => 'search_api_excerpt',
+  );
+  $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
+  /* Field: Search: Excerpt */
+  $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
+  $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
+  $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Search: Fulltext search */
@@ -1288,8 +1472,10 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
   $handler->display->display_options['fields']['fieldset_5']['children'] = array(
     0 => 'body_value',
-    1 => 'field_people',
-    2 => 'created',
+    1 => 'created',
+    2 => 'field_licence',
+    3 => 'nothing',
+    4 => 'field_people',
   );
   $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
   /* Field: The main body text: Text (indexed) */
@@ -1299,6 +1485,33 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['body_value']['label'] = '';
   $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Licence */
+  $handler->display->display_options['fields']['field_licence']['id'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_licence']['field'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['label'] = '';
+  $handler->display->display_options['fields']['field_licence']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['text'] = 'CC';
+  $handler->display->display_options['fields']['field_licence']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="created-float">Created: [created]</div><div class="license-float">[field_licence]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Indexed Node: People */
   $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
   $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
@@ -1306,15 +1519,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
-  /* Field: Indexed Node: Date created */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Created';
-  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
-  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
   /* Field: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
@@ -1459,8 +1663,11 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
   $handler->display->display_options['fields']['fieldset_5']['children'] = array(
     0 => 'body_value',
-    1 => 'field_series_name',
-    2 => 'field_series_field_unit',
+    1 => 'created',
+    2 => 'field_licence',
+    3 => 'nothing',
+    4 => 'field_series_name',
+    5 => 'field_series_field_unit',
   );
   $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
   /* Field: The main body text: Text (indexed) */
@@ -1470,6 +1677,32 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['body_value']['label'] = '';
   $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Created';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Licence */
+  $handler->display->display_options['fields']['field_licence']['id'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_licence']['field'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['label'] = 'License';
+  $handler->display->display_options['fields']['field_licence']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['text'] = 'CC';
+  $handler->display->display_options['fields']['field_licence']['hide_empty'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="created-float">Created: [created]</div><div class="license-float">[field_licence]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Series: Name (indexed) */
   $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
   $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
@@ -1628,8 +1861,11 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['fieldset_5']['label'] = 'fieldset-top-middle';
   $handler->display->display_options['fields']['fieldset_5']['children'] = array(
     0 => 'body_value',
-    1 => 'field_series_name',
-    2 => 'field_series_field_unit',
+    1 => 'created',
+    2 => 'field_licence',
+    3 => 'nothing',
+    4 => 'field_series_name',
+    5 => 'field_people',
   );
   $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
   /* Field: The main body text: Text (indexed) */
@@ -1639,20 +1875,46 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['body_value']['label'] = '';
   $handler->display->display_options['fields']['body_value']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd F Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
+  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Licence */
+  $handler->display->display_options['fields']['field_licence']['id'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_licence']['field'] = 'field_licence';
+  $handler->display->display_options['fields']['field_licence']['label'] = '';
+  $handler->display->display_options['fields']['field_licence']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_licence']['alter']['text'] = 'CC';
+  $handler->display->display_options['fields']['field_licence']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="created-float">Created: [created]</div><div class="license-float">[field_licence]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Series: Name (indexed) */
   $handler->display->display_options['fields']['field_series_name']['id'] = 'field_series_name';
   $handler->display->display_options['fields']['field_series_name']['table'] = 'search_api_index_episode_index_solr';
   $handler->display->display_options['fields']['field_series_name']['field'] = 'field_series_name';
   $handler->display->display_options['fields']['field_series_name']['label'] = 'Series';
   $handler->display->display_options['fields']['field_series_name']['link_to_entity'] = 1;
-  /* Field: Series: Oxford Unit (indexed) */
-  $handler->display->display_options['fields']['field_series_field_unit']['id'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['table'] = 'search_api_index_episode_index_solr';
-  $handler->display->display_options['fields']['field_series_field_unit']['field'] = 'field_series_field_unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['label'] = 'Oxford Unit';
-  $handler->display->display_options['fields']['field_series_field_unit']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_series_field_unit']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_series_field_unit']['bypass_access'] = 0;
+  /* Field: Indexed Node: People */
+  $handler->display->display_options['fields']['field_people']['id'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['table'] = 'search_api_index_episode_index_solr';
+  $handler->display->display_options['fields']['field_people']['field'] = 'field_people';
+  $handler->display->display_options['fields']['field_people']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_people']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_people']['bypass_access'] = 0;
   /* Field: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';

@@ -88,7 +88,7 @@
 		margin-bottom: 20px;	
 	}
 
-	//Styles X close-button on episode sidr-popout
+	//Styles X close-button on front-page keywords search sidr-popout
 	#sidr-id-sidr-close-keyword-menu {
 		border-bottom: 2px solid #ccc;
 		padding-bottom: 10px;
@@ -172,14 +172,17 @@
 
 
 //Removes X close-button on regular (non-sidr-popout) sidebar
-#block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO {
+#block-facetapi-NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5 {
 	#sidr-close-episode-menu {
 		display: none;
 	}
 }
 
 //Styles X close-button on episode sidr-popout
-#sidr-id-block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO {
+#sidr-id-block-facetapi-NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5 {
+	.sidr-class-element-invisible {
+		display: none;
+	}
 	#sidr-id-sidr-close-episode-menu {
 		//border-bottom: 2px solid #ccc;
 		//padding-bottom: 5px;
@@ -190,6 +193,7 @@
 		//margin-bottom: 1em;
 		//@include clearfix;
 		cursor: pointer;
+
 
 	}
 }

@@ -38,6 +38,7 @@ function ox_searchapi_solr_default_search_api_index() {
         "field_itunes_u_category:name" : { "type" : "list\\u003Cstring\\u003E" },
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_keywords:name" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_licence" : { "type" : "string" },
         "field_media_files:file:type" : { "type" : "list\\u003Cstring\\u003E" },
         "field_people" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_series" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },

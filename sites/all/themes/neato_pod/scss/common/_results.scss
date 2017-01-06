@@ -72,9 +72,44 @@
 					}
 
 					.views-field-body-value {
-						border-bottom: 1px solid $base-border-color; 
-						margin-bottom: .5em;
+						//border-bottom: 1px solid $base-border-color; 
 						padding-bottom: .5em;
+					}
+
+					.views-field-nothing {
+						margin-bottom: .5em;
+						display: block;
+						height: 25px;
+						padding: 3px 0 5px 0;
+						background-color:  darken($colorVLightGrey, 1%);
+						.created-float {width: 90%;float: left;}
+						.license-float {
+							width: 10%;
+							float: right; 
+							text-align: right;
+							padding-right: 5px;
+							background-image: url("../images/cc_logo_small.png");
+							background-size: 18px;
+							background-repeat: no-repeat;
+							color: transparent;
+							position: relative;
+							left: 1%;
+
+
+						}
+					}
+
+					.views-field-created {
+						margin-bottom: .5em;
+						background-color:  darken($colorVLightGrey, 1%);
+						// .views-label-created {
+						// 	background-color:  $colorVLightGrey;
+						// 	padding: 2px;
+						// }
+						// .field-content {
+						// 	background-color:  $colorVLightGrey;
+						// 	padding: 2px;
+						// }
 					}
 
 					.views-field-field-series-name, 
