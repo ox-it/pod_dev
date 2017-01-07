@@ -50,9 +50,11 @@
 				margin-bottom: .5em;
 				font-variant: small-caps;
 				span {
-					color: transparentize($colorLinkHover, .3);
-					font-style: italic;
-					font-weight: 500;
+					color: darken($colorLinkHover, 30%);
+					//font-style: italic;
+					font-weight: 800;
+					font-family: "peignot";
+					//font-variant: normal;
 				}
 
 				@include media($tablet) {

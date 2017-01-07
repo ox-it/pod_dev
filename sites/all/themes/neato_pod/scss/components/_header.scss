@@ -1,17 +1,6 @@
-// .header-top-outer {
-// 	background-color: red;
-// 	transition: height 500ms; 
-// 	position:fixed; 
-// 	top:0; 
-// 	margin: auto; 
-// 	z-index:10000;
-// 	width:100%;
-// 	img {
-// 		float: right;
-// 		height: 30px;
-// 		width: 30px;
-// 	}
-// }
+
+
+
 
 .header-top-outer {
 	background-color: $colorPrimary; 
@@ -29,6 +18,9 @@
 		float: right;
 		width: 40px;
 		margin-right: 12px;
+		@include media ($mobile) {
+			margin-right: 8px;
+		}
 		a {
 			opacity: .5;
 			height: 43px;
@@ -43,16 +35,14 @@
 
 	#block-system-main-menu {
 		float: right;
-	
 		ul.menu {
-
 			li {
 				float: left;
 				width: 140px;
 				a {
-					background-color: lighten($colorPrimary, 5%);
+					background-color: darken($colorLink, 18%);
 					display: block;
-					width: 130px;
+					width: 125px;
 					height: 90px;
 					text-align: center;
 					padding: 25px 15px;
@@ -61,7 +51,7 @@
 					color: lighten($colorMidGrey, 30%);
 
 					&:hover {
-						background-color: lighten($colorPrimary, 10%);
+						background-color: $colorLink;
 					}
 				}
 			}
@@ -72,29 +62,44 @@
 	#logo-block {
 		background: url("../images/oxford-logo-square.png") no-repeat;
 		background-size: 100%;
-		height: 94px;
-		width: 94px;
+		height: 101px;
+		width: 101px;
 		float: left; 
 		margin: 10px;
-
+		@include media($mobile) {
+			height: 95px;
+			width: 95px;
+			margin: 3px;
+		}
 	}
 
-	#site-name-block  {
-		margin: 10px 0 0 0;
+
+	#site-name-block  {	
+		font-family: "peignot";
+		margin: -37px 0 0 15px;
 		position: fixed;
-		//border: 1px solid red;
 		opacity: .8;
-		font-size: 5.4em;
-		font-family: arial-black;
+		color: $colorLink;
+		font-size: 9.4em;
+		//font-family: arial-black;
+		span {
+			color: lighten($colorLink, 15%);
+		}
+		&:hover {
+			color: lighten($colorLink, 15%);
+
+		}
+
 		@include media($header) {
-			font-size: 4em;
-			margin: 30px 0 0 0;
+			font-size: 6em;
+			margin: 9px 0 0 0;
 		}
 		@include media($mobile) {
-			font-size: 2.7em;
-			margin: 49px 0 0 0;
+			font-size: 4em;
+			margin: 36px 0 0 8px;
 		}
 	}
+
 	#collapsed-menu-button {
 		background-color: transparent;
 		border-radius: 0;
@@ -109,6 +114,10 @@
 		@include media($header) {
 			font-size: 10em;
 			margin: -58px 20px 0 0;
+		}
+		@include media($mobile) {
+			font-size: 8em;
+			margin: -58px 10px 0 0;
 		}
 
 		&:before {
@@ -138,8 +147,8 @@
 	// Social Media Buttons (twitter/facebook)
 	#block-block-11 {
 		float: right;
-		width: 40px;
-		margin-right: 3px;
+		width: 25px;
+		//margin-right: -10px;
 
 		a {
 			opacity: .5;
@@ -153,49 +162,53 @@
 
 	
 	#block-system-main-menu {
-
 		ul.menu {
 			li { 
 				width: 130px;
-		
 				a {
 					height: 57px;
-					width: 120px;
+					width: 115px;
 					padding: 10px 15px;
 					font-size: .9em;
-
-					//border: 1px solid darken($colorLinkHover, 12%); 
-					//border-radius: $base-border-radius;
 				}
 			}
 		}
 	}
 
 	#logo-block {
-		background: url("../images/oxford-logo-rectangle.png") no-repeat;
+		background: url("../images/oxford_logo.gif") no-repeat;
 		background-size: 100%;
-		height: 57px;
-		width: 180px;
-
+		height: 85px;
+		width: 173px;
 		float: left; 
-		margin: 0;
+		margin: 1px 0 1px 1px;
+		border-width: thin;
+		@include media($mobile) {
+			background: url("../images/oxford-logo-square.png") no-repeat;
+			background-size: 100%;
+			height: 55px;
+			width: 55px;
+			margin: 1px;
+
+		}
 	}
-		#site-name-block  {
-		margin: -24px 5px;
+
+	#site-name-block  {
+		margin: -17px 0 0 25px;
 		position: fixed;
 		opacity: .8;
-		font-size: 4.7em;
-		font-family: arial-black;
+		font-size: 4.6em;
 
 		@include media($header) {
-			font-size: 2.5em;
-			margin: 2px 0 0 15px;
+			font-size: 4em;
+			margin: -11px 0 0 15px;
 		}
 		@include media($mobile) {
-			font-size: 2.2em;
-			margin: 4px 0 0 15px;
+			font-size: 3em;
+			margin: -2px 0 0 15px;
 		}
 	}
+
 	#collapsed-menu-button {
 		background-color: transparent;
 		border-radius: 0;
@@ -216,6 +229,10 @@
 			top: -20px;
 			left: -10px;
 
+		}
+		@include media($mobile) {
+			font-size: 8em;
+			top: -28px;
 		}
 
 	}
