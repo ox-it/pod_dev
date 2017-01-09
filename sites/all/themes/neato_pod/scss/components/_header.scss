@@ -100,29 +100,29 @@
 		background-color: transparent;
 		border-radius: 0;
 		border: none;
-		font-size: 8em;
+		font-size: 7em;
 		font-family: Geneva;
 		position: relative;
-		top: -42px;
+		top: -28px;
 		right: 15px;
 
 		@include media($mobile) {
-			font-size: 4.5em;
+			font-size: 4em;
 			position: relative;
-			top: -25px;
+			top: -18px;
 			right: -10px;
 		}
 
 		&:before {
-			content: "m";
+			content: "☰";
 		}
 		&.active:before {
 			content: "✕";
-			font-size: 50%;
+			font-size: 60%;
 			font-weight: lighter;
 			position: relative;
 			top: -10px;
-			left: -10px;
+			left: -15px;
 			@include media($header) {
 				top: -8px;
 			}
@@ -204,23 +204,24 @@
 		background-color: transparent;
 		border-radius: 0;
 		border: none;
-		font-size: 6em;
+		font-size: 4em;
 		font-family: Geneva;
 		position: relative;
-		top: -43px;
+		top: -18px;
 		right: 10px;
 
 		&.active:before {
 			content: "✕";
-			font-size: 50%;
+			font-size: 60%;
 			font-weight: lighter;
 			position: relative;
 			top: -5px;
+			right: -35px;
 		}
 		@include media($mobile) {
-			font-size: 4em;
+			font-size: 3em;
 			position: relative;
-			top: -20px;
+			top: -6px;
 			right: -10px;
 		}
 	}
