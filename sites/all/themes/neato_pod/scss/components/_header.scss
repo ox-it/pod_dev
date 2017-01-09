@@ -102,15 +102,13 @@
 		border: none;
 		font-size: 7em;
 		font-family: Geneva;
-		position: relative;
-		top: -28px;
-		right: 15px;
-
+		margin: 40px 10px 0 0;
+		//border: 1px solid red;
+		line-height: 0;
 		@include media($mobile) {
 			font-size: 4em;
-			position: relative;
-			top: -18px;
-			right: -10px;
+			margin: 18px 0 0 0;
+
 		}
 
 		&:before {
@@ -206,9 +204,8 @@
 		border: none;
 		font-size: 4em;
 		font-family: Geneva;
-		position: relative;
-		top: -18px;
-		right: 10px;
+		line-height: 0;
+		margin: 20px 10px 0 0;
 
 		&.active:before {
 			content: "✕";
@@ -221,7 +218,7 @@
 		@include media($mobile) {
 			font-size: 3em;
 			position: relative;
-			top: -6px;
+			top: 0;
 			right: -10px;
 		}
 	}
