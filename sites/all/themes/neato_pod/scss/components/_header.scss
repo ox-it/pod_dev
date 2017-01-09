@@ -4,14 +4,12 @@
 
 .header-top-outer {
 	background-color: $colorPrimary; 
-	height: 90px; 
-	//transition: height 500ms; 
+	height: 100px; 
 	position:fixed; 
 	top: 0; 
 	margin: auto; 
 	z-index:10000;
 	width:100%;
-
 
 	// Social Media Buttons (twitter/facebook)
 	#block-block-11 {
@@ -23,11 +21,11 @@
 		}
 		a {
 			opacity: .5;
-			height: 43px;
-			width: 43px;
+			height: 48px;
+			width: 48px;
 			display: block;
 			float: left;
-			margin-bottom: 3px;
+			margin-bottom: 4px;
 		}
 	}
 
@@ -43,9 +41,9 @@
 					background-color: darken($colorLink, 18%);
 					display: block;
 					width: 125px;
-					height: 90px;
+					height: 100px;
 					text-align: center;
-					padding: 25px 15px;
+					padding: 30px 15px;
 					text-transform: uppercase;
 					font-size: 1em;
 					color: lighten($colorMidGrey, 30%);
@@ -62,10 +60,10 @@
 	#logo-block {
 		background: url("../images/oxford-logo-square.png") no-repeat;
 		background-size: 100%;
-		height: 101px;
-		width: 101px;
+		height: 94px;
+		width: 94px;
 		float: left; 
-		margin: 10px;
+		margin: 3px;
 		@include media($mobile) {
 			height: 95px;
 			width: 95px;
@@ -73,30 +71,28 @@
 		}
 	}
 
-
 	#site-name-block  {	
 		font-family: "peignot";
-		margin: -37px 0 0 15px;
+		margin: -30px 0 0 15px;
 		position: fixed;
 		opacity: .8;
-		color: $colorLink;
-		font-size: 9.4em;
+		color: lighten($colorLink, 15%);
+		font-size: 8em;
 		//font-family: arial-black;
 		span {
-			color: lighten($colorLink, 15%);
+			color: lighten($colorLink, 35%);
 		}
 		&:hover {
-			color: lighten($colorLink, 15%);
-
+			color: lighten($colorLink, 35%);
 		}
 
 		@include media($header) {
 			font-size: 6em;
-			margin: 9px 0 0 0;
+			margin: -12px 0 0 10px;
 		}
 		@include media($mobile) {
-			font-size: 4em;
-			margin: 36px 0 0 8px;
+			font-size: 3em;
+			margin: 45px 0 0 5px;
 		}
 	}
 
@@ -104,20 +100,14 @@
 		background-color: transparent;
 		border-radius: 0;
 		position: relative;
-		//height: 90px;
-		padding: 0 0 0 0;
 		border: none;
-		font-size: 13em;
-		text-transform: uppercase;
-		font-family: arial-black;
-		margin: -90px 20px 0 0;
-		@include media($header) {
-			font-size: 10em;
-			margin: -58px 20px 0 0;
-		}
+		font-size: 8em;
+		font-family: Geneva;
+		margin: -40px 20px 0 0;
+
 		@include media($mobile) {
-			font-size: 8em;
-			margin: -58px 10px 0 0;
+			font-size: 4.5em;
+			margin: -25px 10px 0 0;
 		}
 
 		&:before {
@@ -128,21 +118,20 @@
 			font-size: 50%;
 			font-weight: lighter;
 			position: relative;
-			top: -30px;
+			top: -10px;
 			left: -10px;
 			@include media($header) {
-				top: -20px;
+				top: -5px;
 			}
 		}
-
 	}
 }
 
 
 // The .header_scoll is a jQuery addClass toggle 
+
 .header-top-outer.header_scroll {
 	height: 57px;
-	//transition: height 500ms; 
 
 	// Social Media Buttons (twitter/facebook)
 	#block-block-11 {
@@ -189,7 +178,6 @@
 			height: 55px;
 			width: 55px;
 			margin: 1px;
-
 		}
 	}
 
@@ -212,37 +200,33 @@
 	#collapsed-menu-button {
 		background-color: transparent;
 		border-radius: 0;
-		height: 90px;
-		padding: 0 0 0 0;
-		margin-top: -26px;
-		border: none;
-		font-size: 9em;
-		text-transform: uppercase;
 		position: relative;
-		top: -37px;
+		border: none;
+		font-size: 6em;
+		font-family: Geneva;
+		margin: -38px 20px 0 0;
+		padding: 0;
 		//right: 10px;
 		&.active:before {
 			content: "✕";
 			font-size: 50%;
 			font-weight: lighter;
 			position: relative;
-			top: -20px;
-			left: -10px;
-
+			top: -5px;
 		}
 		@include media($mobile) {
-			font-size: 8em;
-			top: -28px;
+			font-size: 5em;
+			margin: -27px 10px 0 0;
 		}
-
 	}
 }
 
 
 
 
+
 // *****   Required to offset the Fixed height above -- plus the Admin menu when logged-in  **********
-.header-middle-outer {margin-top: 90px; /*transition: margin-top 500ms;*/ }
+.header-middle-outer {margin-top: 100px; /*transition: margin-top 500ms;*/ }
 .header-middle-outer.header_scroll {margin-top: 57px; /*transition: margin-top 500ms;*/}
 .logged-in .header-top-outer {margin-top: 15px;}
 //.logged-in .header-top-outer  {top: 20px}
@@ -281,6 +265,7 @@
 					padding: 15px 0;
 					display: block;
 					font-size: 1.3em;
+					width: 100%;
 				}
 				&:hover {
 					background-color: darken($colorMidGrey, 25%);;

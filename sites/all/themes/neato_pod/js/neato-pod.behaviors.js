@@ -295,7 +295,11 @@ Drupal.behaviors.keywordLinkChange = {
   }
 };
 
-
+Drupal.behaviors.hideAddressBar = {
+  attach: function(context) {
+    $('body').scrollTop(1);
+  }
+};
 
 
 })(jQuery);
