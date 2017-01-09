@@ -99,15 +99,18 @@
 	#collapsed-menu-button {
 		background-color: transparent;
 		border-radius: 0;
-		position: relative;
 		border: none;
 		font-size: 8em;
 		font-family: Geneva;
-		margin: -40px 20px 0 0;
+		position: relative;
+		top: -42px;
+		right: 15px;
 
 		@include media($mobile) {
 			font-size: 4.5em;
-			margin: -25px 10px 0 0;
+			position: relative;
+			top: -25px;
+			right: -10px;
 		}
 
 		&:before {
@@ -121,7 +124,7 @@
 			top: -10px;
 			left: -10px;
 			@include media($header) {
-				top: -5px;
+				top: -8px;
 			}
 		}
 	}
@@ -200,13 +203,13 @@
 	#collapsed-menu-button {
 		background-color: transparent;
 		border-radius: 0;
-		position: relative;
 		border: none;
 		font-size: 6em;
 		font-family: Geneva;
-		margin: -38px 20px 0 0;
-		padding: 0;
-		//right: 10px;
+		position: relative;
+		top: -43px;
+		right: 10px;
+
 		&.active:before {
 			content: "✕";
 			font-size: 50%;
@@ -215,8 +218,10 @@
 			top: -5px;
 		}
 		@include media($mobile) {
-			font-size: 5em;
-			margin: -27px 10px 0 0;
+			font-size: 4em;
+			position: relative;
+			top: -20px;
+			right: -10px;
 		}
 	}
 }
