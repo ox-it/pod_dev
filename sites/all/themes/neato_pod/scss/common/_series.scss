@@ -143,7 +143,7 @@
 }
 
 /*
- ********************************   Series Page (.../series/series-name) Title/Description ****************************************
+ **********************   Series Page (.../series/series-name) Title/Description ************************************
  */
 
 
@@ -323,7 +323,7 @@
 						display: block;
 						padding: 5px;
 						vertical-align: middle;
-						margin: .5em;
+						margin: .4em .5em 0 0;
 						&:hover {
 							background-color: lighten($action-color, 10%);
 						}
