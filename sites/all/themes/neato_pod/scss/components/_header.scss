@@ -1,6 +1,6 @@
-
-
-
+/*  
+**********************    Header stying. But on scroll, the .header-top-outer.header_scoll in next section alters this   **********************
+*/
 
 .header-top-outer {
 	background-color: $colorPrimary; 
@@ -60,8 +60,8 @@
 	#logo-block {
 		background: url("../images/oxford-logo-square.png") no-repeat;
 		background-size: 100%;
-		height: 94px;
-		width: 94px;
+		height: 95px;
+		width: 95px;
 		float: left; 
 		margin: 3px;
 		@include media($mobile) {
@@ -91,8 +91,8 @@
 			margin: -12px 0 0 10px;
 		}
 		@include media($mobile) {
-			font-size: 3.7em;
-			margin: 38px 0 0 5px;
+			font-size: 3em;
+			margin: 45px 0 0 5px;
 		}
 	}
 
@@ -138,8 +138,10 @@
 }
 
 
-// The .header_scoll is a jQuery addClass toggle 
-
+/*  
+**********************    The .header_scoll is a jQuery addClass toggle -- with the same header repeated below, configured   **********************
+*/
+ 
 .header-top-outer.header_scroll {
 	height: 57px;
 
@@ -202,7 +204,7 @@
 			margin: -11px 0 0 15px;
 		}
 		@include media($mobile) {
-			font-size: 3.5em;
+			font-size: 3.1em;
 			margin: -6px 0 0 15px;
 		}
 	}
@@ -255,6 +257,9 @@
 // ************************************************************
 
 
+
+
+
 .mobile-menu-button {
 	float: right;
 }
@@ -268,7 +273,7 @@
 			border-bottom: 1px solid $colorMidGrey;
 			margin-bottom: 10px;
 			ul {
-				padding-top: 50px;
+				padding-top: 42px;
 			}
 			opacity: .9;
 			padding-top: 60px;
@@ -279,7 +284,7 @@
 				border-bottom: none;
 				border-right: none;
 				border-left: none;
-				border-top: 1px solid $colorMidGrey;
+				border-bottom: 1px solid $colorMidGrey;
 				a {
 					font-variant: small-caps;
 					color: $colorLightGrey;
@@ -287,6 +292,10 @@
 					display: block;
 					font-size: 1.3em;
 					width: 100%;
+					@include media($mobile) {
+						padding: 5px 0;
+						font-size: 1.1em;
+					}
 				}
 				&:hover {
 					background-color: darken($colorMidGrey, 25%);;
@@ -296,6 +305,19 @@
 		}
 	}
 }
+
+// Decrease padding when header scrolls
+#mobile-menu-wrapper.header_scroll {
+
+	#mobile-menu-inner {
+		#mobile-menu {
+			ul {
+				padding-top: 0px;
+			}
+		}
+	}
+}
+
 
 
 

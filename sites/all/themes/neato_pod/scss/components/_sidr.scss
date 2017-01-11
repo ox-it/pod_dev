@@ -111,13 +111,17 @@
  */
 
 
+
 #sidr-menu-episode-button {
+
+
 	background-color: #F8F8F8; 
 	width:420px; 
 	left:-440px; 
 	right: auto; 
-	padding: $base-spacing; 
+	padding: 1em 4em 7em 1em;
 	overflow-x: hidden;
+
 	ul li {
 		span {display: none; }
 	}
@@ -129,6 +133,7 @@
 
 	input {
 		margin-bottom: $base-spacing / 2;
+
 	}
 	
 	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
@@ -139,6 +144,8 @@
 
 	.sidr-class-block {
 		margin: 0 0 $base-spacing 0;
+
+
 
 		h2 {
 			background-color: $colorLinkHover;
@@ -153,7 +160,7 @@
 		margin: 0 0 $base-spacing 0;
 				
 		.sidr-class-item-list{
-			max-height: 30em;
+			max-height: 20em;
 			overflow-y: scroll;
 		}
 	}
@@ -166,33 +173,41 @@
 		
 	}
 
+	#sidr-id-sidr-menu-keywords {
+		display: none;
+	}
+
 
 }
 
 
 
 //Removes X close-button on regular (non-sidr-popout) sidebar
-#block-facetapi-NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5 {
-	#sidr-close-episode-menu {
-		display: none;
-	}
+#sidr-close-episode-menu {
+	display: none;
 }
 
-//Styles X close-button on episode sidr-popout
-#sidr-id-block-facetapi-NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5 {
-	.sidr-class-element-invisible {
+
+.sidr-class-element-invisible {
 		display: none;
 	}
+
+//Styles X close-button on episode sidr-popout
+#sidr-id-block-facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql {
 	#sidr-id-sidr-close-episode-menu {
 		//border-bottom: 2px solid #ccc;
 		//padding-bottom: 5px;
 		display: block;
 		text-align: right;
-		font-size: 2em;
+		font-size: 3em;
 		color:red;
 		//margin-bottom: 1em;
 		//@include clearfix;
 		cursor: pointer;
+
+		@include media($mobile) {
+			font-size: 2em;
+		}
 
 
 	}

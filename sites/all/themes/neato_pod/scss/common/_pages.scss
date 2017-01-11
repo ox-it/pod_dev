@@ -10,7 +10,7 @@
 			padding-top: 4em;
 
 			@include media($mobile) {
-				padding-top: 1em;
+				padding-top: 2em;
 			}
 
 		}  
@@ -24,7 +24,7 @@
 			padding-top: 6em;
 
 			@include media($mobile) {
-				padding-top: 1em;
+				padding-top: 2em;
 			}
 
 		}  
@@ -32,16 +32,38 @@
 }
 
 .page-solr {
-	main {padding-top: 3em;}
+	main {
+		padding-top: 3em;
+		@include media($mobile) {
+			padding-top: 1em;
+		}
+	}
 }
 
  main {
  	padding-bottom: 15em;
  }
 
- .views-exposed-widgets {
- 	margin: 0;
- }
+
+/*
+ * Always show scroll bar
+ */
+
+.sidebar-first, body {
+	::-webkit-scrollbar {
+	    -webkit-appearance: none;
+	    width: 10px;
+		//border-left: 1px solid $colorLightGrey;
+	    //border-right: 1px solid $colorLightGrey;
+	}
+	::-webkit-scrollbar-thumb {
+	    border-radius: 2px;
+	    background-color: rgba(0,0,0,.5);
+	    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+	}
+}
+
+
 
 
 

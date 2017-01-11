@@ -8,6 +8,11 @@
 		padding-top: 4em;
 		padding-bottom: 4em;
 		background-color: $colorLightGrey;
+
+		@include media($mobile) {
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
 	}
 
 	.views-exposed-form {
@@ -19,6 +24,10 @@
 		padding-top: 4em;
 		text-align: center;
 		color: $colorMidGrey;
+
+		@include media($mobile) {
+			padding-top: 2em;
+		}
 
 		h3 {
 			letter-spacing: .1em;
@@ -54,36 +63,6 @@
 
 	}
 
-
-	// Current Search block -- if using as a block beside the search bar, floated right
-	// .block-current-search {		
-	// 	float: right;
-	// 	width: 25%;
-
-	// 	.current-search-item {
-	// 		h3 {
-	// 			margin: 0;
-	// 			background-color: $colorLinkHover;
-	// 			padding: 1.3em;
-	// 			display: block;
-	// 			color: $font-heading-color;
-	// 	  		border-radius: 2px 2px 0 0;
-	// 	  		letter-spacing: .1em;
-	// 		}
-	// 		.item-list {
-	// 			//text-align: right;
-	// 			background-color: $colorBeigeGrey;
-				
-	// 			//padding-top: 10px;
-	// 			padding: 10px 5px 1px 10px;
-	// 			color: $colorMidGrey;
-	// 			font-size: 1em;
-	// 			a {color: $colorDarkGrey;}
-
-	// 		}
-	// 	}
-
-	// }
 }
 
 

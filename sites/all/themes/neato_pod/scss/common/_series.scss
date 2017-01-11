@@ -9,6 +9,11 @@
 		padding-top: 4em;
 		padding-bottom: 4em;
 
+		@include media($mobile) {
+			padding-top: 1em;
+			padding-bottom: 0;
+		}
+
 	}
 
 
@@ -406,5 +411,7 @@
 
  	}
  }
+
+
 
 

@@ -9,29 +9,52 @@
 		padding-bottom: 4em;
 		background-color: $colorLightGrey;
 		width: 100%;
+		@include media($tablet) {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
+		@include media($mobile) {
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
 	}
 
-
-	.featured-outer-one {
+	// Place image 'before' with null content, so that image can be given opacity without affecting overlaying text
+	.featured-outer-one:before {
+		content: '';
 		background-image: url("../images/ox_city_3.jpg");
+		display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
 		//filter: grayscale(.5);
-		filter: opacity(.7);
-		//background-color: $colorPrimary;
-		//background-blend-mode: difference;
-		//filter: sepia(.5);
+		////filter: sepia(.5);
+		opacity: .6;
 		background-size: 100%;
-		background-position: 0 0px;
+		background-position: 0 -30px;
+		@include media($tablet) {
+			opacity: .6;
+			background-position: 0 0;
+		}
+		@include media($mobile) {
+			opacity: .5;
+		}
+
+	}
+	.featured-outer-one {
+		position: relative;
 		padding-bottom: 5px;
 		background-color: $colorVLightGrey;
 		height: 350px;
 
-
+		
 		@include media($tablet) {
-			height: 250px;
-			background-position: 0 0px;
+			height: 280px;
 		}
 		@include media($mobile) {
-			height: 150px;
+			height: 200px;
 		}
 		
 		.view-episode-series-count {
@@ -39,39 +62,69 @@
 
 			.view-header  {
 				position: relative;
-				clear: both;
-				text-align: center;
-				font-size: 5em;
-				background: transparentize(#fff, 0.5);
+				text-align: center;				
+				line-height: 1em;
+				//background: transparentize(#fff, 0.7);
 				color: $colorPrimary;
 				font-weight: 300;
 				letter-spacing: .1em;
-				margin-top: .8em;
-				margin-bottom: .5em;
+				
+				margin-bottom: 1em;
+				margin-top: 3em;
 				font-variant: small-caps;
-				span {
-					color: darken($colorLinkHover, 30%);
-					//font-style: italic;
+				
+				.headline-one {
+					padding-top: 1em;
+					padding-left: 9em;
+					letter-spacing: 2px;
+					font-size: 2.5em;
+					padding-bottom: .6em;
+					@include media($tablet) {
+						padding-top: .8em;
+						font-size: 1.8em;
+						padding-bottom: 10px;
+					}
+					@include media($mobile) {
+						padding-top: 0;
+						padding-left: 0;
+						font-size: 1.1em;
+						padding-bottom: -2px;
+					}
+				}
+				
+				.headline-two {
+					color: lighten($colorLink, 8%);
+					padding-bottom: 60px;
+					width: 100%;
+					text-align: center;
+					font-size: 14em;
+					padding-top: .1em;
 					font-weight: 800;
 					font-family: "peignot";
-					//font-variant: normal;
+					font-variant: normal;
+					@include media($tablet) {
+						font-size: 10.5em;
+						padding-bottom: 50px;
+					}
+					@include media($mobile) {
+						font-family: arial-black;
+						font-weight: 200;
+						font-size: 5.5em;
+						padding-bottom: 20px;
+					}
 				}
 
-				@include media($tablet) {
-					font-size: 3em;	
-				}
-				@include media($mobile) {
-					font-size: 2em;
-				}
+
 			}
 
 			.view-content {
+				position: relative;
 				display: block;
 				clear: both;
 				text-align: center;
 				font-size: 2em;
-				background: transparentize(#fff, 0.5);
-				color: darken($colorMidGrey, 20%);
+				background: transparentize(#fff, 0.7);
+				color: darken($colorMidGrey, 30%);
 				font-variant: small-caps;
 
 				@include media($tablet) {
@@ -124,6 +177,9 @@
 				padding: 1em 0;
 				font-size: 3.5em;
 				font-variant: small-caps;
+				@include media($mobile) {
+					font-size: 2em;
+				}
 			}
 
 			.views-row {
@@ -135,17 +191,26 @@
 				}
 				.fieldset-latest-right {
 					@include span-columns(4.5 of 6);
+	
 					.views-field-title {
 						//line-height: 1.3em;
 						font-size: 1.3em;
+						@include media($mobile) {
+							font-size: .9em;
+						}
+
 					}
 					.views-field-created {
 						color: darken($colorLightGrey, 25%);
+						@include media($mobile) {
+							font-size: .9em;
+						}
 					}
 				}
 
 				@include media($mobile) {
 					@include span-columns(4 of 4);
+
 				}
 
 
@@ -174,6 +239,9 @@
 			padding: 1em 0;
 			font-size: 3.5em;
 			font-variant: small-caps;
+			@include media($mobile) {
+				font-size: 2em;
+			}
 		}
 
 	}
@@ -254,12 +322,21 @@
 				position: relative;
 				padding: 28px;
 				font-variant: small-caps;
+
+				@include media($mobile) {
+					margin: 1.5em auto 2.5em auto;
+				}
+
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 				&:hover {
 					background: transparentize($colorLinkHover, .5);
 					color: $colorVLightGrey;
 					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 					@include transform(scale(3) rotate(0deg));
+
+					@include media($mobile) {
+						@include transform(scale(1.5) rotate(0deg));
+					}
 				}
 
 			}
@@ -292,6 +369,9 @@
 				padding: 1em 0;
 				font-size: 3.5em;
 				font-variant: small-caps;
+				@include media($mobile) {
+					font-size: 2em;
+				}
 			}
 	}
 
@@ -349,12 +429,21 @@
 				position: relative;
 				padding: 35px 10px;
 				font-variant: small-caps;
+
+				@include media($mobile) {
+					margin: 1.5em auto 2.5em auto;
+				}
+
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 				&:hover {
 					background: transparentize(darken($colorGraduateLightGreen, 10%), .3);
 					color: $colorVLightGrey;
 					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 					@include transform(scale(3) rotate(0deg));
+
+					@include media($mobile) {
+						@include transform(scale(1.5) rotate(0deg));
+					}
 				}
 
 			}
@@ -386,6 +475,9 @@
 				padding: 1em 0;
 				font-size: 3.5em;
 				font-variant: small-caps;
+				@include media($mobile) {
+					font-size: 2em;
+				}
 			}
 
 	}
@@ -414,10 +506,7 @@
 					}
 
 					.views-field-name {
-
-					
 						a {
-
 							display: block;
 							margin-bottom: .5em;
 							font-size: .9em;
@@ -446,13 +535,24 @@
 				position: relative;
 				padding: 30px;
 				font-variant: small-caps;
+				
+				@include media($mobile) {
+					margin: 1.5em auto 2.5em auto;
+				}
+
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 				&:hover {
 					background: transparentize(darken($colorGraduateYellow, 30%), .3);
 					color: $colorVLightGrey;
 					@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
 					@include transform(scale(3) rotate(0deg));
+
+					@include media($mobile) {
+						@include transform(scale(1.5) rotate(0deg));
+					}
 				}
+
+
 
 			}
 		}
@@ -482,7 +582,7 @@
 			}
 
 			@include media($mobile) {
-				font-size: 1.5em;
+				font-size: 1.2em;
 			}
 		}
 
@@ -511,24 +611,39 @@
 	}
 
 	.hover-tile-outer {
-	  background: $colorLinkHover;
-	  border-radius: 1px;
-	  margin: 1em 0;
-	  font-weight: normal;
-	  display: block;
-	  height: 3.2em;
-	  cursor: pointer;
-	  padding: .7em 0;
-	  &:hover {background: transparentize($colorPrimary, 0.3);}
+		background: $colorLinkHover;
+		border-radius: 1px;
+		margin: 1em 0;
+		font-weight: normal;
+		display: block;
+		height: 3.2em;
+		cursor: pointer;
+		padding: .7em 0;
+		@include media($mobile) {
+		  	margin: .8em 0;
+		}
+	&:hover {
+	  	background: transparentize($colorPrimary, 0.3);
+	}
 	  
-	  a {
-	  	color: #fff;
-	  	font-variant: small-caps;
-	    display: block;
+	a {
+		color: #fff;
+		font-variant: small-caps;
+		display: block;
 	    text-align: center;
 	    font-size: 1.1em;
-	    vertical-align: middle;	    
+	    vertical-align: middle;
+	    @include media($mobile) {
+	    	font-size: .9em;
+	    }	    
 	  }
+
+	}
+	
+	@include media($mobile){
+		.category_12 a {
+		  	line-height: 1em;
+		}
 	}
 
 	.hover-tile-container {

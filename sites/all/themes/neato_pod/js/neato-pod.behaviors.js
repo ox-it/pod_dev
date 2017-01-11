@@ -277,6 +277,7 @@ Drupal.behaviors.headerScroll = {
       $(window).on("scroll touchmove", function () {
         $('.header-top-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
         $('.header-middle-outer').toggleClass('header_scroll', $(document).scrollTop() > 0);
+        $('#mobile-menu-wrapper').toggleClass('header_scroll', $(document).scrollTop() > 0);
       });
 
   }

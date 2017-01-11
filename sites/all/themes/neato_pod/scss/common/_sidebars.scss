@@ -28,6 +28,7 @@
 
   	}
 
+	//Refine Search Button
 	.featured-outer-two {
 
 		#block-block-7 {
@@ -36,6 +37,10 @@
 				background-color: $colorLinkHover;
 				padding: 10px;
 				color: $colorVLightGrey;
+				@include media($mobile) {
+					padding: 5px;
+					//font-size: .8em;
+				}
 				&:after {
 					content: "≡";
 					font-size: 2em;
@@ -45,6 +50,7 @@
 
 					@include media($mobile) {
 						top: 5px;
+						//font-size: 1.8em;
 					}
 
 
@@ -82,7 +88,7 @@
 	#sidebar-first {
 
 		position: none;
-		font-size: $sidebar-font-size;
+		font-size: .9em;
 
 		input {
 			margin-bottom: $base-spacing / 2;
@@ -144,6 +150,7 @@
 			.item-list {
 				max-height: 20em;
 				overflow-y: scroll;
+
 			}
 
 			ul.facetapi-facetapi-links {
@@ -158,24 +165,6 @@
 		}
 	
 	}
-
-	// .facetapi-facet-title-az-glossary {
-	// 	@include clearfix;
-	// }
-
-	// .facetapi-facet-title-az-glossary li a {
-	// 	width: 25px; 
-	// 	display: inline-block;
-	// }
-	// .facetapi-facet-title-az-glossary li { 
-	// 	margin: 1px; 
-	// 	padding: 8px; 
-	// 	float:left; 
-	// 	border: 1px solid #ccc;
-	// }
-	// .facetapi-facet-title-az-glossary li .facetapi-active {
-	// 	padding-right: 10px;
-	// }
 
 }
 

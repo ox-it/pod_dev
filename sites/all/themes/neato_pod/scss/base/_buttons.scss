@@ -8,11 +8,12 @@ button {
   color: $font-heading-color;
   cursor: pointer;
   display: inline-block;
+  //position: absolute; // This makes it stick to element on the left
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: 600;
   line-height: 1;
-  padding: 1.4em 1.2em;
+  padding: 1.2em;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;

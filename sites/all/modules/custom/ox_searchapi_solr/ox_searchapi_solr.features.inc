@@ -33,6 +33,7 @@ function ox_searchapi_solr_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "body:value" : { "type" : "text" },
+        "created" : { "type" : "date" },
         "field_episode_description_long:value" : { "type" : "text" },
         "field_itunes_u_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_itunes_u_category:name" : { "type" : "list\\u003Cstring\\u003E" },

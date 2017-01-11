@@ -9,20 +9,85 @@
 
 
 /*
- ************************ Episode Solr Search (overrides general styling above)  ****************************
+ ************************ Search Filters (overrides general styling above)  ****************************
  */
 
-.front, .context-results-page, .context-people-gallery, .context-series-gallery {
 
-  #edit-search-api-views-fulltext-wrapper {
-    width: 50%;
+// Width of the search bar on Episode/Front
+.front header, .context-results-page header {
 
-      @include media ($tablet) {
-        width: 65%;
+	input {
+		height: 55px;
+		border: none;
+		@include media($mobile) {
+      		height: 40px;
+      		font-size: .8em;
+      	}
+	}
+	
+	#edit-search-api-views-fulltext-wrapper {
+    	width: 60%;
+    	margin-right: 2%;
+
+	    @include media($tablet) {
+	        width: 85%;
+	    }
+
+	    @include media($mobile) {
+	      	height: 40px;
+	    	width: 75%
+	    }
+
+  	}
+
+	.views-widget {
+
+	    input {
+
+		    background-color: $colorVLightGrey;
+		    border: 1px solid lighten($action-color, 30%);
+		    border-radius: $base-border-radius;
+		    font-size: 2em;
+		      
+		    @include media($mobile) {
+		      	font-size: 1.3em;
+		    }
+
+		    &:hover {
+		        border-color: darken($base-border-color, 30%);
+		    }
+
+		    &:focus {
+		        border-color: $action-color;
+		        box-shadow: $form-box-shadow-focus;
+		        outline: none;
+		    }
+	    }
+	}
+}
+
+// Width of the search bar on Series 
+.context-series-gallery header {
+
+	input {
+		height: 55px;
+		border: none;
+		@include media($mobile) {
+			height: 40px;
+			font-size: .8em;
+		}
+	}
+
+  #edit-combine-wrapper {
+  	
+    @include span-columns(6);
+
+      @include media($tablet) {
+        width: 100%;
       }
 
-      @include media ($mobile) {
-        width: 75%;
+      @include media($mobile) {
+        width: 100%;
       }
 
   }
@@ -31,14 +96,14 @@
 
     input {
 
-
-
       background-color: $colorVLightGrey;
       border: 1px solid lighten($action-color, 30%);
       border-radius: $base-border-radius;
-      font-size: 1.4em;
-      padding: .7em;
-      //width: 10em;
+      font-size: 2em;
+      
+      @include media($mobile) {
+      	font-size: 1.3em;
+      }
 
       &:hover {
         border-color: darken($base-border-color, 30%);
@@ -50,10 +115,60 @@
         outline: none;
       }
 
+    }
 
+  }
 
+}
 
+// Width of the search bar on People 
+.context-people-gallery header {
 
+	input {
+		height: 55px;
+		border: none;
+		@include media($mobile) {
+			height: 40px;
+			font-size: .8em;
+		}
+	}
+
+  #edit-combine-wrapper {
+  	
+    @include span-columns(6);
+
+      @include media($tablet) {
+        width: 100%;
+      }
+
+      @include media($mobile) {
+        width: 100%;
+      }
+
+  }
+
+  .views-widget {
+
+    input {
+
+      background-color: $colorVLightGrey;
+      border: 1px solid lighten($action-color, 30%);
+      border-radius: $base-border-radius;
+      font-size: 2em;
+      
+      @include media($mobile) {
+      	font-size: 1.3em;
+      }
+
+      &:hover {
+        border-color: darken($base-border-color, 30%);
+      }
+
+      &:focus {
+        border-color: $action-color;
+        box-shadow: $form-box-shadow-focus;
+        outline: none;
+      }
 
     }
 
@@ -129,82 +244,103 @@
  ******************************** Chosen dropdown filter overrides ***********************************
  */
 
-#edit-field-unit-tid-selective-wrapper {
-    @include media ($mobile) {
-        width: 290px !important;
-    }
-
-}
-
+// Width of the dropdown elements -- must be this specific
 div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
-  //width: 290px !important;
+  	width: 300px !important;
+  	margin-right: 20px;
 
-  @include media ($mobile) {
-        width: 290px !important;
-    }
-  }
-
-.chosen-container {
-
-
-
-
-  .chosen-single {
-
-    background: none;
-    box-shadow: none;
-    height: 3.4em;
-    font-size: 1.1em;
-    border: 1px solid darken($colorLightGrey, 40%);
-    padding: 12px;
-    border-radius: $base-border-radius;
-    width: auto;
-
-    div b {
-      position: relative;
-      top: 10px;
-      left: 3px;
-    }
-
-    @include media ($mobile) {
-        width: 290px;
-    }
-
-  }
-
-  .chosen-drop {
-
-    @include media ($mobile) {
-        width: 290px;
-    }
-
-  }
-
+  	// @include media($mobile) {
+   //      width: 20px !important;
+   //  }
 }
+
+#edit-field-unit-tid-selective-wrapper {
+	
+	// Adjustment for MOBILE (without media query, for some reason) 'select' dropdowns -- must match height below
+    .form-item-field-unit-tid-selective select {
+    	height: 40px;
+        background: none;
+		box-shadow: none;
+		border-radius: $base-border-radius;
+		border: 1px solid lighten($colorLinkHover, 20%);
+		font-size: .9em;
+		margin-right: 10px;
+		width: 200px;
+
+		
+    }
+
+    .chosen-container {
+		//Must repeat above in .form-item-field-unit-tid-selective select for MOBILE
+	    .chosen-single {
+	    	height: 55px;
+		    background: none;
+		    box-shadow: none;
+		    font-size: 1.4em;
+		    border: 1px solid lighten($colorLinkHover, 20%);
+		    border-style: thin;
+		    padding: 14px;
+		    border-radius: $base-border-radius;
+		    
+	        div b {
+			    position: relative;
+			    top: 14px;
+			    left: 3px;
+			    @include media($mobile) {
+			    	top: 8px;
+			    }
+
+	     	}
+
+	     	@include media($mobile) {
+	     		height: 40px;
+	     		font-size: 1.1em;
+	     		padding: 8px;
+	     	}
+
+	    }
+
+	  	.chosen-drop {
+	  		width: 100%;
+	  	}
+	}
+}
+
+
+
 
 //.chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
+
+
+
+/*
+***************************** Hideseek search boxes in Solr sidebar **************************************
+ */
+.sidebar-first {
+	#hideseek-keywords, #hideseek-units {
+		height: 35px;
+		font-size: 1.3em;
+	}
+}
 
 
 /*
 ***************************** Load More button **************************************
  */
 
-.view-people-view .item-list .pager li a, .view-series-gallery .item-list .pager li a {
-
-  background-color: $base-background-color;
-  border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $form-box-shadow;
-  box-sizing: border-box;
-  font-family: $base-font-family;
-  font-size: 2em;
-  margin-bottom: $base-spacing;
-  padding: $base-spacing / 3;
-  transition: border-color;
-  width: 100%;
+.pager-load-more a {
+	display: block;
+	background-color: transparentize($colorLinkHover, 0.4);
+	border: $base-border;
+	border-radius: $base-border-radius;
+	font-size: 2em;
+	color: $colorVLightGrey;
+	padding: .5em;
+	width: 100%;
 
   &:hover {
-    border-color: red;
+    background-color: $colorLinkHover;
+    color: $colorVLightGrey;
   }
 
   &:focus {
@@ -215,6 +351,33 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 
 
 }
+
+ul.pager {
+	margin-top: 5em;
+}
+
+
+/*
+ ************************ Exposed form views widget resets  ****************************
+ */
+
+
+
+.views-exposed-form .views-exposed-widget {
+  	//margin-top: .5em;
+  	margin-bottom: 1em;
+	padding: 0;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+	margin-top: 0;
+}
+.views-exposed-widgets {
+ 	margin: 0;
+ 	padding: 0;
+}
+
+
+
 
 
 /*
@@ -227,17 +390,6 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 
 
 
-/*
- ************************ Exposed form Buttons views widget resets  ****************************
- */
 
 
 
-.views-exposed-form .views-exposed-widget {
-  margin-top: .5em;
-  margin-bottom: .5em;
-  padding-top: 0;
-}
-.views-exposed-form .views-exposed-widget .form-submit {
-  margin-top: 0;
-}

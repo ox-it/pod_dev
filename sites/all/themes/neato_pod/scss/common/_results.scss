@@ -48,6 +48,9 @@
 					&:hover {
 						background-color: darken($colorLightGrey, 15%);
 					}
+					@include media($mobile) {
+						font-size: 1em;
+					}
 				}
 			}
 
@@ -56,9 +59,14 @@
 
 				.fieldset-top-left {	
 					@include span-columns(3 of 12);
-					img:hover {opacity: .8;}
+					
 					&:hover ~ .fieldset-top-middle .views-field-field-series-name {
 						background-color: $colorBeigeGrey;
+					}
+
+					@include media($mobile) {
+						//@include span-columns(1 of 4);
+
 					}
 				}
 
@@ -71,9 +79,21 @@
 						font-size: 1em;
 					}
 
+					@include media($mobile) {
+						font-size: .8em;
+						//@include clearfix;
+						//@include span-columns(2 of 4);
+						//@include omega(3n);
+
+					}
+
 					.views-field-body-value {
 						//border-bottom: 1px solid $base-border-color; 
 						padding-bottom: .5em;
+						@include media($mobile) {
+							max-height: 46px;
+							overflow: hidden;
+						}
 					}
 
 					.views-field-nothing {
@@ -82,6 +102,10 @@
 						height: 25px;
 						padding: 3px 0 5px 0;
 						background-color:  darken($colorVLightGrey, 1%);
+						@include media($mobile) {
+							height: 20px;
+								
+							}
 						.created-float {width: 90%;float: left;}
 						.license-float {
 							width: 10%;
@@ -95,6 +119,10 @@
 							position: relative;
 							left: 1%;
 
+							@include media($mobile) {
+								background-size: 14px;
+
+							}
 
 						}
 					}
@@ -128,7 +156,12 @@
 						h2 {display: none;}
 						img {
 							margin-bottom: 1em;
-						}   
+						}  
+
+						@include media($mobile) {
+							//@include span-columns(1 of 4);
+							//@include omega(4n);
+						} 
 					}
 				}
 
@@ -181,4 +214,68 @@ sidebar image -- otherwise, could go above) */
 			margin-top: 8em;
 		}
 	}
+}
+
+
+/*
+ *****************  Series pagination and filter  **************************************************
+ */
+.context-series-page, .context-people-page, .context-unit-page {
+	.form-item-search-api-views-fulltext {
+		margin-right: 5px;
+		input {
+			height: 40px;
+			width: 250px;
+			display: block;
+			padding-right: 35px;
+			@include media($tablet) {
+				width: 175px;
+			}
+			@include media($mobile) {
+				width: 175px;
+				height: 30px;
+				font-size: .8em;
+			}
+		} 
+	}
+
+	.views-widget-sort-by {display:none;}
+	.views-widget-per-page, .views-widget-sort-order {
+		margin-right: 5px;
+
+		label {
+	 		display: none;
+		}
+		select {
+			-webkit-appearance: none;
+			-webkit-border-radius: 0px;
+			border: 1px solid $colorLightGrey;
+			height: 40px;
+			padding: 5px;
+			background-color: $colorVLightGrey;
+			@include media($mobile) {
+				height: 30px;
+				font-size: .8em;
+			}
+
+		}
+		
+	}
+	#edit-submit-episode-search-solr- {
+			height: 40px;
+			border: 1px solid $colorLightGrey;
+			font-size: .9em;
+			background-color: $colorVLightGrey;
+			//padding:5px;
+			color: $colorLinkHover;
+			@include media($mobile) {
+				height: 30px;
+				font-size: .7em;
+			}
+			&:hover {
+				background-color: $colorLinkHover;
+				color: $colorVLightGrey;
+			}
+		}
+
 }
