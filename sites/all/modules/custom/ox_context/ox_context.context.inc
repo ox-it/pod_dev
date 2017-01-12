@@ -366,12 +366,6 @@ function ox_context_context_default_contexts() {
           'region' => 'featured-six',
           'weight' => '-10',
         ),
-        'views-series_gallery-block_1' => array(
-          'module' => 'views',
-          'delta' => 'series_gallery-block_1',
-          'region' => 'footer_hidden_one',
-          'weight' => '-10',
-        ),
         'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
           'module' => 'views',
           'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',

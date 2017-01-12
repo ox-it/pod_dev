@@ -22,23 +22,52 @@
 		@include media($mobile) {
       		height: 40px;
       		font-size: .8em;
+      		padding: 7px;
       	}
 	}
 	
 	#edit-search-api-views-fulltext-wrapper {
     	width: 60%;
-    	margin-right: 2%;
+    	//margin-right: 10px;
+    
 
-	    @include media($tablet) {
-	        width: 85%;
-	    }
+      @include media($tablet) {
+        width: 50%;
+      }
 
-	    @include media($mobile) {
-	      	height: 40px;
-	    	width: 75%
-	    }
+      @include media($mobile) {
+        width: 45%;
+      }
 
   	}
+
+  	.views-widget-sort-order, .views-widget-sort-by {
+
+		label {
+	 		display: none;
+		}
+		select {
+			-webkit-appearance: none;
+			-webkit-border-radius: 0px;
+			font-size: 1.2em;
+			background: none;
+			box-shadow: none;
+			border-radius: $base-border-radius;
+			border: 1px solid lighten($colorLinkHover, 20%);
+			height: 55px;
+			padding: 10px;
+			margin-bottom: 0;
+			margin-top: 0;
+			display: block;
+			//text-align: center;
+			background-color: transparent;
+			@include media($mobile) {
+				padding: 5px;
+				height: 40px;
+				font-size: .8em;
+			}
+		}
+	}
 
 	.views-widget {
 
@@ -50,7 +79,7 @@
 		    font-size: 2em;
 		      
 		    @include media($mobile) {
-		      	font-size: 1.3em;
+		      	font-size: .8em;
 		    }
 
 		    &:hover {
@@ -79,8 +108,7 @@
 	}
 
   #edit-combine-wrapper {
-  	
-    @include span-columns(6);
+  	width: 37%;
 
       @include media($tablet) {
         width: 100%;
@@ -89,20 +117,48 @@
       @include media($mobile) {
         width: 100%;
       }
-
   }
+	
+	.views-widget-sort-order, .views-widget-sort-by {
 
-  .views-widget {
+		label {
+	 		display: none;
+		}
+		select {
+			-webkit-appearance: none;
+			-webkit-border-radius: 0px;
+			font-size: 1.2em;
+			background: none;
+			box-shadow: none;
+			border-radius: $base-border-radius;
+			border: 1px solid lighten($colorLinkHover, 20%);
+			height: 55px;
+			padding: 10px;
+			margin-bottom: 0;
+			margin-top: 0;
+			display: block;
+			//text-align: center;
+			background-color: transparent;
+			@include media($mobile) {
+				padding: 5px;
+				height: 40px;
+				font-size: .8em;
+			}
+		}
+	}
+
+
+  	.views-widget {
 
     input {
 
       background-color: $colorVLightGrey;
-      border: 1px solid lighten($action-color, 30%);
+      //border: 1px solid lighten($action-color, 30%);
       border-radius: $base-border-radius;
       font-size: 2em;
       
       @include media($mobile) {
-      	font-size: 1.3em;
+      	font-size: 1em;
       }
 
       &:hover {
@@ -121,6 +177,9 @@
 
 }
 
+
+
+
 // Width of the search bar on People 
 .context-people-gallery header {
 
@@ -135,7 +194,7 @@
 
   #edit-combine-wrapper {
   	
-    @include span-columns(6);
+    width: 50%;
 
       @include media($tablet) {
         width: 100%;
@@ -157,7 +216,7 @@
       font-size: 2em;
       
       @include media($mobile) {
-      	font-size: 1.3em;
+      	font-size: 1.2em;
       }
 
       &:hover {
@@ -209,19 +268,26 @@
  **************************** Unit Gallery Page (hideseek search box)  ****************************
  */
 
-.context-unit-gallery {
+.context-unit-gallery header {
+
+	input {
+		height: 55px;
+		border: none;
+		@include media($mobile) {
+    		height: 40px;
+    		font-size: .8em;
+    	}
+	}
 
   #block-block-9 {
 
     position: relative;
 
     input {
-      background-color: $colorVLightGrey;
-      border: 1px solid lighten($action-color, 30%);
-      border-radius: $base-border-radius;
-      font-size: 1.4em;
-      padding: .7em;
-      //width: 388px;
+		background-color: $colorVLightGrey;
+		border: 1px solid lighten($action-color, 30%);
+		border-radius: $base-border-radius;
+     	
 
       &:hover {
         border-color: darken($base-border-color, 30%);
@@ -233,6 +299,7 @@
         outline: none;
       }
     }
+
   }
 
 }
@@ -247,11 +314,17 @@
 // Width of the dropdown elements -- must be this specific
 div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
   	width: 300px !important;
-  	margin-right: 20px;
+}
 
-  	// @include media($mobile) {
-   //      width: 20px !important;
-   //  }
+.context-series-gallery {
+	div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
+	  	@include media($tablet) {
+	  		width: 235px !important;
+	  	}
+	  	@include media($mobile) {
+	  		width: 100% !important;
+	  	}
+	}
 }
 
 #edit-field-unit-tid-selective-wrapper {
@@ -263,11 +336,9 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 		box-shadow: none;
 		border-radius: $base-border-radius;
 		border: 1px solid lighten($colorLinkHover, 20%);
-		font-size: .9em;
-		margin-right: 10px;
-		width: 200px;
-
-		
+		font-size: .8em;
+		width: 100%;
+		margin-bottom: 0;
     }
 
     .chosen-container {
@@ -276,7 +347,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 	    	height: 55px;
 		    background: none;
 		    box-shadow: none;
-		    font-size: 1.4em;
+		    font-size: 1.2em;
 		    border: 1px solid lighten($colorLinkHover, 20%);
 		    border-style: thin;
 		    padding: 14px;
@@ -294,7 +365,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 
 	     	@include media($mobile) {
 	     		height: 40px;
-	     		font-size: 1.1em;
+	     		font-size: .8em;
 	     		padding: 8px;
 	     	}
 
@@ -374,6 +445,14 @@ ul.pager {
 .views-exposed-widgets {
  	margin: 0;
  	padding: 0;
+}
+	.context-series-gallery, .context-people-gallery, .context-unit-gallery, .front, .context-results-page {
+	.form-item {
+		margin-right: 10px;
+		@include media($mobile) {
+			margin-right: 5px;
+		}
+	}
 }
 
 

@@ -6,11 +6,11 @@
 
 	.header-middle-outer {
 		background-color: $colorIconBlueGrey;
-		padding-top: 4em;
+		padding-top: 4.5em;
 		padding-bottom: 4em;
 
 		@include media($mobile) {
-			padding-top: 1em;
+			padding-top: 2em;
 			padding-bottom: 0;
 		}
 
@@ -53,7 +53,7 @@
 					font-size: 1.5em;
 				}
 				@include media($mobile) {
-					font-size: 1em;
+					font-size: .9em;
 				}
 			}
 
@@ -103,25 +103,47 @@
 				.views-field-description {
 					
 			    	@include media($mobile) {
-						max-height: 105px; 
+						max-height: 75px; 
 						overflow: hidden;
+						font-size: .8em;
 					}
     			}
 
 				.views-field-nid {
 					border-bottom: 1px solid $base-border-color;
-					font-size: 1.3em;
+					font-size: 1.2em;
 			    	margin-bottom: .5em;
 			    	padding: 3px 0;
-			    	@include media($mobile) {
+			    	@include media($tablet) {
 			    		font-size: 1em;
-			    		margin-bottom: .1em;
+			    		
+			    	}
+			    	@include media($mobile) {
+			    		font-size: .9em;
+			    		//margin-bottom: .1em;
 			    	}
 			    }
 
 			    .views-field-created {
-			    	margin-bottom: .5em;
+					border-bottom: 1px solid $base-border-color;
+					font-size: 1.2em;
+			    	margin-bottom: .3em;
 			    	padding: 3px 0;
+			    	@include media($tablet) {
+			    		font-size: 1em;
+			    		margin-bottom: .1em;
+			    	}
+			    	@include media($mobile) {
+			    		font-size: .9em;
+			    		margin-bottom: .1em;
+			    	}
+			    	&:after {
+			    		content: "(Last Updated)";
+			    		padding-left: 10px;
+			    		//font-size: .9em;
+			    		color: darken($colorLightGrey, 13%);
+
+			    	}
 			    }
 			}
 		}
@@ -133,7 +155,7 @@
 	    	padding: .3em;
 	    	margin-top: .5em;
 			@include media($mobile) {
-	    		font-size: .8em;
+	    		font-size: .7em;
 	    		
 	    	}
 		}

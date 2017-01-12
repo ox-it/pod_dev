@@ -96,7 +96,7 @@ Drupal.behaviors.podOmegaActivateSidr = {
         name: 'sidr-menu-series-button',
         displace:false,
         side: 'right',
-        source: '.view-series-gallery', 
+        source: '.view-series-sidr', 
       });
   
       $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…

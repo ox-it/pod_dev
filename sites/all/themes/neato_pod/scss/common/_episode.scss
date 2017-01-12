@@ -5,13 +5,13 @@
 .context-results-page {
 
 	.header-middle-outer {
-		padding-top: 4em;
+		padding-top: 4.5em;
 		padding-bottom: 4em;
 		background-color: $colorLightGrey;
 
 		@include media($mobile) {
-			padding-top: 1em;
-			padding-bottom: 1em;
+			padding-top: 2em;  // to offset dependence on form elements bottom-padding
+			padding-bottom: 1em;  
 		}
 	}
 
@@ -300,11 +300,10 @@
 					content: "A" !important;
 				    display: block !important;
 				    margin-bottom: 1em !important;
-
 				}
 
 				@include media($mobile) {
-					font-size: 1em;
+					font-size: 1.1em;
 				}
 			}
 		}
@@ -327,7 +326,9 @@
 					content: "A" !important;
 				    display: block !important;
 				    margin-bottom: 1em !important;
-
+				}
+				@include media($mobile) {
+					font-size: 1.1em;
 				}
 
 			}

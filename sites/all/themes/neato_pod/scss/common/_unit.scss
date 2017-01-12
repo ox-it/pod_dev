@@ -8,12 +8,12 @@
 	#page-title {display:none;}
 
 	.header-middle-outer {
-		padding-top: 4.5em;
-		padding-bottom: 4.5em;
+		padding-top: 5em;
+		padding-bottom: 5em;
 		background-color: $colorGraduateYellow; //$colorBooksBlog; //$colorMidGrey;
 		@include media($mobile) {
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
+			padding-top: 2em;
+			padding-bottom: 2em;
 		}
 	}
 

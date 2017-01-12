@@ -114,6 +114,10 @@
 
 #sidr-menu-episode-button {
 
+	@include media($mobile) {
+		//font-size: 80%;
+	}
+
 
 	background-color: #F8F8F8; 
 	width:420px; 
@@ -145,13 +149,15 @@
 	.sidr-class-block {
 		margin: 0 0 $base-spacing 0;
 
-
-
 		h2 {
 			background-color: $colorLinkHover;
 			padding: .75em;
 			color: $font-heading-color;
 			border-radius: $base-border-radius;
+			@include media($mobile) {
+				//font-size: 90%;
+			}
+
 		}
 	}
 

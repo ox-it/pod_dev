@@ -743,7 +743,7 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->hash = 'NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5';
   $facet->settings = array(
     'weight' => 0,
-    'widget' => 'facetapi_checkbox_links',
+    'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
       'active' => 'active',

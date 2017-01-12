@@ -221,18 +221,22 @@ sidebar image -- otherwise, could go above) */
  *****************  Series pagination and filter  **************************************************
  */
 .context-series-page, .context-people-page, .context-unit-page {
+	.views-exposed-widgets {
+		margin-bottom: 10px;
+	}
 	.form-item-search-api-views-fulltext {
 		margin-right: 5px;
 		input {
 			height: 40px;
 			width: 250px;
 			display: block;
-			padding-right: 35px;
+			//padding-right: 35px;
+			margin-bottom: 0;
 			@include media($tablet) {
 				width: 175px;
 			}
 			@include media($mobile) {
-				width: 175px;
+				width: 140px;
 				height: 30px;
 				font-size: .8em;
 			}
@@ -252,6 +256,7 @@ sidebar image -- otherwise, could go above) */
 			border: 1px solid $colorLightGrey;
 			height: 40px;
 			padding: 5px;
+			margin-bottom: 0;
 			background-color: $colorVLightGrey;
 			@include media($mobile) {
 				height: 30px;
@@ -262,20 +267,20 @@ sidebar image -- otherwise, could go above) */
 		
 	}
 	#edit-submit-episode-search-solr- {
-			height: 40px;
-			border: 1px solid $colorLightGrey;
-			font-size: .9em;
-			background-color: $colorVLightGrey;
-			//padding:5px;
-			color: $colorLinkHover;
-			@include media($mobile) {
-				height: 30px;
-				font-size: .7em;
-			}
-			&:hover {
-				background-color: $colorLinkHover;
-				color: $colorVLightGrey;
-			}
+		height: 40px;
+		border: 1px solid $colorLightGrey;
+		font-size: .9em;
+		background-color: $colorVLightGrey;
+		//padding:5px;
+		color: $colorLinkHover;
+		@include media($mobile) {
+			height: 30px;
+			font-size: .7em;
 		}
+		&:hover {
+			background-color: $colorLinkHover;
+			color: $colorVLightGrey;
+		}
+	}
 
 }

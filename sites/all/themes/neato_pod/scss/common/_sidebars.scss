@@ -308,6 +308,10 @@
 		#block-fieldblock-cdd8d27af833196db5fd48c8da91d8d8 {
 			margin-top: 2em;
 			padding-bottom: 5px;
+			@include media($mobile) {
+				margin-top: .5em;
+			}
+
 			h2 {
 				background-color: $colorGraduateLightGreen;
 			}	

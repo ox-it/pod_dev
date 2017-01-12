@@ -24,5 +24,6 @@ features[views_view][] = people_featured
 features[views_view][] = people_view
 features[views_view][] = series_featured
 features[views_view][] = series_gallery
+features[views_view][] = series_sidr
 features[views_view][] = unit_featured
 features[views_view][] = unit_gallery

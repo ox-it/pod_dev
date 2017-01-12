@@ -292,6 +292,10 @@
 					display: block;
 					font-size: 1.3em;
 					width: 100%;
+					@include media($tablet) {
+						padding: 8px 0;
+						font-size: 1.2em;
+					}
 					@include media($mobile) {
 						padding: 5px 0;
 						font-size: 1.1em;
