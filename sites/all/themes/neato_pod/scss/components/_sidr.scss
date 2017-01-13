@@ -229,37 +229,47 @@
  */
 
 
-#block-block-1 {
-	text-align: right;
 
-	#sidr-menu-series {
 
-		color: darken($colorMidGrey, 10%);
-		&:after {
-			content: "≡";
-			font-size: 2em;
-			position: relative;
-			top: 5px;
-			padding-left: 10px;
-		}
-	}
-}
+// // Series Quick Search pop-out
+// #block-block-1 {
+// 	display: block;
+// 	text-align: right;
 
-#block-block-8 {
-	text-align: left;
-	#sidr-menu-keywords {
-		color: darken($colorMidGrey, 10%);
-		&:before {
-			content: "≡";
-			font-size: 2em;
-			position: relative;
-			top: 5px;
-			padding-right: 10px;
+// 	#sidr-menu-series {
 
-		}
-	}
+// 		color: darken($colorMidGrey, 10%);
+// 		&:after {
+// 			content: "≡";
+// 			font-size: 2em;
+// 			position: relative;
+// 			top: 5px;
+// 			padding-left: 10px;
+// 		}
+// 	}
+// }
 
-}
+// //Keywords Search pop-out for front
+// #block-block-8 {
+// 	margin-top: 80px;
+// 	display: block;
+	
+// 	#sidr-menu-keywords {
+// 		color: darken($colorMidGrey, 10%);
+// 		position: relative;
+// 		margin-top: -10px;
+// 		font-size: 2em;
+// 		&:before {
+// 			content: "≡";
+// 			//font-size: 4em;
+// 			position: relative;
+// 			top: 5px;
+// 			padding-right: 10px;
+
+// 		}
+// 	}
+
+// }
 
 
 

@@ -135,7 +135,7 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
     ),
-    'facet_mincount' => '15',
+    'facet_mincount' => '5',
     'facet_missing' => '0',
     'flatten' => '1',
     'individual_parent' => '0',

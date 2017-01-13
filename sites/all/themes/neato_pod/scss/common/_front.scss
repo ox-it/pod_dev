@@ -143,18 +143,6 @@
 
 		}
 		
-
-			#block-block-8 {
-				display: block;
-				width: 50%;
-				float: left;
-			}
-			#block-block-1 {
-				display: block;
-				width: 50%;
-				float:right;
-			}
-		
 	}
 
 }
@@ -573,19 +561,51 @@
 
 	.featured-outer-two {
 
-		.category-headline {
-			padding: 1em;
+		#sidr-menu-keywords {
+
+			border-radius: 3px;
+			font-size: 1.2em;
+			color: darken($colorLightGrey, 15%);
+			text-align: center;
+			padding: .1em 0 .4em 0;
+			cursor: pointer;
+			font-variant: small-caps;
+			border-bottom: 1px solid darken($colorLightGrey, 10%);
+
+			&:hover {
+				color: lighten($colorLink, 8%);
+			}
+			
+			span {
+				content: "≡";
+				font-size: 1.7em;
+				position: relative;
+				top: 5px;
+				padding: 10px;
+
+			}
+
+			@include media($mobile) {
+				font-size: 1em;
+			}
+
+
+		}
+
+		#category-headline {
+			padding-top: .5em;
 			border-radius: 3px;
 			font-size: 2em;
 			color: darken($colorLightGrey, 15%);
 			text-align: center;
-			border-bottom: 1px solid darken($colorLightGrey, 10%);
+			//border-bottom: 1px solid darken($colorLightGrey, 10%);
 
 			@include media($tablet) {
 				font-size: 2em;
 			}
 
 			@include media($mobile) {
+				padding-top: 1em;
 				font-size: 1.2em;
 			}
 		}

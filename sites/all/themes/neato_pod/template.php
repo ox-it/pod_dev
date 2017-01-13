@@ -27,10 +27,10 @@ function neato_pod_preprocess_block(&$variables) {
 
 
     // Add hideseek keyword search box to *Sidr* episode sidebar
-    if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' && $variables['block']->module == 'facetapi') {
-        $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".facetapi-facet-field-keywords"><a id="sidr-menu-keywords" href="#sidr-menu-keywords-button">View All Keywords</a>';
-        $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
-    }
+    // if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' && $variables['block']->module == 'facetapi') {
+    //     $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".facetapi-facet-field-keywords"><a id="sidr-menu-keywords" href="#sidr-menu-keywords-button">View All Keywords</a>';
+    //     $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
+    // }
 
     // Add hideseek unit search box in static episode sidebar
     if($variables['block']->delta == 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK') {
@@ -67,7 +67,7 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
 
     if ($form['#id'] == 'views-exposed-form-episode-search-solr--page') {
       if (isset($form['search_api_views_fulltext'])) {
-        $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Search Podcasts Here...');
+        $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Search Episodes Here...');
       }
     }
 

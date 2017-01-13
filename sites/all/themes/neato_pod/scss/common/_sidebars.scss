@@ -32,46 +32,50 @@
 	.featured-outer-two {
 
 		#block-block-7 {
-			text-align: left;
-			#sidr-menu-episode {
+			float: right;
+
+
+			#sidr-menu-episode, #sidr-menu-episode-keywords {
 				background-color: $colorLinkHover;
-				padding: 10px;
+				padding: 10px 15px;
+				margin-left: 10px;
+
 				color: $colorVLightGrey;
 				@include media($mobile) {
-					padding: 5px;
-					//font-size: .8em;
+					padding: 8px;
+					font-size: .9em;
 				}
 				&:after {
 					content: "≡";
 					font-size: 2em;
 					position: relative;
-					top: 8px;
+					top: 6px;
 					padding-left: 10px;
 
 					@include media($mobile) {
-						top: 5px;
-						//font-size: 1.8em;
+						top: 3px;
+						font-size: 1.8em;
 					}
 
 
 				}
 
 			}
+
+		    // Do not display this except on $tablet and $mobile pages 
+		  	display: none;
+
+		  	@include media($tablet) {
+		  		display: block;
+		  		font-size: 1.4em;
+		  	}
+
+		  	@include media($mobile) {
+		  		font-size: 1em;
+		  	}
+
 		}
 	 
-	  	display: none;
-
-	  	@include media($tablet) {
-	  		display: block;
-	  		font-size: 1.6em;
-	  		float: right;
-	  		padding-bottom: 1em;
-	  		//background-color: red;
-	  	}
-
-	  	@include media($mobile) {
-	  		font-size: 1.1em;
-	  	}
 
   	}
  }
@@ -84,6 +88,32 @@
 
 
 .context-results-page {
+ 
+	// Hide "Keywords" block on Sidr search -- as it has its own block-7 when using mobile/tablet
+    #sidr-id-block-block-12 {display: none;}
+	#block-block-12 {
+		h2 {
+			background-color: $colorLinkHover;
+			padding: .75em;
+			color: $font-heading-white;
+			border-radius: 1px;
+			margin: 0;
+		}
+		p {
+			background-color: $colorVLightGrey;
+			cursor: pointer;
+			font-size: 1.1em;
+			padding: 0 0 10px 10px;
+
+			span {
+				position: relative;
+				top: 5px;
+				margin-right: 10px;
+				font-size: 2.2em;
+			}
+		}
+		margin-bottom: 2em;
+	}
 
 	#sidebar-first {
 

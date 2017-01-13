@@ -91,7 +91,7 @@
 Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
 
-      // Series menu on <front> and on Episode page ("View all keywords")
+      // Series menu on <front> 
       $('#sidr-menu-series').sidr({
         name: 'sidr-menu-series-button',
         displace:false,
@@ -116,7 +116,19 @@ Drupal.behaviors.podOmegaActivateSidr = {
       });
 
 
-      // Facet menu on Episode page
+      // Keyword menu on Episode
+      $('#block-block-12 p').sidr({
+        name: 'sidr-menu-keywords-button',
+        displace:false,
+        source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1',
+      });
+
+      $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu-keywords-button');  // close the div with the ID of "sidr-menu"
+      });
+
+
+      // Facet menu on Episode page "Refine Search"  -- block 7
       $('#sidr-menu-episode').sidr({
         name: 'sidr-menu-episode-button',
         displace:false,
@@ -125,6 +137,17 @@ Drupal.behaviors.podOmegaActivateSidr = {
 
       $('#sidr-id-sidr-close-episode-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
           $.sidr('close', 'sidr-menu-episode-button');  // close the div with the ID of "sidr-menu"
+      });
+
+      // Facet Keywords menu on Episode page "Keywords"
+      $('#sidr-menu-episode-keywords').sidr({
+        name: 'sidr-menu-keywords-button',
+        displace:false,
+        source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1',
+      });
+
+      $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu-keywords-button');  // close the div with the ID of "sidr-menu"
       });
 
   }
@@ -193,16 +216,16 @@ Drupal.behaviors.podOmegaHideSeek = {
 
         
         // Keywords search box (static sidebar)
-        $('#hideseek-keywords').hideseek({
-          list: '.facetapi-facet-field-keywords',      
-          nodata:         'No keywords found',
-          attribute:      'text',
-          highlight:      true,
-          ignore:         '',
-          navigation:     false,
-          ignore_accents: false,
-          //hidden_mode: true
-        });
+        // $('#hideseek-keywords').hideseek({
+        //   list: '.facetapi-facet-field-keywords',      
+        //   nodata:         'No keywords found',
+        //   attribute:      'text',
+        //   highlight:      true,
+        //   ignore:         '',
+        //   navigation:     false,
+        //   ignore_accents: false,
+        //   //hidden_mode: true
+        // });
 
         // Unit search box (Sidr pop-out sidebar)
         // Have to add a class first, as theseclasses automatically appended with sidr-class 

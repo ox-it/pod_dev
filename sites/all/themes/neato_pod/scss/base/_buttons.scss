@@ -12,12 +12,13 @@ button {
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: 600;
-  line-height: 1;
-  padding: 1.2em;
+  //line-height: 1;
+  //padding: 1.2em;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+
 
   &:hover,
   &:focus {

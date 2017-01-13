@@ -3,84 +3,158 @@
 
 ****************************************************************************************************
 ****************************************************************************************************
-*************************       FORM overrides        **********************************************
+*************************   FORM/Button overrides -- overrides general styling     *****************
+*************************          in _form.scss and _buttons.scss               *******************
 ****************************************************************************************************
 ****************************************************************************************************
-
 
 /*
- ************************ Search Filters (overrides general styling above)  ****************************
+ ************************ Search Filters General -- across contexts   ****************************
  */
+.front, .context-results-page, .context-series-gallery, .context-people-gallery, .context-unit-gallery {
+	input[type=submit] {
+		text-indent: -9999px;
+		background-image: url("../images/search_glass.png");
+		//opacity: .5;
+		border: 1px solid lighten($colorLinkHover, 20%);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 55px;
+		background-color: transparent;
+		position: relative;
 
-
-// Width of the search bar on Episode/Front
-.front header, .context-results-page header {
-
-	input {
-		height: 55px;
-		border: none;
 		@include media($mobile) {
-      		height: 40px;
-      		font-size: .8em;
-      		padding: 7px;
-      	}
+			width: 40px;
+		}
+		&:hover, &:focus {
+		background-color: $colorPrimary;
+		color: $font-heading-color;
+		opacity: .5;
+		}
 	}
-	
-	#edit-search-api-views-fulltext-wrapper {
-    	width: 60%;
-    	//margin-right: 10px;
-    
 
-      @include media($tablet) {
-        width: 50%;
-      }
+	header {
+		input {
+			height: 55px;
+			border: none;
+			font-size: 2em;
+			opacity: .7;
+			background-color: $colorVLightGrey;
+			@include media($tablet) {
+			    font-size: 1.5em;
+			}
+			@include media($mobile) {
+	      		height: 40px;
+	      		font-size: 1em;
+	      		padding: 7px;
+	      	}
+		}
+	}
+}
 
-      @include media($mobile) {
-        width: 45%;
-      }
+// // Overried the above just for results page
+// .context-results-page {
+// 	header {
+// 		input {
+// 				@include media($mobile) {
+// 	      		height: 40px;
+// 	      		font-size: .8em;
+// 	      		padding: 7px;
+// 	      	}
 
-  	}
+// 		}
+// 	}
+// }
 
-  	.views-widget-sort-order, .views-widget-sort-by {
+// Smaller page "Filter results here" search filters
+.context-series-page, .context-people-page, .context-unit-page {
+	input[type=submit] {
+		text-indent: -9999px;
+		background-image: url("../images/search_glass.png");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 40px;
+		opacity: .6;
+		background-color: transparent;
+		position: relative;
+		@include media($mobile) {
+			width: 30px;
+		}
+	}
+}
 
+
+// Extra sorting filters
+.context-results-page, .context-series-gallery {
+	header {
+		.views-widget-sort-order, .views-widget-sort-by, .views-widget-per-page {
+
+			label {
+		 		display: none;
+			}
+			select {
+				-webkit-appearance: none;
+				-webkit-border-radius: 0px;
+				font-size: 1.2em;
+				background: none;
+				box-shadow: none;
+				border-radius: $base-border-radius;
+				border: 1px solid lighten($colorLinkHover, 30%);
+				height: 55px;
+				padding: 10px;
+				margin-bottom: 0;
+				margin-top: 0;
+				display: block;
+				//text-align: center;
+				background-color: transparent;
+				@include media($mobile) {
+					padding: 5px;
+					height: 40px;
+					font-size: .8em;
+				}
+				&:hover, &:focus {
+				background-color: $colorPrimary;
+				color: $font-heading-color;
+				opacity: .5;
+				cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+// Don't want the extra filters on the front page, so hide them
+.front header {
+  	.views-widget-sort-order, .views-widget-sort-by, .views-widget-per-page  {
 		label {
 	 		display: none;
 		}
 		select {
-			-webkit-appearance: none;
-			-webkit-border-radius: 0px;
-			font-size: 1.2em;
-			background: none;
-			box-shadow: none;
-			border-radius: $base-border-radius;
-			border: 1px solid lighten($colorLinkHover, 20%);
-			height: 55px;
-			padding: 10px;
-			margin-bottom: 0;
-			margin-top: 0;
-			display: block;
-			//text-align: center;
-			background-color: transparent;
-			@include media($mobile) {
-				padding: 5px;
-				height: 40px;
-				font-size: .8em;
-			}
+			display: none;
 		}
 	}
+	//Adjust for black space from display:none above
+	#edit-submit-episode-search-solr- {
+		margin-left: -20px; 
+		//border: none;
+		@include media($mobile) {
+			margin-left: -10px;
+		}
+	}
+}
 
-	.views-widget {
 
-	    input {
 
-		    background-color: $colorVLightGrey;
-		    border: 1px solid lighten($action-color, 30%);
-		    border-radius: $base-border-radius;
-		    font-size: 2em;
-		      
-		    @include media($mobile) {
-		      	font-size: .8em;
-		    }
+// Search Bar only (not submit button) effects
+.front, .context-results-page, .context-series-gallery, .context-people-gallery {
+	header {
+		.views-widget {
+
+		    input {
+			    background-color: $colorVLightGrey;
+			    border: 1px solid lighten($action-color, 30%);
+			    border-radius: $base-border-radius;
+			}
 
 		    &:hover {
 		        border-color: darken($base-border-color, 30%);
@@ -95,86 +169,57 @@
 	}
 }
 
-// Width of the search bar on Series 
+
+/*
+ ************************ Search Filters Specific -- to each context   ****************************
+ */
+
+// Episode Front and Results page widgets
+.front header {
+	#edit-search-api-views-fulltext-wrapper {
+    	width: 60%;
+	    @include media($tablet) {
+	        width: 80%;
+	    }
+
+      	@include media($mobile) {
+        	width: 80%;
+      	}
+  	}
+
+}
+
+.context-results-page header {
+
+	#edit-search-api-views-fulltext-wrapper {
+    	width: 60%;
+	    @include media($tablet) {
+	        width: 48%;
+	    }
+
+      	@include media($mobile) {
+        	width: 100%;
+      	}
+  	}
+}
+
+
+
+
+// Episode Front and Results page widgets
 .context-series-gallery header {
 
-	input {
-		height: 55px;
-		border: none;
-		@include media($mobile) {
-			height: 40px;
-			font-size: .8em;
-		}
-	}
+  	#edit-combine-wrapper {
+  		width: 37%;
 
-  #edit-combine-wrapper {
-  	width: 37%;
+      	@include media($tablet) {
+        	width: 100%;
+      	}
 
-      @include media($tablet) {
-        width: 100%;
-      }
-
-      @include media($mobile) {
-        width: 100%;
-      }
-  }
-	
-	.views-widget-sort-order, .views-widget-sort-by {
-
-		label {
-	 		display: none;
-		}
-		select {
-			-webkit-appearance: none;
-			-webkit-border-radius: 0px;
-			font-size: 1.2em;
-			background: none;
-			box-shadow: none;
-			border-radius: $base-border-radius;
-			border: 1px solid lighten($colorLinkHover, 20%);
-			height: 55px;
-			padding: 10px;
-			margin-bottom: 0;
-			margin-top: 0;
-			display: block;
-			//text-align: center;
-			background-color: transparent;
-			@include media($mobile) {
-				padding: 5px;
-				height: 40px;
-				font-size: .8em;
-			}
-		}
-	}
-
-
-  	.views-widget {
-
-    input {
-
-      background-color: $colorVLightGrey;
-      //border: 1px solid lighten($action-color, 30%);
-      border-radius: $base-border-radius;
-      font-size: 2em;
-      
-      @include media($mobile) {
-      	font-size: 1em;
-      }
-
-      &:hover {
-        border-color: darken($base-border-color, 30%);
-      }
-
-      &:focus {
-        border-color: $action-color;
-        box-shadow: $form-box-shadow-focus;
-        outline: none;
-      }
-
-    }
-
-  }
-
+      	@include media($mobile) {
+        	width: 100%;
+      	}
+  	}
 }
 
 
@@ -183,17 +228,7 @@
 // Width of the search bar on People 
 .context-people-gallery header {
 
-	input {
-		height: 55px;
-		border: none;
-		@include media($mobile) {
-			height: 40px;
-			font-size: .8em;
-		}
-	}
-
-  #edit-combine-wrapper {
-  	
+  #edit-combine-wrapper {  	
     width: 50%;
 
       @include media($tablet) {
@@ -203,36 +238,7 @@
       @include media($mobile) {
         width: 100%;
       }
-
   }
-
-  .views-widget {
-
-    input {
-
-      background-color: $colorVLightGrey;
-      border: 1px solid lighten($action-color, 30%);
-      border-radius: $base-border-radius;
-      font-size: 2em;
-      
-      @include media($mobile) {
-      	font-size: 1.2em;
-      }
-
-      &:hover {
-        border-color: darken($base-border-color, 30%);
-      }
-
-      &:focus {
-        border-color: $action-color;
-        box-shadow: $form-box-shadow-focus;
-        outline: none;
-      }
-
-    }
-
-  }
-
 }
 
 
@@ -270,17 +276,7 @@
 
 .context-unit-gallery header {
 
-	input {
-		height: 55px;
-		border: none;
-		@include media($mobile) {
-    		height: 40px;
-    		font-size: .8em;
-    	}
-	}
-
   #block-block-9 {
-
     position: relative;
 
     input {
@@ -303,7 +299,6 @@
   }
 
 }
-
 
 
 
@@ -348,7 +343,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 		    background: none;
 		    box-shadow: none;
 		    font-size: 1.2em;
-		    border: 1px solid lighten($colorLinkHover, 20%);
+		    border: 1px solid lighten($colorLinkHover, 25%);
 		    border-style: thin;
 		    padding: 14px;
 		    border-radius: $base-border-radius;
@@ -360,7 +355,6 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 			    @include media($mobile) {
 			    	top: 8px;
 			    }
-
 	     	}
 
 	     	@include media($mobile) {
@@ -379,19 +373,19 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 
 
 
-
-//.chosen-container-single .chosen-single div b {position: relative; top: 10px; left: 3px;}
-
-
-
 /*
 ***************************** Hideseek search boxes in Solr sidebar **************************************
  */
 .sidebar-first {
-	#hideseek-keywords, #hideseek-units {
-		height: 35px;
+	#hideseek-units {
+		height: 40px;
 		font-size: 1.3em;
 	}
+}
+
+#sidr-id-hideseek-keywords-two {
+	height: 50px;
+	font-size: 1.5em;
 }
 
 
@@ -403,7 +397,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 	display: block;
 	background-color: transparentize($colorLinkHover, 0.4);
 	border: $base-border;
-	border-radius: $base-border-radius;
+	border-radius: 2px;
 	font-size: 2em;
 	color: $colorVLightGrey;
 	padding: .5em;
@@ -423,9 +417,78 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 
 }
 
-ul.pager {
-	margin-top: 5em;
+
+
+
+/*
+***************************** Pager **************************************
+ */
+
+.context-results-page {
+
+	ul.pager {
+		margin-top: 8em;
+		display: block;
+		background-color: $colorLightGrey;
+		//border: $base-border;
+		border-radius: $base-border-radius;
+		color: $colorVLightGrey;
+		padding: 1em 0;
+		width: 100%;
+		border-radius: 2px;
+		@include media($mobile) {
+			margin-top: 4em;
+			padding: 0 0 .4em 0;
+		}
+
+		li {
+			font-size: 1.1em;
+			border-radius: 2px;
+			padding: 22px 3px;
+			margin: 0;
+
+			@include media($mobile) {
+				font-size: 50%;
+				padding: 10px 2px;
+			}
+
+			&.pager-current {
+				background-color: $colorLinkHover;
+				color: $colorVLightGrey;
+				border-radius: 2px;
+			}
+			a {
+				padding: 23px 3px;
+				&:hover {
+				    background-color: $colorLinkHover;
+				    color: $colorVLightGrey;
+					border-radius: 2px;
+				  }
+
+
+				&:focus {
+				    border-color: $action-color;
+				    box-shadow: $form-box-shadow-focus;
+				    outline: none;
+				}
+				@include media($mobile) {
+					padding: 10px 0;
+				}
+
+
+			}
+
+		}
+	}
 }
+
+.context-series-gallery {
+	ul.pager a {
+		display: block;
+		margin-top: 4em;
+	}
+}
+
 
 
 /*
@@ -459,13 +522,7 @@ ul.pager {
 
 
 
-/*
-****************************************************************************************************
-****************************************************************************************************
-*************************       Button overrides        **********************************************
-****************************************************************************************************
-****************************************************************************************************
-*/
+
 
 
 

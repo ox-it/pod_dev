@@ -3,6 +3,13 @@
 	//padding-bottom: 10px; 
 }
 
+main {
+ 	padding-bottom: 15em;
+ 	@include media($mobile) {
+ 		padding-bottom: 7em;
+ 	}
+ }
+
 .context-unit-gallery, .context-people-gallery, .context-series-gallery {
 
 	    // See also the more general "main" padding-top on _page.scss
@@ -33,16 +40,14 @@
 
 .page-solr {
 	main {
-		padding-top: 3em;
+		padding-top: 1.5em;
 		@include media($mobile) {
 			padding-top: 1em;
 		}
 	}
 }
 
- main {
- 	padding-bottom: 15em;
- }
+
 
 
 /*
