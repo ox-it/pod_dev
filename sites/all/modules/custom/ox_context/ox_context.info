@@ -13,6 +13,7 @@ dependencies[] = ox_podcasts
 dependencies[] = system
 dependencies[] = views
 features[context][] = context_all
+features[context][] = context_basic_page
 features[context][] = context_breadcrumb
 features[context][] = context_episode_node
 features[context][] = context_episode_page

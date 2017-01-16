@@ -56,8 +56,8 @@ regions[content]             		= Content
 regions[sidebar_second]      		= Right Sidebar
 regions[footer_top_left]     		= Footer Top Left
 regions[footer_top_right]    		= Footer Top Right
+regions[footer_bottom]    			= Footer Bottom
 regions[footer_hidden_one]   		= Footer Hidden One
-regions[footer_hidden_two]   		= Footer Hidden Two
 
 ; ========================================
 ; Scripts

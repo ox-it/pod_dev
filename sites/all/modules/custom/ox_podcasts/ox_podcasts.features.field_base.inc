@@ -79,6 +79,25 @@ function ox_podcasts_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_basic_description'.
+  $field_bases['field_basic_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_basic_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_cc_numeric_code'.
   $field_bases['field_cc_numeric_code'] = array(
     'active' => 1,
@@ -798,6 +817,27 @@ function ox_podcasts_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'metatags_quick',
+  );
+
+  // Exported field_base: 'field_title_display'.
+  $field_bases['field_title_display'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_title_display',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_unit'.

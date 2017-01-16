@@ -4,6 +4,7 @@
 }
 
 main {
+	padding-top: 4em;
  	padding-bottom: 15em;
  	@include media($mobile) {
  		padding-bottom: 7em;
@@ -66,6 +67,64 @@ main {
 	    background-color: rgba(0,0,0,.5);
 	    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 	}
+}
+
+ 
+
+
+
+ /*
+ * Node pages of content type "basic"  --  for general footer information styling
+ */
+
+.node-type-page {
+	main h1 {
+		display: none;
+		padding-top: -2em;
+	}
+	#content {
+		p {
+			margin: 0 0 2em 0;
+		}
+		font-size: 1.2em;
+	}
+
+
+
+	.header-middle-outer {
+		padding-top: 4.5em;
+		padding-bottom: 4em;
+		background-color: $colorLightGrey;
+
+		@include media($mobile) {
+			padding-top: 2em;  // to offset dependence on form elements bottom-padding
+			padding-bottom: 1em;  
+		}
+
+		.field-name-field-title-display  {
+			//color: $colorLightPrimary;
+			font-size: 4em;
+			color: $colorMidGrey;
+			border-bottom: 1px solid $colorBeigeGrey;
+
+			@include media($tablet) {
+				font-size: 3em;
+			}
+
+			@include media($mobile) {
+				font-size: 2em;
+			}
+		}
+
+		.field-name-field-basic-description {
+			p {
+				padding: 10px 0;
+			}
+			font-size: 1.2em;
+			padding-top: 2em;
+		}
+	}
+
 }
 
 

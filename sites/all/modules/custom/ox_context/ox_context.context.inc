@@ -44,10 +44,22 @@ function ox_context_context_default_contexts() {
           'region' => 'header-top-right',
           'weight' => '-42',
         ),
-        'system-powered-by' => array(
-          'module' => 'system',
-          'delta' => 'powered-by',
+        'block-13' => array(
+          'module' => 'block',
+          'delta' => '13',
           'region' => 'footer_top_left',
+          'weight' => '-9',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'footer_top_right',
+          'weight' => '-9',
+        ),
+        'block-15' => array(
+          'module' => 'block',
+          'delta' => '15',
+          'region' => 'footer_bottom',
           'weight' => '-10',
         ),
       ),
@@ -55,6 +67,43 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_all'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'context_basic_page';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'page' => 'page',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'fieldblock-1c8c300027eaaf9f1326ed4fb98137be' => array(
+          'module' => 'fieldblock',
+          'delta' => '1c8c300027eaaf9f1326ed4fb98137be',
+          'region' => 'header-middle',
+          'weight' => '-10',
+        ),
+        'fieldblock-8e6416f4c20d0d037bf13102bf562d6d' => array(
+          'module' => 'fieldblock',
+          'delta' => '8e6416f4c20d0d037bf13102bf562d6d',
+          'region' => 'header-middle',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_basic_page'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -563,7 +612,7 @@ function ox_context_context_default_contexts() {
   $export['context_search_banner'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_searchapi';
   $context->description = '';

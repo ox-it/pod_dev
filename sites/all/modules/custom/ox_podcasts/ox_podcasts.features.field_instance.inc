@@ -1655,7 +1655,93 @@ function ox_podcasts_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_basic_description'.
+  $field_instances['node-page-field_basic_description'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_basic_description',
+    'label' => 'Basic Description',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_title_display'.
+  $field_instances['node-page-field_title_display'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_title_display',
+    'label' => 'Title Display',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -1692,7 +1778,7 @@ function ox_podcasts_field_default_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textarea',
-      'weight' => 0,
+      'weight' => 4,
     ),
   );
 
@@ -1729,7 +1815,7 @@ function ox_podcasts_field_default_field_instances() {
       'module' => 'metatags_quick',
       'settings' => array(),
       'type' => 'metatags_quick_textfield',
-      'weight' => 0,
+      'weight' => 5,
     ),
   );
 
@@ -3349,6 +3435,7 @@ function ox_podcasts_field_default_field_instances() {
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
   t('Automatic Keywords');
+  t('Basic Description');
   t('Body');
   t('CC numeric code');
   t('Choose the iTunes U Category. This field will be populated automatically from OxITEMS and was updated in January 2013 to reflect the new iTunes U category codes.');
@@ -3408,6 +3495,7 @@ function ox_podcasts_field_default_field_instances() {
   t('The media files associated with this episode. Files are hosted remotely, usually on http://media.podcasts.ox.ac.uk');
   t('The name of the person who last updated the entry in OxITEMS.');
   t('Tick this box to make this a "Featured" person for the People Directory page. This feature is only turned on for special events e.g. International Women\'s Day or Women in Science Day.');
+  t('Title Display');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
   t('Units');

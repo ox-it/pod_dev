@@ -1,95 +1,98 @@
+// to hide Sidr block loading -- Sidr must load blocks for each to be active via Sidr JS link
+.footer-hidden-one {display: none;}
 
-.footer-hidden-one .block {display:none;}
-.footer-hidden-two .block {display:none;}
 
 .footer-top-outer {
-  height: 300px;
-  display: block;
-  background-color: $colorLinkHover;
+
+     background-color: $colorLinkHover;
+
+     @include media($mobile) {
+        font-size: 70%;
+     }
+
+     &:after {
+        @include clearfix;
+        display: block;
+        text-align: center;
+        padding: 5em;
+        content: "© 2011-2016 the University of Oxford";
+        font-size: 2.2em;
+        font-variant: small-caps;
+        letter-spacing: .3em;
+
+        @include media($mobile) {
+            font-size: 1.6em;
+            padding: 3em 2em 7em 2em;
+        }
+
+
+    }
+
+    #footer-top-left, #footer-top-right {
+        margin-top: 4em;
+        line-height: 4em;
+        background: darken($colorLinkHover, 3%);
+        padding: 2em;
+        font-variant: small-caps;
+        font-size: 1.5em;
+        border-radius: 3px;
+         @include media($mobile) {
+            line-height: 3em;
+        }
+
+
+        .footer_contribute_header, .footer_information_header {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+        }
+
+        .footer_contribute {
+            border-bottom: 1px solid lighten($colorLinkHover, 10%);
+            
+            a {
+                display: block;
+                color: darken($colorLightGrey, 5%);
+                &:hover {
+                    color: lighten($colorPrimary, 50%);;
+                }
+            }
+        }
+
+        .footer_information {
+            border-bottom: 1px solid lighten($colorLinkHover, 10%);
+            a {
+                display: block;
+                color: darken($colorLightGrey, 5%);
+                &:hover {
+                    color: lighten($colorPrimary, 50%);;
+                }
+            }
+
+        }
+    }
+
+    #footer-bottom {
+        .footer_cookies {
+            margin-top: 4em;
+            font-size: 1.2em;
+            font-variant: normal;
+            line-height: normal;
+            text-align: center;
+            color: darken($colorMidGrey, 20%);
+            a {
+                color: lighten($colorLinkHover, 10%);
+            }
+
+        }
+    }
 
 }
+
+
 
 
 
 
 /* below are styles that came with the STARTER from neato */
 
-#site-footer-top {
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-spacing: 1.5em !default;
-  $base-accent-color: #477DCA !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
 
-  ul:not(.contextual-links) {
-    padding: 0;
-
-    li {
-      list-style: none;
-      line-height: 1.5em;
-    }
-  }
-
-  a {
-    text-decoration: none;
-  }
-  //////////////////////////////////////////////////////////////////////////////////
-
-  section {
-    @include outer-container(100%);
-  }
-
-  $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.35);
-
-  background: $footer-background;
-  padding: ($base-spacing * 2) 0;
-  //width: 100%;
-
-  .footer-top {
-    margin-bottom: 1em;
-  }
-
-  .footer-logo {
-    margin-bottom: 2em;
-    text-align: center;
-
-    img {
-      height: 3em;
-    }
-  }
-
-  .footer-bottom {
-    p {
-      color: $footer-disclaimer-color;
-      font-size: 0.9em;
-      line-height: 1.5em;
-      margin: auto;
-    }
-  }
-
-  .copyright {
-    @include span-columns(4);
-    padding-left: 1em;
-  }
-
-  .utility-menu {
-    @include span-columns(8);
-
-    ul {
-      text-align: right;
-      font-weight: 600;
-
-      li {
-        display: inline;
-        padding-right: 1em;
-
-        a {
-          color: $footer-disclaimer-color;
-        }
-      }
-    }
-  }
-}

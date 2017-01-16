@@ -316,7 +316,8 @@
 				font-variant: small-caps;
 
 				@include media($mobile) {
-					margin: 1.5em auto 2.5em auto;
+					padding: 35px 28px;
+					font-size: 1.1em;
 				}
 
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
@@ -423,7 +424,8 @@
 				font-variant: small-caps;
 
 				@include media($mobile) {
-					margin: 1.5em auto 2.5em auto;
+					padding: 40px 10px;
+					font-size: 1em;
 				}
 
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
@@ -529,7 +531,8 @@
 				font-variant: small-caps;
 				
 				@include media($mobile) {
-					margin: 1.5em auto 2.5em auto;
+					padding: 35px 10px;
+					font-size: 1em;
 				}
 
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);

@@ -104,9 +104,22 @@ body {
 
 
  footer {
-    &.footer-top-left { @include span-columns(6); }
-    &.footer-top-right { @include span-columns(6); }
-    &.footer-bottom { @include span-columns(12); }
+    &.footer-top-left { 
+      @include span-columns(6); 
+      @include media($mobile) {
+        @include span-columns(4 of 4);
+      }
+    }
+    &.footer-top-right { 
+      @include span-columns(6); 
+      @include omega(2n); 
+       @include media($mobile) {
+        @include span-columns(4 of 4);
+      }
+    }
+    &.footer-bottom { 
+      @include span-columns(12);
+    }
   }
 
 
