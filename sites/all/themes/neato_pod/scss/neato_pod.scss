@@ -30,7 +30,10 @@
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 
 // Import Fonts
-//@import "../../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
+@include font-face("milonga", "../fonts/milonga/Milonga-Regular");
+@include font-face("riffic", "../fonts/riffic/RifficFree-Bold");
+@include font-face("maxwell", "../fonts/maxwell/MAXWELL REGULAR");
+@include font-face("peignot", "../fonts/peignot/Peignot");
 
 // Import layout
 @import "layout/layout";
