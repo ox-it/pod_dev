@@ -12,6 +12,7 @@ dependencies[] = fieldblock
 dependencies[] = ox_podcasts
 dependencies[] = system
 dependencies[] = views
+features[context][] = context_about_page
 features[context][] = context_all
 features[context][] = context_basic_page
 features[context][] = context_breadcrumb

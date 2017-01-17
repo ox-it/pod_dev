@@ -357,6 +357,82 @@ function ox_views_views_default_views() {
   $export['admin_series'] = $view;
 
   $view = new view();
+  $view->name = 'embed_codes';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'file_managed';
+  $view->human_name = 'Embed codes';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Embed codes';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: File: Content using Media Files */
+  $handler->display->display_options['relationships']['reverse_field_media_files_node']['id'] = 'reverse_field_media_files_node';
+  $handler->display->display_options['relationships']['reverse_field_media_files_node']['table'] = 'file_managed';
+  $handler->display->display_options['relationships']['reverse_field_media_files_node']['field'] = 'reverse_field_media_files_node';
+  $handler->display->display_options['relationships']['reverse_field_media_files_node']['required'] = TRUE;
+  /* Field: File: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['machine_name'] = 0;
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['id'] = 'ox_jwplayer_embed';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['field'] = 'ox_jwplayer_embed';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['label'] = '';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['text'] = '[type] Embed Code';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['alt'] = 'Click here to copy HTML to embed this file on your site.';
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['element_label_colon'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_media_files_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: File: Disable embedding (field_disable_embedding) */
+  $handler->display->display_options['filters']['field_disable_embedding_value']['id'] = 'field_disable_embedding_value';
+  $handler->display->display_options['filters']['field_disable_embedding_value']['table'] = 'field_data_field_disable_embedding';
+  $handler->display->display_options['filters']['field_disable_embedding_value']['field'] = 'field_disable_embedding_value';
+  $handler->display->display_options['filters']['field_disable_embedding_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_disable_embedding_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Embed Code Block */
+  $handler = $view->new_display('block', 'Embed Code Block', 'block');
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="http://help.it.ox.ac.uk/podcasts/how-to-podcast#embedding_podcasts">Embed HELP</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['block_description'] = 'Embed Code Block';
+  $export['embed_codes'] = $view;
+
+  $view = new view();
   $view->name = 'episode_featured_latest';
   $view->description = '';
   $view->tag = 'default';
@@ -2246,9 +2322,71 @@ function ox_views_views_default_views() {
     'series' => 'series',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Front Page Stats */
+  $handler = $view->new_display('block', 'Front Page Stats', 'block');
   $handler->display->display_options['block_description'] = 'Episode/Series Count Block';
+
+  /* Display: About Page Stats */
+  $handler = $view->new_display('block', 'About Page Stats', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Site Statistics';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="about_stats_header">Since Jan 2017 (approx.):</div>
+
+<div class="about_stats">
+<span>+4000 hours of audio material</span>
+<span>+2000 hours of video material</span>
+</div>
+
+<div class="about_stats">
+<span>+7000 academic speakers from around the world</span>
+</div>
+
+<div class="about_stats">
+<span>+128 academic departments & colleges</span>
+</div
+
+<div class="about_stats">
+<span>+2.4 million downloads on iTunes U</span>
+</div>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(DISTINCT Content: Series) */
+  $handler->display->display_options['fields']['field_series']['id'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['table'] = 'field_data_field_series';
+  $handler->display->display_options['fields']['field_series']['field'] = 'field_series';
+  $handler->display->display_options['fields']['field_series']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['fields']['field_series']['group_type'] = 'count_distinct';
+  $handler->display->display_options['fields']['field_series']['label'] = '';
+  $handler->display->display_options['fields']['field_series']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_series']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_series']['separator'] = ', ';
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'reverse_field_series_node';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Total number of episodes: [nid] <br>
+Total number or series: [field_series] ';
+  $handler->display->display_options['fields']['nothing']['element_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'oxford-count';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['block_description'] = 'About Page Stats';
   $export['episode_series_count'] = $view;
 
   $view = new view();
