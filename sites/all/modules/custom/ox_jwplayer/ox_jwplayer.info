@@ -1,0 +1,13 @@
+name = Oxford JWPlayer
+description = Provide JWPlayer embed codes integration for Podcasts.ox
+core = 7.x
+package = Podcasts.ox
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = file_entity
+dependencies[] = jw_player
+dependencies[] = views
+stylesheets[all][] = ox-jwplayer.css
+configure = admin/config/media/ox_jwplayer
+files[] = ox_jwplayer_embed_handler.inc
+mtime = 1461070371

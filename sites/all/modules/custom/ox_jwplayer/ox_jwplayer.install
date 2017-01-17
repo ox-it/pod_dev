@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Schema definitions and update hooks for the Podcasts.ox JWPlayer module
+ */
+
+function ox_jwplayer_schema() {
+  $schema['ox_jwplayer_embed_codes'] = array(
+    'description' => 'Table of JWPlayer embed codes.',
+    'fields' => array(
+      'hash' => array(
+        'description' => 'SHA1 hash code used in URLs',
+        'type' => 'char',
+        'length' => '20',
+        'not null' => TRUE,
+      ),
+      'url' => array(
+        'description' => 'URL of audio or video file',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'mediapub_nid' => array(
+        'description' => 'Mediapub node ID of associated episode',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'access' => array(
+        'description' => 'Number of accesses to this URL',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('hash'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Create table for hash-based embed codes
+ */
+function ox_jwplayer_update_7100() {
+  $schema['ox_jwplayer_embed_codes'] = array(
+    'description' => 'Table of JWPlayer embed codes.',
+    'fields' => array(
+      'hash' => array(
+        'description' => 'SHA1 hash code used in URLs',
+        'type' => 'char',
+        'length' => '20',
+        'not null' => TRUE,
+      ),
+      'url' => array(
+        'description' => 'URL of audio or video file',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'mediapub_nid' => array(
+        'description' => 'Mediapub node ID of associated episode',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+        'default' => NULL,
+      ),
+      'access' => array(
+        'description' => 'Number of accesses to this URL',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('hash'),
+  );
+  $name = 'ox_jwplayer_embed_codes';
+  db_create_table($name, $schema[$name]);
+}

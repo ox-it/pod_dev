@@ -1,0 +1,865 @@
+<?php
+/**
+ * @file
+ * Code for the ox_jwplayer module.
+ *
+ * This module adds embed codes to podcasts.ox.ac.uk.  It augments the contrib
+ * "jw_player" module and the (currently) custom "views_jwplayer" modules,
+ * altering their JWPlayer objects to provide embed codes.
+ *
+ * This module is highly specific to Podcasts.ox.  In particular, it makes the
+ * following assumptions:
+ *
+ * - files are associated with nodes (episodes) through a file-field named
+ *   "field_media_files"
+ *
+ * - files to be displayed in JWPlayer have file types with the machine name
+ *   "audio" or "video"
+ *
+ * - files for which embedding should be disabled have a non-zero value in a
+ *   field named "field_disable_embedding"
+ *
+ * - episodes have a field named "field_mediapub_nid" which tracks their unique
+ *   NID in Mediapub.
+ *
+ * The reasoning behind this last requirement is that Podcasts.ox is simply a
+ * front-end which mirrors content in Mediapub via feeds importers, so the
+ * Mediapub IDs are assumed to be more permanent and authoritative than the
+ * Podcasts.ox IDs.  If things go wrong, we can wipe all data from Podcasts.ox
+ * and re-import it from Mediapub.  Moreover, it is possible that the
+ * public-facing part of Podcasts.ox will eventually be merged into Mediapub, in
+ * which case using the Mediapub IDs for these permanent links will make the
+ * transition easier.
+ */
+
+include_once 'ox_jwplayer.features.inc';
+
+/**
+ * Default dimensions of IFrames for external embedding
+ */
+const OX_JWPLAYER_EMBED_WIDTH = 560;
+const OX_JWPLAYER_EMBED_VIDEO_HEIGHT = 335;
+const OX_JWPLAYER_EMBED_AUDIO_HEIGHT = 200;
+
+function _ox_jwplayer_embed_width() {
+  return variable_get('ox_jwplayer_embed_width', OX_JWPLAYER_EMBED_WIDTH);
+}
+
+function _ox_jwplayer_embed_video_height() {
+  return variable_get('ox_jwplayer_embed_video_height', OX_JWPLAYER_EMBED_VIDEO_HEIGHT);
+}
+
+function _ox_jwplayer_embed_audio_height() {
+  return variable_get('ox_jwplayer_embed_audio_height', OX_JWPLAYER_EMBED_AUDIO_HEIGHT);
+}
+
+/**
+ * Global variable to accumulate footer HTML
+ */
+$_OX_JWPLAYER_FOOTER = array();
+
+/**
+ * Implements hook_permission().
+ *
+ * Define a permission which allows users to configure default JWPlayer width
+ * and height through the admin interface.
+ */
+function ox_jwplayer_permission() {
+  return array(
+    'configure oxford jwplayer settings' =>  array(
+      'title' => t('Configure Oxford JWPlayer settings'),
+      'description' => t('Configure JWPlayer for display and embedding.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * Define three theme hooks, which can be overridden or altered by other
+ * modules/themes to customise the way players and embed links work:
+ *
+ * - 'ox_jwplayer_iframe': A minimal HTML document, used to wrap around a
+ *   JWPlayer which is to be embedded within an <iframe> tag on an external site.
+ *
+ * - 'ox_jwplayer_embed_code': Generate an embed code: an HTML snippet which can
+ *   be copied and pasted to embed a JWPlayer on 3rd-party sites.
+ *
+ * - 'ox_jwplayer_embed_link': Generate an embed link: a Javascript-enabled link
+ *   which displays a popup and allows website users to copy and paste an embed
+ *   code.
+ *
+ * Each of these theme hooks is implemented by the combination of a template
+ * in the theme/ directory, and a preprocess hook defined in this file.
+ *
+ * @see template_preprocess_ox_jwplayer_iframe()
+ * @see template_preprocess_ox_jwplayer_embed_code()
+ * @see template_preprocess_ox_jwplayer_embed_link()
+ * @see ox_jwplayer_views_handler()
+ */
+function ox_jwplayer_theme($existing, $type, $theme, $path) {
+  $theme_dir = $path . '/theme';
+  return array(
+    // Theme wrapper for the embed pages which are served as the content of
+    // IFrames on external sites.
+    'ox_jwplayer_iframe' => array(
+      'render element' => 'element',
+      'path' => $theme_dir,
+      'template' => 'ox-jwplayer-iframe',
+    ),
+
+    // Theme hook for embed codes: HTML snippets for copying and pasting onto
+    // external sites.  These are not displayed on Podcasts.ox, but are provided
+    // for users to copy and paste into their own sites.
+    'ox_jwplayer_embed_code' => array(
+      'variables' => array(
+        'file' => NULL,
+        'episode' => NULL,
+      ),
+      'path' => $theme_dir,
+      'template' => 'ox-jwplayer-embed-code',
+    ),
+
+    // Theme hook for embed-code popup links: Javascript-enabled links which pop
+    // up a modal dialog when clicked, allowing the user to copy and paste an
+    // embed code.
+    'ox_jwplayer_embed_link' => array(
+      'variables' => array(
+        'file' => NULL,
+        'episode' => NULL,
+        'link_text' => 'Embed code',
+        'message' => 'Copy and paste this HTML to embed the file on your site:',
+      ),
+      'path' => $theme_dir,
+      'template' => 'ox-jwplayer-embed-link',
+    ),
+
+    // Theme hook for the popup dialog which appears when an embed-code popup
+    // link is clicked.  The default implementation of this theme hook,
+    // theme_ox_jwplayer_dialog(), uses Drupal's form API to construct HTML.
+    // This can be overridden by copying and editing the dummy template named
+    // "ox-jwplayer-dialog.tpl.php" in the theme/ directory
+    'ox_jwplayer_dialog' => array(
+      'variables' => array(
+        'rel' => NULL,
+        'embed_code' => NULL,
+        'message' => NULL,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * Define URLs for:
+ *
+ * - An admin settings page for adjusting embedded player width and height.
+ *
+ * - embedded JWPlayers, in the form "embed/HASH", where HASH is an opaque token
+ *   generated by hashing (1) the URL of the file to display, (2) the Mediapub
+ *   node ID of the episode, and (3) a hash salt.
+ */
+function ox_jwplayer_menu() {
+  // JWPlayer embedding URLs.  The '%ox_jwplayer_embed_code' placeholder means that
+  // Drupal will call ox_jwplayer_embed_code_load() to look up the hash code in the
+  // database, and signal a 404 error if not found.
+  $items['embed/%ox_jwplayer_embed_code'] = array(
+    'title' => 'Embed Video',
+    'page callback' => 'ox_jwplayer_embed',
+    'page arguments' => array(1),
+    'access callback' => 'ox_jwplayer_embed_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
+
+  // Configuration page
+  $items['admin/config/media/ox_jwplayer'] = array(
+    'title' => 'Oxford JWPlayer settings',
+    'description' => 'Configure JWPlayer sizes.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ox_jwplayer_admin'),
+    'access arguments' => array('configure oxford jwplayer settings'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'ox_jwplayer.admin.inc',
+   );
+  return $items;
+}
+
+/**
+ * @defgroup ox_jwplayer_embed_urls
+ * @{
+ *
+ * Functions and other definitions relating to constructing, retrieving and
+ * displaying embed URLs.
+ */
+
+/**
+ * Build an embed URL for given file and episode IDs.
+ *
+ * @param object $file
+ *    Audio or video file entity
+ * @param object $episode
+ *    Related episode node, or NULL if unknown.
+ * @return string
+ *    An absolute URL which embeds a JWPlayer for the given file and
+ *    links to the related episode.
+ */
+function _ox_jwplayer_embed_url(stdClass $file, $episode) {
+  // Find the episode's Mediapub NID, if possible
+  if (isset($episode->field_mediapub_nid[LANGUAGE_NONE][0]['value'])) {
+    $mediapub_nid = ($episode->field_mediapub_nid[LANGUAGE_NONE][0]['value']);
+  } else {
+    $mediapub_nid = '';
+  }
+
+  // Create a hash code
+  $salt = drupal_get_hash_salt();
+  $hash = substr(sha1($salt . $file->uri . $mediapub_nid), 0, 20);
+
+  // Insert the embed code into the database
+  $record = array(
+    'url' => $file->uri,
+  );
+  if (is_numeric($mediapub_nid)) {
+    $record['mediapub_nid'] = $mediapub_nid;
+  }
+  db_merge('ox_jwplayer_embed_codes')
+    ->key(array('hash' => $hash))
+    ->fields($record)
+    ->execute();
+
+  // Return an absolute URL
+  $path = "embed/{$hash}";
+  return url($path, array('absolute' => TRUE));
+}
+
+/**
+ * Return TRUE if the current page is an embedded JWPlayer.
+ */
+function _ox_jwplayer_page_is_embed() {
+  return menu_get_object('ox_jwplayer_embed_code') ? TRUE : FALSE;
+}
+
+/**
+ * Load an embed code object using its hash code.
+ *
+ * @param string $hash
+ *   A hash code, as used in the URLs generated by _ox_jwplayer_embed_url().
+ * @return object
+ *   An object with the following properties:
+ *
+ *   - file: A fully-loaded file object for the audio or video file
+ *
+ *   - episode: A fully-loaded node object for the associated episode,
+ *       or FALSE if no associated episode could be found.
+ */
+function ox_jwplayer_embed_code_load($hash) {
+  $result = db_select('ox_jwplayer_embed_codes', 'o')
+          ->fields('o')
+          ->condition('hash', $hash)
+          ->execute()
+          ->fetchObject();
+
+  if (!$result) {
+    return FALSE;
+  }
+
+  // Increment the access counter
+  db_update('ox_jwplayer_embed_codes')
+    ->condition('hash', $hash)
+    ->expression('access', 'access + 1')
+    ->execute();
+
+  // Load the file based on URL
+  $file = _ox_jwplayer_file_load_by_url($result->url);
+  if (!$file) {
+    // @todo add watchdog here
+    return FALSE;
+  }
+
+  $result->file = $file;
+  $result->episode = NULL;
+
+  // Try to load the related episode based on its Mediapub NID.
+  if (is_numeric($result->mediapub_nid)) {
+    $episode = ox_jwplayer_mediapub_node_load($result->mediapub_nid);
+    // Add the episode to the record only if it is related to $file.
+    if ($episode && _ox_jwplayer_check_related($file, $episode)) {
+      $result->episode = $episode;
+    }
+  }
+
+  return $result;
+}
+
+/**
+ * Load a file object by URL.
+ *
+ * @param string $url
+ *     The URL.
+ * @param object
+ *     A file object, or NULL if none was found.
+ */
+function _ox_jwplayer_file_load_by_url($url) {
+  $result = file_load_multiple(NULL, array('uri' => $url));
+  return empty($result) ? NULL : reset($result);
+}
+
+/**
+ * Load an episode node by its Mediapub NID.
+ *
+ * @param int $nid
+ *     The Mediapub node ID.
+ * @return object
+ *     A node object, or NULL if no corresponding node was found.
+ */
+function ox_jwplayer_mediapub_node_load($nid) {
+  $q = new EntityFieldQuery();
+  $results = $q->entityCondition('entity_type', 'node')
+           ->fieldCondition('field_mediapub_nid', 'value', $nid)
+           ->execute();
+
+  if (empty($results['node'])) {
+    return NULL;
+  }
+
+  // There should be only one Podcasts.ox node for a given Mediapub NID.  Warn
+  // if more than one is returned.
+  if (count($results['node']) > 1) {
+    watchdog('ox_jwplayer', 'More than one node found with Mediapub ID @nid!',
+      array('@nid' => $nid),
+      WATCHDOG_ALERT
+    );
+  }
+
+  return node_load(key($results['node']));
+}
+
+/**
+ * Access callback for "embed/HASH" URLs.
+ *
+ * @param object $embed
+ *   An embed-code object, as returned by ox_jwplayer_embed_code_load().
+ * @return boolean
+ *   TRUE if the file is accessible and does not have embedding disabled,
+ *   otherwise FALSE.
+ */
+function ox_jwplayer_embed_access(stdClass $embed) {
+  return file_entity_access('view', $embed->file)
+    && _ox_jwplayer_embedding_enabled($embed->file);
+}
+
+/**
+ * Page callback for "embed/HASH" URLs.
+ *
+ * @param object $embed
+ *     An embed-code object, as returned by ox_jwplayer_embed_code_load().
+ */
+function ox_jwplayer_embed(stdClass $embed) {
+  // Build an embedded JWPlayer as a renderable array
+  $preset = ($embed->file->type == 'audio')
+          ? 'views_jwplayer_audio'
+          : 'views_jwplayer_video'; // FIXME: make configurable?
+
+  $render = array(
+    '#theme' => 'jw_player',
+    '#theme_wrappers' => array('ox_jwplayer_iframe'),
+    '#file' => (array) $embed->file,
+    '#preset' => $preset,
+  );
+
+  // We need to output a page without having Drupal add all the surrounding
+  // theme header and footer stuff.  The simplest way of doing this seems to be
+  // to output HTML directly to the browser and quit :-/
+  print drupal_render($render);
+  exit(0);
+}
+
+/**
+ * Check that a file and episode are related.
+ *
+ * @param object $file
+ *     An audio or video file object
+ * @param object $episode
+ *     An episode node
+ * @return boolean
+ *     TRUE if $file is related to $episode, otherwise FALSE.
+ */
+function _ox_jwplayer_check_related($file, $episode) {
+  if (empty($episode->field_media_files['und'])) {
+    return FALSE;
+  }
+  foreach ($episode->field_media_files['und'] as $related_file) {
+    if ($related_file['fid'] == $file->fid) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Check whether embedding is enabled for a given file.
+ *
+ * Embedding is enabled for a file if (1) it is of 'audio' or 'video' type, and
+ * (2) it does not have a non-zero value in the 'field_disable_embedding' field.
+ *
+ * @param object $file
+ *     A file object
+ * @return boolean
+ *     TRUE if $file can be embedded, otherwise FALSE.
+ */
+function _ox_jwplayer_embedding_enabled($file) {
+  if (($file->type != 'audio') && ($file->type != 'video')) {
+    return FALSE;               // Only audio and video files can be embedded
+  }
+
+  if (isset($file->field_disable_embedding[LANGUAGE_NONE][0]['value'])
+    && $file->field_disable_embedding[LANGUAGE_NONE][0]['value']) {
+    return FALSE;               // Embedding disabled
+  }
+
+  return TRUE;                  // All OK.
+}
+
+/**
+ * @} End of "defgroup ox_jwplayer_embed_urls"
+ */
+
+/**
+ * @defgroup ox_jwplayer_alterations
+ *
+ * Theme (pre)process hooks for hooks created by other modules.  These are used
+ * to augment JWPlayers created by the "jw_player" or "views_jwplayer" modules
+ * with embed-code functionality.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for jw_player().
+ *
+ * Add embed code information to JWPlayer objects.
+ */
+function ox_jwplayer_preprocess_jw_player(&$variables) {
+  $file = file_load($variables['file']['fid']);
+  $episode = _ox_jwplayer_guess_episode($file);
+  $embedded = _ox_jwplayer_page_is_embed();
+
+  $config = _ox_jwplayer_build_config($file, $episode, $embedded);
+  $variables['config'] = array_merge($variables['config'], $config);
+}
+
+/**
+ * Implements hook_process_HOOK() for jw_player().
+ *
+ * Fix a JSON-encoding bug in jw_player_process_jw_player().
+ */
+function ox_jwplayer_process_jw_player(&$variables) {
+  // The jw_player module erroneously passes the result of json_encode() through
+  // stripslashes(), therefore we must replace its broken value with a
+  // non-broken one.
+  $variables['jw_player_inline_js_code'] = json_encode($variables['config']);
+}
+
+/**
+ * @} End of "defgroup ox_jwplayer_alterations"
+ */
+
+/**
+ * @defgroup ox_jwplayer_theme
+ * @{
+ *
+ * Theme implementations and (pre)process functions for this module's own theme
+ * hooks.  These process variables or create HTML for embed pages, embed codes,
+ * and embed-code popup links.
+ */
+
+/**
+ * Processes variables for ox-jwplayer-iframe.tpl.php.
+ *
+ * Because this HTML is output directly to the browser without Drupal's normal
+ * header and footer, we can't use drupal_add_js to add the jwplayer.js library,
+ * and must locate it manually.
+ */
+function template_preprocess_ox_jwplayer_iframe(&$variables) {
+  $jwplayer_js = _ox_jwplayer_find_js();
+  $variables['script_url'] = url($jwplayer_js, array('absolute' => TRUE));
+
+  // Add JWPlayer license key if available.  The following snippet is adapted
+  // from jw_player_init in the main jw_player module:
+  if ($key = variable_get('jw_player_key', NULL)) {
+    $variables['jwplayer_key_js'] = sprintf('jwplayer.key=%s;', json_encode($key));
+  } else {
+    $variables['jwplayer_key_js'] = NULL;
+  }
+}
+
+/**
+ * Processes variables for ox-jwplayer-embed-code.tpl.php.
+ *
+ * This theme hook is used to generate embed codes: snippets of HTML (most
+ * likely an IFrame) which allow embedding on a 3rd-party site.
+ *
+ * The $variables array contains 'file' and 'episode' elements.
+ *
+ * This function adds a 'url' variable containing an embed URL for the given
+ * file and episode, escaped for HTML interpolation.
+ */
+function template_preprocess_ox_jwplayer_embed_code(&$variables) {
+  // Attempt to find a related episode if none was specified
+  if (!$variables['episode']) {
+    $variables['episode'] = _ox_jwplayer_guess_episode($variables['file']);
+  }
+
+  // Determine the dimensions of the <iframe> tag based on file type
+  $variables['width'] = check_plain(_ox_jwplayer_embed_width());
+  if (isset($variables['file']->type) && $variables['file']->type == 'audio') {
+    $variables['height'] = check_plain(_ox_jwplayer_embed_audio_height());
+  } else {
+    $variables['height'] = check_plain(_ox_jwplayer_embed_video_height());
+  }
+
+  // Construct the url of the embed page.
+  $variables['url'] = check_plain(
+    _ox_jwplayer_embed_url($variables['file'], $variables['episode'])
+  );
+}
+
+/**
+ * Processes variables for ox-jwplayer-embed-link.tpl.php.
+ *
+ * Embed links are short Javascript-enabled links which pop up a dialog allowing
+ * the user to copy and paste an embed code (an HTML snippet).
+ *
+ * The $variables array contains 'file' and 'episode' elements, as well as two
+ * pieces of text for display: 'link_text' and 'message'.
+ *
+ * This function adds a 'url' variable, safely escaped for HTML, and containing
+ * a "javascript:" URL to pop up a modal dialog displaying the popup text and
+ * the embed code for copying.
+ */
+function template_preprocess_ox_jwplayer_embed_link(&$variables) {
+  // Attempt to find a related episode if none was specified
+  if (!$variables['episode']) {
+    $variables['episode'] = _ox_jwplayer_guess_episode($variables['file']);
+  }
+
+  $file = $variables['file'];
+  $episode = $variables['episode'];
+
+  // Generate a unique HTML ID for this element.
+  $id = drupal_html_id("ox-jwplayer-link-{$file->fid}");
+
+  // Construct the embed code and URL
+  $embed_code = theme(
+    'ox_jwplayer_embed_code', array(
+      'file' => $file,
+      'episode' => $episode,
+    )
+  );
+  $embed_url = _ox_jwplayer_embed_url($file, $episode);
+
+  // Add the dialog element
+  _ox_jwplayer_add_popup_dialog($id, $variables['message'], $variables['embed_code']);
+
+  $variables['html_id'] = $id;
+  $variables['url'] = $embed_url;
+}
+
+/**
+ * Prepares variables for the "copy embed code" popup dialog.
+ *
+ * This preprocess function is provided as a convenience in case the builtin
+ * theme_ox_jwplayer_dialog() is overridden using a .tpl.php file in the theme.
+ * In this case a unique HTML ID is needed for the textarea form element.  This
+ * variable is not used in the default implementation (which gets a unique ID by
+ * using Drupal's Form API).
+ */
+function template_preprocess_ox_jwplayer_dialog(&$variables) {
+  $variables['textarea_id'] = drupal_html_id('copy-embed-code');
+}
+
+/**
+ * Return HTML for the "copy embed code" popup dialog.
+ *
+ * This HTML will be placed in the footer area of the page and hidden from view.
+ * It is displayed using the jQuery dialog plugin when a "copy embed code" link
+ * is clicked.
+ *
+ * This theme function is unusual in that it calls Drupal's form API to produce
+ * HTML.  This is convenient, although we do not actually need many features of
+ * the form API itself (e.g., this form should never be submitted).  If desired,
+ * the HTML for the dialog can be overridden by copying the file
+ * "ox-jwplayer-dialog.tpl.php" from this module into a theme's template
+ * directory.  This allows more custom control by generating the required form
+ * elements directly.
+ *
+ * @param array $variables
+ *   An associative array containining:
+ *   - rel: the HTML ID of the associated link
+ *
+ *   - message: A message to be displayed at the top of the form.  It should be
+ *     safely HTML-escaped before passing to the theme layer.
+ *
+ *   - embed_code: The embed code for the user to copy.  This should be a string
+ *     of HTML; it will be double-escaped for embedding within the HTML output
+ *     if necessary.
+ *
+ * @ingroup themeable
+ */
+function theme_ox_jwplayer_dialog($variables) {
+  $form = drupal_get_form(
+    'ox_jwplayer_dialog_form',
+    $variables['rel'],
+    $variables['message'],
+    $variables['embed_code']
+  );
+
+  return drupal_render($form);
+}
+
+/**
+ * Form constructor for the "copy embed code" popup dialog.
+ */
+function ox_jwplayer_dialog_form($form, &$form_state, $rel, $message, $embed_code) {
+  $form = array();
+
+  $form['#prefix'] = sprintf('<div class="ox-jwplayer-dialog-form" rel="%s">', $rel);
+  $form['#suffix'] = '</div>';
+
+  $form['message'] = array(
+    '#markup' => $message,
+  );
+
+  $form['embed_code'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Embed code'),
+    '#default_value' => $embed_code,
+    '#size' => 10,
+  );
+
+  $form['embed_code_saved'] = array(
+    '#type' => 'hidden',
+    '#default_value' => $embed_code,
+  );
+
+  return $form;
+}
+
+/**
+ * @} End of "defgroup ox_jwplayer_theme"
+ */
+
+/**
+ * @defgroup ox_jwplayer_utils
+ * @{
+ *
+ * Module-internal functions for querying the database, constructing JWPlayer
+ * configurations, etc.
+ */
+
+/**
+ * Build a JWPlayer configuration array for a given file and episode.
+ *
+ * @param object $file
+ *     Audio or video file entity.
+ * @param object $episode
+ *     A related episode node, or NULL if unknown.
+ * @param boolean $embedded
+ *     TRUE if this JWPlayer is to be embedded on an outside site.
+ */
+function _ox_jwplayer_build_config($file, $episode, $embedded) {
+  // Build an array of JWPlayer configuration options, which will be merged with
+  // options from the jw_player module preset, JSON-encoded, and passed as an
+  // argument to jwplayer.setup().
+  $config = array (
+    'image' => '',
+    'aspectratio' => '16:9',
+  );
+
+  // Display logo and title only on video players
+  if ($file->type == 'video') {
+    $config['title'] = $episode ? $episode->title : '';
+    $config['logo'] = array (
+      'file' => url('sites/all/themes/betacast/logo.png', array('absolute' => TRUE)), // FIXME
+      'hide' => TRUE,
+    );
+  }
+
+  // Override width for embedded players, which should be displayed at
+  // full width in order to resize with the enclosing iframe.
+  if ($embedded) {
+    $config['width'] = '100%';
+  }
+
+  // Add an embed code to video players, if embedding is enabled for the file
+  if ($file->type == 'video' && _ox_jwplayer_embedding_enabled($file)) {
+    $config['sharing']['code'] = theme(
+      'ox_jwplayer_embed_code',
+      array('file' => $file, 'episode' => $episode)
+    );
+  }
+
+  // If the related episode is known, use its full URL as the sharing link.
+  // Otherwise, fall back to sharing a link to the plain embed page.
+  if ($episode) {
+    $link = url('node/' . $episode->nid, array('absolute' => TRUE));
+    if ($file->type == 'video') {
+      $config['sharing']['link'] = $link;
+    }
+    // When the related episode is known and the player is embedded in an
+    // IFrame, link the logo and right-click menu to the original page.
+    if ($embedded) {
+      $config['logo']['link'] = $link;
+      $config['abouttext'] = 'Watch on Podcasts.ox';
+      $config['aboutlink'] = $link;
+    }
+  } else {
+    // Related episode is unknown: fall back to linking to the embed page.
+    // Provide generic links to the homepage on the logo and about text.
+    $link = url('', array('absolute' => TRUE));
+    if ($file->type == 'video') {
+      $config['sharing']['link'] = _ox_jwplayer_embed_url($file, $episode);
+    }
+    $config['logo']['link'] = $link;
+    $config['abouttext'] = 'Go to Podcasts.ox';
+    $config['aboutlink'] = $link;
+  }
+
+  return $config;
+}
+
+/**
+ * Attempt to return an episode node associated with the given file, based on
+ * the current page context.
+ *
+ * If the current page is an episode node page, the node ID is taken from the
+ * URL.  If the current page is an embed-code page, the node ID is taken from
+ * the saved embedding data.  Otherwise, the database is queried for a related
+ * episode.
+ *
+ * @param object $file
+ *     A file object
+ * @return object
+ *     An episode object, or NULL.
+ */
+function _ox_jwplayer_guess_episode($file) {
+  if ($node = menu_get_object('node') && $node->type == 'episode') {
+    // On an episode page
+    return $node;
+  }
+  elseif ($embed = menu_get_object('ox_jwplayer_embed_code')) {
+    // On an embed-code page
+    if (is_object($embed->episode)) {
+      return $embed->episode;
+    }
+  }
+  else {
+    // Look for related episodes in database.
+    $nid = _ox_jwplayer_lookup_nid($file);
+    if ($nid) {
+      return node_load($nid);
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Query the database for the NID of an episode associated with a given file.
+ *
+ * Because a given file may be attached to more than one episode, this is not
+ * deterministic.  However, it enables us to make a "best guess" effort in cases
+ * where information on the original episode is missing for some reason.
+ *
+ * @param object $file
+ *    A file object.
+ * @return int
+ *    The NID of the related episode, or NULL if none was found.
+ */
+function _ox_jwplayer_lookup_nid($file) {
+  $q = new EntityFieldQuery();
+  $results = $q->entityCondition('entity_type', 'node')
+               ->entityCondition('bundle', 'episode')
+               ->fieldCondition('field_media_files', 'fid', $file->fid)
+               ->execute();
+  if (empty($results['node'])) {
+    return NULL;
+  } else {
+    return key($results['node']);
+  }
+}
+
+/**
+ * Return the path to the jwplayer.js file.
+ */
+function _ox_jwplayer_find_js() {
+  $jwplayer_path = libraries_get_path('jwplayer');
+  if (!$jwplayer_path) {
+    watchdog('ox_jwplayer', 'JWPlayer library not found');
+    return NULL;
+  }
+
+  return $jwplayer_path . '/jwplayer.js';
+}
+
+/**
+ * @} End of "defgroup ox_jwplayer_utils"
+ */
+
+/**
+ * @defgroup ox_jwplayer_embed_link
+ * @{
+ *
+ * Functions and other definitions related to creating embed links:
+ * javascript-enabled links which display a popup and allow the website user to
+ * copy and paste the HTMl embed code.
+ *
+ * Embed links can be created either by a field formatter, or by a Views
+ * handler.
+ *
+ * @see ox_jwplayer_embed_handler
+ * @see ox_jwplayer_field_formatter_view
+ */
+
+/**
+ * Add HTML for an embed-code popup dialog to the page footer.
+ *
+ * @param $id
+ *     The HTML ID of the associated embed-code popup link.
+ *     This is stored as a rel="..." property on the popup dialog, so that it
+ *     can be selected by JavaScript when the corresponding link is clicked.
+ * @param $message
+ *     Message to display at the top of the popup dialog.
+ * @param $embed_code
+ *     Embed code HTML for the user to copy.
+ */
+function _ox_jwplayer_add_popup_dialog($id, $message, $embed_code) {
+  global $_OX_JWPLAYER_FOOTER;
+  $dialog = theme('ox_jwplayer_dialog', array(
+      'rel' => $id,
+      'message' => $message,
+      'embed_code' => $embed_code,
+    )
+  );
+  $_OX_JWPLAYER_FOOTER[] = $dialog;
+}
+
+/**
+ * Implements hook_page_build().
+ *
+ * Output all the HTML chunks accumulated by _ox_jwplayer_add_html() at the
+ * footer of the page.
+ */
+function ox_jwplayer_page_build(&$page) {
+  global $_OX_JWPLAYER_FOOTER;
+  if (is_array($_OX_JWPLAYER_FOOTER)) {
+    foreach ($_OX_JWPLAYER_FOOTER as $delta => $html) {
+      $page['page_bottom']['ox_jwplayer-' . $delta] = array(
+        '#markup' => $html,
+      );
+    }
+  }
+}
+
+/**
+ * @} End of "defgroup ox_jwplayer_embed_links"
+ */
