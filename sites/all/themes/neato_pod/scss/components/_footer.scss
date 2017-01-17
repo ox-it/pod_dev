@@ -7,8 +7,9 @@
      background-color: $colorLinkHover;
 
      @include media($mobile) {
-        font-size: 70%;
+        font-size: 80%;
      }
+
 
      &:after {
         @include clearfix;
@@ -33,7 +34,7 @@
         padding: 2em 0;
         background: darken($colorLinkHover, 3%);
         font-variant: small-caps;
-        font-size: 1.5em;
+        font-size: 1.4em;
         border-radius: 3px;
         padding: 2em;
 

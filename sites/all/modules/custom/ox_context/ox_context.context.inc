@@ -72,17 +72,17 @@ function ox_context_context_default_contexts() {
           'region' => 'header-top-right',
           'weight' => '-42',
         ),
-        'block-13' => array(
-          'module' => 'block',
-          'delta' => '13',
-          'region' => 'footer_top_left',
-          'weight' => '-9',
-        ),
         'block-14' => array(
           'module' => 'block',
           'delta' => '14',
+          'region' => 'footer_top_left',
+          'weight' => '-10',
+        ),
+        'block-13' => array(
+          'module' => 'block',
+          'delta' => '13',
           'region' => 'footer_top_right',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'block-15' => array(
           'module' => 'block',

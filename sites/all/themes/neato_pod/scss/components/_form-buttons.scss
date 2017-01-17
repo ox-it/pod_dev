@@ -93,8 +93,7 @@
 		 		display: none;
 			}
 			select {
-				-webkit-appearance: none;
-				-webkit-border-radius: 0px;
+				@include appearance(none);
 				font-size: 1.2em;
 				background: none;
 				box-shadow: none;
@@ -194,7 +193,7 @@
 	#edit-search-api-views-fulltext-wrapper {
     	width: 60%;
 	    @include media($tablet) {
-	        width: 48%;
+	        width: 42%;
 	    }
 
       	@include media($mobile) {
@@ -309,6 +308,9 @@
 // Width of the dropdown elements -- must be this specific
 div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-single.form-select.chosen-processed {
   	width: 300px !important;
+  	@include media($mobile) {
+  		width: 250px !important;
+  	}
 }
 
 .context-series-gallery {
@@ -509,7 +511,8 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
  	margin: 0;
  	padding: 0;
 }
-	.context-series-gallery, .context-people-gallery, .context-unit-gallery, .front, .context-results-page {
+
+.context-series-gallery, .context-people-gallery, .context-unit-gallery, .front, .context-results-page {
 	.form-item {
 		margin-right: 10px;
 		@include media($mobile) {

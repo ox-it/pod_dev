@@ -5,9 +5,10 @@
     background-color: $colorVeryLightBlue;
     border-radius: 6px;
 
-    input.form-text {
+    input[type=text], input[type=password] {
       height: 2em;
-      font-size: 1.8em;
+      font-size: 2em;
+
     }
   }
 
