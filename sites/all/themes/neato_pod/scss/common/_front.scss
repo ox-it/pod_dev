@@ -306,18 +306,18 @@
 				text-align: center;
 				margin: 1em auto 4em auto;
 				//border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.3em;
+				font-size: 1.1em;
 				background-color: lighten($colorIconBlueGrey, 1%);
 				border-radius: 5em;
 				height: 130px;
 				width: 130px;
 				position: relative;
-				padding: 28px;
+				padding: 30px;
 				font-variant: small-caps;
 
 				@include media($mobile) {
 					padding: 35px 28px;
-					font-size: 1.1em;
+					font-size: 1em;
 				}
 
 				@include transition (background .5s ease-in-out, color .5s ease-in-out, transform .5s ease-in-out);
@@ -414,13 +414,13 @@
 				text-align: center;
 				margin: 2em auto 4em auto;
 				//border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.3em;
+				font-size: 1.2em;
 				background-color: $colorGraduateLightGreen;
 				border-radius: 5em;
 				height: 130px;
 				width: 130px;
 				position: relative;
-				padding: 35px 10px;
+				padding: 40px 10px;
 				font-variant: small-caps;
 
 				@include media($mobile) {
@@ -521,13 +521,13 @@
 				text-align: center;
 				margin: 2em auto 4em auto;
 				//border-bottom: 1px solid darken($colorLightGrey, 10%);
-				font-size: 1.2em;
+				font-size: 1.1em;
 				background-color: $colorGraduateYellow;
 				border-radius: 5em;
 				height: 130px;
 				width: 130px;
 				position: relative;
-				padding: 30px;
+				padding: 30px 15px;
 				font-variant: small-caps;
 				
 				@include media($mobile) {
