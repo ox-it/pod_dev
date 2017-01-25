@@ -1,0 +1,240 @@
+/*
+ * Node pages of content type "basic"  --  for general footer information styling
+ */
+
+
+.node-type-page {
+
+
+  // Reset the display defaults on _layout.scss and make responsive
+  &.one-sidebar.sidebar-first {
+    main {
+      aside {
+        &#sidebar-first {
+          @include span-columns(4);
+          @include media($mobile) {
+          	@include span-columns(4);
+          }
+        }
+      }
+      section#content {
+        @include span-columns(8);
+        @include media($mobile) {
+          	@include span-columns(4);
+          }
+      }
+    }
+  }
+
+
+  	.header-middle-outer {
+		padding-top: 4.5em;
+		padding-bottom: 4em;
+		background-color: $colorLightGrey;
+
+		@include media($mobile) {
+			padding-top: 2em;  // to offset dependence on form elements bottom-padding
+			padding-bottom: 1em;  
+		}
+
+		.field-name-field-title-display  {
+			font-size: 3em;
+			color: $colorMidGrey;
+			border-bottom: 1px solid $colorBeigeGrey;
+
+			@include media($tablet) {
+				font-size: 2.8em;
+			}
+
+			@include media($mobile) {
+				font-size: 1.7em;
+			}
+		}
+
+		.field-name-field-basic-description {
+			p {
+				padding: 10px 0;
+			}
+			font-size: 1.2em;
+			padding-top: 1em;
+			color: darken($colorLightGrey, 50%);
+			@include media($mobile) {
+				font-size: 1em;
+			}
+		}
+	}
+
+
+
+	main {
+
+		padding-top: 4em;
+
+		h1 {
+			display: none;
+			padding-top: -2em;
+		}
+
+		#content {
+
+			font-size: 1.1em;
+			@include media($mobile) {
+				font-size: .9em;
+			}
+
+			p {
+				margin: 0 0 2em 0;
+				clear: both;		
+			}
+
+			h2 {
+				font-variant: small-caps;
+				font-size: 1.5em;
+				//border-top: 1px solid darken($colorLightGrey, 1%);
+				//border-top: 1px solid $colorLightGrey;
+				color: darken($colorLightGrey, 30%);
+				&:not(:first-child) {
+					margin-top: 5em;
+				}
+				@include media($mobile) {
+					background-color: darken($colorVLightGrey, 4%);
+					padding: 5px;
+					font-size: 1.2em;
+				}
+			}
+
+			span {
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+
+			a.menu {
+				background-color: darken($colorLink, 5%);
+				font-variant: small-caps;
+				color: $colorVLightGrey;
+				padding: 0 5px 2px 5px;
+			}
+
+			.about-itunes-subscribe, .about-rss-subscribe {
+				background-color: $action-color;
+				color: $colorLightGrey;
+				font-size: .9em;
+				width: 145px;
+				float: left;
+				display: block;
+				padding: 5px;
+				vertical-align: middle;
+				//margin:.5em 1em .5em 0;
+				margin: 0 1em 2em 0;
+			}
+
+
+			.about-itunes-subscribe {
+				background-image: url("../images/itunes_u.png");
+				background-repeat: no-repeat;
+				background-size: 21%;
+				padding-left: 45px;
+
+
+			}
+			.about-rss-subscribe {
+				background-image: url("../images/rss_icon.png");
+				background-repeat: no-repeat;
+				background-size: 22%;
+				background-position: -5px -1px;
+				padding-left: 40px;
+
+			}
+
+			.about-cc-copyright {
+
+				background-color: $colorVLightGrey;
+				padding: 10px 20px 10px 10px;
+				&:before {
+					content: "cc";
+					color: transparent; // Required if only to show image below
+					background-image: url("../images/cc_logo_small.png");
+					background-size: 18px;
+					position: relative;
+					top: 4px;
+					//float: right;
+					left: 5px;
+					padding: 5px 10px;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+
+
+		aside {
+			#block-views-episode_series_count-block_1 {	
+				font-size: 1.3em;
+				font-variant: small-caps;
+				background-color: $colorVLightGrey;
+				@include media($tablet) {
+					font-size: 1em;
+				}
+				@include media($mobile) {
+					font-size: 1em;
+					margin-bottom: 5em;
+					background-color: transparent;
+				}
+
+				h2 {
+					margin: 0;
+					padding: 1em;
+					background-color: darken($colorVLightGrey, 4%);
+					font-size: 1.2em;
+					color: darken($colorLightGrey, 30%);
+					@include media($tablet) {
+						font-size: 1.1em;
+					}
+					@include media($mobile) {
+						font-size: 1.1em;
+						background-color: transparent;
+						margin-bottom: 1em;
+						background-color: darken($colorVLightGrey, 4%);
+						padding: 5px;
+
+
+					}
+				}
+
+
+				.view-episode-series-count {
+					padding: 1em 2em 1em 1em;
+
+					@include media($mobile) {
+							padding: 0;
+						}
+
+					.view-footer {
+						.about_stats_header {
+							color: $colorMidGrey;
+							font-size: 1em;
+							border-top: 1px solid $colorLightGrey;
+							border-bottom: 1px solid $colorLightGrey;
+							margin: 1.5em 0;
+							padding: 1em 0;
+							@include media($mobile) {
+								padding: 0;
+								font-size: 1em;
+								border: none;
+							}
+
+						}
+						.about_stats {
+							padding-bottom: 1.5em;
+						}
+					}
+				}	
+			}		
+		}
+	}
+}
+
+
+
+
+
+
