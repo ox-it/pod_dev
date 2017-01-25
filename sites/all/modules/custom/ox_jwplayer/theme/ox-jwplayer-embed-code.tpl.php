@@ -15,4 +15,4 @@
  *    The default height of the IFrame
  */
 ?>
-<iframe width="<?php print $width; ?>" height="<?php print $height; ?>" src="<?php print $url; ?>" frameborder="0" allowfullscreen></iframe>
+<div class="myWrapper"><iframe width="<?php print $width; ?>" height="<?php print $height; ?>" src="<?php print $url; ?>" frameborder="0" allowfullscreen></iframe></div>
