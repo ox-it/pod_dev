@@ -238,7 +238,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->api_version = 1;
   $file_display->name = 'audio__teaser__file_field_file_table';
   $file_display->weight = 0;
-  $file_display->status = TRUE;
+  $file_display->status = FALSE;
   $file_display->settings = '';
   $export['audio__teaser__file_field_file_table'] = $file_display;
 
@@ -246,7 +246,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->api_version = 1;
   $file_display->name = 'audio__teaser__file_field_file_url_plain';
   $file_display->weight = 0;
-  $file_display->status = TRUE;
+  $file_display->status = FALSE;
   $file_display->settings = '';
   $export['audio__teaser__file_field_file_url_plain'] = $file_display;
 
@@ -256,7 +256,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'views_av_responsive',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => 'file:audio|field_audio_image',
     'preview_image_style' => 'large',
     'check_support' => 0,
@@ -537,7 +537,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => '',
     'preview_image_style' => '',
     'check_support' => 0,
@@ -550,7 +550,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => '',
     'preview_image_style' => '',
     'playlist_size' => '200',
@@ -565,7 +565,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'jwplayer_episode_node',
+    'jwplayer_preset' => 'views_jwplayer_audio',
     'preview_image_field' => '',
     'preview_image_style' => '',
     'check_support' => 0,
@@ -851,7 +851,7 @@ function ox_podcasts_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'jwplayer_preset' => 'views_av_responsive',
+    'jwplayer_preset' => 'views_jwplayer_video',
     'preview_image_field' => 'file:video|field_video_image',
     'preview_image_style' => 'large',
     'check_support' => 0,

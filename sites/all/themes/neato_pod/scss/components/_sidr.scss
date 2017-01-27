@@ -63,11 +63,11 @@
 
 
 /*
-******************************** Sidr Keywords (Front page) pop-out menu  *******************************
+******************************** Sidr Keywords (Front & Episode page) pop-out menu  *******************************
  */
 
 
-#sidr-menu-keywords-button, #menu-episode-sidr {
+#sidr-menu-keywords-button-front, #sidr-menu-keywords-button-episode, #menu-episode-sidr {
 	background-color: #F8F8F8; 
 	width:420px; 
 	left:-440px; 
@@ -104,6 +104,12 @@
 
 }
 
+#sidr-menu-keywords-button-episode {
+	h2 {
+		display: none;
+	}
+}
+
 
 
 /*
@@ -113,12 +119,8 @@
 
 
 #sidr-menu-episode-button {
-
-	@include media($mobile) {
-		//font-size: 80%;
-	}
-
-
+	position: none;
+	font-size: $sidebar-font-size;
 	background-color: #F8F8F8; 
 	width:420px; 
 	left:-440px; 
@@ -126,28 +128,26 @@
 	padding: 1em 4em 7em 1em;
 	overflow-x: hidden;
 
-	ul li {
-		span {display: none; }
-	}
-
 	@include media($mobile) {
 		width: 280px;
 		left: -300px;
 	}
 
+	ul li {
+		span {display: none; }
+	}
+
 	input {
 		margin-bottom: $base-spacing / 2;
-
 	}
 	
 	.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
 
-	position: none;
-	font-size: $sidebar-font-size;
-
-
-	.sidr-class-block {
-		margin: 0 0 $base-spacing 0;
+	
+	section {
+		ul {
+			margin: 0 0 4em 0;
+		}
 
 		h2 {
 			background-color: $colorLinkHover;

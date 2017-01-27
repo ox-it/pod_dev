@@ -36,20 +36,63 @@
 		ul.menu {
 			li {
 				float: left;
-				width: 140px;
+				width: 125px;
+
 				a {
-					background-color: darken($colorLink, 18%);
+					background-color: lighten($colorPrimary, 5%);
 					display: block;
-					width: 125px;
+					width: 115px;
+					margin: 0;
 					height: 100px;
 					text-align: center;
-					padding: 30px 15px;
+					padding: 30px 8px;
 					text-transform: uppercase;
 					font-size: 1em;
 					color: lighten($colorMidGrey, 30%);
 
+
 					&:hover {
 						background-color: $colorLink;
+					}
+				}
+
+				&.last {
+					img {
+							opacity: .5;
+						}
+					a {
+						border-bottom: 8px solid darken(green, 8%);
+						background-image: url("../images/cc_logo_small-2.png");
+						background-repeat: no-repeat;
+						background-size: 80px;
+						background-position: 13px 5px;
+
+
+						//color: green;
+						// &:hover {
+						// 	background-color: darken(green, 8%);
+						// }
+					}
+				}
+
+				&:nth-last-child(2) {
+					a {
+						border-bottom: 8px solid $colorGraduateYellow;
+					}
+				}
+				&:nth-last-child(3) {
+					a {
+						border-bottom: 8px solid $colorGraduateLightGreen;
+					}
+				}
+				&:nth-last-child(4) {
+					a {
+						border-bottom: 8px solid $colorIconBlueGrey;
+					}
+				}
+				&:nth-last-child(5) {
+					a {
+						border-bottom: 8px solid $colorLightGrey;
 					}
 				}
 			}
@@ -169,7 +212,7 @@
 				a {
 					height: 57px;
 					width: 115px;
-					padding: 10px 15px;
+					padding: 8px 15px;
 					font-size: .9em;
 				}
 			}

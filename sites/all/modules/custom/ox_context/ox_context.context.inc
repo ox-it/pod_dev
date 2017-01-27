@@ -242,6 +242,12 @@ function ox_context_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
+        'views-embed_codes-block' => array(
+          'module' => 'views',
+          'delta' => 'embed_codes-block',
+          'region' => 'content',
+          'weight' => '-7',
+        ),
         'fieldblock-4d4f4dfd90a617592ab52dc4a738d36f' => array(
           'module' => 'fieldblock',
           'delta' => '4d4f4dfd90a617592ab52dc4a738d36f',
@@ -364,9 +370,9 @@ function ox_context_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-4',
         ),
-        'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
-          'module' => 'views',
-          'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
+        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
+          'module' => 'facetapi',
+          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
           'region' => 'footer_hidden_one',
           'weight' => '-10',
         ),

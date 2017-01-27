@@ -23,6 +23,10 @@ table {
   td {
     line-height: $base-line-height;
   }
+
+  td.active {
+    background-color: transparent;
+  }
   //////////////////////////////////////////////////////////////////////////////////
 
   $table-border-color: $base-border-color;
@@ -42,7 +46,7 @@ table {
       background-color: $table-hover-background;
     }
     tr:first-child td {
-      //border-top: 2px solid $table-border-color;
+      border-top: 2px solid $table-border-color;
     }
   }
 
@@ -59,11 +63,11 @@ table {
 
     td {
       border-bottom: 0px;
-      //border-top: 1px solid $table-border-color;
+      border-top: 1px solid $table-border-color;
       padding: $table-padding;
 
       button {
-        // @include button(flat, $base-accent-color); //button mixin deprecated 
+        //@include button(flat, $base-accent-color); //button mixin deprecated 
         display: inline-block;
         font-size: .7em;
         line-height: $base-line-height;

@@ -37,9 +37,9 @@ include_once 'ox_jwplayer.features.inc';
 /**
  * Default dimensions of IFrames for external embedding
  */
-const OX_JWPLAYER_EMBED_WIDTH = 560;
-const OX_JWPLAYER_EMBED_VIDEO_HEIGHT = 335;
-const OX_JWPLAYER_EMBED_AUDIO_HEIGHT = 200;
+const OX_JWPLAYER_EMBED_WIDTH = 640;
+const OX_JWPLAYER_EMBED_VIDEO_HEIGHT = 400;
+const OX_JWPLAYER_EMBED_AUDIO_HEIGHT = 400;
 
 function _ox_jwplayer_embed_width() {
   return variable_get('ox_jwplayer_embed_width', OX_JWPLAYER_EMBED_WIDTH);
@@ -440,12 +440,19 @@ function _ox_jwplayer_embedding_enabled($file) {
  * Add embed code information to JWPlayer objects.
  */
 function ox_jwplayer_preprocess_jw_player(&$variables) {
+  
   $file = file_load($variables['file']['fid']);
   $episode = _ox_jwplayer_guess_episode($file);
   $embedded = _ox_jwplayer_page_is_embed();
 
   $config = _ox_jwplayer_build_config($file, $episode, $embedded);
   $variables['config'] = array_merge($variables['config'], $config);
+
+  // See function _ox_jwplayer_build_config below for config options
+  // including subtitles and logo configuration
+
+
+
 }
 
 /**
@@ -486,7 +493,7 @@ function template_preprocess_ox_jwplayer_iframe(&$variables) {
 
   // Add JWPlayer license key if available.  The following snippet is adapted
   // from jw_player_init in the main jw_player module:
-  if ($key = variable_get('jw_player_key', NULL)) {
+  if ($key = variable_get('jw_player_key_7', NULL)) {
     $variables['jwplayer_key_js'] = sprintf('jwplayer.key=%s;', json_encode($key));
   } else {
     $variables['jwplayer_key_js'] = NULL;
@@ -668,22 +675,82 @@ function ox_jwplayer_dialog_form($form, &$form_state, $rel, $message, $embed_cod
  *     TRUE if this JWPlayer is to be embedded on an outside site.
  */
 function _ox_jwplayer_build_config($file, $episode, $embedded) {
+
   // Build an array of JWPlayer configuration options, which will be merged with
   // options from the jw_player module preset, JSON-encoded, and passed as an
   // argument to jwplayer.setup().
-  $config = array (
-    'image' => '',
-    'aspectratio' => '16:9',
-  );
 
-  // Display logo and title only on video players
+ //  $config = array (
+ //    'file' => $file->uri,
+ //    'image' => '',
+ //    'aspectratio' => '16:9',
+ //    #'skin' => 'modieus',
+ //    #'stretching' => 'uniform',
+
+ // );
+
+  if ($file->type == 'video') {
+    // $config['height'] = '400';
+    // $config['controls'] = true;
+
+    $config['playlist'] = array(
+      array (
+        'title' =>  $episode->title,
+        'file' => $file->uri,
+        'image' => url('sites/all/themes/neato_pod/images/video-bg-3.jpg'),
+        'position' => 'bottom',
+        // Uncomment this when ready to use sub-title actions
+        'tracks' => array(
+          array(
+
+            'file' => '/assets/'.substr_replace($file->filename , 'srt', strrpos($file->filename, '.') +1),
+            'kind' => 'captions',
+            'default' => "true",
+            'label' => 'English'
+            )
+          )
+        )
+      );
+  }
+
+  if ($file->type == 'audio') {
+    // $config['height'] = '400';
+    // $config['controls'] = true;
+
+    $config['playlist'] = array(
+      array (
+        'title' => $episode->title,
+        'file' => $file->uri,
+        'image' => url('sites/all/themes/neato_pod/images/audio-bg-3.jpg'),
+        )
+      );
+  }
+
+
+  // Display logo and title only on video player
   if ($file->type == 'video') {
     $config['title'] = $episode ? $episode->title : '';
     $config['logo'] = array (
-      'file' => url('sites/all/themes/betacast/logo.png', array('absolute' => TRUE)), // FIXME
+      'file' => url('sites/all/themes/neato_pod/images/logo-long.png'), // FIXME
       'hide' => TRUE,
+      'position' => 'bottom-left',
+      // 'margin' => 10
     );
   }
+
+  // Display logo and title only on audio player
+  if ($file->type == 'audio') {
+    $config['title'] = $episode ? $episode->title : '';
+    $config['logo'] = array (
+      'file' => url('sites/all/themes/neato_pod/images/logo-long.png'), // FIXME
+      'hide' => TRUE,
+      // 'margin' => 10
+    );
+  }
+
+
+
+
 
   // Override width for embedded players, which should be displayed at
   // full width in order to resize with the enclosing iframe.
@@ -692,7 +759,7 @@ function _ox_jwplayer_build_config($file, $episode, $embedded) {
   }
 
   // Add an embed code to video players, if embedding is enabled for the file
-  if ($file->type == 'video' && _ox_jwplayer_embedding_enabled($file)) {
+  if ($file->type == _ox_jwplayer_embedding_enabled($file)) {
     $config['sharing']['code'] = theme(
       'ox_jwplayer_embed_code',
       array('file' => $file, 'episode' => $episode)
@@ -703,7 +770,7 @@ function _ox_jwplayer_build_config($file, $episode, $embedded) {
   // Otherwise, fall back to sharing a link to the plain embed page.
   if ($episode) {
     $link = url('node/' . $episode->nid, array('absolute' => TRUE));
-    if ($file->type == 'video') {
+    if ($file->type == 'video' || 'audio') {
       $config['sharing']['link'] = $link;
     }
     // When the related episode is known and the player is embedded in an
@@ -743,7 +810,7 @@ function _ox_jwplayer_build_config($file, $episode, $embedded) {
  *     An episode object, or NULL.
  */
 function _ox_jwplayer_guess_episode($file) {
-  if ($node = menu_get_object('node') && $node->type == 'episode') {
+  if ($node = menu_get_object('node') ) {
     // On an episode page
     return $node;
   }

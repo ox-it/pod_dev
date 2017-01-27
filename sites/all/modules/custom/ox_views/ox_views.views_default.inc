@@ -29,12 +29,11 @@ function ox_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
   $handler->display->display_options['style_plugin'] = 'editableviews_table';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = array(
@@ -73,6 +72,14 @@ function ox_views_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['batch_size'] = '10';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'This view manages the "featured people" view on the front page. Choose at least 12 of these for display. 
+<br>
+Must click SAVE below for changes to take effect.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Taxonomy term: Image */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
   $handler->display->display_options['fields']['field_people_image']['table'] = 'field_data_field_people_image';
@@ -197,8 +204,8 @@ function ox_views_views_default_views() {
     ),
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: People Admin */
+  $handler = $view->new_display('page', 'People Admin', 'page');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Taxonomy vocabulary: Machine name */
@@ -294,8 +301,50 @@ function ox_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_series_album_cover' => 'field_series_album_cover',
+    'name' => 'name',
+    'field_featured_series_editable' => 'field_featured_series_editable',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_series_album_cover' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_featured_series_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['batch'] = TRUE;
+  $handler->display->display_options['style_options']['batch_size'] = '10';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'This view manages the "featured series" view on the front page. Choose at least 8 of these for display. 
+<br>
+Must click SAVE below for changes to take effect.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Taxonomy term: Album Cover */
   $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
   $handler->display->display_options['fields']['field_series_album_cover']['table'] = 'field_data_field_series_album_cover';
@@ -391,7 +440,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['machine_name'] = 0;
-  /* Field: Broken/missing handler */
+  /* Field: File: JW Player Embed-Code Link */
   $handler->display->display_options['fields']['ox_jwplayer_embed']['id'] = 'ox_jwplayer_embed';
   $handler->display->display_options['fields']['ox_jwplayer_embed']['table'] = 'file_managed';
   $handler->display->display_options['fields']['ox_jwplayer_embed']['field'] = 'ox_jwplayer_embed';
@@ -401,6 +450,7 @@ function ox_views_views_default_views() {
   $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['ox_jwplayer_embed']['alter']['alt'] = 'Click here to copy HTML to embed this file on your site.';
   $handler->display->display_options['fields']['ox_jwplayer_embed']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['ox_jwplayer_embed']['ox_jwplayer_message'] = 'Copy and paste this HTML snippet to embed the audio or video on your site:';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -649,82 +699,6 @@ function ox_views_views_default_views() {
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['relationship'] = 'file_to_node';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['term_node_tid_depth_modifier']['summary']['format'] = 'default_summary';
-  /* Filter criterion: File: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'file_managed';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'audio' => 'audio',
-    'document' => 'document',
-    'video' => 'video',
-  );
-  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['type']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Media Type';
-  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
-    1 => array(
-      'title' => 'Audio',
-      'operator' => 'in',
-      'value' => array(
-        'audio' => 'audio',
-        'all' => 0,
-        'document' => 0,
-        'image' => 0,
-        'video' => 0,
-      ),
-    ),
-    2 => array(
-      'title' => 'Video',
-      'operator' => 'in',
-      'value' => array(
-        'video' => 'video',
-        'all' => 0,
-        'audio' => 0,
-        'document' => 0,
-        'image' => 0,
-      ),
-    ),
-    3 => array(
-      'title' => 'Document',
-      'operator' => 'in',
-      'value' => array(
-        'document' => 'document',
-        'all' => 0,
-        'audio' => 0,
-        'image' => 0,
-        'video' => 0,
-      ),
-    ),
-  );
-  /* Filter criterion: Content: Series (field_series) */
-  $handler->display->display_options['filters']['field_series_tid']['id'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['table'] = 'field_data_field_series';
-  $handler->display->display_options['filters']['field_series_tid']['field'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['relationship'] = 'file_to_node';
-  $handler->display->display_options['filters']['field_series_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_series_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_series_tid']['expose']['operator_id'] = 'field_series_tid_op';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['label'] = 'Series';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['operator'] = 'field_series_tid_op';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['identifier'] = 'field_series_tid';
-  $handler->display->display_options['filters']['field_series_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['filters']['field_series_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_series_tid']['vocabulary'] = 'series';
 
   /* Display: Episode Node Page (AV) */
   $handler = $view->new_display('block', 'Episode Node Page (AV)', 'episode_node_view');
@@ -3690,6 +3664,13 @@ Total number or series: [field_series] ';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'series' => 'series',
+  );
+  /* Filter criterion: Taxonomy term: Featured Series (field_featured_series) */
+  $handler->display->display_options['filters']['field_featured_series_value']['id'] = 'field_featured_series_value';
+  $handler->display->display_options['filters']['field_featured_series_value']['table'] = 'field_data_field_featured_series';
+  $handler->display->display_options['filters']['field_featured_series_value']['field'] = 'field_featured_series_value';
+  $handler->display->display_options['filters']['field_featured_series_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Block */

@@ -11,8 +11,8 @@
 /*
  ************************ Search Filters General -- across contexts   ****************************
  */
-.front, .context-results-page, .context-series-gallery, .context-people-gallery, .context-unit-gallery {
-	input[type=submit] {
+.front, .context-results-page, .context-series-gallery, .context-people-gallery, .context-unit-gallery, .page-manage {
+	.views-submit-button input {
 		text-indent: -9999px;
 		background-image: url("../images/search_glass.png");
 		//opacity: .5;
@@ -22,6 +22,7 @@
 		width: 55px;
 		background-color: transparent;
 		position: relative;
+
 
 		@include media($mobile) {
 			width: 40px;
@@ -33,12 +34,13 @@
 		}
 	}
 
-	header {
+
+	header, section {
 		input {
 			height: 55px;
 			border: none;
 			font-size: 2em;
-			opacity: .7;
+			opacity: .9;
 			background-color: $colorVLightGrey;
 			@include media($tablet) {
 			    font-size: 1.5em;
@@ -379,13 +381,13 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 ***************************** Hideseek search boxes in Solr sidebar **************************************
  */
 .sidebar-first {
-	#hideseek-units {
+	#hideseek-units, #hideseek-keywords, #sidr-id-hideseek-units {
 		height: 40px;
 		font-size: 1.3em;
 	}
 }
 
-#sidr-id-hideseek-keywords-two {
+#sidr-id-hideseek-keywords-two, #sidr-id-hideseek-keywords {
 	height: 50px;
 	font-size: 1.5em;
 }

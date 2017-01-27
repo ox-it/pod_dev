@@ -32,16 +32,22 @@ function neato_pod_preprocess_block(&$variables) {
     //     $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords');
     // }
 
-    // Add hideseek unit search box in static episode sidebar
+    // Add hideseek department/college search box in static episode sidebar
     if($variables['block']->delta == 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK') {
         $variables['title_suffix'] = '<input id="hideseek-units" name="hideseek-units" placeholder="Oxford Unit Filter" type="text" data-list=".facetapi-facet-field-seriesfield-unit" >';
         $variables['classes_array'][] = drupal_html_class('block-facetapi-units');
     }
 
-    // Keywords Sidr popout sidebar (Keywords alone)
+    // Keywords Sidr popout sidebar on FRONT page
     if($variables['block']->delta == 'd1fd9fb73e9d432f430dcbd5aaf5eaf1') {
         $variables['title_suffix'] = '<input id="hideseek-keywords-two" name="hideseek-keywords-two" placeholder="Search Keywords" type="text" data-list=".sidr-class-item-list ul" ><a id="sidr-close-keyword-menu">✕</a>';
-        $variables['classes_array'][] = drupal_html_class('block-facetapi-keywords-sidr');
+        //$variables['classes_array'][] = drupal_html_class('block-facetapi-keywords-sidr');
+    }
+
+    // Keywords Sidr popout sidebar (Keywords refine) on Episode page
+    if($variables['block']->delta == 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO') {
+        $variables['title_suffix'] = '<input id="hideseek-keywords" name="hideseek-keywords" placeholder="Search Keywords" type="text" data-list=".sidr-class-item-list ul" ><a id="sidr-close-keyword-menu">✕</a>';
+        //$variables['classes_array'][] = drupal_html_class('block-facetapi-keywords-sidr');
     }
   
     // Add "X" close button on Episode Sidr popout

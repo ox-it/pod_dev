@@ -28,12 +28,13 @@
 
   	}
 
-	//Refine Search Button
+	//Refine Search Buttons
 	.featured-outer-two {
 
 		#block-block-7 {
+			// Do not display this except on $tablet and $mobile pages 
+		  	display: none;
 			float: right;
-
 
 			#sidr-menu-episode, #sidr-menu-episode-keywords {
 				background-color: $colorLinkHover;
@@ -56,14 +57,10 @@
 						top: 3px;
 						font-size: 1.8em;
 					}
-
-
 				}
-
 			}
 
-		    // Do not display this except on $tablet and $mobile pages 
-		  	display: none;
+		 
 
 		  	@include media($tablet) {
 		  		display: block;
@@ -128,10 +125,12 @@
 		.contextual-links-region {position: static;}  // Some strange bug that affects only UNIT links block
 
 
-		.block-facetapi {
-			margin: 0 0 $base-spacing 0;
-			background-color: $colorVLightGrey;
-			//padding: 4px;
+		section {
+			.item-list {
+				padding: 4px;
+				margin: 0 0 3em 0;
+				background-color: $colorVLightGrey;
+			}
 
 
 			h2 {
@@ -141,12 +140,8 @@
 				border-radius: 1px;
 			}
 
-			.item-list {
-				padding: 4px;
-			}
 
 			.facetapi-facet-field-licence li {
-				//border: 1px solid red;
 				&:before {
 					content: "cc";
 					color: transparent; // Required if only to show image below
