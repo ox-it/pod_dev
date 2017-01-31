@@ -330,7 +330,7 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 	
 	// Adjustment for MOBILE (without media query, for some reason) 'select' dropdowns -- must match height below
     .form-item-field-unit-tid-selective select {
-    	height: 40px;
+    	height: 55px;
         background: none;
 		box-shadow: none;
 		border-radius: $base-border-radius;
@@ -338,6 +338,10 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 		font-size: .8em;
 		width: 100%;
 		margin-bottom: 0;
+		@include media($mobile) {
+			height: 40px;
+			width: 160px;
+		}
     }
 
     .chosen-container {
@@ -365,8 +369,8 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 	     		height: 40px;
 	     		font-size: .8em;
 	     		padding: 8px;
+	     		width: 160px;
 	     	}
-
 	    }
 
 	  	.chosen-drop {
@@ -384,12 +388,8 @@ div#edit_field_unit_tid_selective_chosen.chosen-container.chosen-container-singl
 	#hideseek-units, #hideseek-keywords, #sidr-id-hideseek-units {
 		height: 40px;
 		font-size: 1.3em;
+		border: 1px solid $colorLightGrey;
 	}
-}
-
-#sidr-id-hideseek-keywords-two, #sidr-id-hideseek-keywords {
-	height: 50px;
-	font-size: 1.5em;
 }
 
 

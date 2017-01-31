@@ -94,12 +94,20 @@
 				//border-top: 1px solid $colorLightGrey;
 				color: darken($colorLightGrey, 30%);
 				&:not(:first-child) {
-					margin-top: 5em;
+					margin-top: 2.5em;
+					padding-top: 2.5em;
+					border-top: 1px solid $colorLightGrey;
+					@include media($mobile) {
+						padding-top: 5px;
+						margin-top: 6em;
+						border-top: none;
+					}
 				}
 				@include media($mobile) {
 					background-color: darken($colorVLightGrey, 4%);
-					padding: 5px;
 					font-size: 1.2em;
+					//padding-top: 15px; // Must explicitly state padding-top to counter-act not:first-chile above
+					padding: 5px;
 				}
 			}
 
