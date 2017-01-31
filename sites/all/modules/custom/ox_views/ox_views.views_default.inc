@@ -3404,7 +3404,7 @@ Total number or series: [field_series] ';
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/people" class="people-more-link">View all contributors</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="people" class="people-more-link">View all contributors</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   /* Field: Taxonomy term: Image */
   $handler->display->display_options['fields']['field_people_image']['id'] = 'field_people_image';
@@ -3637,7 +3637,7 @@ Total number or series: [field_series] ';
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/series" class="series-more-link">View all podcast series</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="series" class="series-more-link">View all podcast series</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   /* Field: Taxonomy term: Album Cover */
   $handler->display->display_options['fields']['field_series_album_cover']['id'] = 'field_series_album_cover';
@@ -4029,7 +4029,7 @@ Total number or series: [field_series] ';
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/departments-colleges" class="unit-more-link">View all departments & colleges</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="departments-colleges" class="unit-more-link">View all departments & colleges</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   /* Field: Taxonomy term: Image */
   $handler->display->display_options['fields']['field_unit_image']['id'] = 'field_unit_image';
