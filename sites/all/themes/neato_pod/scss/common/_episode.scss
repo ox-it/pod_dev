@@ -258,12 +258,14 @@
 				}
 
 				@include media($mobile) {
-					width: 30%;
-					font-size: 1.1em;
+					padding: 8px 2px;
+					width: 32%;
+					font-size: 1em;
 				}
 				
 			}
-
+			
+			// "Embed Code Help" button
 			.view-footer a {
 				text-align: center;
 				width: 23%;
@@ -280,11 +282,10 @@
 					color: $colorLightGrey;
 
 				}
-
 				@include media($mobile) {
-					width: 30%;
-					//height: 74px;
-					font-size: 1.1em;
+					width: 28%;
+					padding: 8px 2px;
+					font-size: 1em;
 				}
 
 			}
