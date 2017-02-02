@@ -1,4 +1,24 @@
- main #content #page-title {
+/**************************************************************************************
+/*  Styling to deal with the fixed HEADER pulling all content up on .logged-in pages */
+.logged-in main, .page-user-login {
+ 	padding-top: 4em;
+ }
+.page-manage main {
+	padding-top: 2em;
+}
+ .page-manage #featured, .page-user #featured {
+ 	padding-top: 4em;
+ }
+
+
+
+
+
+
+/**************************************************************************************
+/*  Mosty padding on main pages and gallery pages */
+
+main #content #page-title {
 	font-size: 1.5em;
 	//padding-bottom: 10px; 
 }
@@ -11,16 +31,8 @@ main {
  	}
  }
 
- .logged-in main {
- 	padding-top: 5em;
- }
 
-.page-user-login {
-	main {
-		padding-top: 4em;
-	}
-}
-
+// Gallery styling 
 .context-unit-gallery, .context-people-gallery, .context-series-gallery {
 
 	    // See also the more general "main" padding-top on _page.scss

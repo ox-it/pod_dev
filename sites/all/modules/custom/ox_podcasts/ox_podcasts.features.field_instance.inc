@@ -2290,7 +2290,7 @@ function ox_podcasts_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Tick this box to make this a "Featured" person for the People Directory page. This feature is only turned on for special events e.g. International Women\'s Day or Women in Science Day.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2307,9 +2307,16 @@ function ox_podcasts_field_default_field_instances() {
     ),
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_featured',
-    'label' => 'Featured',
+    'label' => 'Featured People',
     'required' => 0,
     'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3279,6 +3286,50 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-units-field_unit_featured'.
+  $field_instances['taxonomy_term-units-field_unit_featured'] = array(
+    'bundle' => 'units',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_unit_featured',
+    'label' => 'Featured Dept/College',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 34,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-units-field_unit_image'.
   $field_instances['taxonomy_term-units-field_unit_image'] = array(
     'bundle' => 'units',
@@ -3451,7 +3502,8 @@ function ox_podcasts_field_default_field_instances() {
   t('Enter the order in which this episode should appear in the Series. Larger numbers will appear further down the page. This field is equivalent to the itunes:order element in the RSS feed.');
   t('Enter the people you wish to promote as a comma-separated list. Only people who have an image will be displayed, and only the first 4 people will be displayed.');
   t('Enter the units you wish to promote as a comma-separated list. Only units who have an image will be displayed, and only the first 4 people will be displayed.');
-  t('Featured');
+  t('Featured Dept/College');
+  t('Featured People');
   t('Featured Series');
   t('File ID of this file on Mediapub. This is assumed to be more stable than the file ID on Podcasts, and is used for generating permanet video embedding URLs.  It should <i>never</i>be changed.');
   t('Identifies the document type.');
@@ -3489,7 +3541,6 @@ function ox_podcasts_field_default_field_instances() {
   t('The duration of the video file in the format h:mm:ss');
   t('The media files associated with this episode. Files are hosted remotely, usually on http://media.podcasts.ox.ac.uk');
   t('The name of the person who last updated the entry in OxITEMS.');
-  t('Tick this box to make this a "Featured" person for the People Directory page. This feature is only turned on for special events e.g. International Women\'s Day or Women in Science Day.');
   t('Title Display');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');

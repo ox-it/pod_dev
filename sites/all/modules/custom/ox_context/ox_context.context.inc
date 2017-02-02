@@ -41,6 +41,35 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_admin';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'manage*' => 'manage*',
+        'user*' => 'user*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-management' => array(
+          'module' => 'menu',
+          'delta' => 'menu-management',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_admin'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_all';
   $context->description = '';
   $context->tag = '';
@@ -143,43 +172,6 @@ function ox_context_context_default_contexts() {
   $context->reactions = array();
   $context->condition_mode = 0;
   $export['context_breadcrumb'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_episode_node';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'node' => array(
-      'values' => array(
-        'episode' => 'episode',
-      ),
-      'options' => array(
-        'node_form' => '1',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views-9b7fe8d2964fd2d8c6ee04b0e59788e2' => array(
-          'module' => 'views',
-          'delta' => '9b7fe8d2964fd2d8c6ee04b0e59788e2',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-        'views-episode_node_view-block_1' => array(
-          'module' => 'views',
-          'delta' => 'episode_node_view-block_1',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_episode_node'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -456,34 +448,6 @@ function ox_context_context_default_contexts() {
   $export['context_front'] = $context;
 
   $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_people';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'people' => 'people',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-people_view-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-people_view-page',
-          'region' => 'featured-one',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_people'] = $context;
-
-  $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'context_people_gallery';
@@ -616,173 +580,6 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_people_page'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_search_banner';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        '<front>' => '<front>',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-episode_search_solr-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-episode_search_solr-page',
-          'region' => 'featured',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_search_banner'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_searchapi';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'search' => 'search',
-        'search*' => 'search*',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-episode_search_api-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-episode_search_api-page',
-          'region' => 'featured',
-          'weight' => '-10',
-        ),
-        'current_search-episode_current_search' => array(
-          'module' => 'current_search',
-          'delta' => 'episode_current_search',
-          'region' => 'featured',
-          'weight' => '-9',
-        ),
-        'facetapi-EZWaCxOWhedI0cUvGDFTeNECA3eaUehM' => array(
-          'module' => 'facetapi',
-          'delta' => 'EZWaCxOWhedI0cUvGDFTeNECA3eaUehM',
-          'region' => 'sidebar_second',
-          'weight' => '-21',
-        ),
-        'facetapi-gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd' => array(
-          'module' => 'facetapi',
-          'delta' => 'gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd',
-          'region' => 'sidebar_second',
-          'weight' => '-20',
-        ),
-        'facetapi-2jJNzaGGAk51or515mhY4LIxVV2yhQ9K' => array(
-          'module' => 'facetapi',
-          'delta' => '2jJNzaGGAk51or515mhY4LIxVV2yhQ9K',
-          'region' => 'sidebar_second',
-          'weight' => '-19',
-        ),
-        'facetapi-nfMPqS2Nrkzo4693KsSw79EEoXE7aK31' => array(
-          'module' => 'facetapi',
-          'delta' => 'nfMPqS2Nrkzo4693KsSw79EEoXE7aK31',
-          'region' => 'sidebar_second',
-          'weight' => '-18',
-        ),
-        'facetapi-362X7yIwCWvjKplJmmvMq7R4XcGmkqNP' => array(
-          'module' => 'facetapi',
-          'delta' => '362X7yIwCWvjKplJmmvMq7R4XcGmkqNP',
-          'region' => 'sidebar_second',
-          'weight' => '-17',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_searchapi'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_searchapi_solr';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'solr' => 'solr',
-        'solr*' => 'solr*',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-episode_search_solr_-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-episode_search_solr_-page',
-          'region' => 'header-middle-bottom',
-          'weight' => '-10',
-        ),
-        'current_search-episode_current_search_solr' => array(
-          'module' => 'current_search',
-          'delta' => 'episode_current_search_solr',
-          'region' => 'featured-one',
-          'weight' => '-10',
-        ),
-        'block-7' => array(
-          'module' => 'block',
-          'delta' => '7',
-          'region' => 'featured-two',
-          'weight' => '-10',
-        ),
-        'facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO' => array(
-          'module' => 'facetapi',
-          'delta' => 'o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
-          'region' => 'sidebar_first',
-          'weight' => '-9',
-        ),
-        'facetapi-d0QkDcLZVvKKApcDWQIsYZWHl7OBcfql' => array(
-          'module' => 'facetapi',
-          'delta' => 'd0QkDcLZVvKKApcDWQIsYZWHl7OBcfql',
-          'region' => 'sidebar_first',
-          'weight' => '-8',
-        ),
-        'facetapi-837BDXTsIxl64mMkFvJwYkbi2ENJXzt4' => array(
-          'module' => 'facetapi',
-          'delta' => '837BDXTsIxl64mMkFvJwYkbi2ENJXzt4',
-          'region' => 'sidebar_first',
-          'weight' => '-7',
-        ),
-        'facetapi-of40kfhwyeEUIt533q2rG0nxZzK9A5sK' => array(
-          'module' => 'facetapi',
-          'delta' => 'of40kfhwyeEUIt533q2rG0nxZzK9A5sK',
-          'region' => 'sidebar_first',
-          'weight' => '-6',
-        ),
-        'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
-          'module' => 'views',
-          'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
-          'region' => 'footer_hidden_two',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-    'theme_html' => array(
-      'class' => 'context-results-page',
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_searchapi_solr'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -919,52 +716,6 @@ function ox_context_context_default_contexts() {
   );
   $context->condition_mode = 0;
   $export['context_series_page'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'context_sidr';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        '<front>' => '<front>',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'block-8' => array(
-          'module' => 'block',
-          'delta' => '8',
-          'region' => 'header-bottom-left',
-          'weight' => '-10',
-        ),
-        'block-1' => array(
-          'module' => 'block',
-          'delta' => '1',
-          'region' => 'header-bottom-right',
-          'weight' => '-10',
-        ),
-        'views-series_gallery-block_1' => array(
-          'module' => 'views',
-          'delta' => 'series_gallery-block_1',
-          'region' => 'footer_hidden_one',
-          'weight' => '-10',
-        ),
-        'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
-          'module' => 'views',
-          'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
-          'region' => 'footer_hidden_one',
-          'weight' => '-9',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-  $export['context_sidr'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

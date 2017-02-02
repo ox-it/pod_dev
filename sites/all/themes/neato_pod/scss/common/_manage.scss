@@ -1,20 +1,46 @@
-.page-manage {
+.page-manage, .page-user {
 
+
+	#block-menu-menu-management {
+		h2 {
+			font-size: 2em;
+			border-top: 1px solid $colorMidGrey;
+		}
+		ul.menu {
+			li {
+				a {
+					display: block;
+					width: 140px;
+					margin: 0 10px 10px 0;
+					float: left;
+					text-align: center;
+					padding: 10px 0;
+					color: $colorLightGrey;
+					background-color: $colorLinkHover;
+					&:hover {
+						background-color: $colorLink;
+					}
+					
+				}
+			}
+		}
+	}
 	.views-reset-button input, #edit-actions-submit {
 		font-size: 1.2em;
 		background-color: $colorLinkHover;
 		color: $colorLightGrey;
-		//margin-left: 10px;
 		width: 100px;
+		margin-bottom: 2em;
+		margin-left: 10px;
 	}
 
-	.view-admin-people, .view-admin-series {
+	.view-admin-manage-featured {
 		.view-header {
 			background-color: $colorLightGrey;
 			padding: 1em;
-			font-size: 1.3em;
-			margin-bottom: 1em;
-			line-height: 1em;
+			font-size: 1.1em;
+			margin-bottom: 2em;
+			line-height: .7em;
 			color: $colorMidGrey;
 		}
 
@@ -22,8 +48,8 @@
 
 	h1#page-title {
 		background-color: $colorLightGrey;
-		padding: 1em;
-		font-size: 2em !important;
+		padding: .8em;
+		font-size: 1.7em !important;
 		margin-bottom: 1em;
 		font-variant: small-caps;
 		color: $colorMidGrey;

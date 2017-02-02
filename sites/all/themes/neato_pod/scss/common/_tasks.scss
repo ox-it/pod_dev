@@ -1,9 +1,13 @@
   #user-login{
     margin: 50px 0 0 0;
-    padding: 80px 200px;
+    padding: 20px 200px;
     border: 2px solid $colorBeigeGrey;
     background-color: $colorVeryLightBlue;
     border-radius: 6px;
+
+    @include media($tablet) {
+      padding: 20px 20px;
+    }
 
     input[type=text], input[type=password] {
       height: 2em;
