@@ -1,0 +1,336 @@
+.context-open-page {
+
+
+	.header-middle-outer {
+
+		background-color: darken(green, 4%);
+		.open_ed_cc {
+			width: 65%;
+			float: left;
+			img {
+				min-width: 100%;
+			}
+		}
+		.open_ed_title_cc  {
+			width: 35%;
+			text-align: right;
+			float: right;
+			opacity: .8;
+			font-variant: small-caps;
+			img {
+				width: 82%;
+			}
+			@include media($tablet) {
+				font-size: 3.5em;
+			}
+		}
+	}
+
+	.featured-outer-one {
+		background-color: $colorLightGrey;
+		padding-top: 4em;
+		padding-bottom: 4em;
+		color: $colorMidGrey;
+		.cc_open_text {
+			@include span-columns(8);
+			font-size: 1.5em;
+			margin-bottom: 1em;
+			@include media($tablet) {
+				font-size: 1.4em;
+			}
+			@include media($tablet) {
+				@include span-columns(6);
+				margin-bottom: 4em;
+			}
+		}
+
+		.cc_open_logo_container {
+			@include span-columns(4);
+			@include media($tablet) {
+				@include span-columns(6);
+			}
+
+			.cc_open_logo {	
+				border: 1px solid lighten($colorMidGrey, 20%);
+				font-size: 1.3em;
+				text-align: right;
+				padding: 1em;
+				overflow: auto;
+				@include media($tablet) {
+					font-size: 1.5em;
+
+				}
+
+				.cc_open_logo_logo {
+					width: 25%;
+					float: right;
+					@include media($tablet) {
+						width: 15%;
+
+					}
+				}
+				.cc_open_logo_inner {
+					width: 65%;
+					float: left;
+					@include media($tablet) {
+						width: 80%;
+
+
+						
+
+					}
+				}
+			}
+
+
+			.cc_open_text_button {
+				a {
+					display: block;
+					margin-top: 1em;
+					border: 1px solid lighten($colorMidGrey, 20%);
+					padding: .5em;
+					font-size: 1.7em;
+					text-align: center;
+					img {
+						margin-top: 7px;
+						width: 20px;
+					}
+					&:hover {
+						background-color: $colorLink;
+						color: $colorLightGrey;
+					}
+					@include media($tablet) {
+						font-size: 1.2em;
+						img {
+							margin-top: 3px;
+							width: 15px;
+						}
+					}
+				}
+			}
+
+			.cc_open_links {
+				margin-top: 2em;
+				padding: .5em;
+				border: 1px solid lighten($colorMidGrey, 20%);
+				a {
+					text-align: center;
+					display: block;
+					&:hover {
+						background-color: lighten($colorMidGrey, 30%);
+					}
+					
+				}
+			}
+		}
+	}
+
+
+
+	.featured-outer-two {
+		background-color: $colorBeigeGrey;
+
+		h2 {
+				color: lighten($colorMidGrey, 25%);
+				border-bottom: 1px solid $colorLightGrey;
+				text-align: center;
+				padding: 1em 0;
+				font-size: 2.5em;
+				font-variant: small-caps;
+			}
+
+		
+		.view-open-featured-images {	
+			.views-row {
+				margin-top: 1em;
+				margin-bottom: 5em;
+				@include span-columns(6);
+				@include omega(2n);
+				@include media($mobile) {
+					@include span-columns(4 of 4);
+				}
+			}
+		}
+	}
+
+
+
+	.featured-outer-three {
+
+		h2 {
+			color: lighten($colorMidGrey, 25%);
+			text-align: center;
+			padding: 1em 0;
+			font-size: 2em;
+			font-variant: small-caps;
+		}
+
+		background-color: $colorVLightGrey;
+		padding-bottom: 3em;
+		.testimonials {
+			.testimonial {
+				@include span-columns(4);
+				@include omega(3n);
+				font-size: 1.2em;
+				color: darken($colorLightGrey, 25%);
+				border: 1px solid $colorLightGrey;
+				padding: 1em;
+				span {
+					color: $colorMidGrey;
+					padding: 10px 0;
+					font-variant: small-caps;
+					display: block;
+
+				}
+
+				@include media($tablet) {
+					@include span-columns(4 of 4);
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	
+
+	.featured-outer-four {
+		background-color: $colorLightGrey;
+		//padding-top: 4em;
+		overflow: auto;
+		#block-block-17 {
+			h2 {
+				color: lighten($colorMidGrey, 25%);
+				border-bottom: 1px solid $colorBeigeGrey;
+				text-align: center;
+				padding: 1em 0;
+				font-size: 2.5em;
+				font-variant: small-caps;
+			}
+			
+			.open_collections {
+				border: 1px solid darken(green, 4%);;
+				background-color: $colorVLightGrey;
+				padding: 1em;
+
+				@include span-columns(3);
+				//@include omega(4n);
+				margin-bottom: 5em;
+
+				@include media($mobile) {
+					@include span-columns(2 of 4);
+					@include omega(3n);
+				}
+				
+
+			}
+		}
+
+	}
+
+	.featured-outer-five {
+		padding-bottom: 1em;
+		background-color: $colorBeigeGrey;
+
+			h2 {
+				color: lighten($colorMidGrey, 25%);
+				border-bottom: 1px solid $colorLightGrey;
+				text-align: center;
+				padding: 1em 0;
+				font-size: 2.5em;
+				font-variant: small-caps;
+				@include media($mobile) {
+					font-size: 2em;
+				}
+			}
+
+		.view-people-featured {
+
+			.view-content {
+				@include clearfix;
+
+				.views-row {
+					
+					margin-bottom: 2em;
+					@include span-columns(2);
+			    	@include omega(6n);
+
+					@include media($mobile) {
+						@include span-columns(2);
+						@include omega(2n);
+					}
+
+					.views-field-field-people-image:hover ~ .views-field-name a {
+						border-bottom: 1px solid darken($colorBeigeGrey, 20%);
+						@include transition (border-bottom .4s ease-in-out);
+					}
+
+					.views-field-name {
+
+						a {
+							display: block;
+							margin-bottom: .5em;
+							font-size: .9em;
+							padding: 3px;
+							text-align: center;
+							border-bottom: 1px solid $colorBeigeGrey;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	.view-open-series {
+		.views-row {
+			@include span-columns(4);
+			@include omega(3n);
+			margin-bottom: 7em;
+			@include media($mobile) {
+				@include omega-reset(3n, 4);
+				@include span-columns(2);
+				@include omega(2n);
+				
+
+			}
+			.views-field-name {
+				padding: 5px 0;
+				font-size: 1.2em;
+				border-bottom: 1px solid transparent;
+			}
+
+			.views-field-field-series-album-cover:hover ~ .views-field-name  {
+				border-bottom: 1px solid darken($colorBeigeGrey, 20%);
+				@include transition (border-bottom .4s ease-in-out);
+			}
+		}
+
+
+
+		.views-exposed-widgets {
+			background-color: $colorLightGrey; //$colorIconBlueGrey;
+			padding: 2em 1em 1em 2em;
+			margin-bottom: 4em;
+		}
+	}
+
+
+
+
+
+	
+
+	// #block-block-19 {
+	// 	margin-bottom: 3em;
+	// 	.open_series_examples {
+
+	// 		// @include span-columns (2 of 4);
+	// 		// @include omega(3n);
+	// 		margin-bottom: 2em;
+	// 		//background-color: $colorLightGrey;
+	// 		img {
+	// 		}
+	// 	}
+	// }
+
+}

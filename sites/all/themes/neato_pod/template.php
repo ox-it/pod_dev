@@ -89,6 +89,12 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
       }
     }
 
+    if ($form['#id'] == 'views-exposed-form-open-series-page') {
+      if (isset($form['combine'])) {
+            $form['combine']['#attributes']['placeholder'] = t('Search Open Series Here...');
+      }
+    }
+
   	// Remove hard-to-remove title from Search API fulltext search block 
 
   	if (isset($form['#info']['filter-search_api_views_fulltext']['label'])) {

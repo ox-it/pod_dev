@@ -2638,6 +2638,52 @@ function ox_podcasts_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-series-field_cc_series'.
+  $field_instances['taxonomy_term-series-field_cc_series'] = array(
+    'bundle' => 'series',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'This field indicates whether ALL episodes within a series have been marked as \'open\' using the CC license. It should not be used if only some of the episodes within a series are CC licensed. 
+
+Checking this here also implies the series will be displayed on the \'open\' pages.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_cc_series',
+    'label' => 'CC Series',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-series-field_featured_series'.
   $field_instances['taxonomy_term-series-field_featured_series'] = array(
     'bundle' => 'series',
@@ -3483,6 +3529,7 @@ function ox_podcasts_field_default_field_instances() {
   t('Automatic Keywords');
   t('Basic Description');
   t('Body');
+  t('CC Series');
   t('CC numeric code');
   t('Choose the iTunes U Category. This field will be populated automatically from OxITEMS and was updated in January 2013 to reflect the new iTunes U category codes.');
   t('Choose the series to which this episode belongs.');
@@ -3541,6 +3588,9 @@ function ox_podcasts_field_default_field_instances() {
   t('The duration of the video file in the format h:mm:ss');
   t('The media files associated with this episode. Files are hosted remotely, usually on http://media.podcasts.ox.ac.uk');
   t('The name of the person who last updated the entry in OxITEMS.');
+  t('This field indicates whether ALL episodes within a series have been marked as \'open\' using the CC license. It should not be used if only some of the episodes within a series are CC licensed. 
+
+Checking this here also implies the series will be displayed on the \'open\' pages.');
   t('Title Display');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
