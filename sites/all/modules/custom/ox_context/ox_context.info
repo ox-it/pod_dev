@@ -21,6 +21,7 @@ features[context][] = context_breadcrumb
 features[context][] = context_episode_page
 features[context][] = context_episode_solr
 features[context][] = context_front
+features[context][] = context_open
 features[context][] = context_people_gallery
 features[context][] = context_people_name
 features[context][] = context_people_page

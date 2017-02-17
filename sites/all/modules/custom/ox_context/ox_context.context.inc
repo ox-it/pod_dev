@@ -450,6 +450,67 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_open';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'open*' => 'open*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-21' => array(
+          'module' => 'block',
+          'delta' => '21',
+          'region' => 'header-middle',
+          'weight' => '-10',
+        ),
+        'block-22' => array(
+          'module' => 'block',
+          'delta' => '22',
+          'region' => 'featured-one',
+          'weight' => '-10',
+        ),
+        'views-open_featured_images-block' => array(
+          'module' => 'views',
+          'delta' => 'open_featured_images-block',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'block-23' => array(
+          'module' => 'block',
+          'delta' => '23',
+          'region' => 'featured-three',
+          'weight' => '-9',
+        ),
+        'block-17' => array(
+          'module' => 'block',
+          'delta' => '17',
+          'region' => 'featured-four',
+          'weight' => '-9',
+        ),
+        'views-people_featured-block_1' => array(
+          'module' => 'views',
+          'delta' => 'people_featured-block_1',
+          'region' => 'featured-five',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-open-page',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_open'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_people_gallery';
   $context->description = '';
   $context->tag = '';
