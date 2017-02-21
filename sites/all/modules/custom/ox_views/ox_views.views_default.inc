@@ -1860,7 +1860,6 @@ Must click SAVE below for changes to take effect.';
   $handler->display->display_options['fields']['field_licence']['field'] = 'field_licence';
   $handler->display->display_options['fields']['field_licence']['label'] = '';
   $handler->display->display_options['fields']['field_licence']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_licence']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_licence']['alter']['text'] = 'CC';
   $handler->display->display_options['fields']['field_licence']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */

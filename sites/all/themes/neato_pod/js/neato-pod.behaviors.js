@@ -59,6 +59,31 @@
 
 
 
+  Drupal.behaviors.podOmegaToggleMediaSize = {
+    attach: function (context, settings) {
+
+      $('#ToggleMediaSize').click(function(){
+
+         var $button = $('#ToggleMediaSize');
+         
+         $button.toggleClass('media-size');
+
+         if ($button.hasClass('media-size')) {
+          $button.text('Regular Mode');
+          $(this).parents('body').addClass('media-size-large');
+          //$(this).parents('main').removeClass('media-size-large');
+         
+         } else {
+          $button.text('Theatre Mode');
+          $(this).parents('body').removeClass('media-size-large');
+         }
+
+       });
+
+    }
+  };
+
+
 
   // Drupal.behaviors.podOmegaToggleGridList = {
   //   attach: function (context, settings) {

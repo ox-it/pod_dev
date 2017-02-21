@@ -2804,7 +2804,7 @@ function ox_podcasts_field_default_field_instances() {
 Checking this here also implies the series will be displayed on the \'open\' pages.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',

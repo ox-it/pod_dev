@@ -572,6 +572,94 @@
 	}
  }
 
+ .context-episode-page {
+
+ 	.featured-outer-three {
+ 		border-bottom: 1px solid $colorLightGrey;
+ 		
+ 		#block-block-24 {
+ 			display: block;
+	 		cursor: pointer;
+	 		font-size: 1.2em;
+	 		text-align: right;
+	 		padding: 2px 0 0 0;
+	 		font-variant: small-caps;
+	 	}
+
+ 	}
+
+
+  	&.one-sidebar.sidebar-second.media-size-large {
+
+
+
+	    //main.media-size-large {
+
+	      aside {
+	        &#sidebar-second {
+	          @include span-columns(12);
+	          //#block-fieldblock-630a57856486cdfd6ffae3f01d91f1de {height: 200px;}
+	          #block-fieldblock-630a57856486cdfd6ffae3f01d91f1de {
+	          	background-color: $colorVLightGrey;
+	          	padding: 0 auto;
+	          	margin-top: 0;
+	          	@include span-columns(6);
+	          	@include omega(2n);
+	          	
+	          	@include media($mobile) {
+	          		@include span-columns(4 of 4);
+	          	}
+	          	.field-content {
+	          		padding: .5em 2em;
+	          		@include media($tablet) {
+	          			padding: 0;
+	          		}
+	          	}
+	          	.views-field-name {
+	          		padding: 0 2em;
+	          		@include media($tablet) {
+	          			padding: 0;
+	          		}
+	          	}
+
+	          }
+
+	          #block-fieldblock-7b10cc1cab6a98fd855a85ecf788b262, 
+	          #block-fieldblock-f2a1d4eeeeba6a4d281270c27feda668, 
+	          #block-fieldblock-e35d38c08e89f66e8a25a05d91352fda {
+	          	margin-left: 51%;
+	          	margin-top: 0;
+	          	margin-bottom: 3em;
+				@include media($mobile) {
+					margin-top: 3em;
+					margin-bottom: 0;
+					margin-left: 0;
+	          		@include span-columns(4 of 4);
+	          	}
+
+	          }
+
+	        }
+	      }
+
+	      section#content {
+	        @include span-columns(12);
+
+	        #block-fieldblock-16e816e45c986dcf5e236f70e09d6b54, #block-fieldblock-246fe9672be939b4eabf987d9769fd64 {
+	        	margin-bottom: 5em;
+	        }
+
+
+	      }
+
+
+	    //}
+
+
+	  }
+
+ }
+
 
 /*
  *****************  Responsive Embed code on jwplayer iframe  **************************************************
