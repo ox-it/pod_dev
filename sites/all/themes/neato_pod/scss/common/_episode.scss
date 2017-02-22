@@ -522,15 +522,25 @@
 		}
 
 		.field-name-field-itunes-u-category {
+			background-color: $colorBeigeGrey;
 			.field-items {
-				background-color: $colorBeigeGrey;
+				
 				padding: .2em 0;
-				a {
-					display: block;
-					margin: .3em 0;
-					padding: 0 .5em;
-					&:hover {
-						background-color: $colorLightGrey;
+				overflow: auto;
+				// a {
+				// 	display: block;
+				// 	margin: .3em 0;
+				// 	padding: 0 .5em;
+				// 	&:hover {
+				// 		background-color: $colorLightGrey;
+				// 	}
+				// }
+				.shs-hierarchy {
+					padding-left: 5px;
+					li {
+						padding: 5px 5px 5px 0;
+						width: auto;
+						float: left;
 					}
 				}
 			}
@@ -572,26 +582,34 @@
 	}
  }
 
+
+// See jQuery in neato-pod.behaviours.js
+// This changes layout for "Theatre Mode/Regular Mode" jQuery toggle
  .context-episode-page {
 
  	.featured-outer-three {
  		border-bottom: 1px solid $colorLightGrey;
+ 		&:hover {
+ 			background-color: $colorVLightGrey;
+ 		}
+ 		@include media($mobile) {
+ 			display: none;
+ 		}
  		
  		#block-block-24 {
  			display: block;
 	 		cursor: pointer;
-	 		font-size: 1.2em;
+	 		font-size: 1.3em;
 	 		text-align: right;
 	 		padding: 2px 0 0 0;
 	 		font-variant: small-caps;
+
 	 	}
 
  	}
 
 
   	&.one-sidebar.sidebar-second.media-size-large {
-
-
 
 	    //main.media-size-large {
 

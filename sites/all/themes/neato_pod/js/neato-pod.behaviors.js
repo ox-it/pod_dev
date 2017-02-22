@@ -164,6 +164,11 @@ Drupal.behaviors.podOmegaActivateSidr = {
           $.sidr('close', 'sidr-menu-episode-button');  // close the div with the ID of "sidr-menu"
       });
 
+      // Close keyword Sidr sidebar on Episode page, if no keywords available (see _sidr.scss 'content' for CSS class)
+      $('#sidr-menu-keywords-button-episode div.sidr-inner').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+          $.sidr('close', 'sidr-menu-keywords-button-episode');  // close the div with the ID of "sidr-menu"
+      });
+
 
   }
 };
@@ -310,6 +315,9 @@ Drupal.behaviors.keywordLinkChange = {
       var theHref = $( this ).text();
       var theNewHref = theHref.replace(/ /g, "-");
       $( this ).attr("href", "/solr/keyword/" + theNewHref);
+
+      // var theHref = $(this).text();  
+      // $(this).attr("href", "/solr/keyword/" + theHref)
 
     })
   }

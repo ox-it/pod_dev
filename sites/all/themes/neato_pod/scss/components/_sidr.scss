@@ -108,11 +108,37 @@
 
 }
 
-#sidr-menu-keywords-button-episode {
-	h2 {
-		display: none;
+
+// This code adds "X" psuedo-element to CLOSE Sidr sidebar menu on Episode page when NO keywords are in filter (see JS behaviour for closing action)
+.sidr-open {
+	#sidr-menu-keywords-button-episode {
+		// &:after {
+		// 	content: "No keywords with given search terms.";
+		// }
+		h2 {
+			display: none;
+		}
+
+		.sidr-inner {
+
+			&:after {
+				font-size: 1.1em;
+				content: "✕";
+				//float: right;
+				display: block;
+				text-align: right;
+				font-size: 2em;
+				color:red;
+				cursor: pointer;
+				
+			}
+
+
+		}
 	}
 }
+
+
 
 
 
@@ -211,8 +237,6 @@
 		text-align: right;
 		font-size: 3em;
 		color:red;
-		//margin-bottom: 1em;
-		//@include clearfix;
 		cursor: pointer;
 
 		@include media($mobile) {

@@ -61,7 +61,7 @@
 					@include span-columns(3 of 12);
 					
 					&:hover ~ .fieldset-top-middle .views-field-field-series-name {
-						background-color: $colorBeigeGrey;
+						background-color: $colorLightGrey;
 					}
 
 					@include media($mobile) {
