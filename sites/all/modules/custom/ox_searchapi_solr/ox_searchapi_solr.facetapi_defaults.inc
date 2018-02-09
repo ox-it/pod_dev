@@ -18,7 +18,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'created';
   $facet->enabled = FALSE;
-  $facet->hash = '0F0YC0aSu3scppPMtQOUI7XgxEQ2KZke';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '15',
@@ -52,7 +51,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_itunes_u_category';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -88,7 +86,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_itunes_u_category:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -122,7 +119,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_keywords';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -158,7 +154,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_licence';
   $facet->enabled = FALSE;
-  $facet->hash = '1kufz5Sef0zGawP1ienCL9YqGJ5H8Noa';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '3',
@@ -192,7 +187,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_media_files:file:type';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '5',
@@ -223,7 +217,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_series:field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -259,7 +252,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'title_az_glossary';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -294,7 +286,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'body:value';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -334,7 +325,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'created';
   $facet->enabled = TRUE;
-  $facet->hash = '5GjU1qnIe0TB8uTyHBMv2QBm77CDixxi';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -393,7 +383,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_episode_description_long:value';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -433,7 +422,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -539,7 +527,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -641,7 +628,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_keywords';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -700,7 +686,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_keywords:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -740,7 +725,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_licence';
   $facet->enabled = TRUE;
-  $facet->hash = 'NU2cNBgMSBRM2WKnpsemNlrKMR9EOTv5';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -799,7 +783,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_media_files:file:type';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -858,7 +841,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_people';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -898,7 +880,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -938,7 +919,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series:field_unit';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -997,7 +977,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1037,7 +1016,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1077,7 +1055,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1117,7 +1094,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1157,7 +1133,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'search_api_language';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1197,7 +1172,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'title';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1237,7 +1211,6 @@ function ox_searchapi_solr_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'title_az_glossary';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
