@@ -67,7 +67,7 @@
  */
 
 
-#sidr-menu-keywords-button-front, #sidr-menu-keywords-button-episode, #menu-episode-sidr {
+#sidr-menu-keywords-button-front, #sidr-menu-keywords-button-episode, #menu-episode-sidr, #sidr-menu-episode-button {
 	background-color: #F8F8F8; 
 	width:420px; 
 	left:-440px; 
@@ -93,7 +93,7 @@
 	}
 
 	//Styles X close-button on front-page keywords search sidr-popout
-	#sidr-id-sidr-close-keyword-menu {
+	#sidr-id-sidr-close-keyword-menu, #sidr-id-sidr-close-episode-menu {
 		border-bottom: 2px solid #ccc;
 		padding-bottom: 10px;
 		display: block;
@@ -121,17 +121,17 @@
 
 		.sidr-inner {
 
-			&:after {
-				font-size: 1.1em;
-				content: "✕";
-				//float: right;
-				display: block;
-				text-align: right;
-				font-size: 2em;
-				color:red;
-				cursor: pointer;
+			// &:after {
+			// 	font-size: 1.1em;
+			// 	content: "✕";
+			// 	//float: right;
+			// 	display: block;
+			// 	text-align: right;
+			// 	font-size: 2em;
+			// 	color:red;
+			// 	cursor: pointer;
 				
-			}
+			// }
 
 
 		}

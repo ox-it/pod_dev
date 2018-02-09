@@ -6,9 +6,9 @@
  */
 
 
-.page-solr, .context-people-page, .context-series-page, .context-unit-page {
+.page-solr, .page-search, .context-people-page, .context-series-page, .context-unit-page {
 
-	.view-episode-search-solr- {
+	.view-episode-search-solr-, .view-episode-search-db- {
 
 		.view-header {
 			float: right;
@@ -185,7 +185,7 @@
 // This overrides the layout above -- as the Series results do not include a Series cover.
 .context-series-page {
 
-	.view-episode-search-solr- {
+	.view-episode-search-solr-, .view-episode-search-db- {
 
 		.views-row {
 			.fieldset-top {
@@ -266,7 +266,7 @@ sidebar image -- otherwise, could go above) */
 		}
 		
 	}
-	#edit-submit-episode-search-solr- {
+	#edit-submit-episode-search-solr-, #edit-submit-episode-search-db- {
 		height: 40px;
 		border: 1px solid $colorLightGrey;
 		font-size: .9em;

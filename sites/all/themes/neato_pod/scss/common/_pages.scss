@@ -61,9 +61,9 @@ main {
 
 }
 
-.page-solr {
+.page-solr, .page-search {
 	main {
-		padding-top: 1.5em;
+		padding-top: 2em;
 		@include media($mobile) {
 			padding-top: 1em;
 		}

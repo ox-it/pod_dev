@@ -116,24 +116,25 @@
 Drupal.behaviors.podOmegaActivateSidr = {
     attach: function (context, settings) {
 
-      // Series menu on <front> 
-      $('#sidr-menu-series').sidr({
-        name: 'sidr-menu-series-button',
-        displace:false,
-        side: 'right',
-        source: '.view-series-sidr', 
-      });
+      // // Series menu on <front> 
+      // $('#sidr-menu-series').sidr({
+      //   name: 'sidr-menu-series-button',
+      //   displace:false,
+      //   side: 'right',
+      //   source: '.view-series-sidr', 
+      // });
   
-      $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
-          $.sidr('close', 'sidr-menu-series-button');  // close the div with the ID of "sidr-menu"
-      });
+      // $('#sidr-id-sidr-close-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+      //     $.sidr('close', 'sidr-menu-series-button');  // close the div with the ID of "sidr-menu"
+      // });
 
 
       // Keyword menu on <front>
       $('#sidr-menu-keywords').sidr({
         name: 'sidr-menu-keywords-button-front',
         displace:false,
-        source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1',
+        source: '#block-views-23ce4c144ceee6d3f5e17c3593438fe4', // for DB Views
+        //source: '#block-views-d1fd9fb73e9d432f430dcbd5aaf5eaf1', // for Solr Views
       });
 
       $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
@@ -141,14 +142,16 @@ Drupal.behaviors.podOmegaActivateSidr = {
       });
 
 
-      // Keyword menu on Episode (both on Block 12 and on the "Refine Keywords" responsive menu)
+
+      // Keyword menu on Episode Solr OR DB View (both on Block 12 and on the "Refine Keywords" responsive menu)
       $('#block-block-12 p, #sidr-menu-episode-keywords').sidr({
         name: 'sidr-menu-keywords-button-episode',
         displace:false,
-        source: '#block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO',
+        source: '#block-facetapi-nfMPqS2Nrkzo4693KsSw79EEoXE7aK31', //for DB Views
+        //source: '#block-facetapi-o6aDGCaAmfMxmbKrOU0dCvz7VInqV0yO', //for Solr Views
       });
 
-      $('#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+      $('a#sidr-id-sidr-close-keyword-menu').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
           $.sidr('close', 'sidr-menu-keywords-button-episode');  // close the div with the ID of "sidr-menu"
       });
 
@@ -164,10 +167,10 @@ Drupal.behaviors.podOmegaActivateSidr = {
           $.sidr('close', 'sidr-menu-episode-button');  // close the div with the ID of "sidr-menu"
       });
 
-      // Close keyword Sidr sidebar on Episode page, if no keywords available (see _sidr.scss 'content' for CSS class)
-      $('#sidr-menu-keywords-button-episode div.sidr-inner').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
-          $.sidr('close', 'sidr-menu-keywords-button-episode');  // close the div with the ID of "sidr-menu"
-      });
+      // // Close keyword Sidr sidebar on Episode page, if no keywords available (see _sidr.scss 'content' for CSS class)
+      // $('#sidr-menu-keywords-button-episode div.sidr-inner').click(function(){ // when 'sidr-id-sidr-close-menu' is clicked…
+      //     $.sidr('close', 'sidr-menu-keywords-button-episode');  // close the div with the ID of "sidr-menu"
+      // });
 
 
   }
@@ -206,7 +209,7 @@ Drupal.behaviors.podOmegaHideSeek = {
         // Keywords Sidr pop-out search box on FRONT page
         $('#sidr-id-hideseek-keywords-two, #sidr-id-hideseek-keywords').hideseek({
           list: '.sidr-class-item-list ul',      
-          nodata:         'nothing',
+          nodata:         'No match',
           attribute:      'text',
           highlight:      true,
           ignore:         '',
@@ -247,7 +250,7 @@ Drupal.behaviors.podOmegaHideSeek = {
         // Departments/colleges search box (static sidebar)
         $('#hideseek-units').hideseek({
           list: '.facetapi-facet-field-seriesfield-unit',      
-          nodata:         '',
+          nodata:         'No corresponding department or college',
           attribute:      'text',
           highlight:      true,
           ignore:         '',
@@ -314,8 +317,8 @@ Drupal.behaviors.keywordLinkChange = {
     
       var theHref = $( this ).text();
       var theNewHref = theHref.replace(/ /g, "-");
-      $( this ).attr("href", "/solr/keyword/" + theNewHref);
-
+      //$( this ).attr("href", "/solr/keyword/" + theNewHref); // if Solr search
+      $( this ).attr("href", "/search/keyword/" + theNewHref); // if DB search
       // var theHref = $(this).text();  
       // $(this).attr("href", "/solr/keyword/" + theHref)
 
