@@ -6,8 +6,8 @@
 
 	.header-middle-outer {
 		background-color: $colorIconBlueGrey;
-		padding-top: 4.5em;
-		padding-bottom: 4em;
+		padding-top: 3em;
+		padding-bottom: 2em;
 
 		@include media($mobile) {
 			padding-top: 2em;
@@ -187,7 +187,7 @@
 
 			.views-field-name {
 				color: $colorLightPrimary;
-				padding-top: 2em;
+				padding-top: 1em;
 				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
 
@@ -223,7 +223,7 @@
 
 				.views-field-description {
 					padding-top: 1.5em;
-					padding-bottom: 3em;
+					padding-bottom: 2em;
 					font-size: 1.2em;
 					color: darken($colorMidGrey, 20%);
 

@@ -5,14 +5,14 @@
 
 		background-color: darken(green, 4%);
 		.open_ed_cc {
-			width: 65%;
+			width: 45.7%;
 			float: left;
 			img {
 				min-width: 100%;
 			}
 		}
 		.open_ed_title_cc  {
-			width: 35%;
+			width: 25%;
 			text-align: right;
 			float: right;
 			opacity: .8;
@@ -28,8 +28,8 @@
 
 	.featured-outer-one {
 		background-color: $colorLightGrey;
-		padding-top: 4em;
-		padding-bottom: 4em;
+		padding-top: 3em;
+		padding-bottom: 2em;
 		color: $colorMidGrey;
 		.cc_open_text {
 			@include span-columns(8);

@@ -36,18 +36,18 @@
 		ul.menu {
 			li {
 				float: left;
-				width: 125px;
+				width: 100px;
 
 				a {
 					background-color: lighten($colorPrimary, 5%);
 					display: block;
-					width: 115px;
+					width: 90px;
 					margin: 0;
 					height: 100px;
 					text-align: center;
-					padding: 30px 8px;
+					padding: 30px 5px;
 					text-transform: uppercase;
-					font-size: 1em;
+					font-size: .85em;
 					color: lighten($colorMidGrey, 30%);
 
 
@@ -65,7 +65,7 @@
 						background-image: url("../images/cc_logo_small-2.png");
 						background-repeat: no-repeat;
 						background-size: 80px;
-						background-position: 13px 5px;
+						background-position: 5px 5px;
 
 
 						//color: green;
@@ -152,6 +152,7 @@
 		background-size: 100%;
 		height: 100px;
 		width: 100px;
+
 		&:hover {
 			opacity: .9;
 			color: red;
@@ -187,6 +188,7 @@
  
 .header-top-outer.header_scroll {
 	height: 57px;
+	//@include transition(all 1.0s ease-in);
 
 	// Social Media Buttons (twitter/facebook)
 	#block-block-11 {
@@ -208,12 +210,12 @@
 	#block-system-main-menu {
 		ul.menu {
 			li { 
-				width: 130px;
+				width: 100px;
 				a {
 					height: 57px;
-					width: 115px;
-					padding: 8px 15px;
-					font-size: .9em;
+					width: 90px;
+					padding: 10px 8px;
+					font-size: .8em;
 				}
 			}
 		}

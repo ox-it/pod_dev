@@ -91,10 +91,13 @@
 	#block-block-12 {
 		h2 {
 			background-color: $colorLinkHover;
-			padding: .75em;
-			color: $font-heading-white;
+			padding: 4px 10px 6px 10px;
+			color: #fff;
 			border-radius: 1px;
 			margin: 0;
+			font-variant: all-small-caps;
+			font-size: 1.5em;
+			font-weight: 400;
 		}
 		p {
 			background-color: $colorVLightGrey;
@@ -135,9 +138,12 @@
 
 			h2 {
 				background-color: $colorLinkHover;
-				padding: .75em;
-				color: $font-heading-white;
+				padding: 4px 10px 6px 10px;
+				color: #fff;
 				border-radius: 1px;
+				font-variant: all-small-caps;
+				font-size: 1.5em;
+				font-weight: 400;
 			}
 
 

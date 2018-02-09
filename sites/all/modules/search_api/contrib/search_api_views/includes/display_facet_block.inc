@@ -164,7 +164,13 @@ class SearchApiViewsFacetsBlockDisplay extends views_plugin_display_block {
       $base_path = $_GET['q'];
     }
 
-    $limit = empty($this->view->query->pager->options['items_per_page']) ? 10 : $this->view->query->pager->options['items_per_page'];
+
+    $limit = 10;
+    $pager = $this->get_option('pager');
+    if (isset($pager) && isset($pager['options']) && isset($pager['options']['items_per_page'])) {
+      $limit = $pager['options']['items_per_page'];
+    };
+
     $query_options = &$this->view->query->getOptions();
     if (!$this->get_option('hide_block')) {
       // If we hide the block, we don't need this extra facet.

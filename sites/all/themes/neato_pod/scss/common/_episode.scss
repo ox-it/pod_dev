@@ -5,8 +5,8 @@
 .context-results-page {
 
 	.header-middle-outer {
-		padding-top: 4.5em;
-		padding-bottom: 4em;
+		padding-top: 3em;
+		padding-bottom: 2em;
 		background-color: $colorLightGrey;
 
 		@include media($mobile) {
@@ -311,7 +311,7 @@
 
 			.views-field-title {
 				color: $colorLightPrimary;
-				padding-top: 2em;
+				padding-top: 1em;
 				font-size: 2.4em;
 				border-bottom: 1px solid $colorLinkHover;
 
