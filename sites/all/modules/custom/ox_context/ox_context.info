@@ -18,6 +18,7 @@ features[context][] = context_admin
 features[context][] = context_all
 features[context][] = context_basic_page
 features[context][] = context_breadcrumb
+features[context][] = context_episode_db
 features[context][] = context_episode_page
 features[context][] = context_episode_solr
 features[context][] = context_front

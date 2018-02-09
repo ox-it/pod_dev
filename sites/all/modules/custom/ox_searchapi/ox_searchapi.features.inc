@@ -37,11 +37,13 @@ function ox_searchapi_default_search_api_index() {
       "index_statistics_ttl" : "365d",
       "fields" : {
         "body:value" : { "type" : "text" },
+        "created" : { "type" : "date" },
         "field_episode_description_long:value" : { "type" : "text" },
         "field_itunes_u_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_itunes_u_category:name" : { "type" : "list\\u003Cstring\\u003E" },
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_keywords:name" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_licence" : { "type" : "string" },
         "field_media_files:file:type" : { "type" : "list\\u003Cstring\\u003E" },
         "field_people" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_series" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -183,7 +185,7 @@ function ox_searchapi_default_search_api_server() {
     "class" : "search_api_db_service",
     "options" : {
       "database" : "default:default",
-      "min_chars" : "1",
+      "min_chars" : "3",
       "partial_matches" : 0,
       "indexes" : { "episode_index" : {
           "title" : {
@@ -282,6 +284,18 @@ function ox_searchapi_default_search_api_server() {
             "table" : "search_api_db_episode_index_field_media_files_file_type",
             "column" : "value",
             "type" : "list\\u003Cstring\\u003E",
+            "boost" : "1.0"
+          },
+          "created" : {
+            "table" : "search_api_db_episode_index",
+            "column" : "created",
+            "type" : "date",
+            "boost" : "1.0"
+          },
+          "field_licence" : {
+            "table" : "search_api_db_episode_index",
+            "column" : "field_licence",
+            "type" : "string",
             "boost" : "1.0"
           }
         }

@@ -13,12 +13,44 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index::created';
+  $facet->searcher = 'search_api@episode_index';
+  $facet->realm = '';
+  $facet->facet = 'created';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '15',
+    'dependencies' => array(
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+      'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
+    ),
+    'facet_mincount' => '0',
+    'facet_missing' => '0',
+    'flatten' => 0,
+    'individual_parent' => 0,
+    'query_type' => 'date',
+    'limit_active_items' => 0,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'date_granularity' => 'YEAR',
+    'pretty_paths_alias' => 'date',
+  );
+  $export['search_api@episode_index::created'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@episode_index::field_itunes_u_category';
   $facet->searcher = 'search_api@episode_index';
   $facet->realm = '';
   $facet->facet = 'field_itunes_u_category';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -54,7 +86,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_keywords';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -62,10 +93,14 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
       'roles' => array(),
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
     ),
-    'facet_mincount' => '10',
+    'facet_mincount' => '5',
     'facet_missing' => '0',
-    'flatten' => '0',
+    'flatten' => '1',
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
@@ -81,12 +116,41 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index::field_licence';
+  $facet->searcher = 'search_api@episode_index';
+  $facet->realm = '';
+  $facet->facet = 'field_licence';
+  $facet->enabled = FALSE;
+  $facet->settings = array(
+    'operator' => 'and',
+    'hard_limit' => '3',
+    'dependencies' => array(
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
+    ),
+    'facet_mincount' => '1',
+    'facet_missing' => '0',
+    'flatten' => 0,
+    'individual_parent' => 0,
+    'query_type' => 'term',
+    'limit_active_items' => 1,
+    'default_true' => '1',
+    'facet_search_ids' => array(),
+    'exclude' => 0,
+    'pretty_paths_alias' => 'license',
+  );
+  $export['search_api@episode_index::field_licence'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
   $facet->name = 'search_api@episode_index::field_media_files:file:type';
   $facet->searcher = 'search_api@episode_index';
   $facet->realm = '';
   $facet->facet = 'field_media_files:file:type';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '5',
@@ -94,6 +158,10 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
       'roles' => array(),
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
     ),
     'facet_mincount' => '0',
     'facet_missing' => '0',
@@ -116,7 +184,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_series';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -148,7 +215,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_series:field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '-1',
@@ -156,6 +222,10 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'bundle' => 'none',
       'bundle_selected' => array(),
       'roles' => array(),
+      'facets' => array(),
+      'reverse_dependency' => FALSE,
+      'force_deactivation' => TRUE,
+      'regex' => FALSE,
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -180,7 +250,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -208,7 +277,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_unit:field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -236,7 +304,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'field_unit:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -264,7 +331,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = '';
   $facet->facet = 'title_az_glossary';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'operator' => 'and',
     'hard_limit' => '50',
@@ -295,7 +361,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'body:value';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -322,8 +387,68 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'The main body text » Text',
   );
   $export['search_api@episode_index:block:body:value'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index:block:created';
+  $facet->searcher = 'search_api@episode_index';
+  $facet->realm = 'block';
+  $facet->facet = 'created';
+  $facet->enabled = TRUE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_links',
+    'filters' => array(),
+    'active_sorts' => array(
+      'natural' => 'natural',
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+      'indexed' => 0,
+      'glossary_az' => 0,
+    ),
+    'sort_weight' => array(
+      'natural' => '-50',
+      'active' => '-49',
+      'count' => '-48',
+      'display' => '-47',
+      'indexed' => '-46',
+      'glossary_az' => '-45',
+    ),
+    'sort_order' => array(
+      'natural' => '4',
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'glossary_az' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Date created',
+    'soft_limit' => '20',
+    'nofollow' => 1,
+    'show_expanded' => 0,
+    'show_all' => 1,
+    'show_count' => 1,
+    'default_option_label' => '',
+    'reset_option_label' => '',
+    'submit_page' => '',
+    'hide_facet_count' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['search_api@episode_index:block:created'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
@@ -333,7 +458,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_episode_description_long:value';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -360,6 +484,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'Long Description » Text',
   );
   $export['search_api@episode_index:block:field_episode_description_long:value'] = $facet;
 
@@ -371,7 +497,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -395,26 +520,29 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => 'count',
       'glossary_az' => 0,
       'indexed' => 0,
+      'natural' => 0,
     ),
     'sort_weight' => array(
       'display' => '-50',
-      'glossary_az' => '-47',
       'active' => '-49',
       'count' => '-48',
+      'glossary_az' => '-47',
       'indexed' => '-46',
+      'natural' => '0',
     ),
     'sort_order' => array(
       'display' => '4',
-      'glossary_az' => '4',
       'active' => '3',
       'count' => '3',
+      'glossary_az' => '4',
       'indexed' => '4',
+      'natural' => '4',
     ),
     'empty_behavior' => 'none',
     'display_count' => 1,
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '50',
+    'soft_limit' => '40',
     'nofollow' => 1,
     'show_expanded' => 0,
     'show_all' => 1,
@@ -433,6 +561,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'show_minimum_items' => 2,
     'depth' => '0',
     'parents' => 1,
+    'title_override' => 0,
+    'title' => 'iTunes U Category',
   );
   $export['search_api@episode_index:block:field_itunes_u_category'] = $facet;
 
@@ -444,7 +574,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -471,6 +600,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'iTunes U Category » Name',
   );
   $export['search_api@episode_index:block:field_itunes_u_category:name'] = $facet;
 
@@ -482,7 +613,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category:parent';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -520,7 +650,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_itunes_u_category:parents_all';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -558,30 +687,32 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_keywords';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
     'filters' => array(),
     'active_sorts' => array(
-      'active' => 'active',
-      'count' => 'count',
       'display' => 'display',
+      'count' => 'count',
+      'active' => 'active',
       'indexed' => 0,
+      'natural' => 0,
       'glossary_az' => 0,
     ),
     'sort_weight' => array(
-      'active' => '-50',
+      'display' => '-50',
       'count' => '-49',
-      'display' => '-48',
-      'indexed' => '0',
-      'glossary_az' => '0',
+      'active' => '-48',
+      'indexed' => '-47',
+      'natural' => '-46',
+      'glossary_az' => '-45',
     ),
     'sort_order' => array(
-      'active' => '3',
-      'count' => '3',
       'display' => '4',
+      'count' => '3',
+      'active' => '3',
       'indexed' => '4',
+      'natural' => '4',
       'glossary_az' => '4',
     ),
     'empty_behavior' => 'none',
@@ -601,6 +732,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Keywords',
   );
   $export['search_api@episode_index:block:field_keywords'] = $facet;
 
@@ -612,7 +745,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_keywords:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -639,18 +771,19 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'Keywords » Name',
   );
   $export['search_api@episode_index:block:field_keywords:name'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@episode_index:block:field_media_files:file:type';
+  $facet->name = 'search_api@episode_index:block:field_licence';
   $facet->searcher = 'search_api@episode_index';
   $facet->realm = 'block';
-  $facet->facet = 'field_media_files:file:type';
+  $facet->facet = 'field_licence';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -660,6 +793,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => 'count',
       'display' => 'display',
       'indexed' => 0,
+      'natural' => 0,
       'glossary_az' => 0,
     ),
     'sort_weight' => array(
@@ -667,6 +801,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => '-49',
       'display' => '-48',
       'indexed' => '0',
+      'natural' => '0',
       'glossary_az' => '0',
     ),
     'sort_order' => array(
@@ -674,6 +809,65 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => '3',
       'display' => '4',
       'indexed' => '4',
+      'natural' => '4',
+      'glossary_az' => '4',
+    ),
+    'empty_behavior' => 'none',
+    'display_count' => 1,
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
+    'title_override' => 0,
+    'title' => 'Licence',
+    'soft_limit' => '3',
+    'nofollow' => 1,
+    'show_expanded' => 0,
+    'show_all' => 1,
+    'show_count' => 1,
+    'default_option_label' => '',
+    'reset_option_label' => '',
+    'submit_page' => '',
+    'hide_facet_count' => 0,
+    'empty_text' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['search_api@episode_index:block:field_licence'] = $facet;
+
+  $facet = new stdClass();
+  $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
+  $facet->api_version = 1;
+  $facet->name = 'search_api@episode_index:block:field_media_files:file:type';
+  $facet->searcher = 'search_api@episode_index';
+  $facet->realm = 'block';
+  $facet->facet = 'field_media_files:file:type';
+  $facet->enabled = TRUE;
+  $facet->settings = array(
+    'weight' => 0,
+    'widget' => 'facetapi_links',
+    'filters' => array(),
+    'active_sorts' => array(
+      'active' => 'active',
+      'count' => 'count',
+      'display' => 'display',
+      'indexed' => 0,
+      'natural' => 0,
+      'glossary_az' => 0,
+    ),
+    'sort_weight' => array(
+      'active' => '-50',
+      'count' => '-49',
+      'display' => '-48',
+      'indexed' => '0',
+      'natural' => '0',
+      'glossary_az' => '0',
+    ),
+    'sort_order' => array(
+      'active' => '3',
+      'count' => '3',
+      'display' => '4',
+      'indexed' => '4',
+      'natural' => '4',
       'glossary_az' => '4',
     ),
     'empty_behavior' => 'none',
@@ -693,6 +887,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Media Files » The file. » File type',
   );
   $export['search_api@episode_index:block:field_media_files:file:type'] = $facet;
 
@@ -704,7 +900,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_people';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -731,6 +926,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'People',
   );
   $export['search_api@episode_index:block:field_people'] = $facet;
 
@@ -742,7 +939,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_select_dropdowns',
@@ -785,6 +981,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Series',
   );
   $export['search_api@episode_index:block:field_series'] = $facet;
 
@@ -796,7 +994,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series:field_unit';
   $facet->enabled = TRUE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -847,6 +1044,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => 'count',
       'display' => 'display',
       'indexed' => 0,
+      'natural' => 0,
       'glossary_az' => 0,
     ),
     'sort_weight' => array(
@@ -854,6 +1052,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => '-49',
       'display' => '-48',
       'indexed' => '0',
+      'natural' => '0',
       'glossary_az' => '0',
     ),
     'sort_order' => array(
@@ -861,6 +1060,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'count' => '3',
       'display' => '4',
       'indexed' => '4',
+      'natural' => '4',
       'glossary_az' => '4',
     ),
     'empty_behavior' => 'none',
@@ -886,6 +1086,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'show_minimum_items' => 2,
     'depth' => '2',
     'parents' => 1,
+    'title_override' => 0,
+    'title' => 'Series » Oxford Unit',
   );
   $export['search_api@episode_index:block:field_series:field_unit'] = $facet;
 
@@ -897,7 +1099,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_series:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -924,6 +1125,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'Series » Name',
   );
   $export['search_api@episode_index:block:field_series:name'] = $facet;
 
@@ -935,7 +1138,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_select_dropdowns',
@@ -978,6 +1180,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Units',
   );
   $export['search_api@episode_index:block:field_unit'] = $facet;
 
@@ -989,7 +1193,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:field_unit';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1032,6 +1235,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Units » Oxford Unit',
   );
   $export['search_api@episode_index:block:field_unit:field_unit'] = $facet;
 
@@ -1043,7 +1248,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:name';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1086,6 +1290,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Units » Name',
   );
   $export['search_api@episode_index:block:field_unit:name'] = $facet;
 
@@ -1097,7 +1303,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:parent';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1135,7 +1340,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit:parents_all';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1173,7 +1377,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'search_api_language';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1200,6 +1403,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'Item language',
   );
   $export['search_api@episode_index:block:search_api_language'] = $facet;
 
@@ -1211,7 +1416,6 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'title';
   $facet->enabled = FALSE;
-  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1238,6 +1442,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
     'soft_limit' => 20,
     'nofollow' => 1,
     'show_expanded' => 0,
+    'title_override' => 0,
+    'title' => 'Title',
   );
   $export['search_api@episode_index:block:title'] = $facet;
 
@@ -1248,8 +1454,7 @@ function ox_searchapi_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@episode_index';
   $facet->realm = 'block';
   $facet->facet = 'title_az_glossary';
-  $facet->enabled = TRUE;
-  $facet->hash = '0';
+  $facet->enabled = FALSE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -1292,6 +1497,8 @@ function ox_searchapi_facetapi_default_facet_settings() {
       'value' => '',
       'format' => 'filtered_html',
     ),
+    'title_override' => 0,
+    'title' => 'Title A-Z Glossary',
   );
   $export['search_api@episode_index:block:title_az_glossary'] = $facet;
 

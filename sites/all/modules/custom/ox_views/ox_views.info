@@ -14,6 +14,7 @@ features[views_view][] = episode_featured_latest
 features[views_view][] = episode_node_view
 features[views_view][] = episode_page
 features[views_view][] = episode_search_db_
+features[views_view][] = episode_search_db_pageholder
 features[views_view][] = episode_search_solr_
 features[views_view][] = episode_search_solr_pageholder
 features[views_view][] = episode_series_count

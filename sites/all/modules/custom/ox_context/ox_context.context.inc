@@ -176,6 +176,92 @@ function ox_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'context_episode_db';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'search' => 'search',
+        'search*' => 'search*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-episode_search_db_-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-episode_search_db_-page',
+          'region' => 'header-middle',
+          'weight' => '-9',
+        ),
+        'current_search-episode_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'episode_current_search',
+          'region' => 'featured-one',
+          'weight' => '-9',
+        ),
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'featured-two',
+          'weight' => '-10',
+        ),
+        'facetapi-gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd' => array(
+          'module' => 'facetapi',
+          'delta' => 'gIWEsGcCXOebHOnc62cCOpYzXEMwx8gd',
+          'region' => 'sidebar_first',
+          'weight' => '-52',
+        ),
+        'facetapi-nWRbzKoSJS37Ay7qWg1TIMIOr3HAUJ5d' => array(
+          'module' => 'facetapi',
+          'delta' => 'nWRbzKoSJS37Ay7qWg1TIMIOr3HAUJ5d',
+          'region' => 'sidebar_first',
+          'weight' => '-51',
+        ),
+        'block-12' => array(
+          'module' => 'block',
+          'delta' => '12',
+          'region' => 'sidebar_first',
+          'weight' => '-50',
+        ),
+        'facetapi-2jJNzaGGAk51or515mhY4LIxVV2yhQ9K' => array(
+          'module' => 'facetapi',
+          'delta' => '2jJNzaGGAk51or515mhY4LIxVV2yhQ9K',
+          'region' => 'sidebar_first',
+          'weight' => '-49',
+        ),
+        'facetapi-362X7yIwCWvjKplJmmvMq7R4XcGmkqNP' => array(
+          'module' => 'facetapi',
+          'delta' => '362X7yIwCWvjKplJmmvMq7R4XcGmkqNP',
+          'region' => 'sidebar_first',
+          'weight' => '-48',
+        ),
+        'facetapi-VekU3SoxVgF8qKbjcxbztWlm8UlwycqO' => array(
+          'module' => 'facetapi',
+          'delta' => 'VekU3SoxVgF8qKbjcxbztWlm8UlwycqO',
+          'region' => 'sidebar_first',
+          'weight' => '-47',
+        ),
+        'facetapi-nfMPqS2Nrkzo4693KsSw79EEoXE7aK31' => array(
+          'module' => 'facetapi',
+          'delta' => 'nfMPqS2Nrkzo4693KsSw79EEoXE7aK31',
+          'region' => 'footer_hidden_one',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'context-results-page',
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['context_episode_db'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'context_episode_page';
   $context->description = '';
   $context->tag = '';
@@ -399,11 +485,11 @@ function ox_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-episode_search_solr_-page' => array(
+        'views--exp-episode_search_db_-page' => array(
           'module' => 'views',
-          'delta' => '-exp-episode_search_solr_-page',
+          'delta' => '-exp-episode_search_db_-page',
           'region' => 'header-middle',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-episode_series_count-block' => array(
           'module' => 'views',
@@ -441,11 +527,17 @@ function ox_context_context_default_contexts() {
           'region' => 'featured-six',
           'weight' => '-10',
         ),
+        'views-23ce4c144ceee6d3f5e17c3593438fe4' => array(
+          'module' => 'views',
+          'delta' => '23ce4c144ceee6d3f5e17c3593438fe4',
+          'region' => 'footer_hidden_one',
+          'weight' => '-53',
+        ),
         'views-d1fd9fb73e9d432f430dcbd5aaf5eaf1' => array(
           'module' => 'views',
           'delta' => 'd1fd9fb73e9d432f430dcbd5aaf5eaf1',
           'region' => 'footer_hidden_one',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
       ),
     ),
