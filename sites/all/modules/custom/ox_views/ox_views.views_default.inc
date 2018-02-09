@@ -2389,6 +2389,7 @@ Must click SAVE below for changes to take effect.';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
@@ -2588,6 +2589,7 @@ Must click SAVE below for changes to take effect.';
 
   /* Display: EVA Field (Series) */
   $handler = $view->new_display('entity_view', 'EVA Field (Series)', 'entity_view_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -2787,6 +2789,7 @@ Must click SAVE below for changes to take effect.';
 
   /* Display: EVA Field (People) */
   $handler = $view->new_display('entity_view', 'EVA Field (People)', 'entity_view_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -3011,6 +3014,7 @@ Must click SAVE below for changes to take effect.';
 
   /* Display: EVA Field (Unit) */
   $handler = $view->new_display('entity_view', 'EVA Field (Unit)', 'entity_view_3');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
