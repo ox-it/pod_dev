@@ -67,7 +67,7 @@ function neato_pod_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
 
     if ($form['#id'] == 'views-exposed-form-episode-search-solr--entity-view-1' || 'views-exposed-form-episode-search-solr--entity-view-2' || 'views-exposed-form-episode-search-solr--entity-view-3') {
       if (isset($form['search_api_views_fulltext'])) {
-        $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Filter Results Here...');
+        $form['search_api_views_fulltext']['#attributes']['placeholder'] = t('Search Episodes Here...');
       }
     }
 
